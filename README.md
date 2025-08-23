@@ -7,6 +7,8 @@ Strona umożliwia:
 - odpowiadanie na pytania podzielone na **poszczególne kategorie egzaminacyjne** (np. *Prawo*, *Matematyka Finansowa*),  
 - generowanie egzaminów próbnych w trybie **nauki** lub **egzaminu** z timerem i oceną punktową.  
 
+---
+
 Projekt składa się z **trzech części**:  
 1. **Frontend (React + Vite.js)** – aplikacja webowa dla użytkownika,  
 2. **Backend (FastAPI + Python + MongoDB)** – API obsługujące pytania, egzaminy i statystyki,  
