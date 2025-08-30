@@ -1,10 +1,61 @@
 import axios from "axios";
+
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
-export const fetchTopics = () =>
-  axios.get(`${API_URL}/topics`).then(r=>r.data);
+// Create axios instance with interceptors
+const api = axios.create({
+  baseURL: API_URL,
+});
 
-// Unified questions endpoint - handles all question fetching scenarios
+// Token management
+let authToken = null;
+
+export const setAuthToken = (token) => {
+  authToken = token;
+  if (token) {
+    api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  } else {
+    delete api.defaults.headers.common['Authorization'];
+  }
+};
+
+export const getAuthToken = () => authToken;
+
+export const clearAuthToken = () => {
+  authToken = null;
+  delete api.defaults.headers.common['Authorization'];
+};
+
+// Response interceptor to handle 401 errors
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      clearAuthToken();
+      // Dispatch custom event for auth state change
+      window.dispatchEvent(new CustomEvent('auth-expired'));
+    }
+    return Promise.reject(error);
+  }
+);
+
+// Auth API calls
+export const getGoogleAuthUrl = () =>
+  api.get('/auth/google/url').then(r => r.data);
+
+export const exchangeCodeForToken = (code) =>
+  api.post('/auth/google/callback', { code }).then(r => r.data);
+
+export const getCurrentUser = () =>
+  api.get('/auth/me').then(r => r.data);
+
+export const logout = () =>
+  api.post('/auth/logout').then(r => r.data);
+
+// Protected API calls (now require authentication)
+export const fetchTopics = () =>
+  api.get('/topics').then(r => r.data);
+
 export const fetchQuestions = (options = {}) => {
   const { 
     main_topic = null, 
@@ -20,11 +71,11 @@ export const fetchQuestions = (options = {}) => {
   if (sub_topic) params.sub_topic = sub_topic;
   if (exam_date) params.exam_date = exam_date;
   
-  console.log("API Request params:", params); // Debug log
+  console.log("API Request params:", params);
   
-  return axios.get(`${API_URL}/questions`, { params })
+  return api.get('/questions', { params })
     .then(r => {
-      console.log("API Response:", r.data); // Debug log
+      console.log("API Response:", r.data);
       return r.data;
     })
     .catch(error => {
@@ -33,7 +84,6 @@ export const fetchQuestions = (options = {}) => {
     });
 };
 
-// Get total count of questions for given filters
 export const fetchQuestionsCount = (options = {}) => {
   const { main_topic = null, sub_topic = null, exam_date = null } = options;
   
@@ -42,8 +92,14 @@ export const fetchQuestionsCount = (options = {}) => {
   if (sub_topic) params.sub_topic = sub_topic;
   if (exam_date) params.exam_date = exam_date;
   
-  return axios.get(`${API_URL}/questions/count`, { params }).then(r => r.data);
+  return api.get('/questions/count', { params }).then(r => r.data);
 };
+
+export const fetchExamDates = () =>
+  api.get('/exam_dates').then(r => r.data);
+
+export const fetchSubtopicCounts = () =>
+  api.get('/subtopic_counts').then(r => r.data);
 
 // Convenience functions for common use cases
 export const fetchExam = (n = 5, exam_date = null) =>
@@ -54,9 +110,3 @@ export const fetchQuestionsByTopic = (main_topic, sub_topic = null, n = 10, skip
 
 export const fetchQuestionsByDate = (exam_date, n = 10, skip = 0) =>
   fetchQuestions({ exam_date, n, skip, random: false });
-
-export const fetchExamDates = () =>
-  axios.get(`${API_URL}/exam_dates`).then(r=>r.data);
-
-export const fetchSubtopicCounts = () =>
-  axios.get(`${API_URL}/subtopic_counts`).then(r=>r.data);
