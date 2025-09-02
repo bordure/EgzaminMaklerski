@@ -5,6 +5,7 @@ from pymongo import MongoClient
 import json
 from dotenv import load_dotenv
 import os 
+import time 
 
 load_dotenv()
 
@@ -15,6 +16,27 @@ COLLECTION_NAME = "questions"
 client = MongoClient(MONGO_URI)
 db = client[DB_NAME]
 collection = db[COLLECTION_NAME]
+collection.drop()  # Clear existing data
+
+from pymongo.errors import BulkWriteError
+
+def safe_insert_many(collection, docs, max_retries=5):
+    for attempt in range(max_retries):
+        try:
+            collection.insert_many(docs)
+            return
+        except BulkWriteError as bwe:
+            details = bwe.details
+            print("Bulk write error:", details)
+            # Get retry delay from error if available
+            retry_ms = 3000
+            if details.get("writeErrors"):
+                msg = details["writeErrors"][0].get("errmsg", "")
+                match = re.search(r"RetryAfterMs=(\d+)", msg)
+                if match:
+                    retry_ms = int(match.group(1))
+            time.sleep(retry_ms / 1000.0)
+    raise Exception("Max retries exceeded during insert_many")
 
 def normalize(s: str) -> str:
     s = s.replace('\r', '\n')
@@ -131,7 +153,9 @@ def scrap_pdf_file(PDF_PATH: str):
 
     # Insert into MongoDB
     if result:
-        collection.insert_many(result)
+        for i in range(0, len(result), 10):
+            safe_insert_many(collection, result[i:i+10])
+
         print(f"{len(result)} questions inserted into MongoDB collection '{COLLECTION_NAME}'.")
 
 if __name__ == "__main__":
