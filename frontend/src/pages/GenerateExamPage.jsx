@@ -47,23 +47,25 @@ export default function GenerateExamPage() {
 
   // Timer effect for exam mode
   useEffect(() => {
-    // Start timer only when an exam is loaded in exam mode and it hasn't been submitted
-    if (mode === "exam" && questions.length > 0 && !examSubmitted && timeRemaining === null) {
-      // Initialize timer
-      const totalSeconds = parseInt(examTimer, 10) * 60;
+    // Only start timer if we're in exam mode, have questions, exam not submitted, and no active timer
+    if (mode === "exam" && questions.length > 0 && !examSubmitted && !timerIntervalRef.current) {
+      // Initialize timer immediately
+      const timerValue = examTimer === '' ? 60 : parseInt(examTimer, 10);
+      const totalSeconds = timerValue * 60;
+      
+      // Set the time immediately (synchronously)
       setTimeRemaining(totalSeconds);
 
-      // Clear any existing timer before starting a new one
-      if (timerIntervalRef.current) {
-        clearInterval(timerIntervalRef.current);
-      }
-
+      // Start the countdown
       timerIntervalRef.current = setInterval(() => {
         setTimeRemaining(prev => {
           if (prev <= 1) {
             // Time's up - auto submit exam
             setExamSubmitted(true);
-            clearInterval(timerIntervalRef.current);
+            if (timerIntervalRef.current) {
+              clearInterval(timerIntervalRef.current);
+              timerIntervalRef.current = null;
+            }
             return 0;
           }
           return prev - 1;
@@ -71,13 +73,14 @@ export default function GenerateExamPage() {
       }, 1000);
     }
     
-    // Cleanup function to clear the interval when the component unmounts or dependencies change
+    // Cleanup function
     return () => {
       if (timerIntervalRef.current) {
         clearInterval(timerIntervalRef.current);
+        timerIntervalRef.current = null;
       }
     };
-  }, [mode, questions.length, examSubmitted, examTimer]);
+  }, [mode, questions, examSubmitted, examTimer]);
 
   // Fixed number input handler
   const handleNumberChange = (e) => {
@@ -124,12 +127,13 @@ export default function GenerateExamPage() {
     setLoading(true);
     setError(null);
     setExamSubmitted(false); // Reset exam state
-    // Reset timer before new exam
+    
+    // Always clear timer state when generating new exam
     if (timerIntervalRef.current) {
       clearInterval(timerIntervalRef.current);
       timerIntervalRef.current = null;
     }
-    setTimeRemaining(null);
+    setTimeRemaining(null); // Reset timer state
 
     try {
       // Ensure numberOfQuestions is a valid number
@@ -173,6 +177,10 @@ export default function GenerateExamPage() {
       }));
       
       setQuestions(transformedQuestions);
+      
+      // The timer will automatically start via the useEffect hook
+      // when questions are set and mode is "exam"
+      
     } catch (err) {
       setError("Failed to generate exam. Please try again.");
       console.error("Error generating exam:", err);
