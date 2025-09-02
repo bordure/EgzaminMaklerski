@@ -2,23 +2,22 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Install dependencies
-COPY package.json package-lock.json* ./ 
+COPY package.json package-lock.json* ./
 RUN npm install
-
-# Copy source files
 COPY . .
-
-# Build frontend
 RUN npm run build
 
 # Stage 2: Serve with nginx
 FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Remove default nginx config and use custom if needed
+# Custom nginx config if you have one
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Add startup script to inject env variables
+COPY env.sh /docker-entrypoint.d/env.sh
+RUN chmod +x /docker-entrypoint.d/env.sh
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
