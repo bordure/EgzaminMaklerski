@@ -79,6 +79,46 @@ export default function GenerateExamPage() {
     };
   }, [mode, questions.length, examSubmitted, examTimer]);
 
+  // Fixed number input handler
+  const handleNumberChange = (e) => {
+    const value = e.target.value;
+    
+    // Allow empty string (so user can clear the field)
+    if (value === '') {
+      setNumberOfQuestions('');
+      return;
+    }
+    
+    // Parse the number
+    const numValue = parseInt(value, 10);
+    
+    // Only update if it's a valid positive number
+    if (!isNaN(numValue) && numValue > 0) {
+      setNumberOfQuestions(numValue);
+    }
+    // If invalid, keep the current state (don't update)
+  };
+
+  // Fixed timer input handler
+  const handleTimerChange = (e) => {
+    const value = e.target.value;
+    
+    // Allow empty string (so user can clear the field)
+    if (value === '') {
+      setExamTimer('');
+      return;
+    }
+    
+    // Parse the number
+    const numValue = parseInt(value, 10);
+    
+    // Only update if it's a valid positive number
+    if (!isNaN(numValue) && numValue > 0) {
+      setExamTimer(numValue);
+    }
+    // If invalid, keep the current state (don't update)
+  };
+
   // Handle Generate Exam Button Click
   const handleGenerateExam = async () => {
     setLoading(true);
@@ -92,9 +132,12 @@ export default function GenerateExamPage() {
     setTimeRemaining(null);
 
     try {
+      // Ensure numberOfQuestions is a valid number
+      const questionsCount = numberOfQuestions === '' ? 1 : parseInt(numberOfQuestions, 10);
+      
       // Build query options for the unified API
       const queryOptions = {
-        n: numberOfQuestions,
+        n: questionsCount, // Use the validated number
         random: true // Always use random for exam generation
       };
 
@@ -114,7 +157,6 @@ export default function GenerateExamPage() {
         queryOptions.exam_date = selectedYear;
       }
 
-
       // Fetch questions using the unified API
       const res = await fetchQuestions(queryOptions);
       
@@ -122,7 +164,6 @@ export default function GenerateExamPage() {
       if (!res || !res.questions || !Array.isArray(res.questions)) {
         throw new Error("No questions received from API");
       }
-      
       
       const transformedQuestions = res.questions.map(q => ({
         ...q,
@@ -220,13 +261,19 @@ export default function GenerateExamPage() {
         </h1>
 
         <div className="bg-white p-6 rounded-lg shadow-lg mb-8 space-y-4">
-          {/* Number of Questions */}
+          {/* Number of Questions - Fixed Input */}
           <div>
             <label className="block text-gray-700 font-medium mb-1">Number of Questions:</label>
             <input
               type="number"
               value={numberOfQuestions}
-              onChange={e => setNumberOfQuestions(parseInt(e.target.value, 10) || 1)}
+              onChange={handleNumberChange}
+              onBlur={(e) => {
+                // Ensure we have a valid number when user leaves the field
+                if (numberOfQuestions === '' || numberOfQuestions < 1) {
+                  setNumberOfQuestions(1);
+                }
+              }}
               min="1"
               className="w-full p-2 border border-gray-300 rounded-md shadow-sm"
             />
@@ -352,14 +399,20 @@ export default function GenerateExamPage() {
             </button>
           </div>
 
-          {/* Timer Input (visible in Exam Mode) */}
+          {/* Timer Input (visible in Exam Mode) - Fixed Input */}
           {mode === "exam" && (
             <div>
               <label className="block text-gray-700 font-medium mb-1">Exam Timer (minutes):</label>
               <input
                 type="number"
                 value={examTimer}
-                onChange={e => setExamTimer(e.target.value)}
+                onChange={handleTimerChange}
+                onBlur={(e) => {
+                  // Ensure we have a valid number when user leaves the field
+                  if (examTimer === '' || examTimer < 1) {
+                    setExamTimer(60);
+                  }
+                }}
                 min="1"
                 className="w-full p-2 border border-gray-300 rounded-md shadow-sm"
               />
@@ -371,7 +424,6 @@ export default function GenerateExamPage() {
             onClick={handleGenerateExam}
             disabled={loading}
             className="w-full mt-4 bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
-
           >
             {loading ? "Generating..." : "Generate Exam"}
           </button>
