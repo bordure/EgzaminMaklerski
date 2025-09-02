@@ -41,7 +41,7 @@ LOGINS_COLLECTION = "user_logins"
 logins_collection = db[LOGINS_COLLECTION]
 
 # FastAPI app
-app = FastAPI(title="Exam API with Google OAuth2")
+app = FastAPI(title="Egzamin Maklerski API")
 
 # CORS middleware
 origins = [
