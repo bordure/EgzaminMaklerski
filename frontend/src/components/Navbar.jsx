@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
-import { BookOpen, LogOut, User } from 'lucide-react';
+import { BookOpen, LogOut } from 'lucide-react';
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
   const location = useLocation();
 
-  // Don't show navbar if user is not authenticated
   if (!isAuthenticated) {
     return null;
   }
 
   const isActive = (path) => location.pathname === path;
+
+  const donateButtonClasses = `flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors 
+    text-gray-600 hover:text-gray-900 hover:bg-gray-100`;
 
   return (
     <nav className="bg-white shadow-sm border-b border-gray-200">
@@ -50,6 +52,22 @@ const Navbar = () => {
             >
               Browse Topics
             </Link>
+
+            {/* Donate Button */}
+            <a
+              href="https://buycoffee.to/egzaminmaklerski"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={donateButtonClasses}
+              title="Support us with a coffee!"
+            >
+              <img 
+                src="https://www.svgrepo.com/show/330105/buymeacoffee.svg" 
+                alt="Buy Me a Coffee"
+                className="w-5 h-5"
+              />
+              <span className="hidden lg:inline">Donate</span>
+            </a>
           </div>
 
           {/* User Menu */}
@@ -78,7 +96,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         <div className="md:hidden pb-4 pt-2">
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 flex-wrap gap-y-2">
             <Link
               to="/generate"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -99,6 +117,22 @@ const Navbar = () => {
             >
               Browse Topics
             </Link>
+
+            {/* Mobile Donate Button */}
+            <a
+              href="https://buycoffee.to/egzaminmaklerski"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={donateButtonClasses}
+              title="Support us with a coffee!"
+            >
+              <img 
+                src="https://www.svgrepo.com/show/330105/buymeacoffee.svg" 
+                alt="Buy Me a Coffee"
+                className="w-5 h-5"
+              />
+              Donate
+            </a>
           </div>
         </div>
       </div>
