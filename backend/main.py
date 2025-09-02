@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Query, Depends, status, Request
+from fastapi import FastAPI, HTTPException, Query, Depends, status, Request, Header
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.responses import RedirectResponse
 from pymongo import MongoClient
@@ -20,6 +20,7 @@ DB_NAME = cfg.db_name
 COLLECTION_NAME = cfg.collection_name
 USERS_COLLECTION = cfg.users_collection
 FRONTEND_URL = cfg.frontend_url
+ANALYTICS_TOKEN = cfg.analytics_token
 
 # Google OAuth2 settings
 GOOGLE_CLIENT_ID = cfg.google_client_id
@@ -36,6 +37,8 @@ client = MongoClient(MONGO_URI)
 db = client[DB_NAME]
 collection = db[COLLECTION_NAME]
 users_collection = db[USERS_COLLECTION]
+LOGINS_COLLECTION = "user_logins"
+logins_collection = db[LOGINS_COLLECTION]
 
 # FastAPI app
 app = FastAPI(title="Exam API with Google OAuth2")
@@ -168,17 +171,6 @@ async def google_callback(code: str):
         # Get user info from Google
         google_user = await get_google_user_info(access_token)
         
-        # Store/update user in database
-        user_data = {
-            "google_id": google_user["id"],
-            "email": google_user["email"],
-            "name": google_user["name"],
-            "picture": google_user["picture"],
-            "verified_email": google_user["verified_email"],
-            "last_login": datetime.utcnow(),
-            "created_at": datetime.utcnow()
-        }
-        
         # Upsert user (update if exists, create if not)
         users_collection.update_one(
             {"google_id": google_user["id"]},
@@ -198,6 +190,12 @@ async def google_callback(code: str):
             upsert=True
         )
 
+        # Log this login event
+        logins_collection.insert_one({
+            "google_id": google_user["id"],
+            "email": google_user["email"],
+            "login_time": datetime.utcnow()
+        })
         
         # Create JWT token
         jwt_token = create_jwt_token(google_user)
@@ -217,6 +215,37 @@ def get_current_user_info(current_user: dict = Depends(get_current_user)):
 def logout(current_user: dict = Depends(get_current_user)):
     """Logout endpoint (client should delete the token)"""
     return {"message": "Successfully logged out"}
+
+# Analytics endpoint secured by static token
+@app.get("/analytics/logins")
+def get_login_stats(
+    token: str = Header(None),
+    days: int = Query(7, ge=1, le=90)
+):
+    """Return login counts per day for the last N days (requires ANALYTICS_TOKEN header)"""
+    if token != ANALYTICS_TOKEN:
+        raise HTTPException(status_code=403, detail="Forbidden")
+
+    since = datetime.utcnow() - timedelta(days=days)
+    pipeline = [
+        {"$match": {"login_time": {"$gte": since}}},
+        {
+            "$group": {
+                "_id": {"$dateToString": {"format": "%Y-%m-%d", "date": "$login_time"}},
+                "count": {"$sum": 1},
+                "unique_users": {"$addToSet": "$google_id"}
+            }
+        },
+        {
+            "$project": {
+                "count": 1,
+                "unique_users": {"$size": "$unique_users"}
+            }
+        },
+        {"$sort": {"_id": 1}}
+    ]
+    results = list(logins_collection.aggregate(pipeline))
+    return {"logins": results}
 
 # Protected endpoints (require authentication)
 @app.get("/topics")
@@ -242,12 +271,6 @@ def get_questions(
     random: bool = Query(False),
     current_user: dict = Depends(get_current_user)
 ):
-    """
-    Unified endpoint for fetching questions with flexible filtering (Protected)
-    - If random=True: returns random questions (useful for exams)
-    - If random=False: returns ordered questions with pagination (useful for browsing)
-    - Supports filtering by main_topic, sub_topic, and/or exam_date
-    """
     query = {}
     
     if main_topic:
@@ -290,7 +313,6 @@ def get_questions_count(
     exam_date: Optional[str] = None,
     current_user: dict = Depends(get_current_user)
 ):
-    """Return the total count of questions for given filters (Protected)"""
     query = {}
     
     if main_topic:
@@ -307,7 +329,6 @@ def get_questions_count(
 
 @app.get("/exam_dates")
 def get_exam_dates(current_user: dict = Depends(get_current_user)):
-    """Return all unique exam_date values sorted chronologically (Protected)"""
     dates = collection.distinct("exam_date")
     sorted_dates = sorted(
         dates,
@@ -317,7 +338,6 @@ def get_exam_dates(current_user: dict = Depends(get_current_user)):
 
 @app.get("/subtopic_counts")
 def get_subtopic_counts(current_user: dict = Depends(get_current_user)):
-    """Return counts of how many questions exist per subtopic (Protected)"""
     pipeline = [
         {"$unwind": "$sub_topic"},
         {"$group": {"_id": "$sub_topic", "count": {"$sum": 1}}},
@@ -329,7 +349,6 @@ def get_subtopic_counts(current_user: dict = Depends(get_current_user)):
 # Health check endpoint (public)
 @app.get("/health")
 def health_check():
-    """Health check endpoint"""
     return {"status": "healthy", "timestamp": datetime.utcnow().isoformat()}
 
 if __name__ == "__main__":
