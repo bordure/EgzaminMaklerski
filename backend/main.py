@@ -44,7 +44,8 @@ app = FastAPI(title="Exam API with Google OAuth2")
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://frontend:3000"
+    "http://frontend:3000",
+    "https://egzaminmaklerski.azurewebsites.net"
 ]
 
 app.add_middleware(
@@ -330,3 +331,7 @@ def get_subtopic_counts(current_user: dict = Depends(get_current_user)):
 def health_check():
     """Health check endpoint"""
     return {"status": "healthy", "timestamp": datetime.utcnow().isoformat()}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
