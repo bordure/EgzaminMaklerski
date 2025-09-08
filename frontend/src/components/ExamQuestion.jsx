@@ -4,15 +4,13 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
 
-  // Reset state when question changes or exam is regenerated
   useEffect(() => {
     if (mode !== "review") {
       setSelectedOption(null);
       setIsAnswered(false);
     }
-  }, [q._id, q.question, mode]); // Reset when question ID, content, or mode changes
+  }, [q._id, q.question, mode]); 
 
-  // In review mode, set the selected option from the answered state
   useEffect(() => {
     if (mode === "review" && q.answered && q.answered.chosenOption) {
       setSelectedOption(q.answered.chosenOption);
@@ -20,7 +18,6 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
     }
   }, [mode, q.answered]);
 
-  // Helper function to get the text of the correct answer based on the letter
   const getCorrectAnswerText = (correctAnswerLetter) => {
     switch (correctAnswerLetter) {
       case "A":
@@ -37,14 +34,11 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
   };
 
   const handleOptionClick = (option) => {
-    // Prevent any interaction in review mode
     if (mode === "review") return;
     
-    // Prevent changing the answer after exam is submitted
     if (examSubmitted) return;
     
-    // In exam mode, prevent changing answer after it's been selected
-    if (isAnswered && mode === "exam") return;
+    if (isAnswered && mode === "study") return;
 
     setSelectedOption(option);
     setIsAnswered(true);
@@ -58,15 +52,13 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
     let classes = "w-full text-left p-3 border rounded-md transition-colors duration-200 shadow-sm";
     const correctText = getCorrectAnswerText(q.correct_answer);
 
-    // Disable cursor if in review mode, exam is submitted, or if answered in exam mode
-    if (mode === "review" || examSubmitted || (isAnswered && mode === "exam")) {
+    if (mode === "review" || examSubmitted || (isAnswered && mode === "study")) {
       classes += " cursor-default";
     } else {
       classes += " cursor-pointer";
     }
 
     if (mode === "review" || examSubmitted || (mode === "study" && isAnswered)) {
-      // Show correct/incorrect answers in review mode, after submission, or in study mode after answering
       if (option === correctText) {
         classes += " bg-green-200 border-green-500 text-green-800 font-medium";
       } else if (option === selectedOption && option !== correctText) {
@@ -75,7 +67,6 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
         classes += " bg-gray-50 border-gray-300 text-gray-600";
       }
     } else {
-      // In exam mode before submission or study mode before answering
       if (option === selectedOption) {
         classes += " bg-blue-200 border-blue-500 text-blue-800";
       } else {
@@ -113,8 +104,6 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
           </li>
         ))}
       </ul>
-      
-
     </div>
   );
 }

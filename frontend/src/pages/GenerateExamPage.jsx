@@ -20,8 +20,8 @@ export default function GenerateExamPage() {
   const [error, setError] = useState(null);
   const [examSubmitted, setExamSubmitted] = useState(false);
   const timerIntervalRef = useRef(null);
+  const resultsRef = useRef(null);
 
-  // Fetch topics and exam dates
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -33,18 +33,15 @@ export default function GenerateExamPage() {
         if (examDatesData && Array.isArray(examDatesData.exam_dates)) {
           setExamYears(examDatesData.exam_dates);
         } else {
-          console.error("Exam dates data is not an array:", examDatesData);
           setExamYears([]);
         }
       } catch (err) {
         setError("Failed to fetch topics or exam dates.");
-        console.error("Error fetching data:", err);
       }
     };
     loadData();
   }, []);
 
-  // Timer effect for exam mode
   useEffect(() => {
     if (
       mode === "exam" &&
@@ -77,6 +74,12 @@ export default function GenerateExamPage() {
       }
     };
   }, [mode, questions, examSubmitted, examTimer]);
+
+  useEffect(() => {
+    if (examSubmitted && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [examSubmitted]);
 
   const handleNumberChange = e => {
     const value = e.target.value;
@@ -138,20 +141,21 @@ export default function GenerateExamPage() {
       setQuestions(transformedQuestions);
     } catch (err) {
       setError("Failed to generate exam. Please try again.");
-      console.error("Error generating exam:", err);
     } finally {
       setLoading(false);
     }
   };
 
   const handleAnswer = (questionId, isCorrect, chosenOption) => {
-    setQuestions(prevQuestions =>
-      prevQuestions.map(q =>
-        q._id === questionId
-          ? { ...q, answered: { isCorrect, chosenOption } }
-          : q
-      )
-    );
+    if (!examSubmitted) {
+      setQuestions(prevQuestions =>
+        prevQuestions.map(q =>
+          q._id === questionId
+            ? { ...q, answered: { isCorrect, chosenOption } }
+            : q
+        )
+      );
+    }
   };
 
   const handleFinishExam = () => {
@@ -202,13 +206,19 @@ export default function GenerateExamPage() {
       .padStart(2, "0")}`;
   };
 
+  const answeredCount = questions.filter(q => q.answered.chosenOption !== null).length;
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 p-8">
-      {/* Timer bar */}
       {mode === "exam" && questions.length > 0 && !examSubmitted && timeRemaining !== null && (
         <div className="fixed top-0 left-0 right-0 bg-red-600 text-white py-3 px-6 shadow-lg z-50">
           <div className="max-w-4xl mx-auto flex justify-between items-center">
-            <span className="text-lg font-semibold">Exam in Progress</span>
+            <div className="flex items-center space-x-4">
+              <span className="text-lg font-semibold">Exam in Progress</span>
+              <span className="text-sm bg-red-700 px-2 py-1 rounded">
+                {answeredCount}/{questions.length} answered
+              </span>
+            </div>
             <div className="text-xl font-bold">
               ⏰ Time Remaining: {formatTime(timeRemaining)}
             </div>
@@ -231,7 +241,6 @@ export default function GenerateExamPage() {
         </h1>
 
         <div className="bg-white p-6 rounded-lg shadow-lg mb-8 space-y-4">
-          {/* Number of Questions */}
           <div>
             <label className="block text-gray-700 font-medium mb-1">
               Number of Questions:
@@ -250,7 +259,6 @@ export default function GenerateExamPage() {
             />
           </div>
 
-          {/* Specific Topics Toggle */}
           <div>
             <div className="flex items-center justify-between">
               <span className="text-lg font-medium">
@@ -268,7 +276,6 @@ export default function GenerateExamPage() {
               </button>
             </div>
 
-            {/* Main/Sub Topics appear immediately below toggle */}
             {isSpecificTopics && (
               <div className="space-y-4 pt-4">
                 <div>
@@ -317,7 +324,6 @@ export default function GenerateExamPage() {
             )}
           </div>
 
-          {/* Specific Year Toggle */}
           <div className="flex items-center justify-between">
             <span className="text-lg font-medium">Ask from specific year:</span>
             <button
@@ -352,7 +358,6 @@ export default function GenerateExamPage() {
             </div>
           )}
 
-          {/* Mode Toggle */}
           <div>
             <div className="flex items-center justify-between">
               <span className="text-lg font-medium">Mode:</span>
@@ -373,7 +378,6 @@ export default function GenerateExamPage() {
               </button>
             </div>
 
-            {/* Exam timer immediately below mode toggle */}
             {mode === "exam" && (
               <div className="pt-4">
                 <label className="block text-gray-700 font-medium mb-1">
@@ -395,7 +399,6 @@ export default function GenerateExamPage() {
             )}
           </div>
 
-          {/* Show Years Toggle */}
           <div className="flex items-center justify-between">
             <span className="text-lg font-medium">Show Exam Years:</span>
             <button
@@ -410,7 +413,6 @@ export default function GenerateExamPage() {
             </button>
           </div>
 
-          {/* Generate Exam Button */}
           <button
             onClick={handleGenerateExam}
             disabled={loading}
@@ -420,7 +422,6 @@ export default function GenerateExamPage() {
           </button>
         </div>
 
-        {/* Questions or Summary */}
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 p-4 rounded-lg text-center mb-8">
             {error}
@@ -428,7 +429,7 @@ export default function GenerateExamPage() {
         )}
 
         {examSubmitted ? (
-          <div className="bg-white p-8 rounded-lg shadow-lg">
+          <div ref={resultsRef} className="bg-white p-8 rounded-lg shadow-lg">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
                 Exam Finished!
@@ -478,7 +479,6 @@ export default function GenerateExamPage() {
               })()}
             </div>
 
-            {/* Review answers */}
             <div className="space-y-6">
               <h3 className="text-xl font-semibold text-gray-800 border-b pb-2">
                 Review Your Answers:
@@ -524,8 +524,7 @@ export default function GenerateExamPage() {
           </>
         ) : (
           <div className="bg-white p-8 rounded-lg shadow-lg text-center text-gray-500">
-            <p className="text-xl">Generate an exam to get started!
-            </p>
+            <p className="text-xl">Generate an exam to get started!</p>
           </div>
         )}
       </div>
