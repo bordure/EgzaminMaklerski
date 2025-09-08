@@ -42,38 +42,37 @@ export default function GenerateExamPage() {
     loadData();
   }, []);
 
-  useEffect(() => {
-    if (
-      mode === "exam" &&
-      questions.length > 0 &&
-      !examSubmitted &&
-      !timerIntervalRef.current
-    ) {
-      const timerValue = examTimer === "" ? 60 : parseInt(examTimer, 10);
-      const totalSeconds = timerValue * 60;
-      setTimeRemaining(totalSeconds);
+useEffect(() => {
+  if (
+    mode === "exam" &&
+    !examSubmitted &&
+    questions.length > 0 &&
+    !timerIntervalRef.current
+  ) {
+    const timerValue = examTimer === "" ? 60 : parseInt(examTimer, 10);
+    const totalSeconds = timerValue * 60;
+    setTimeRemaining(totalSeconds);
 
-      timerIntervalRef.current = setInterval(() => {
-        setTimeRemaining(prev => {
-          if (prev <= 1) {
-            setExamSubmitted(true);
-            if (timerIntervalRef.current) {
-              clearInterval(timerIntervalRef.current);
-              timerIntervalRef.current = null;
-            }
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
+    timerIntervalRef.current = setInterval(() => {
+      setTimeRemaining(prev => {
+        if (prev <= 1) {
+          setExamSubmitted(true);
+          clearInterval(timerIntervalRef.current);
+          timerIntervalRef.current = null;
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }
+  return () => {
+    if (timerIntervalRef.current) {
+      clearInterval(timerIntervalRef.current);
+      timerIntervalRef.current = null;
     }
-    return () => {
-      if (timerIntervalRef.current) {
-        clearInterval(timerIntervalRef.current);
-        timerIntervalRef.current = null;
-      }
-    };
-  }, [mode, questions, examSubmitted, examTimer]);
+  };
+}, [mode, examSubmitted, examTimer, questions.length]);
+
 
   useEffect(() => {
     if (examSubmitted && resultsRef.current) {
@@ -413,13 +412,18 @@ export default function GenerateExamPage() {
             </button>
           </div>
 
-          <button
-            onClick={handleGenerateExam}
-            disabled={loading}
-            className="w-full mt-4 bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
-          >
-            {loading ? "Generating..." : "Generate Exam"}
-          </button>
+        <button
+          onClick={handleGenerateExam}
+          disabled={loading || (mode === "exam" && !examSubmitted && timeRemaining !== null)}
+          className="w-full mt-4 bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
+        >
+          {loading
+            ? "Generating..."
+            : mode === "exam" && !examSubmitted && timeRemaining !== null
+            ? "Exam In Progress"
+            : "Generate Exam"}
+        </button>
+
         </div>
 
         {error && (
