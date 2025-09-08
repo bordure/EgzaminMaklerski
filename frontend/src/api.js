@@ -1,15 +1,12 @@
 import axios from "axios";
 
 const API_URL = window.RUNTIME_CONFIG?.VITE_API_URL || "http://localhost:8000";
-console.log("API_URL:", API_URL);
 
 
-// Create axios instance with interceptors
 const api = axios.create({
   baseURL: API_URL,
 });
 
-// Token management
 let authToken = null;
 
 export const setAuthToken = (token) => {
@@ -28,20 +25,17 @@ export const clearAuthToken = () => {
   delete api.defaults.headers.common['Authorization'];
 };
 
-// Response interceptor to handle 401 errors
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
       clearAuthToken();
-      // Dispatch custom event for auth state change
       window.dispatchEvent(new CustomEvent('auth-expired'));
     }
     return Promise.reject(error);
   }
 );
 
-// Auth API calls
 export const getGoogleAuthUrl = () =>
   api.get('/auth/google/url').then(r => r.data);
 
@@ -54,7 +48,6 @@ export const getCurrentUser = () =>
 export const logout = () =>
   api.post('/auth/logout').then(r => r.data);
 
-// Protected API calls (now require authentication)
 export const fetchTopics = () =>
   api.get('/topics').then(r => r.data);
 
@@ -73,11 +66,9 @@ export const fetchQuestions = (options = {}) => {
   if (sub_topic) params.sub_topic = sub_topic;
   if (exam_date) params.exam_date = exam_date;
   
-  console.log("API Request params:", params);
   
   return api.get('/questions', { params })
     .then(r => {
-      console.log("API Response:", r.data);
       return r.data;
     })
     .catch(error => {
@@ -103,7 +94,6 @@ export const fetchExamDates = () =>
 export const fetchSubtopicCounts = () =>
   api.get('/subtopic_counts').then(r => r.data);
 
-// Convenience functions for common use cases
 export const fetchExam = (n = 5, exam_date = null) =>
   fetchQuestions({ n, exam_date, random_questions: true });
 
