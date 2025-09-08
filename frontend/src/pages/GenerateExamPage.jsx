@@ -115,7 +115,7 @@ export default function GenerateExamPage() {
     try {
       const questionsCount =
         numberOfQuestions === "" ? 1 : parseInt(numberOfQuestions, 10);
-      const queryOptions = { n: questionsCount, random: true };
+      const queryOptions = { n: questionsCount, random_questions: true };
 
       if (isSpecificTopics) {
         if (selectedMainTopic) queryOptions.main_topic = selectedMainTopic;

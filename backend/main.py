@@ -11,10 +11,10 @@ import httpx
 from pydantic import BaseModel
 import secrets
 from settings import Settings
+import random
 
 cfg = Settings()
 
-# Environment variables
 MONGO_URI = cfg.mongo_uri
 DB_NAME = cfg.db_name
 COLLECTION_NAME = cfg.collection_name
@@ -22,17 +22,14 @@ USERS_COLLECTION = cfg.users_collection
 FRONTEND_URL = cfg.frontend_url
 ANALYTICS_TOKEN = cfg.analytics_token
 
-# Google OAuth2 settings
 GOOGLE_CLIENT_ID = cfg.google_client_id
 GOOGLE_CLIENT_SECRET = cfg.google_client_secret
 GOOGLE_REDIRECT_URI = cfg.google_redirect_uri
 
-# JWT settings
 JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", secrets.token_urlsafe(32))
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRATION_TIME = timedelta(hours=24)
 
-# MongoDB setup
 client = MongoClient(MONGO_URI)
 db = client[DB_NAME]
 collection = db[COLLECTION_NAME]
@@ -40,10 +37,8 @@ users_collection = db[USERS_COLLECTION]
 LOGINS_COLLECTION = "user_logins"
 logins_collection = db[LOGINS_COLLECTION]
 
-# FastAPI app
 app = FastAPI(title="Egzamin Maklerski API")
 
-# CORS middleware
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -59,10 +54,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Security
 security = HTTPBearer()
 
-# Pydantic models
 class GoogleTokenRequest(BaseModel):
     code: str
 
@@ -78,7 +71,6 @@ class TokenResponse(BaseModel):
     token_type: str
     expires_in: int
 
-# Helper functions
 def create_jwt_token(user_data: dict) -> str:
     """Create JWT token for authenticated user"""
     payload = {
@@ -146,7 +138,6 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(securit
         "picture": user["picture"]
     }
 
-# Authentication endpoints
 @app.get("/auth/google/url")
 def get_google_auth_url():
     """Get Google OAuth2 authorization URL"""
@@ -165,13 +156,10 @@ def get_google_auth_url():
 async def google_callback(code: str):
     """Handle Google OAuth2 callback (GET request from Google)"""
     try:
-        # Exchange code for access token
         access_token = await exchange_code_for_token(code)
         
-        # Get user info from Google
         google_user = await get_google_user_info(access_token)
         
-        # Upsert user (update if exists, create if not)
         users_collection.update_one(
             {"google_id": google_user["id"]},
             {
@@ -190,14 +178,12 @@ async def google_callback(code: str):
             upsert=True
         )
 
-        # Log this login event
         logins_collection.insert_one({
             "google_id": google_user["id"],
             "email": google_user["email"],
             "login_time": datetime.utcnow()
         })
         
-        # Create JWT token
         jwt_token = create_jwt_token(google_user)
 
         redirect_url = f"{FRONTEND_URL}/auth/callback?token={jwt_token}"
@@ -216,7 +202,6 @@ def logout(current_user: dict = Depends(get_current_user)):
     """Logout endpoint (client should delete the token)"""
     return {"message": "Successfully logged out"}
 
-# Analytics endpoint secured by static token
 @app.get("/analytics/logins")
 def get_login_stats(
     token: str = Header(None),
@@ -247,7 +232,6 @@ def get_login_stats(
     results = list(logins_collection.aggregate(pipeline))
     return {"logins": results}
 
-# Protected endpoints (require authentication)
 @app.get("/topics")
 def get_topics(current_user: dict = Depends(get_current_user)):
     """List all main topics and their subtopics (Protected)"""
@@ -268,7 +252,7 @@ def get_questions(
     exam_date: Optional[str] = None,
     n: int = Query(10, gt=0),
     skip: int = Query(0, ge=0),
-    random: bool = Query(False),
+    random_questions: bool = Query(False),
     current_user: dict = Depends(get_current_user)
 ):
     query = {}
@@ -288,9 +272,13 @@ def get_questions(
     
     n = min(n, total)
     
-    if random:
-        pipeline = [{"$match": query}, {"$sample": {"size": n}}]
-        questions = list(collection.aggregate(pipeline))
+    if random_questions:
+        all_questions = list(collection.find(query, {"_id": 1})) 
+        random.shuffle(all_questions)
+        selected_ids = [q["_id"] for q in all_questions[:n]]
+        
+        questions = list(collection.find({"_id": {"$in": selected_ids}}))
+        random.shuffle(questions)
     else:
         questions = list(collection.find(query).skip(skip).limit(n))
     
@@ -300,11 +288,12 @@ def get_questions(
     return {
         "questions": questions,
         "total": total,
-        "skip": skip if not random else 0,
+        "skip": skip if not random_questions else 0,
         "limit": n,
-        "has_more": skip + n < total if not random else False,
-        "random": random
+        "has_more": skip + n < total if not random_questions else False,
+        "random": random_questions
     }
+
 
 @app.get("/questions/count")
 def get_questions_count(
@@ -346,7 +335,6 @@ def get_subtopic_counts(current_user: dict = Depends(get_current_user)):
     result = list(collection.aggregate(pipeline))
     return {"subtopic_counts": result}
 
-# Health check endpoint (public)
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "timestamp": datetime.utcnow().isoformat()}

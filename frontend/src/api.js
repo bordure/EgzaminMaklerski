@@ -65,10 +65,10 @@ export const fetchQuestions = (options = {}) => {
     exam_date = null, 
     n = 10, 
     skip = 0, 
-    random = false 
+    random_questions = false 
   } = options;
-  
-  const params = { n, skip, random };
+
+  const params = { n, skip, random_questions };
   if (main_topic) params.main_topic = main_topic;
   if (sub_topic) params.sub_topic = sub_topic;
   if (exam_date) params.exam_date = exam_date;
@@ -105,10 +105,10 @@ export const fetchSubtopicCounts = () =>
 
 // Convenience functions for common use cases
 export const fetchExam = (n = 5, exam_date = null) =>
-  fetchQuestions({ n, exam_date, random: true });
+  fetchQuestions({ n, exam_date, random_questions: true });
 
 export const fetchQuestionsByTopic = (main_topic, sub_topic = null, n = 10, skip = 0) =>
-  fetchQuestions({ main_topic, sub_topic, n, skip, random: false });
+  fetchQuestions({ main_topic, sub_topic, n, skip, random_questions: false });
 
 export const fetchQuestionsByDate = (exam_date, n = 10, skip = 0) =>
-  fetchQuestions({ exam_date, n, skip, random: false });
+  fetchQuestions({ exam_date, n, skip, random_questions: false });
