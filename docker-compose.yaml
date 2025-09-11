@@ -3,8 +3,8 @@ services:
     image: mongo:6
     container_name: mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     ports:
       - "27017:27017"
     volumes:
@@ -17,12 +17,12 @@ services:
     depends_on:
       - mongo
     environment:
-      MONGO_URI: "mongodb://root:example@mongo:27017"
+      MONGO_URI: ${MONGO_URI}
     ports:
       - "8000:8000"
     volumes:
       - ./backend:/app
-      
+
   frontend:
     build:
       context: ./frontend
@@ -30,10 +30,9 @@ services:
     ports:
       - "3000:80"
     environment:
-      VITE_API_URL: "http://localhost:8000"
+      VITE_API_URL: ${VITE_API_URL}
     depends_on:
       - backend
-
 
 volumes:
   mongo_data:

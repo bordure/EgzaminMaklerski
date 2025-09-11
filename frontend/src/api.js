@@ -1,10 +1,56 @@
 import axios from "axios";
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
+const API_URL = window.RUNTIME_CONFIG?.VITE_API_URL || "http://localhost:8000";
+
+
+const api = axios.create({
+  baseURL: API_URL,
+});
+
+let authToken = null;
+
+export const setAuthToken = (token) => {
+  authToken = token;
+  if (token) {
+    api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  } else {
+    delete api.defaults.headers.common['Authorization'];
+  }
+};
+
+export const getAuthToken = () => authToken;
+
+export const clearAuthToken = () => {
+  authToken = null;
+  delete api.defaults.headers.common['Authorization'];
+};
+
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      clearAuthToken();
+      window.dispatchEvent(new CustomEvent('auth-expired'));
+    }
+    return Promise.reject(error);
+  }
+);
+
+export const getGoogleAuthUrl = () =>
+  api.get('/auth/google/url').then(r => r.data);
+
+export const exchangeCodeForToken = (code) =>
+  api.post('/auth/google/callback', { code }).then(r => r.data);
+
+export const getCurrentUser = () =>
+  api.get('/auth/me').then(r => r.data);
+
+export const logout = () =>
+  api.post('/auth/logout').then(r => r.data);
 
 export const fetchTopics = () =>
-  axios.get(`${API_URL}/topics`).then(r=>r.data);
+  api.get('/topics').then(r => r.data);
 
-// Unified questions endpoint - handles all question fetching scenarios
 export const fetchQuestions = (options = {}) => {
   const { 
     main_topic = null, 
@@ -12,19 +58,17 @@ export const fetchQuestions = (options = {}) => {
     exam_date = null, 
     n = 10, 
     skip = 0, 
-    random = false 
+    random_questions = false 
   } = options;
-  
-  const params = { n, skip, random };
+
+  const params = { n, skip, random_questions };
   if (main_topic) params.main_topic = main_topic;
   if (sub_topic) params.sub_topic = sub_topic;
   if (exam_date) params.exam_date = exam_date;
   
-  console.log("API Request params:", params); // Debug log
   
-  return axios.get(`${API_URL}/questions`, { params })
+  return api.get('/questions', { params })
     .then(r => {
-      console.log("API Response:", r.data); // Debug log
       return r.data;
     })
     .catch(error => {
@@ -33,7 +77,6 @@ export const fetchQuestions = (options = {}) => {
     });
 };
 
-// Get total count of questions for given filters
 export const fetchQuestionsCount = (options = {}) => {
   const { main_topic = null, sub_topic = null, exam_date = null } = options;
   
@@ -42,21 +85,20 @@ export const fetchQuestionsCount = (options = {}) => {
   if (sub_topic) params.sub_topic = sub_topic;
   if (exam_date) params.exam_date = exam_date;
   
-  return axios.get(`${API_URL}/questions/count`, { params }).then(r => r.data);
+  return api.get('/questions/count', { params }).then(r => r.data);
 };
 
-// Convenience functions for common use cases
-export const fetchExam = (n = 5, exam_date = null) =>
-  fetchQuestions({ n, exam_date, random: true });
-
-export const fetchQuestionsByTopic = (main_topic, sub_topic = null, n = 10, skip = 0) =>
-  fetchQuestions({ main_topic, sub_topic, n, skip, random: false });
-
-export const fetchQuestionsByDate = (exam_date, n = 10, skip = 0) =>
-  fetchQuestions({ exam_date, n, skip, random: false });
-
 export const fetchExamDates = () =>
-  axios.get(`${API_URL}/exam_dates`).then(r=>r.data);
+  api.get('/exam_dates').then(r => r.data);
 
 export const fetchSubtopicCounts = () =>
-  axios.get(`${API_URL}/subtopic_counts`).then(r=>r.data);
+  api.get('/subtopic_counts').then(r => r.data);
+
+export const fetchExam = (n = 5, exam_date = null) =>
+  fetchQuestions({ n, exam_date, random_questions: true });
+
+export const fetchQuestionsByTopic = (main_topic, sub_topic = null, n = 10, skip = 0) =>
+  fetchQuestions({ main_topic, sub_topic, n, skip, random_questions: false });
+
+export const fetchQuestionsByDate = (exam_date, n = 10, skip = 0) =>
+  fetchQuestions({ exam_date, n, skip, random_questions: false });

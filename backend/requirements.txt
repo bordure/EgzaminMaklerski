@@ -2,3 +2,8 @@ fastapi[standard]
 uvicorn[standard]
 pymongo
 python-dotenv
+python-jose[cryptography] 
+httpx 
+python-multipart
+pyJWT
+pydantic-settings
