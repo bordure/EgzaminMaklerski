@@ -1,0 +1,187 @@
+import React, { useEffect, useState, useCallback } from "react";
+import { NotionRenderer } from "react-notion-x";
+import { Code } from "react-notion-x/build/third-party/code";
+import { Equation } from "react-notion-x/build/third-party/equation";
+
+import "react-notion-x/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css";
+import "katex/dist/katex.min.css";
+
+import { useParams } from "react-router-dom";
+import { fetchNotionPage } from "../api";
+
+const Notes = () => {
+  const { id } = useParams();
+  const pageId = id || "248cf5e9d029808eb124f2913f1dc259";
+  const [recordMap, setRecordMap] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [currentPageId, setCurrentPageId] = useState(pageId);
+
+  const processNotionData = useCallback((data) => {
+    if (data?.recordMap?.block) {
+      return data.recordMap;
+    } else if (data?.block) {
+      return {
+        block: data.block,
+        notion_user: data.notion_user || {},
+        collection: data.collection || {},
+        collection_view: data.collection_view || {},
+        space: data.space || {},
+        user: data.user || {},
+      };
+    } else {
+      const blocks = {};
+      Object.keys(data || {}).forEach((key) => {
+        if (data[key]?.value) blocks[key] = data[key];
+      });
+      return {
+        block: blocks,
+        notion_user: {},
+        collection: {},
+        collection_view: {},
+        space: {},
+        user: {},
+      };
+    }
+  }, []);
+
+  const handlePageClick = useCallback(
+    async (clickedPageId) => {
+      try {
+        setLoading(true);
+        setError(null);
+        const data = await fetchNotionPage(clickedPageId);
+        setRecordMap(processNotionData(data));
+        setCurrentPageId(clickedPageId);
+      } catch (err) {
+        setError(err.message || "Failed to load page");
+      } finally {
+        setLoading(false);
+      }
+    },
+    [processNotionData]
+  );
+
+  useEffect(() => {
+    const loadPage = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const data = await fetchNotionPage(currentPageId);
+        setRecordMap(processNotionData(data));
+      } catch (err) {
+        setError(err.message || "Failed to load page");
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadPage();
+  }, [currentPageId, processNotionData]);
+
+  useEffect(() => {
+    const handleClick = (e) => {
+      const link = e.target.closest("a");
+      if (link?.href) {
+        try {
+          const url = new URL(link.href);
+          if (url.pathname.startsWith("/notes/")) {
+            e.preventDefault();
+            e.stopPropagation();
+            handlePageClick(url.pathname.split("/notes/")[1]);
+          }
+        } catch {
+          /* ignore */
+        }
+      }
+    };
+    document.addEventListener("click", handleClick, true);
+    return () => document.removeEventListener("click", handleClick, true);
+  }, [handlePageClick]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading Notion page...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center max-w-md mx-auto p-6">
+          <div className="text-red-500 text-4xl mb-4">⚠️</div>
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            Failed to Load Page
+          </h2>
+          <p className="text-red-600 mb-6">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!recordMap || !recordMap.block || Object.keys(recordMap.block).length === 0) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center max-w-md mx-auto p-6">
+          <div className="text-gray-400 text-4xl mb-4">📄</div>
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            Page Empty
+          </h2>
+          <p className="text-gray-600 mb-6">
+            The Notion page has no content blocks.
+          </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+          >
+            Refresh
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="notion-frame max-w-7xl mx-auto py-8 px-8">
+        <NotionRenderer
+          recordMap={recordMap}
+          fullPage={false}
+          darkMode={false}
+          rootPageId={currentPageId}
+          previewImages={true}
+          showCollectionViewDropdown={false}
+          mapPageUrl={(pageId) => `/notes/${pageId}`}
+          mapImageUrl={(url, block) => {
+            if (!url) return "";
+            if (url.includes("img.notionusercontent.com")) return url;
+            try {
+              const u = new URL(url);
+              if (u.searchParams.has("exp") && u.searchParams.has("sig")) {
+                return `https://img.notionusercontent.com${u.pathname}?${u.searchParams.toString()}`;
+              }
+            } catch {}
+            return `https://www.notion.so/image/${encodeURIComponent(
+              url
+            )}?table=block&id=${block?.id}&cache=v2`;
+          }}
+          components={{ Code, Equation }}
+          disableHeader={false}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Notes;
