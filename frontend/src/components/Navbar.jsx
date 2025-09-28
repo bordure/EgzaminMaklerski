@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
-import { BookOpen, LogOut } from 'lucide-react';
+import { BookOpen, LogOut, FileText } from 'lucide-react';
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -51,6 +51,17 @@ const Navbar = () => {
               }`}
             >
               Browse Topics
+            </Link>
+            <Link
+              to="/notes"
+              className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive('/notes')
+                  ? 'bg-blue-100 text-blue-700'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+              }`}
+            >
+              <FileText className="w-4 h-4" />
+              Notes
             </Link>
 
             {/* Donate Button */}
@@ -117,8 +128,18 @@ const Navbar = () => {
             >
               Browse Topics
             </Link>
+            <Link
+              to="/notes"
+              className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive('/notes')
+                  ? 'bg-blue-100 text-blue-700'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+              }`}
+            >
+              <FileText className="w-4 h-4" />
+              Notes
+            </Link>
 
-            {/* Mobile Donate Button */}
             <a
               href="https://buycoffee.to/egzaminmaklerski"
               target="_blank"

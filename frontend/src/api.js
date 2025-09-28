@@ -2,7 +2,6 @@ import axios from "axios";
 
 const API_URL = window.RUNTIME_CONFIG?.VITE_API_URL || "http://localhost:8000";
 
-
 const api = axios.create({
   baseURL: API_URL,
 });
@@ -66,7 +65,6 @@ export const fetchQuestions = (options = {}) => {
   if (sub_topic) params.sub_topic = sub_topic;
   if (exam_date) params.exam_date = exam_date;
   
-  
   return api.get('/questions', { params })
     .then(r => {
       return r.data;
@@ -102,3 +100,6 @@ export const fetchQuestionsByTopic = (main_topic, sub_topic = null, n = 10, skip
 
 export const fetchQuestionsByDate = (exam_date, n = 10, skip = 0) =>
   fetchQuestions({ exam_date, n, skip, random_questions: false });
+
+export const fetchNotionPage = (pageId) =>
+  api.get(`/notion/${pageId}`).then(r => r.data);

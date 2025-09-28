@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import GenerateExamPage from "./pages/GenerateExamPage";
 import TopicsPage from "./pages/TopicsPage";
 import AuthCallback from "./components/AuthCallback";
+import Notes from './pages/Notes';
 
 export default function App() {
   return (
@@ -25,6 +26,14 @@ export default function App() {
               } 
             />
             <Route 
+              path="/notes" 
+              element={
+                <ProtectedRoute>
+                  <Notes />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
               path="/topics" 
               element={
                 <ProtectedRoute>
@@ -33,6 +42,7 @@ export default function App() {
               } 
             />
           </Routes>
+          
         </div>
       </Router>
     </AuthProvider>
