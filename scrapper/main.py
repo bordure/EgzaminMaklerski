@@ -94,7 +94,7 @@ def get_main_and_sub_topic(question: str):
             sub_topic = ["Wycena Instrumentów Finansowych"]
     return main_topic, sub_topic
 
-def scrap_pdf_file(PDF_PATH: str):
+def scrap_pdf_file(PDF_PATH: str, mode: str = "prod"):
     doc = pymupdf.open(PDF_PATH)
     text = "\n".join(page.get_text() for page in doc)
     t = normalize(text)
@@ -118,7 +118,7 @@ def scrap_pdf_file(PDF_PATH: str):
     result = []
 
     for idx, b in enumerate(blocks):
-        qm = re.match(r'(\d+)\.\s+(.*?)(?=\s+[A-D][\.\)]\s+)', b, flags=re.DOTALL)
+        qm = re.match(r'(\d+)\.\s+(.*?)(?=\n[A-D][\.\)]\s+)', b, flags=re.DOTALL)
         if not qm:
             continue
 
@@ -151,6 +151,10 @@ def scrap_pdf_file(PDF_PATH: str):
         item["sub_topic"] = topics[1]
         item["exam_date"] = year_of_exam.group(0) if year_of_exam else None
 
+    if mode == "local":
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+        return
+    
     # Insert into MongoDB
     if result:
         for i in range(0, len(result), 10):
