@@ -2,15 +2,16 @@ import React, { useEffect, useState, useCallback } from "react";
 import { NotionRenderer } from "react-notion-x";
 import { Code } from "react-notion-x/build/third-party/code";
 import { Equation } from "react-notion-x/build/third-party/equation";
+import { useParams } from "react-router-dom";
+import { fetchNotionPage } from "../api";
+import { useDarkMode } from "../components/DarkModeContext";
 
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "katex/dist/katex.min.css";
 
-import { useParams } from "react-router-dom";
-import { fetchNotionPage } from "../api";
-
 const Notes = () => {
+  const { isDarkMode } = useDarkMode();
   const { id } = useParams();
   const pageId = id || "248cf5e9d029808eb124f2913f1dc259";
   const [recordMap, setRecordMap] = useState(null);
@@ -19,9 +20,8 @@ const Notes = () => {
   const [currentPageId, setCurrentPageId] = useState(pageId);
 
   const processNotionData = useCallback((data) => {
-    if (data?.recordMap?.block) {
-      return data.recordMap;
-    } else if (data?.block) {
+    if (data?.recordMap?.block) return data.recordMap;
+    if (data?.block)
       return {
         block: data.block,
         notion_user: data.notion_user || {},
@@ -30,20 +30,18 @@ const Notes = () => {
         space: data.space || {},
         user: data.user || {},
       };
-    } else {
-      const blocks = {};
-      Object.keys(data || {}).forEach((key) => {
-        if (data[key]?.value) blocks[key] = data[key];
-      });
-      return {
-        block: blocks,
-        notion_user: {},
-        collection: {},
-        collection_view: {},
-        space: {},
-        user: {},
-      };
-    }
+    const blocks = {};
+    Object.keys(data || {}).forEach((key) => {
+      if (data[key]?.value) blocks[key] = data[key];
+    });
+    return {
+      block: blocks,
+      notion_user: {},
+      collection: {},
+      collection_view: {},
+      space: {},
+      user: {},
+    };
   }, []);
 
   const handlePageClick = useCallback(
@@ -90,9 +88,7 @@ const Notes = () => {
             e.stopPropagation();
             handlePageClick(url.pathname.split("/notes/")[1]);
           }
-        } catch {
-          /* ignore */
-        }
+        } catch {}
       }
     };
     document.addEventListener("click", handleClick, true);
@@ -101,10 +97,10 @@ const Notes = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading Notion page...</p>
+          <p className="text-gray-600 dark:text-gray-300">Loading Notion page...</p>
         </div>
       </div>
     );
@@ -112,16 +108,16 @@ const Notes = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center max-w-md mx-auto p-6">
           <div className="text-red-500 text-4xl mb-4">⚠️</div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
             Failed to Load Page
           </h2>
-          <p className="text-red-600 mb-6">{error}</p>
+          <p className="text-red-600 dark:text-red-400 mb-6">{error}</p>
           <button
             onClick={() => window.location.reload()}
-            className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className="px-6 py-3 bg-blue-500 dark:bg-blue-600 text-white rounded-lg hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors"
           >
             Try Again
           </button>
@@ -132,18 +128,18 @@ const Notes = () => {
 
   if (!recordMap || !recordMap.block || Object.keys(recordMap.block).length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center max-w-md mx-auto p-6">
-          <div className="text-gray-400 text-4xl mb-4">📄</div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <div className="text-gray-400 dark:text-gray-500 text-4xl mb-4">📄</div>
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
             Page Empty
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             The Notion page has no content blocks.
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className="px-6 py-3 bg-blue-500 dark:bg-blue-600 text-white rounded-lg hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors"
           >
             Refresh
           </button>
@@ -153,12 +149,12 @@ const Notes = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className={`min-h-screen bg-gray-50 dark:bg-gray-900`}>
       <div className="notion-frame max-w-7xl mx-auto py-8 px-8">
         <NotionRenderer
           recordMap={recordMap}
           fullPage={false}
-          darkMode={false}
+          darkMode={isDarkMode}
           rootPageId={currentPageId}
           previewImages={true}
           showCollectionViewDropdown={false}
