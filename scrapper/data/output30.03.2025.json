@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1,
+    "question": "Czy zgodnie z Regulaminem Giełdy animatorem emitenta może być wyłącznie członek giełdy?",
+    "option_A": "tak",
+    "option_B": "nie",
+    "option_C": "tak, ale pod warunkiem że jest uprawniony do działania na rachunek klienta",
+    "option_D": "tak, ale pod warunkiem wyrażenia zgody przez Zarząd Giełdy",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 2,
+    "question": "Portfel F osiągnął w badanym okresie wartość miernika Treynor’a na poziomie 5,75%, przy przeciętnej wartości stopy zwrotu z tego portfela równej 11,67% oraz współczynniku Beta równym 1,32. Jaka jest wartość miernika Jensen’a dla portfela F, jeżeli przeciętna wartość stopy zwrotu z portfela rynkowego osiągnęła poziom 6,58%?",
+    "option_A": "2,79%",
+    "option_B": "3,31%",
+    "option_C": "4,20%",
+    "option_D": "4,29%",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 3,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących wewnętrznej stopy zwrotu IRR projektu jest nieprawdziwe:",
+    "option_A": "do obliczenia wartości IRR nie musi być znana wartość kosztu kapitału (stopa dyskontowa)",
+    "option_B": "w przypadku wyboru spośród projektów wzajemnie wykluczających się zawsze projekt o wyższej wartości IRR ma jednocześnie wyższą wartość NPV",
+    "option_C": "w przypadku niektórych projektów inwestycyjnych o niekonwencjonalnych przepływach pieniężnych może pojawić się sytuacja braku IRR",
+    "option_D": "w przypadku niektórych projektów inwestycyjnych o niekonwencjonalnych przepływach, teoretycznie możliwa jest sytuacja, że znajdziemy tyle wartości IRR, ile razy przepływy pieniężne zmieniają znak.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 4,
+    "question": "Inwestor, który zainwestował w strategię portfolio insurance (używając minimalnej liczby naturalnej instrumentów niezbędnych do zbudowania tej strategii, przy czym wszystkie instrumenty wchodzące w skład tej strategii miały taką samą cenę wykonania), postanowił dodatkowo zająć długą pozycję w opcji sprzedaży (long put) z taką samą ceną wykonania jak dotychczas posiadane instrumenty, przy czym wszystkie pozostałe istotne parametry instrumentów, o które wzbogacił się portfel inwestora, są identyczne jak instrumentów wchodzących w skład strategii portfolio insurance inwestora. Jaką strategię uzyskał inwestor wskutek powyższej transakcji?",
+    "option_A": "strategia long straddle",
+    "option_B": "strategia long strangle",
+    "option_C": "strategia long butterfly",
+    "option_D": "strategia long condor",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 5,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi Komisja Nadzoru Finansowego może ustalić limity otwartych pozycji dla instrumentów pochodnych opartych na towarach rolnych, jednakże limity te nie mają zastosowania do pozycji otwartych przez: I. podmiot niefinansowy lub pozycji otwartych na jego rachunek, jeżeli można je zakwalifikować jako pozycje zmniejszające ryzyko bezpośrednio związane z działalnością handlową tego podmiotu niefinansowego, II. podmiot finansowy, który wchodzi w skład grupy kapitałowej i działa w imieniu podmiotu niefinansowego wchodzącego w skład tej samej grupy kapitałowej, lub pozycji otwartych na rachunek tego podmiotu finansowego, jeżeli można je zakwalifikować jako pozycje zmniejszające ryzyko bezpośrednio związane z działalnością handlową tego podmiotu niefinansowego, o ile głównym przedmiotem działalności tej grupy kapitałowej nie jest prowadzenie działalności maklerskiej lub wykonywanie czynności bankowych, III. podmiot finansowy lub podmiot niefinansowy, jeżeli można je zakwalifikować jako pozycje wynikające z transakcji towarowymi instrumentami pochodnymi lub uprawnieniami do emisji lub związanymi z nimi instrumentami pochodnymi, zawartych w celu spełnienia obowiązków związanych z zapewnieniem płynności w systemie obrotu.",
+    "option_A": "I, II, III",
+    "option_B": "I",
+    "option_C": "I, II",
+    "option_D": "III.",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 6,
+    "question": "Strategia long condor polega na:",
+    "option_A": "zakupie opcji kupna (call) z niską ceną wykonania, wystawieniu opcji kupna (call) z nieco wyższą ceną wykonania, wystawieniu opcji kupna (call) z jeszcze wyższą ceną wykonania i zakupie opcji kupna (call) z najwyższą ceną wykonania",
+    "option_B": "wystawieniu opcji kupna (call) z niską ceną wykonania, zakupie opcji kupna (call) z nieco wyższą ceną wykonania, zakupie opcji kupna (call) z jeszcze wyższą ceną wykonania i wystawieniu opcji kupna (call) z najwyższą ceną wykonania",
+    "option_C": "zakupie opcji kupna (call) z niską ceną wykonania, wystawieniu dwóch opcji kupna (call) ze średnią ceną wykonania i zakupie opcji kupna (call) z wysoką ceną wykonania",
+    "option_D": "wystawieniu opcji kupna (call) z niską ceną wykonania, zakupie dwóch opcji kupna (call) ze średnią ceną wykonania i wystawieniu opcji kupna (call) z wysoką ceną wykonania",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 7,
+    "question": "Ile wynosi w chwili obecnej cena obligacji zerokuponowej, na dwanaście lat przed jej wykupem, jeżeli nominał tej obligacji równy jest 3.450,00 PLN, przy stopie zwrotu do wykupu (ang. yield to maturity) wynoszącej 14%?",
+    "option_A": "501,04 PLN",
+    "option_B": "509,85 PLN",
+    "option_C": "669,08 PLN",
+    "option_D": "716,22 PLN",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 8,
+    "question": "Jakiej wysokości kredyt zaciągnął inwestor w chwili obecnej, jeżeli odsetki, jakie zapłaci wraz z 60 ratą, wynoszą 4.500 PLN, natomiast nominalna roczna stopa procentowa wynosi 9,45%, a kredyt spłacany jest wraz z odsetkami w 84 ratach płatnych na koniec każdego miesiąca metodą równych rat kapitałowych?",
+    "option_A": "38.000 PLN",
+    "option_B": "162.000 PLN",
+    "option_C": "200.000 PLN",
+    "option_D": "1.920.000 PLN.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 9,
+    "question": "Zgodnie z ustawą Kodeks cywilny ograniczoną zdolność do czynności prawnych mają:",
+    "option_A": "osoby ubezwłasnowolnione częściowo lub całkowicie",
+    "option_B": "wyłącznie osoby ubezwłasnowolnione częściowo",
+    "option_C": "małoletni, którzy ukończyli lat dziewięć, oraz osoby ubezwłasnowolnione częściowo",
+    "option_D": "małoletni, którzy ukończyli lat trzynaście, oraz osoby ubezwłasnowolnione częściowo",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 10,
+    "question": "Inwestor chce w chwili obecnej zainwestować w opcje na akcję spółki działającej na rynku motoryzacyjnym. W najbliższym czasie inwestor spodziewa się istotnego spadku sprzedaży samochodów, który spowoduje drastyczny spadek wyników spółek działających w tym sektorze, co powinno doprowadzić do istotnego spadku cen akcji interesującej go spółki. Jaką strategię powinien zastosować inwestor o dużym apetycie na ryzyko, chcący zmaksymalizować swój zysk w przypadku realizacji jego oczekiwań oraz akceptujący poniesienie straty w przypadku nie zrealizowania się założonego przez niego scenariusza (należy pominąć koszty transakcyjne)?",
+    "option_A": "stategię protective put",
+    "option_B": "strategię long butterfly",
+    "option_C": "strategię long strip",
+    "option_D": "strategię rotated bull spread",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 11,
+    "question": "Inwestor ulokował swoje środki na 2 lata (okres inwestycji) w inwestycji A i inwestycji B. Inwestycja A przyniosła -6% zwrotu w pierwszym roku inwestycji oraz 15% zwrotu w drugim roku inwestycji i wypłaciła 4.250,00 PLN po zakończeniu okresu inwestycji (zainwestowany kapitał skorygowany o zwrot), natomiast inwestycja B przyniosła 16% w pierwszym roku inwestycji oraz -18% zwrotu w drugim roku inwestycji i wypłaciła 1.725,00 PLN po zakończeniu okresu inwestycji (zainwestowany kapitał skorygowany o zwrot). Jakimi środkami dysponował inwestor na początku okresu inwestycyjnego oraz jaki średnioroczny zwrot z zainwestowanego kapitału uzyskał?",
+    "option_A": "środki w wysokości 5.137,03 PLN, a średnioroczna stopa zwrotu równa 1,98%",
+    "option_B": "środki w wysokości 5.745,04 PLN, a średnioroczna stopa zwrotu równa 1,98%",
+    "option_C": "środki w wysokości 5.745,04 PLN, a średnioroczna stopa zwrotu równa 2,15%",
+    "option_D": "środki w wysokości 6.235,07 PLN, a średnioroczna stopa zwrotu równa 2,15%.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 12,
+    "question": "Zgodnie z Zasadami Etyki Zawodowej Maklerów i Doradców, maklerzy i doradcy powinni dbać o dobre imię:",
+    "option_A": "Zrzeszenia Nadzwyczajnego Maklerów i Doradców",
+    "option_B": "pracodawcy",
+    "option_C": "Prezesa ZMiD",
+    "option_D": "żadne z powyższych",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 13,
+    "question": "Zgodnie z Regulaminem Giełdy członkiem giełdy jest:",
+    "option_A": "firma inwestycyjna, jeśli deklaruje taką wolę",
+    "option_B": "bank prowadzący działalność maklerską, pod warunkiem posiadania zezwolenia na prowadzenie rachunków papierów wartościowych, automatycznie po wpisaniu na listę prowadzoną przez KNF",
+    "option_C": "KDPW S.A",
+    "option_D": "żadne z powyższych",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 14,
+    "question": "Wskaż, które z niżej wymienionych stwierdzeń odnoszących się do spółki akcyjnej, nie jest zgodne z ustawą Kodeks spółek handlowych:",
+    "option_A": "do powstania spółki akcyjnej nie wymaga się wpisu do rejestru",
+    "option_B": "osoby podpisujące statut są założycielami spółki",
+    "option_C": "firma spółki może być obrana dowolnie; powinna zawierać dodatkowe oznaczenie \"spółka akcyjna\"",
+    "option_D": "do powstania spółki akcyjnej wymaga się ustanowienia zarządu i rady nadzorczej.",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 15,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi, w odniesieniu do środków pieniężnych powierzonych firmie inwestycyjnej przez klientów nie jest prawdą, że:",
+    "option_A": "dom maklerski nie może wykorzystywać na własny rachunek środków pieniężnych powierzonych przez klientów w związku ze świadczeniem przez niego usług maklerskich",
+    "option_B": "w razie wszczęcia postępowania egzekucyjnego przeciwko firmie inwestycyjnej środki pieniężne powierzone przez klientów firmie inwestycyjnej w związku ze świadczeniem przez nią usług maklerskich nie podlegają zajęciu",
+    "option_C": "w razie ogłoszenia upadłości firmy inwestycyjnej środki pieniężne powierzone przez klientów firmie inwestycyjnej w związku ze świadczeniem przez nią usług maklerskich podlegają wyłączeniu z masy upadłości firmy inwestycyjnej",
+    "option_D": "zasady oprocentowania środków pieniężnych powierzonych przez klienta firmie inwestycyjnej w związku ze świadczeniem usług maklerskich określa zarząd firmy inwestycyjnej w formie uchwały",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 16,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi firma inwestycyjna świadcząca usługi wykonywania zleceń nabycia lub zbycia instrumentów finansowych nie jest obowiązana do podjęcia wszelkich uzasadnionych działań w celu uzyskania możliwie najlepszych wyników dla klienta w związku z wykonaniem zlecenia klienta w przypadku gdy:",
+    "option_A": "zlecenie dotyczy prostych instrumentów finansowych",
+    "option_B": "klient jest klientem profesjonalnym",
+    "option_C": "klient określił szczegółowe warunki, na jakich zlecenie ma zostać wykonane",
+    "option_D": "zlecenie ma zostać wykonane w systemie obrotu instrumentami finansowymi w państwie trzecim",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 17,
+    "question": "Jeżeli długookresowa stopa zysków zatrzymanych (ang. retention rate of earnings) spółki LF wynosi 75%, wsteczny wskaźnik cena/zysk (ang. trailing P/E, liczony jako bieżąca cena akcji do bieżącego zysku na akcję) tej spółki równy jest 2,5, a oczekiwana stopa wzrostu dywidendy wynosi 3,20%, to wymagana stopa zwrotu z akcji tej spółki kształtuje się na poziomie:",
+    "option_A": "12,06%",
+    "option_B": "13,52%",
+    "option_C": "27,04%",
+    "option_D": "34,16%.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 18,
+    "question": "Jeżeli nominalna stopa procentowa wynosi 19%, a stopa inflacji kształtuje się na poziomie 9%, to realna stopa procentowa równa jest:",
+    "option_A": "9%",
+    "option_B": "28%",
+    "option_C": "29%",
+    "option_D": "30%",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 19,
+    "question": "Zgodnie ze Szczegółowymi Zasadami Obrotu Giełdowego w systemie UTP, transakcje dotyczące nabycia znacznych pakietów akcji, zawierane są:",
+    "option_A": "poza systemem notowań ciągłych ale w systemie kursu jednolitego",
+    "option_B": "w systemie notowań ciągłych ale poza systemem kursu jednolitego",
+    "option_C": "poza systemem notowań ciągłych oraz systemem kursu jednolitego",
+    "option_D": "w systemie notowań ciągłych i w systemie kursu jednolitego",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 20,
+    "question": "Zgodnie ze Szczegółowymi Zasadami Obrotu Giełdowego w systemie UTP, zlecenia maklerskie dotyczące transakcji pakietowych akcjami mogą być przekazywane do systemu transakcyjnego giełdy:",
+    "option_A": "wyłącznie na dzień poprzedzający dzień, w którym transakcja ma zostać zawarta",
+    "option_B": "wyłącznie w dniu, w którym transakcja ma zostać zawarta",
+    "option_C": "w dowolnym dniu",
+    "option_D": "wyłącznie w godzinie, w której transakcja ma zostać zawarta",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 21,
+    "question": "Zgodnie z ustawą o rachunkowości, odpisy aktualizujące wartość należności zalicza się do:",
+    "option_A": "kosztów przerobu",
+    "option_B": "przychodów finansowych",
+    "option_C": "kosztów finansowych lub pozostałych kosztów operacyjnych",
+    "option_D": "żadna z powyższych.",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 22,
+    "question": "Jeżeli inwestor wpłacił w chwili obecnej na swoje konto oszczędnościowe oprocentowane roczną stopą równą 12% z kwartalną kapitalizacją odsetek kwotę w wysokości 455.047,11 PLN, to jaką kwotę będzie mógł wybierać na koniec każdego kwartału przez 3 kolejne lata?",
+    "option_A": "45.715 PLN",
+    "option_B": "133.767 PLN",
+    "option_C": "346.558 PLN",
+    "option_D": "648.770 PLN",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 23,
+    "question": "Zgodnie z ustawą o funduszach inwestycyjnych i zarządzaniu alternatywnymi funduszami inwestycyjnymi, w odniesieniu do funduszy inwestycyjnych nie jest prawdą, że:",
+    "option_A": "fundusz inwestycyjny może być utworzony wyłącznie przez towarzystwo funduszy inwestycyjnych (towarzystwo)",
+    "option_B": "towarzystwo może utworzyć więcej niż jeden fundusz inwestycyjny",
+    "option_C": "siedzibą i adresem funduszu inwestycyjnego jest siedziba i adres towarzystwa będącego jego organem",
+    "option_D": "organem funduszu inwestycyjnego otwartego jest rada inwestorów",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 24,
+    "question": "Wskaż, które z poniższych stwierdzeń odnoszących się do wezwania do zapisywania się na sprzedaż akcji spółki publicznej nie jest zgodne z ustawą o ofercie publicznej i warunkach wprowadzania instrumentów finansowych do zorganizowanego systemu obrotu oraz o spółkach publicznych:",
+    "option_A": "podmioty będące stronami porozumienia, o którym mowa w ustawie, które ogłosiły wspólnie wezwanie odpowiadają solidarnie za zapłatę ceny akcji proponowanej w wezwaniu oraz za wydanie papierów wartościowych w zamian za akcje objęte zapisami złożonymi w ramach wezwania",
+    "option_B": "transakcja nabycia akcji objętych zapisami złożonymi w ramach wezwania następuje nie później niż w terminie 3 dni roboczych od dnia zakończenia przyjmowania zapisów",
+    "option_C": "wzywający może zmienić treść wezwania dobrowolnego w zakresie terminów transakcji nabycia akcji w wezwaniu, przypadających przed upływem terminu przyjmowania zapisów",
+    "option_D": "wezwanie jest ogłaszane i przeprowadzane za pośrednictwem giełdy.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 25,
+    "question": "Zgodnie z ustawą o rachunkowości, do środków trwałych nie zalicza się:",
+    "option_A": "maszyn",
+    "option_B": "gruntów",
+    "option_C": "urządzeń",
+    "option_D": "know-how",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 26,
+    "question": "Jeżeli inwestor odkłada po 4.260 PLN na koniec każdego następnego półrocza na swoje konto oszczędnościowe oprocentowane 14% w skali roku (z półroczną kapitalizacją odsetek), to jaką kwotę zgromadzi po 7 latach?",
+    "option_A": "10.984,41 PLN",
+    "option_B": "45.711,93 PLN",
+    "option_C": "96.065,13 PLN",
+    "option_D": "108.245,63 PLN",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 27,
+    "question": "Zgodnie z Regulaminem Giełdy, transakcje giełdowe zawierane są:",
+    "option_A": "pod warunkiem rozliczenia transakcji przez KDPW S.A., z chwilą dokonania odpowiedniego zapisu w systemie informatycznym Giełdy",
+    "option_B": "z chwilą dokonania odpowiedniego zapisu w systemie informatycznym Giełdy",
+    "option_C": "w terminie n+0 dla papierów wartościowych, poprzez zapis na rachunku papierów wartościowych",
+    "option_D": "w terminie n+0 dla instrumentów pochodnych, poprzez zapis na rachunku derywatów.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 28,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących wyceny przedsiębiorstw metodą zdyskontowanych przepływów pieniężnych jest nieprawdziwe:",
+    "option_A": "metoda Equity Cash Flow określa wartość fundamentalną kapitału własnego w przedsiębiorstwie",
+    "option_B": "w metodzie Capital Cash Flow, wartość przedsiębiorstwa można przedstawić jako sumę Equity Cash Flow i Firm Cash Flow",
+    "option_C": "w metodzie Firm Cash Flow przepływy pieniężne są dyskontowane średnim ważonym kosztem kapitału (WACC)",
+    "option_D": "w metodzie Capital Cash Flow, przepływy pieniężne należące do wierzycieli przedsiębiorstwa składają się z sumy wypłat związanych z kosztami finansowania oraz zmiany stanu poziomu zadłużenia w danym okresie",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 29,
+    "question": "Wskaż, częścią którego z poniżej wymienionych rodzajów ryzyka jest ryzyko niedotrzymania warunków (ang. default risk):",
+    "option_A": "ryzyko rynkowe (ang. market risk)",
+    "option_B": "ryzyko płynności (ang. liquidity risk)",
+    "option_C": "ryzyko polityczne (ang. political risk)",
+    "option_D": "ryzyko kredytowe (ang. credit risk)",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 30,
+    "question": "Akcje spółki TR wyceniane są zgodnie z modelem Gordona na 650 PLN, przy wymaganej stopie zwrotu dla akcji tej spółki równej 9,22% oraz stopie zwrotu z kapitału własnego (ROE) równej 16,00%. Ile wynosi wskaźnik wypłaty dywidendy (ang. dividend payout ratio), jeżeli prognozowana na koniec roku dywidenda osiąga wartość 13,13 PLN?",
+    "option_A": "0,45",
+    "option_B": "0,55",
+    "option_C": "0,56",
+    "option_D": "0,64.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 31,
+    "question": "Zgodnie z Regulaminem Giełdy emitent instrumentów finansowych dopuszczonych do obrotu giełdowego obowiązany jest posiadać:",
+    "option_A": "identyfikujący go kod Legal Entity Identifier – LEI",
+    "option_B": "status Local Operating Units - LOU",
+    "option_C": "25-znakowy kod alfa-numeryczny Global LEI System - GLEIS",
+    "option_D": "kod nadany przez Association of National Numbering Agencies - ANNA",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 32,
+    "question": "Zgodnie ze Szczegółowymi Zasadami Obrotu Giełdowego w systemie UTP, karty umów będące dowodem zawarcia transakcji giełdowych, są wystawiane i przekazywane członkom giełdy:",
+    "option_A": "w terminie 1 godziny po zawarciu transakcji",
+    "option_B": "w dniu zawarcia transakcji",
+    "option_C": "w terminie wyznaczonym dla wystawiania i przekazania kart umów do KDPW_CCP S.A",
+    "option_D": "żadne z powyższych",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 33,
+    "question": "Zgodnie z Regulaminem Giełdy, za działalność maklera giełdowego związaną z wykonywaniem obowiązków dotyczących obrotu giełdowego, całkowitą odpowiedzialność ponosi:",
+    "option_A": "przełożony maklera giełdowego",
+    "option_B": "makler nadzorujący",
+    "option_C": "przewodniczący sesji",
+    "option_D": "członek giełdy.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 34,
+    "question": "Zgodnie z ustawą o rachunkowości, przepisy tej ustawy stosuje się w odniesieniu do alternatywnych spółek inwestycyjnych w rozumieniu przepisów o funduszach inwestycyjnych i zarządzaniu alternatywnymi funduszami inwestycyjnymi:",
+    "option_A": "jeżeli przychody tych podmiotów przekroczą 25 mln PLN",
+    "option_B": "jeżeli przychody tych podmiotów przekroczą 50 mln PLN",
+    "option_C": "jeżeli przychody tych podmiotów przekroczą 80 mln EUR",
+    "option_D": "bez względu na wielkość przychodów",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 35,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi w odniesieniu do agenta firmy inwestycyjnej (agent) nie jest prawdą, że:",
+    "option_A": "agent może mieć umowę zawartą z jedną firmą inwestycyjną",
+    "option_B": "zakazane jest przyjmowanie przez agenta jakichkolwiek wpłat, w związku z czynnościami wykonywanymi na podstawie umowy z firmą inwestycyjną, od osób, na rzecz których firma inwestycyjna świadczy usługi, jak również dokonywanych przez firmę inwestycyjną na rzecz tych osób",
+    "option_C": "agent informuje klienta lub potencjalnego klienta oraz posiadacza lub potencjalnego posiadacza lokaty strukturyzowanej o zakresie czynności, do podejmowania których jest upoważniony",
+    "option_D": "za szkodę wyrządzoną przez agenta w związku z wykonywaniem czynności w imieniu i na rachunek firmy inwestycyjnej odpowiada wyłącznie ta firma inwestycyjna",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 36,
+    "question": "Czy zgodnie z Regulaminem Giełdy członek Zarządu w spółce posiadającej status członka giełdy, będący maklerem nadzorującym oraz wykonujący czynności maklera nadzorującego, może jednocześnie wykonywać czynności maklera nadzorującego na podstawie umowy cywilnoprawnej w innej spółce również posiadającej statusu członka giełdy?",
+    "option_A": "tak, ponieważ umowa cywilnoprawna w przeciwieństwie do umowy o pracę, oznacza brak nadzoru pracodawcy",
+    "option_B": "nie",
+    "option_C": "tak, jednak wymaga to porozumienia zawartego pomiędzy spółkami w celu zarządzania rzeczywistym lub potencjalnym konfliktem interesów",
+    "option_D": "odpowiedź zależy od treści regulaminu świadczenia usług maklerskich w obydwu spółkach oraz wyniku analizy rzeczywistego lub potencjalnego konfliktu interesów.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 37,
+    "question": "Jeżeli suma wartości bieżących wszystkich ujemnych przepływów występujących w tym projekcie wynosi 6.540,00 PLN, przy NPV na poziomie 2.877,60 PLN, to ile wynosi indeks zyskowności (ang. Profitability Index) projektu?",
+    "option_A": "0,44",
+    "option_B": "0,56",
+    "option_C": "1,32",
+    "option_D": "1,44",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 38,
+    "question": "Zgodnie z rozporządzeniem Ministra Finansów w sprawie szczegółowych warunków technicznych i organizacyjnych dla firm inwestycyjnych, banków państwowych prowadzących działalność maklerską, banków, o których mowa w art. 70 ust. 2 ustawy o obrocie instrumentami finansowymi, i banków powierniczych, środki pieniężne klientów mogą być deponowane w: I. banku centralnym, II. banku krajowym, III. zagranicznej instytucji kredytowej, IV. banku zagranicznym.",
+    "option_A": "I, II",
+    "option_B": "I, II, III, IV",
+    "option_C": "II, IV",
+    "option_D": "żadne z powyższych.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 39,
+    "question": "Zgodnie z ustawą o rachunkowości, jeżeli w wyjątkowych przypadkach stosowanie określonego przepisu ustawy nie pozwoliłoby na rzetelne i jasne przedstawienie sytuacji majątkowej i finansowej oraz wyniku finansowego, jednostka:",
+    "option_A": "nie stosuje tego przepisu, a w informacji dodatkowej uzasadnia przyczyny jego niezastosowania oraz określa wpływ, jaki niezastosowanie przepisu wywiera na obraz sytuacji majątkowej i finansowej oraz wynik finansowy jednostki",
+    "option_B": "stosuje ten przepis, a w informacji dodatkowej uzasadnia jedynie przyczyny jego zastosowania",
+    "option_C": "stosuje ten przepis, a w informacji dodatkowej uzasadnia jedynie wpływ, jaki zastosowanie przepisu wywiera na obraz sytuacji majątkowej jednostki",
+    "option_D": "żadna z powyższych",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 40,
+    "question": "Który z poniższych przepływów pieniężnych ma w chwili obecnej największą wartość?",
+    "option_A": "367 PLN za 9 lat dyskontowane roczną stopą procentową równą 2%",
+    "option_B": "369 PLN za 4 lata dyskontowane roczną stopą procentową równą 5%",
+    "option_C": "371 PLN za 2 lata dyskontowane roczną stopą procentową równą 11%",
+    "option_D": "373 PLN za 1 rok dyskontowane roczną stopą procentową równą 19%",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 41,
+    "question": "W spółce MJD zysk netto wynosi 10.530 PLN, wskaźnik zwrotu z kapitału (ROC) wynosi 4% a stopa zwrotu z kapitału własnego (ROE) wynosi 10%. Przy powyższych wielkościach, wartość księgowa kapitału obcego (D) wynosi:",
+    "option_A": "157.950 PLN",
+    "option_B": "166.970 PLN",
+    "option_C": "360.473 PLN",
+    "option_D": "465.532 PLN.",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 42,
+    "question": "Zgodnie z rozporządzeniem Parlamentu Europejskiego i Rady (UE) nr 596/2014 z dnia 16 kwietnia 2014 r. w sprawie nadużyć na rynku (rozporządzenie w sprawie nadużyć na rynku) oraz uchylającym dyrektywę 2003/6/WE Parlamentu Europejskiego i Rady i dyrektywy Komisji 2003/124/WE, 2003/125/WE i 2004/72/WE, zakaz wykorzystywania i bezprawnego ujawniania informacji poufnych dotyczy:",
+    "option_A": "każdej osoby",
+    "option_B": "wyłącznie maklerów i doradców inwestycyjnych",
+    "option_C": "wyłącznie osób umieszczonych na liście osób mających dostęp do informacji poufnych",
+    "option_D": "wyłącznie osób zatrudnionych u emitenta lub z nim powiązanych",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 43,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących strategii zarządzania portfelem obligacji jest nieprawdziwe:",
+    "option_A": "linia rynku obligacji jest prostą, na której znajdują punkty zwrotu i czasu trwania zarówno weksli skarbowych jak, jak i indeksu rynku obligacji",
+    "option_B": "linia rynku obligacji uzależnia zwroty z portfela obligacji od czterech przyczyn: efektu obrotu (ang. trading effect), efektu przewidywania stopy oprocentowania (ang. interest rate anticipation effect), efektu analizy (ang analysis effect) oraz efektu polityki (ang. policy effect)",
+    "option_C": "w wyniku połączenia efektu przewidywania stopy oprocentowania (ang. interest rate anticipation effect), efektu analizy (ang. analysis effect) oraz efektu polityki (ang. policy effect) otrzymujemy efekt zarządzania (ang. management effect)",
+    "option_D": "różnica między oczekiwanym zwrotem z czasu trwania a bieżącym zwrotem z portfela w danym okresie jest wynikiem połączenia efektu analizy (ang. analysis effect) i efektu obrotu (ang. trading effect)",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 44,
+    "question": "Zgodnie z ustawą o rachunkowości, dla zapewnienia współmierności przychodów i związanych z nimi kosztów, do aktywów lub pasywów danego okresu sprawozdawczego zaliczane będą przypadające na ten okres sprawozdawczy koszty, które jeszcze nie zostały poniesione oraz:",
+    "option_A": "wyłącznie koszty poniesione w przeszłości",
+    "option_B": "koszty lub przychody dotyczące przyszłych okresów",
+    "option_C": "krótkoterminowe zobowiązania pozabilansowe",
+    "option_D": "żadna z powyższych.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 45,
+    "question": "Zgodnie z Regulaminem Giełdy stroną transakcji giełdowej jest:",
+    "option_A": "uczestnik KDPW S.A",
+    "option_B": "uczestnik KDPW_CCP S.A",
+    "option_C": "dom maklerski",
+    "option_D": "żaden z powyższych",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 46,
+    "question": "Zgodnie z Regulaminem Giełdy Zarząd Giełdy dopuszczając instrumenty pochodne do obrotu giełdowego:",
+    "option_A": "zatwierdza standard instrumentu pochodnego określony przez wystawcę instrumentu pochodnego",
+    "option_B": "określa standard instrumentów pochodnych",
+    "option_C": "uzgadnia z emitentem instrumentu pochodnego standard instrumentów pochodnych",
+    "option_D": "wprowadza szczegółowy opis danego instrumentu pochodnego do umowy z KDPW S.A",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 47,
+    "question": "Jeżeli cena opcji wynosi w chwili obecnej 7,17 PLN, to ile wyniesie cena tej samej opcji po zmianie ceny instrumentu bazowego z poziomu 45,20 PLN do poziomu 38,70 PLN, jeżeli współczynnik delta tej opcji równy jest -0,44?",
+    "option_A": "2,86 PLN",
+    "option_B": "4,31 PLN",
+    "option_C": "6,73 PLN",
+    "option_D": "10,03 PLN.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 48,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi firma inwestycyjna, która w ramach prowadzonej działalności maklerskiej rekomenduje lub oferuje instrument finansowy, opracowuje, wdraża, stosuje oraz poddaje przeglądowi rozwiązania zapewniające, że instrument finansowy oraz strategia dystrybucji będą odpowiednie dla grupy docelowej. Rozwiązania te polegają na: I. określeniu grupy docelowej instrumentu finansowego, także w przypadku gdy podmiot emitujący instrument finansowy nie określił grupy docelowej instrumentu finansowego, II. określeniu strategii dystrybucji instrumentu finansowego odpowiedniej dla określonej grupy docelowej, III. regularnym przeglądzie, dokonywanym z uwzględnieniem wszelkich zdarzeń, które mogłyby wpłynąć na powstanie ryzyk dla grupy docelowej, czy instrument finansowy pozostaje zgodny z potrzebami określonej grupy docelowej oraz czy zamierzona strategia dystrybucji tego instrumentu jest odpowiednia dla tej grupy docelowej.",
+    "option_A": "I, II, III",
+    "option_B": "II",
+    "option_C": "I, III",
+    "option_D": "I",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 49,
+    "question": "Zgodnie z ustawą o rachunkowości, odpisy aktualizujące wartość rzeczowych składników aktywów obrotowych dokonane w związku z utratą ich wartości oraz wynikające z wyceny według cen sprzedaży netto zamiast według cen nabycia, albo zakupu, albo kosztów wytworzenia, zalicza się do:",
+    "option_A": "pozostałych kosztów operacyjnych",
+    "option_B": "zysków nadzwyczajnych",
+    "option_C": "kosztów połączenia",
+    "option_D": "amortyzacji.",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 50,
+    "question": "Członek Rady Nadzorczej spółki publicznej X (emitenta) notowanej na rynku regulowanym prowadzonym przez Giełdę Papierów Wartościowych w Warszawie SA sprzedał w dniu 4 września 2024 r. akcje spółki publicznej X za kwotę o równowartości 10000 EUR. Przed transakcją zwrócił się do emitenta o wyrażenie zgody na sprzedaż akcji, z uwagi na poważne trudności finansowe wymagające natychmiastowej sprzedaży akcji i uzyskał zezwolenie na sprzedaż od emitenta. Zgodnie z harmonogramem przekazanym do publicznej wiadomości emitent miał opublikować raport półroczny za 2024 r. w dniu 30 września 2024 r. Zgodnie z rozporządzeniem Parlamentu Europejskiego i Rady (UE) nr 596/2014 z dnia 16 kwietnia 2014 r. w sprawie nadużyć na rynku (rozporządzenie w sprawie nadużyć na rynku) oraz uchylającym dyrektywę 2003/6/WE Parlamentu Europejskiego i Rady i dyrektywy Komisji 2003/124/WE, 2003/125/WE i 2004/72/WE, wskaż, które z poniższych stwierdzeń jest poprawne w odniesieniu do transakcji członka Rady Nadzorczej emitenta:",
+    "option_A": "członek Rady Nadzorczej mógł sprzedać akcje emitenta w okresie zamkniętym, ponieważ miał poważne trudności finansowe i uzyskał zezwolenie emitenta",
+    "option_B": "członek Rady Nadzorczej mógł sprzedać akcje emitenta, nawet bez uzyskania zezwolenia emitenta",
+    "option_C": "członek Rady Nadzorczej nie mógł sprzedać akcji emitenta, ponieważ transakcja była dokonana w okresie zamkniętym",
+    "option_D": "członek Rady Nadzorczej nie mógł sprzedać akcji emitenta, ponieważ transakcja była dokonana w okresie zamkniętym, a zezwolenie emitenta na dokonanie transakcji nie miało w tym przypadku znaczenia",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 51,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących wypukłości (ang. convexity) obligacji jest nieprawdziwe:",
+    "option_A": "wypukłość \"poprawia\" przybliżenie zmiany ceny obligacji przy zmieniającej się stopie dochodu obligacji",
+    "option_B": "im wyższe oprocentowanie obligacji, tym wyższa wypukłość (przy tym samym terminie wykupu i tej samej stopie dochodu)",
+    "option_C": "wypukłość obligacji rośnie w coraz szybszym tempie w miarę wzrostu duration i spada w coraz wolniejszym tempie w miarę spadku duration",
+    "option_D": "im wyższe oprocentowanie obligacji, tym wyższa wypukłość (przy tej samej stopie dochodu i tym samym duration).",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 52,
+    "question": "W Spółce WRO w 2018 r. średni okres inkasa (average collection period) wyniósł 48 dni, średni okres realizacji obrotu zapasami (average inventory processing turnover) wyniósł 39 dni, zaś okres płatności zobowiązań (payables payment period) wyniósł 14 dni. Przy powyższych danych, cykl konwersji gotówki wyniesie:",
+    "option_A": "70",
+    "option_B": "73",
+    "option_C": "78",
+    "option_D": "79",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 53,
+    "question": "Wskaż, które z poniższych strategii inwestowania w obligacje można zaliczyć do grupy strategii aktywnych: I. strategie wykorzystujące brak efektywności rynku, II. strategie dopasowania, III. strategie wynikające z oczekiwań braku zmiany stóp procentowych, IV. strategie immunizacji. Wersje odpowiedzi:",
+    "option_A": "(I, III)",
+    "option_B": "(I, II, III)",
+    "option_C": "(II, IV)",
+    "option_D": "(II, III, IV).",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 54,
+    "question": "Spółka XYZ S.A. posiada od roku akcje spółki publicznej A notowanej na rynku oficjalnych notowań stanowiące 9% ogólnej liczby głosów. Spółka XYZ S.A. posiada również 100% udziałów w spółce B z o.o. (spółka XYZ S.A. jest podmiotem dominującym wobec spółki B z o.o.). Spółka B z o.o., która wcześniej nie posiadała akcji spółki publicznej A kupiła na giełdzie pakiet jej akcji stanowiący 1,2% ogólnej liczby głosów w spółce publicznej A. Wskaż, zgodnie z ustawą o ofercie publicznej i warunkach wprowadzania instrumentów finansowych do zorganizowanego systemu obrotu oraz o spółkach publicznych, czy w wyniku w/w kupna akcji spółki publicznej A, powstanie obowiązek zawiadomienia Komisji oraz spółki publicznej A, a jeśli tak, na kim spocznie ten obowiązek:",
+    "option_A": "obowiązek zawiadomienia spocznie wyłącznie na spółce XYZ S.A",
+    "option_B": "obowiązek zawiadomienia spocznie wyłącznie na spółce B z o.o",
+    "option_C": "obowiązek zawiadomienia spocznie na spółce XYZ S.A. oraz na spółce B z o.o",
+    "option_D": "nie powstał obowiązek zawiadomienia",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 55,
+    "question": "W Spółce BAN roczna sprzedaż netto za 2020 r. wyniosła 325.000 PLN, zaś średni stan należności za ten sam rok wyniósł 50.400 PLN. Bazując na powyższych danych, obrót należnościami (receivables turnover) oraz średni okres inkasa (average collection period), przy założeniu liczby dni w roku równej 365, wyniosły odpowiednio:",
+    "option_A": "obrót należnościami 6,45 a średni okres inkasa 56,6 dni",
+    "option_B": "obrót należnościami 5,75 a średni okres inkasa 56,7 dni",
+    "option_C": "obrót należnościami 45,5 a średni okres inkasa 54,9 dnia",
+    "option_D": "obrót należnościami 6,51 a średni okres inkasa 51,8 dnia",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 56,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących wyceny opcji jest nieprawdziwe:",
+    "option_A": "model dwumianowy wyceny opcji wykorzystuje zasadę wyceny arbitrażowej",
+    "option_B": "model Black'a - Scholes'a - Merton'a może być stosowany do wyceny amerykańskich opcji sprzedaży (put)",
+    "option_C": "model Black'a - Scholes'a - Merton'a stosowany jest do wyceny opcji europejskich",
+    "option_D": "w modelu Black'a-Scholes'a-Merton'a przyjmuje się założenie, że proces kształtowania się cen instrumentu podstawowego jest tzw. geometrycznym ruchem Browna.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 57,
+    "question": "Zgodnie z Regulaminem Giełdy, członek giełdy po spełnieniu określonych wymogów, może udostępnić swoim klientom bezpośredni dostęp elektroniczny. Czy taki klient może udostępnić swoim klientom korzystanie z bezpośredniego dostępu elektronicznego (tzw. subdelegacja bezpośredniego dostępu elektronicznego)?",
+    "option_A": "nie",
+    "option_B": "tak",
+    "option_C": "tak, pod warunkiem spełnienia przez członka giełdy dodatkowych zobowiązań wskazanych w Regulaminie Giełdy oraz wydania zezwolenia swoim klientom w tym zakresie",
+    "option_D": "tak, pod warunkiem poinformowania o tym fakcie Giełdy",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 58,
+    "question": "Zgodnie z ustawą Kodeks spółek handlowych, bezwzględna większość głosów oznacza:",
+    "option_A": "więcej niż połowę głosów „za” niż „przeciw”, przy czym nie uwzględnia się głosów wstrzymujących się",
+    "option_B": "więcej niż połowę głosów oddanych",
+    "option_C": "co najmniej połowę głosów oddanych",
+    "option_D": "żadna z powyższych.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 59,
+    "question": "Zgodnie z rozporządzeniem Ministra Finansów w sprawie trybu i warunków postępowania firm inwestycyjnych, banków państwowych prowadzących działalność maklerską, banków, o których mowa w art. 70 ust. 2 ustawy o obrocie instrumentami finansowymi, oraz banków powierniczych, regulamin świadczenia usługi zarządzania portfelami, w skład których wchodzi jeden lub większa liczba instrumentów finansowych, określa spośród niżej wymienionych: I. tryb dokonywania wyboru podmiotu przechowującego aktywa wchodzące w skład portfeli zarządzanych przez firmę inwestycyjną, jeżeli firma inwestycyjna wykorzystuje pośrednictwo takich podmiotów przy świadczeniu tej usługi, II. metody wyceny instrumentów finansowych znajdujących się w portfelu klienta oraz jej częstotliwości, III. obiektywne wskaźniki finansowe, do których będą porównywane wyniki portfela klienta w celu ustalenia poziomu efektywności świadczonej usługi, IV. sposób i tryb przekazywania przez klienta dyspozycji dotyczących aktywów wchodzących w skład zarządzanego przez firmę inwestycyjną portfela instrumentów finansowych.",
+    "option_A": "III",
+    "option_B": "I, II, III",
+    "option_C": "I, II, III, IV",
+    "option_D": "II",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 60,
+    "question": "Zgodnie z Regulaminem Giełdy Zarząd Giełdy może zawiesić obrót instrumentami finansowymi:",
+    "option_A": "na żądanie Urzędu Komisji Nadzoru Finansowego zgłoszone zgodnie z przepisami Ustawy o obrocie instrumentami finansowymi",
+    "option_B": "jeżeli w ciągu ostatnich 3 miesięcy nie dokonano żadnych transakcji giełdowych na danym instrumencie finansowym",
+    "option_C": "jeżeli uzna, że wymaga tego interes Giełdy",
+    "option_D": "na wniosek emitenta.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 61,
+    "question": "Zgodnie z ustawą o rachunkowości, przez zyski powstające w zakładach ubezpieczeń, na skutek zdarzeń trudnych do przewidzenia, poza działalnością operacyjną zakładu i niezwiązane z ogólnym ryzykiem jej prowadzenia rozumie się:",
+    "option_A": "zyski nadzwyczajne",
+    "option_B": "przychody ogólne",
+    "option_C": "straty nadzwyczajne",
+    "option_D": "straty transferowe",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 62,
+    "question": "Wystawienie opcji kupna (call) z krótszym terminem wygaśnięcia oraz zakup opcji kupna (call) z dłuższym terminem wygaśnięcia, przy czym obie opcje mają tę samą cenę wykonania (wszystkie pozostałe istotne parametry instrumentów finansowych są tożsame) nazywa się strategią:",
+    "option_A": "call calendar spread",
+    "option_B": "put calendar spread",
+    "option_C": "bull call spread",
+    "option_D": "bear call spread",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 63,
+    "question": "Czy zgodnie z Regulaminem Giełdy maklerem giełdowym, którego zakres obowiązków obejmuje przekazywanie, modyfikowanie lub anulowanie zleceń maklerskich na rachunek klienta, może zostać osoba, która: 1) jest wpisana na listę maklerów papierów wartościowych prowadzoną przez KNF, 2) posiada odpowiednie, zweryfikowane przez członka giełdy, kwalifikacje i doświadczenie, zapewniające sprawność i bezpieczeństwo obrotu giełdowego, 3) jest zatrudniona przez klienta członka giełdy (obydwie spółki mają siedzibę w Polsce)?",
+    "option_A": "nie, ponieważ warunkiem niezbędnym jest relacja prawna z członkiem giełdy",
+    "option_B": "tak",
+    "option_C": "tak, po warunkiem korzystania z dostępu sponsorowanego przez klienta członka giełdy",
+    "option_D": "nie, ponieważ maklerem giełdowym automatycznie zostaje osoba która z wynikiem pozytywnym ukończy egzamin przeprowadzany przez Komisję Egzaminacyjną dla Maklerów Papierów Wartościowych powołaną przez Przewodniczącego Komisji Nadzoru Finansowego.",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 64,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących pomiaru ryzyka ceny obligacji jest nieprawdziwe:",
+    "option_A": "duration obligacji mierzone jest w jednostkach czasu, którymi są okresy otrzymywania przepływów pieniężnych (odsetek)",
+    "option_B": "duration obligacji z odsetkami jest mniejsze niż długość do terminu wykupu",
+    "option_C": "jeśli w pewnym okresie nie występują płatności z tytułu posiadaniu obligacji, a YTM (stopa dochodu w okresie do wykupu) się nie zmienia, to duration zmniejsza się dokładnie o długość tego okresu",
+    "option_D": "wypłata odsetek oznacza spadek (niewielki) duration",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 65,
+    "question": "Zgodnie z Regulaminem Giełdy wprowadzenie instrumentów finansowych do obrotu giełdowego następuje na wniosek emitenta, w którym wskazuje on w szczególności kod pod jakim instrumenty te będą rejestrowane w:",
+    "option_A": "Global LEI System - GLEIS",
+    "option_B": "KDPW_CCP S.A",
+    "option_C": "systemach Giełdy",
+    "option_D": "Krajowym Depozycie Papierów Wartościowych S.A",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 66,
+    "question": "Zgodnie z Regulaminem Giełdy zawiesić na czas określony przyjmowanie zleceń maklerskich może:",
+    "option_A": "członek giełdy wobec zleceń klienta korzystającego z bezpośredniego dostępu elektronicznego oznaczonych tym samym kodem wystawcy zlecenia",
+    "option_B": "KDPW S.A",
+    "option_C": "Komisja Nadzoru Finansowego",
+    "option_D": "przewodniczący sesji.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 67,
+    "question": "Wskaż, które z poniższych stwierdzeń odnoszących się do Komisji Nadzoru Finansowego nie jest zgodne z ustawą o nadzorze nad rynkiem finansowym:",
+    "option_A": "w toku postępowania w sprawie nałożenia sankcji na podstawie przepisów ustawy, Komisja może wydać postanowienie o możliwości zawarcia układu w sprawie warunków nadzwyczajnego złagodzenia sankcji",
+    "option_B": "Komisja posiada prawo używania pieczęci z godłem państwowym",
+    "option_C": "organem Komisji jest Urząd Komisji",
+    "option_D": "w skład Komisji wchodzą Przewodniczący, trzech Zastępców Przewodniczącego i dziewięciu członków",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 68,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi spółka prowadząca rynek regulowany może czasowo zawiesić lub ograniczyć obrót instrumentami finansowymi w przypadku znacznego wahania cen tych instrumentów finansowych na tym rynku lub na rynku powiązanym, na okres nie dłuższy niż:",
+    "option_A": "10 dni",
+    "option_B": "15 dni",
+    "option_C": "21 dni",
+    "option_D": "miesiąc",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 69,
+    "question": "Jeżeli inwestor odkłada po 4.350,00 PLN na koniec każdego kwartału na swoje konto oszczędnościowe z kwartalną kapitalizacją odsetek, to po ilu kwartałach oszczędzania suma jego oszczędności na tym koncie będzie równa 116.886,24 PLN, jeżeli oprocentowanie tego konta wynosi 12% w skali roku?",
+    "option_A": "5",
+    "option_B": "10",
+    "option_C": "20",
+    "option_D": "24.",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 70,
+    "question": "Zgodnie z ustawą o rachunkowości, zakaz kompensowania odnosi się co do zasady do wartości różnych co do rodzaju:",
+    "option_A": "wyłącznie aktywów średnioterminowych",
+    "option_B": "aktywów i pasywów, przychodów i kosztów związanych z nimi oraz zysków i strat nadzwyczajnych",
+    "option_C": "wyłącznie zysków",
+    "option_D": "wyłącznie przychodów",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 71,
+    "question": "Zgodnie z rozporządzeniem Ministra Finansów w sprawie trybu i warunków postępowania firm inwestycyjnych, banków państwowych prowadzących działalność maklerską, banków, o których mowa w art. 70 ust. 2 ustawy o obrocie instrumentami finansowymi, oraz banków powierniczych, w odniesieniu do określania przez firmę inwestycyjną (firma) grupy docelowej nie jest prawdą, że:",
+    "option_A": "firma określa grupę docelową danego instrumentu finansowego także w przypadku, gdy emitent lub wystawca tego instrumentu nie określili grupy docelowej",
+    "option_B": "firma określa grupę docelową instrumentu finansowego lub usługi na etapie ustalania celów biznesowych i strategii dystrybucji, przed rozpoczęciem świadczenia usług w odniesieniu do tego instrumentu finansowego",
+    "option_C": "firma, realizując w bieżącej działalności operacyjnej określoną przez siebie grupę docelową dla danego instrumentu finansowego lub usługi, zapewnia dostosowanie i zgodność świadczonych usług maklerskich w odniesieniu do objętych grupą docelową instrumentów finansowych",
+    "option_D": "firma nie musi zapewniać zgodności określanej grupy docelowej z podstawowymi założeniami odnoszącymi się do grupy docelowej określonej przez emitenta lub wystawcę instrumentu finansowego, jeżeli tak wynika z analizy cech bazy klientów firmy i potencjalnych klientów.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 72,
+    "question": "Inwestor zaciągnął kredyt inwestycyjny w wysokości 19.589,92 PLN, spłacany w półrocznych ratach metodą równych rat kapitałowo-odsetkowych. Na jaki okres inwestor zaciągnął kredyt, jeżeli półroczna rata kapitałowo-odsetkowa, jaką płaci inwestor, równa jest 2.240 PLN, a roczna stopa procentowa kształtuje się na poziomie 14% (raty będą płacone z dołu)?",
+    "option_A": "4 lata",
+    "option_B": "7 lat",
+    "option_C": "8 lat",
+    "option_D": "14 lat",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 73,
+    "question": "Prawo do wytoczenia powództwa o uchylenie uchwały zgromadzenia obligatariuszy nie przysługuje obligatariuszowi, który:",
+    "option_A": "głosował przeciwko uchwale i po jej podjęciu żądał zaprotokołowania sprzeciwu",
+    "option_B": "głosował za uchwałą",
+    "option_C": "bezzasadnie nie został dopuszczony do uczestniczenia w zgromadzeniu obligatariuszy",
+    "option_D": "nie był obecny na zgromadzeniu obligatariuszy, w przypadku wadliwego zwołania zgromadzenia obligatariuszy lub podjęcia uchwały w sprawie nieobjętej porządkiem obrad",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 74,
+    "question": "Zgodnie z ustawą o rachunkowości, przez okres sprawozdawczy rozumie się:",
+    "option_A": "okres, za który sporządza się wyłącznie uproszczone sprawozdanie z działalności podmiotu w trybie i zakresie wskazanym ustawą o rachunkowości",
+    "option_B": "okres w którym następuje pełne zużycie aktywów jednostki a także okres za który sporządza się wyłącznie uproszczone sprawozdanie z działalności podmiotu w trybie określonym ustawą",
+    "option_C": "okres w którym następuje nadmierne lecz niepełne zużycie aktywów jednostki",
+    "option_D": "okres, za który sporządza się sprawozdanie finansowe w trybie przewidzianym ustawą lub inne sprawozdania sporządzone na podstawie ksiąg rachunkowych.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 75,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących opcji realnych jest nieprawdziwe:",
+    "option_A": "wycena opcji finansowych jest zadaniem bardziej skomplikowanym niż wycena opcji realnych, co wynika głównie z istotnych różnic między tymi opcjami",
+    "option_B": "w przypadku opcji realnych oprócz ryzyka rynkowego występuje także ryzyko specyficzne",
+    "option_C": "opcje realne to przeważnie opcje amerykańskie, a termin wykonania może być zmieniany",
+    "option_D": "możliwość zatrzymania produkcji i ponownego jej uruchomienia może być interpretowana jako portfel złożony z amerykańskiej opcji sprzedaży (put - wstrzymanie produkcji) i amerykańskiej opcji kupna (call - ponowne uruchomienie produkcji), czyli straddle",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 76,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi klientem profesjonalnym co do zasady nie jest:",
+    "option_A": "zakład ubezpieczeń",
+    "option_B": "towarowy dom maklerski",
+    "option_C": "bank spółdzielczy",
+    "option_D": "giełda kryptoaktywów",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 77,
+    "question": "W ocenie rentowności portfela inwestycji, wskaźnik dywersyfikacji służy do pomiaru:",
+    "option_A": "przeinwestowania lub niedoinwestowania w określony segment rynku",
+    "option_B": "dodatkowego zwrotu z tytułu niepełnej dywersyfikacji portfela",
+    "option_C": "o ile lepszą rentowność ma dany portfel w stosunku do portfela wybranego w wyniku zastosowania modelu polityki \"kupuj i trzymaj\" i o takim samym ryzyku",
+    "option_D": "całkowitej rentowności portfela przy założonym ryzyku.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 78,
+    "question": "Zgodnie z ustawą Kodeks cywilny jednostronna czynność prawna dokonana przez działającego jako organ osoby prawnej bez umocowania albo z przekroczeniem jego zakresu jest:",
+    "option_A": "ważna",
+    "option_B": "nieważna; jednakże gdy ten, komu zostało złożone oświadczenie woli w imieniu osoby prawnej, zgodził się na działanie bez umocowania, stosuje się odpowiednio przepisy o zawarciu umowy bez umocowania",
+    "option_C": "warunkowo ważna",
+    "option_D": "żadna z powyższych",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 79,
+    "question": "Zgodnie z rozporządzeniem Ministra Finansów w sprawie szczegółowych warunków technicznych i organizacyjnych dla firm inwestycyjnych, banków państwowych prowadzących działalność maklerską, banków, o których mowa w art. 70 ust. 2 ustawy o obrocie instrumentami finansowymi, i banków powierniczych, firma inwestycyjna ma obowiązek: I. zabezpieczyć pomieszczenia, w których jest prowadzona działalność maklerska, przed niekontrolowanym dostępem osób nieuprawnionych, II. wyposażyć punkty obsługi klientów w urządzenia telekomunikacyjne umożliwiające stały i bezpośredni kontakt z centralą firmy inwestycyjnej, III. oznaczyć punkty obsługi klientów w sposób umożliwiający ich identyfikację jako jednostek organizacyjnych firmy inwestycyjnej, IV. stosować zabezpieczenia urządzeń uniemożliwiające nieuprawniony dostęp do systemów i podsystemów informatycznych oraz przetwarzania danych.",
+    "option_A": "I, IV",
+    "option_B": "II",
+    "option_C": "I, II, III, IV",
+    "option_D": "II, III.",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 80,
+    "question": "Zgodnie ze Szczegółowymi Zasadami Obrotu Giełdowego w systemie UTP, przedmiotem obrotu jest prawo poboru z:",
+    "option_A": "jednej akcji",
+    "option_B": "liczby akcji wynikającej z uchwały emitenta",
+    "option_C": "liczby akcji wynikającej z deklaracji właściciela akcji o woli nabycia akcji nowej emisji",
+    "option_D": "co najmniej tylu akcji ile umożliwi zachowanie przez akcjonariusza dotychczasowych proporcji udziału w kapitale",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 81,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi firma inwestycyjna jest obowiązana zatrudniać, na podstawie umowy o pracę, co najmniej:",
+    "option_A": "dwóch doradców inwestycyjnych do czynności zarządzania portfelami, w skład których wchodzi jeden lub większa liczba instrumentów finansowych",
+    "option_B": "jednego doradcę inwestycyjnego do czynności zarządzania portfelami, w skład których wchodzi jeden lub większa liczba instrumentów finansowych",
+    "option_C": "jednego maklera papierów wartościowych do czynności wykonywaniu zleceń nabycia lub zbycia instrumentów finansowych na rachunek dającego zlecenie",
+    "option_D": "jednego maklera papierów wartościowych do czynności oferowania instrumentów finansowych",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 82,
+    "question": "Zgodnie ze Szczegółowymi Zasadami Obrotu Giełdowego w systemie UTP działanie na giełdzie przez członka giełdy wymaga potwierdzenia posiadania rozwiązań w zakresie zapewnienia post-transakcji. Udokumentowanie takich rozwiązań następuje poprzez przekazanie przez członka giełdy do Giełdy:",
+    "option_A": "potwierdzenia przez KDPW S.A. o posiadaniu przez członka giełdy statusu uczestnika rozrachunku",
+    "option_B": "potwierdzenia przez KDPW S.A. o posiadaniu przez członka giełdy statusu uczestnika rozliczającego",
+    "option_C": "potwierdzenia przez KDPW_CCP S.A. o posiadaniu przez członka giełdy statusu uczestnika rozliczającego",
+    "option_D": "potwierdzenia przez KDPW_CCP S.A. o posiadaniu przez członka giełdy statusu uczestnika rozrachunku.",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 83,
+    "question": "Wskaż, które z poniższych stwierdzeń odnoszących się do Przewodniczącego Komisji Nadzoru Finansowego nie jest zgodne z ustawą o nadzorze nad rynkiem finansowym:",
+    "option_A": "w zakresie określonym w ustawie Przewodniczący Komisji może zarządzić przeprowadzenie postępowania wyjaśniającego",
+    "option_B": "Przewodniczącego Komisji powołuje Prezes Rady Ministrów",
+    "option_C": "Przewodniczący Komisji tworzy sąd polubowny i ustala jego regulamin",
+    "option_D": "w zakresie określonym w ustawie Przewodniczący Komisji może zażądać od Szefa Krajowej Administracji Skarbowej udostępnienia określonych informacji stanowiących tajemnicę skarbową",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 84,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących optymalnego budżetu kapitałowego, w ramach analizy projektów inwestycyjnych, jest nieprawdziwe:",
+    "option_A": "krzywa możliwości inwestycyjnych IOS (ang. Investment Opportunity Schedule) jest zbiorem projektów, zgodnych ze strategią przedsiębiorstwa, uporządkowanych według rosnącej wartości wewnętrznej stopy zwrotu IRR (ang. Internal Rate of Return) tych projektów",
+    "option_B": "optymalny budżet kapitałowy zapewnia najwyższy możliwy w danych warunkach przyrost wartości rynkowej przedsiębiorstwa",
+    "option_C": "wykres krańcowego kosztu kapitału MCC (ang. Marginal Cost of Capital) jest rosnący, bo przedsiębiorstwo korzysta z coraz droższego kapitału",
+    "option_D": "wyznaczenie optymalnego budżetu kapitałowego, tzn. kapitału niezbędnego do sfinansowania wszystkich efektywnych projektów inwestycyjnych, wymaga jednoczesnej analizy krzywej pokazującej kształtowanie się możliwości inwestycyjnych przedsiębiorstwa i krzywej pokazującej kształtowanie się średniego ważonego kosztu kapitału przedsiębiorstwa.",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 85,
+    "question": "Ile wynosi zwrot z portfela rynkowego, jeżeli rynkowa wartość długu spółki RFR to 300 PLN, rynkowa wartość kapitału własnego to 450 PLN, koszt długu kształtuje się na poziomie 5,40%, stopa wolna od ryzyka równa jest 4,91%, współczynnik Beta spółki RFR to 1,12, średni ważony koszt kapitału tej spółki równy jest 9,27%, a stawka podatku dochodowego od zysków spółek równa jest 25%?",
+    "option_A": "7,52%",
+    "option_B": "9,27%",
+    "option_C": "11,91%",
+    "option_D": "12,75%",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 86,
+    "question": "Zgodnie z ustawą o rachunkowości, w przypadku umorzenia akcji własnych, dodatnią różnicę między ich wartością nominalną a ceną nabycia należy odnieść na:",
+    "option_A": "kapitał z aktualizacji wyceny",
+    "option_B": "kapitał likwidacyjny",
+    "option_C": "kapitał zapasowy",
+    "option_D": "żadna z powyższych",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 87,
+    "question": "Zgodnie z Regulaminem Giełdy, jeżeli co innego nie wynika z decyzji o zawieszeniu przyjmowania zleceń maklerskich, przekazane na giełdę a niezrealizowane zlecenia maklerskie złożone przez danego członka giełdy, tracą ważność:",
+    "option_A": "z chwilą tego zawieszenia",
+    "option_B": "w terminie 15 minut od tego zawieszenia",
+    "option_C": "do końca sesji",
+    "option_D": "zgodnie z godziną otrzymania komunikatu o zawieszeniu przyjmowania zleceń od maklera nadzorującego członka giełdy.",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 88,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi, w odniesieniu do spółki prowadzącej rynek regulowany nie jest prawdą, że spółka ta:",
+    "option_A": "może organizować rynki wyodrębnione pod względem rodzaju papierów wartościowych",
+    "option_B": "może, w ramach organizowania rynku regulowanego, wyodrębnić rynek oficjalnych notowań, zwany dalej \"rynkiem oficjalnych notowań\"",
+    "option_C": "może, po uzyskaniu zezwolenia Komisji Nadzoru Finansowego, prowadzić ASO",
+    "option_D": "może, po przekazaniu zawiadomienia Komisji Nadzoru Finansowego, prowadzić OTF",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 89,
+    "question": "Wskaż, którego z poniższych współczynników greckich powinien użyć inwestor, chcący przeanalizować wrażliwość wartości opcji na zmianę zmienności instrumentu bazowego:",
+    "option_A": "Delta",
+    "option_B": "Lambda",
+    "option_C": "Gamma",
+    "option_D": "Vega",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 90,
+    "question": "Ile wynosi współczynnik Beta spółki TLF, jeżeli rynkowa wartość długu to 90 PLN, rynkowa wartość kapitału własnego to 285 PLN, koszt długu kształtuje się na poziomie 3,00%, stopa wolna od ryzyka równa jest 1,40%, zwrot z portfela rynkowego to 12,90%, średni ważony koszt kapitału tej spółki równy jest 8,74%, a stawka podatku dochodowego od zysków spółek równa jest 5%?",
+    "option_A": "0,2",
+    "option_B": "0,6",
+    "option_C": "0,8",
+    "option_D": "1,25.",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 91,
+    "question": "W analizie struktury terminowej stóp procentowych, teoria preferencji płynności najczęściej jest traktowana jako koncepcja wyjaśniająca: I. normalną krzywą dochodowości (ang. normal curve), II. odwróconą krzywą dochodowości (ang. inverted curve), III. płaską krzywą dochodowości (ang. flat curve), IV. łukowatą krzywą dochodowości (ang. humped curve). Wersje odpowiedzi:",
+    "option_A": "(I, II, III, IV)",
+    "option_B": "(II, III)",
+    "option_C": "(I)",
+    "option_D": "(IV)",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 92,
+    "question": "Zgodnie z ustawą o obligacjach, z zastrzeżeniem przypadku, gdy obligacje są dopuszczone do obrotu na rynku regulowanym lub wprowadzone do alternatywnego obrotu albo mają być przedmiotem wniosku o dopuszczenie do obrotu na rynku regulowanym lub wniosku o wprowadzenie do alternatywnego systemu obrotu, klient detaliczny w rozumieniu ustawy o obrocie instrumentami finansowymi, będący osobą fizyczną, może nabywać obligacje, jeżeli wartość nominalna obligacji nie jest mniejsza niż:",
+    "option_A": "4.000 EUR",
+    "option_B": "10.000 EUR",
+    "option_C": "20.000 EUR",
+    "option_D": "40.000 EUR.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 93,
+    "question": "Zgodnie z ustawą o funduszach inwestycyjnych i zarządzaniu alternatywnymi funduszami inwestycyjnymi, celem inwestycyjnym funduszu inwestycyjnego otwartego może być: I. ochrona realnej wartości aktywów funduszu inwestycyjnego, II. osiąganie przychodów z lokat netto funduszu inwestycyjnego, III. wzrost wartości aktywów funduszu inwestycyjnego w wyniku wzrostu wartości lokat.",
+    "option_A": "I, II",
+    "option_B": "I, II, III",
+    "option_C": "III",
+    "option_D": "żadne z powyższych",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 94,
+    "question": "Oczekiwany zwrot z akcji spółki TY równy jest 14,01%, podczas gdy stopa wolna od ryzyka kształtuje się na poziomie 3,45%. Ile wynosi wariancja zwrotów z portfela rynkowego, jeżeli zwrot z portfela rynkowego wynosi 8,25%, natomiast kowariancja pomiędzy zwrotami z akcji spółki TY a zwrotami z portfela rynkowego równa jest 0,242?",
+    "option_A": "0,110",
+    "option_B": "0,224",
+    "option_C": "0,320",
+    "option_D": "0,532",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 95,
+    "question": "W spółce DDA sprzedaż netto wyniosła 125.000 PLN a koszty sprzedaży dóbr wyniosły 45.000 PLN. Przy powyższych danych marża zysku brutto (gross profit margin) wyniosła:",
+    "option_A": "51%",
+    "option_B": "56%",
+    "option_C": "59%",
+    "option_D": "64%.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 96,
+    "question": "Zgodnie z ustawą o nadzorze nad rynkiem finansowym w obszar nadzoru sprawowanego przez Komisję Nadzoru Finansowego nad rynkiem finansowym nie wchodzi nadzór:",
+    "option_A": "nad agencjami ratingowymi",
+    "option_B": "w zakresie przewidzianym przepisami w sprawie ujawniania informacji związanych ze zrównoważonym rozwojem w sektorze usług finansowych",
+    "option_C": "nad instytucjami pieniądza elektronicznego",
+    "option_D": "nad działalnością kantorową",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 97,
+    "question": "Zgodnie z ustawą Kodeks spółek handlowych (dalej: „KSH”) zasadą jest że, jeżeli przepisy działu II KSH lub statutu nie stanowią inaczej, walne zgromadzenie spółki akcyjnej jest ważne:",
+    "option_A": "jeżeli reprezentowane jest na nim co najmniej 10% kapitału zakładowego",
+    "option_B": "jeżeli reprezentowane jest na nim co najmniej 30% kapitału zakładowego",
+    "option_C": "jeżeli reprezentowane jest na nim co najmniej 50% kapitału zakładowego",
+    "option_D": "bez względu na liczbę reprezentowanych na nim akcji",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 98,
+    "question": "Wskaż, które z poniższych metod klasyfikowane są jako metody mieszane wyceny przedsiębiorstw: I. klasyczna, II. skorygowanej wartości księgowej, III. UEC, IV. pośrednia. Wersje odpowiedzi::",
+    "option_A": "(I, II, III, IV)",
+    "option_B": "(I, III, IV)",
+    "option_C": "(I, III)",
+    "option_D": "(I, II, III).",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 99,
+    "question": "Zgodnie z ustawą o funduszach inwestycyjnych i zarządzaniu alternatywnymi funduszami inwestycyjnymi, katalog potencjalnych depozytariuszy funduszu inwestycyjnego otwartego nie obejmuje:",
+    "option_A": "banku krajowego, którego fundusze własne wynoszą co najmniej 100 000 000 zł",
+    "option_B": "oddziału instytucji kredytowej z siedzibą na terytorium Rzeczypospolitej Polskiej, jeżeli fundusze przydzielone do dyspozycji tego oddziału wynoszą co najmniej 100 000 000 zł",
+    "option_C": "Krajowego Depozytu Papierów Wartościowych S.A",
+    "option_D": "firmy inwestycyjnej uprawnionej do wykonywania czynności przechowywania lub rejestrowania instrumentów finansowych, w tym prowadzenia rachunków papierów wartościowych, rachunków derywatów i rachunków zbiorczych, oraz prowadzenia rachunków pieniężnych, a także prowadzenia ewidencji instrumentów finansowych, której fundusze własne wynoszą co najmniej 100 000 000 zł",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 100,
+    "question": "Walne zgromadzenie spółki publicznej zostało zwołane na dzień 28 maja 2025 r. Zgodnie z ustawą Kodeks spółek handlowych wskaż na jaki dzień, osoby będące akcjonariuszami spółki publicznej mają prawo uczestniczenia w walnym zgromadzeniu spółki publicznej (dzień rejestracji uczestnictwa w walnym zgromadzeniu):",
+    "option_A": "12 maja 2025 r",
+    "option_B": "14 maja 2025 r",
+    "option_C": "21 maja 2025 r",
+    "option_D": "28 maja 2025 r",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 101,
+    "question": "Zgodnie z ustawą o obligacjach uchwała zgromadzenia obligatariuszy w sprawie obniżenia wartości nominalnej obligacji:",
+    "option_A": "wymaga zgody wszystkich obligatariuszy obecnych na zgromadzeniu",
+    "option_B": "zapada większością 3/4 głosów",
+    "option_C": "zapada bezwzględną większością głosów",
+    "option_D": "zapada większością 2/3 głosów.",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 102,
+    "question": "Wskaż, które z niżej wymienionych stwierdzeń odnoszących się do obligacji, nie jest zgodne z ustawą o obligacjach:",
+    "option_A": "przez obligacje emitowane w serii rozumie się obligacje reprezentujące prawa majątkowe podzielone na określoną liczbę równych jednostek",
+    "option_B": "świadczenia wynikające z obligacji, sposób ich realizacji oraz związane z nimi prawa i obowiązki emitenta i obligatariuszy określają warunki emisji",
+    "option_C": "emitentem obligacji kapitałowych nie może być bank krajowy",
+    "option_D": "spółdzielcza kasa oszczędnościowo-kredytowa może emitować obligacje podporządkowane, o ile wartość nominalna jednej obligacji nie będzie niższa niż 400 000 zł",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 103,
+    "question": "Zgodnie z Regulaminem Giełdy członek giełdy obowiązany jest do wyznaczenia i zgłoszenia Giełdzie co najmniej jednego maklera nadzorującego. Czy według Regulaminu Giełdy czynności maklera nadzorującego w zakresie nadzoru nad procesem przekazywania na giełdę, modyfikowania i anulowania zleceń maklerskich przez członka giełdy mogą być łącznie wykonywane u członka giełdy przez tego samego maklera nadzorującego?",
+    "option_A": "nie",
+    "option_B": "tak",
+    "option_C": "ten sam makler nadzorujący może nadzorować proces przekazania na giełdę i modyfikowania zleceń maklerskich, ale nie może jednocześnie nadzorować procesu anulowania zleceń maklerskich",
+    "option_D": "Regulamin Giełdy nie reguluje tego zagadnienia zostawiając podjęcie decyzji samemu członkowi giełdy poprzez odpowiednie zapisy w regulaminie świadczenia usług maklerskich.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 104,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących strategii zarządzania portfelem akcji jest nieprawdziwe:",
+    "option_A": "przy strategii pasywnego zarządzania portfelem akcji, osiąga się średni lub wysoki poziom dochodowości z portfela",
+    "option_B": "zarządzanie portfelem akcji może być realizowane wraz z inwestycjami w portfel pochodnych instrumentów finansowych",
+    "option_C": "głównym zadaniem instrumentów pochodnych przy konstruowaniu efektywnego portfela akcji jest ograniczenie systematycznego i specyficznego ryzyka",
+    "option_D": "zazwyczaj stopa zwrotu z pasywnie zarządzanego portfela akcji zmienia się w podobnym stopniu jak wielkość indeksu giełdowego",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 105,
+    "question": "Zgodnie ze Szczegółowymi Zasadami Obrotu Giełdowego w systemie UTP, jeżeli wymaga tego interes i bezpieczeństwo uczestników obrotu na rynku terminowym, w szczególności w przypadku gdy zachodzi konieczność uzupełnienia depozytów zabezpieczających, następuje zawieszenie obrotu instrumentem pochodnym:",
+    "option_A": "przez KDPW_CCP S.A",
+    "option_B": "przez KDPW S.A",
+    "option_C": "przez Zarząd Giełdy na żądanie KDPW_CCP S.A",
+    "option_D": "przez Zarząd Giełdy na wniosek KDPW S.A",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 106,
+    "question": "Zgodnie z rozporządzeniem delegowanym Komisji (UE) 2017/565 z dnia 25 kwietnia 2016 r. uzupełniającym dyrektywę Parlamentu Europejskiego i Rady 2014/65/UE w odniesieniu do wymogów organizacyjnych i warunków prowadzenia działalności przez firmy inwestycyjne oraz pojęć zdefiniowanych na potrzeby tej dyrektywy, ograniczenia dotyczące transakcji osobistych nie mają zastosowania w przypadku nabywania przez pracownika firmy inwestycyjnej, która nie posiada zezwolenia na zarządzanie portfelami, w skład których wchodzi jeden lub większa liczba instrumentów finansowych:",
+    "option_A": "obligacji Skarbu Państwa",
+    "option_B": "akcji spółek wchodzących w skład WIG20",
+    "option_C": "obligacji będących prostym instrumentem finansowym",
+    "option_D": "jednostek uczestnictwa funduszu inwestycyjnego otwartego.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 107,
+    "question": "Zgodnie z ustawą o ofercie publicznej i warunkach wprowadzania instrumentów finansowych do zorganizowanego systemu obrotu oraz o spółkach publicznych, termin przyjmowania zapisów w wezwaniu do zapisywania się na sprzedaż akcji spółki publicznej:",
+    "option_A": "nie może być krótszy niż 15 dni i nie może być dłuższy niż 30 dni",
+    "option_B": "nie może być krótszy niż 30 dni i nie może być dłuższy niż 70 dni",
+    "option_C": "nie jest określony",
+    "option_D": "nie może być dłuższy niż 100 dni",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 108,
+    "question": "Czy zgodnie ze Szczegółowymi Zasadami Obrotu Giełdowego w systemie UTP, warunkiem notowania ETF-ów jest istnienie ważnego zobowiązania animatora rynku do wykonywania w stosunku do danych instrumentów zadań animatora rynku na zasadach określonych przez Giełdę?",
+    "option_A": "nie",
+    "option_B": "tak",
+    "option_C": "tak, ale wyłącznie wobec ETF-ów wpisanych do segmentu Lista Alertów",
+    "option_D": "odpowiedź zależy od ustalenia czy dostawca ETF jest krajowym czy zagranicznym członkiem giełdy",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 109,
+    "question": "Zgodnie z Zasadami Etyki Zawodowej Maklerów i Doradców, działalność na rzecz Związku Maklerów i Doradców:",
+    "option_A": "wymaga zgody Prezesa ZMID",
+    "option_B": "nie wymaga zgody pracodawcy",
+    "option_C": "nie wymaga zgody Prezesa ZMiD",
+    "option_D": "żadne z powyższych.",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 110,
+    "question": "Jeżeli inwestor odkłada po 4.680 PLN na koniec każdego kolejnego kwartału na swoje konto oszczędnościowe oprocentowane roczną stopą procentową równą 16% (odsetki kapitalizowane są kwartalnie), to jaką kwotę zgromadzi na tym koncie po 4 latach oszczędzania?",
+    "option_A": "19.873,62 PLN",
+    "option_B": "23.711,22 PLN",
+    "option_C": "102.138,66 PLN",
+    "option_D": "285.129,00 PLN",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 111,
+    "question": "Zgodnie z rozporządzeniem Ministra Finansów w sprawie trybu i warunków postępowania firm inwestycyjnych, banków państwowych prowadzących działalność maklerską, banków, o których mowa w art. 70 ust. 2 ustawy o obrocie instrumentami finansowymi, oraz banków powierniczych, firma inwestycyjna przyjmuje zlecenie zawierające co do zasady: I. datę i czas wystawienia zlecenia, II. rodzaj i liczbę instrumentów finansowych będących przedmiotem zlecenia, III. określenie ceny, IV. oznaczenie terminu ważności zlecenia.",
+    "option_A": "I, II, III, IV",
+    "option_B": "I, II, IV",
+    "option_C": "III",
+    "option_D": "I, IV.",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 112,
+    "question": "Zgodnie z rozporządzeniem delegowanym Komisji (UE) 2017/565 z dnia 25 kwietnia 2016 r. uzupełniającym dyrektywę Parlamentu Europejskiego i Rady 2014/65/UE w odniesieniu do wymogów organizacyjnych i warunków prowadzenia działalności przez firmy inwestycyjne oraz pojęć zdefiniowanych na potrzeby tej dyrektywy, firma inwestycyjna (firma) przekazuje klientowi informacje za pośrednictwem strony internetowej, a informacje takie nie są skierowane osobiście do klienta, pod warunkiem, że: I. przekazanie informacji w ten sposób jest celowe w kontekście, w jakim jest lub ma być prowadzona działalność handlowa między firmą a klientem, II. klient musi wyrazić jednoznaczną zgodę na przekazywanie informacji w tej formie, III. klient musi uzyskać powiadomienie w formie elektronicznej zawierające adres strony internetowej oraz wskazanie miejsca na tej stronie, gdzie można znaleźć informacje, IV. informacje są aktualne i stale dostępne na stronie internetowej tak długo, jak jest prawdopodobne, że klient ma potrzebę się z nimi zapoznać.",
+    "option_A": "I, IV",
+    "option_B": "I, II, III, IV",
+    "option_C": "IV",
+    "option_D": "II",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 113,
+    "question": "Wskaż, które z niżej wymienionych stwierdzeń odnoszących się do prokury, nie jest zgodne z ustawą Kodeks cywilny:",
+    "option_A": "nie można ograniczyć prokury ze skutkiem wobec osób trzecich, chyba że przepis szczególny stanowi inaczej",
+    "option_B": "utrata przez przedsiębiorcę zdolności do czynności prawnych nie powoduje wygaśnięcia prokury",
+    "option_C": "prokura może być w każdym czasie odwołana",
+    "option_D": "prokurentem może być osoba prawna.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 114,
+    "question": "W spółce KJD stopień dźwigni finansowej (degree of financial leverage) wyniósł 1,63. Oznacza to, że w przypadku gdy:",
+    "option_A": "zysk operacyjny wzrośnie o 10%, to zysk netto wzrośnie o 16,3%",
+    "option_B": "zysk operacyjny spadnie o 10%, to zysk netto wzrośnie o 16,3%",
+    "option_C": "zysk operacyjny wzrośnie o 16,3%, to zysk netto wzrośnie również o 16,3%",
+    "option_D": "żadna z powyższych",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 115,
+    "question": "Zgodnie z ustawą o obrocie instrumentami finansowymi, w odniesieniu do agenta emisji nie jest prawdą, że agent emisji:",
+    "option_A": "weryfikuje dokumenty stanowiące podstawę prawną emisji papierów wartościowych w zakresie spełniania wynikających z przepisów prawa wymogów niezbędnych dla powstania i realizacji praw wynikających z papierów wartościowych",
+    "option_B": "weryfikuje dokumenty i oświadczenia przedstawione przez emitenta w zakresie prawidłowości przeprowadzonej emisji i zachowania praw zapisujących się inwestorów",
+    "option_C": "tworzy ewidencję osób uprawnionych z papierów wartościowych",
+    "option_D": "zawiera w imieniu emitenta umowę, której przedmiotem jest rejestracja papierów wartościowych w depozycie papierów wartościowych",
+    "correct_answer": "B",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 116,
+    "question": "Jaką kwotę powinien zainwestować inwestor w chwili obecnej w lokatę bankową oprocentowaną roczną stopą procentową równą 5,84% z półroczną kapitalizacją odsetek, aby uzyskać wieczny półroczny przepływ gotówki wysokości 4.336,93 PLN?",
+    "option_A": "14.852 PLN",
+    "option_B": "74.262 PLN",
+    "option_C": "89.115 PLN",
+    "option_D": "148.525 PLN.",
+    "correct_answer": "D",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 117,
+    "question": "Żona członka Zarządu spółki publicznej X (emitenta) notowanej na rynku regulowanym prowadzonym przez Giełdę Papierów Wartościowych w Warszawie SA (dalej giełda) kupiła w dniu 24 lutego 2025 r. (po raz pierwszy w 2025 r) na swój rachunek akcje spółki publicznej X za kwotę o równowartości 4000 EUR. Następnie w dniu 3 marca 2025 r. dokupiła na giełdzie akcje spółki publicznej X za kwotę o równowartości 2000 EUR. Wskaż, zgodnie z rozporządzeniem Parlamentu Europejskiego i Rady (UE) nr 596/2014 z dnia 16 kwietnia 2014 r. w sprawie nadużyć na rynku (rozporządzenie w sprawie nadużyć na rynku) oraz uchylającym dyrektywę 2003/6/WE Parlamentu Europejskiego i Rady i dyrektywy Komisji 2003/124/WE, 2003/125/WE i 2004/72/WE, czy, a jeżeli tak, na kim i w jakim zakresie spoczywa obowiązek powiadomienia w związku z transakcjami na akcjach emitenta:",
+    "option_A": "obowiązek powiadomienia nie powstał",
+    "option_B": "żona członka Zarządu emitenta miała obowiązek dokonania powiadomienia emitenta oraz Komisji Nadzoru Finansowego jedynie po transakcji kupna akcji emitenta za kwotę o równowartości 2000 EUR",
+    "option_C": "członek Zarządu emitenta miał obowiązek dokonania powiadomienia emitenta oraz Komisji Nadzoru Finansowego jedynie po transakcji kupna akcji emitenta za kwotę o równowartości 2000 EUR",
+    "option_D": "żona członka Zarządu emitenta miała obowiązek dokonania powiadomienia emitenta oraz Komisji Nadzoru Finansowego po każdej transakcji kupna akcji emitenta",
+    "correct_answer": "A",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 118,
+    "question": "Wskaż, które z poniższych technik służą do konstrukcji aktywnego portfela inwestycyjnego: I. optymalizacji kwadratów lub programowania (ang. quadratic optimization or programming), II. osiągania maksimum zysków (ang. earnings momentum), III. maksymalnych cen akcji (ang. price momentum), IV. funduszy blankietowych (ang. completeness funds). Wersje odpowiedzi:",
+    "option_A": "(I, IV)",
+    "option_B": "(I, II, III)",
+    "option_C": "(II, III)",
+    "option_D": "(II, III, IV).",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 119,
+    "question": "Zgodnie z Regulaminem Giełdy Zarząd Giełdy w przypadku zniesienia dematerializacji instrumentu finansowego:",
+    "option_A": "może wykluczyć taki instrument finansowy z obrotu giełdowego",
+    "option_B": "może zawiesić obrót takim instrumentem finansowych",
+    "option_C": "wyklucza taki instrument finansowy z obrotu giełdowego",
+    "option_D": "zawiesza obrót takim instrumentem finansowym",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  },
+  {
+    "id": 120,
+    "question": "Wskaż, które z poniższych stwierdzeń dotyczących wartości bieżącej renty jest nieprawdziwe:",
+    "option_A": "wartość bieżąca renty płatnej z góry jest równa wartości bieżącej renty płatnej z dołu pomnożonej przez czynnik równy 1 plus stopa procentowa",
+    "option_B": "im większa liczba rent, tym wyższa wartość bieżąca renty",
+    "option_C": "im wyższa wielkość renty, tym niższa wartość bieżąca renty",
+    "option_D": "im niższa stopa procentowa, tym wyższa wartość bieżąca renty.",
+    "correct_answer": "C",
+    "exam_date": "30.03.2025"
+  }
+]
