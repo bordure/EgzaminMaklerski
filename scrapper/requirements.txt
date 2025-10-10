@@ -1,0 +1,5 @@
+pytesseract
+pdf2image
+pymupdf
+pymongo
+python-dotenv
