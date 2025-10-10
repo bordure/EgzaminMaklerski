@@ -8,6 +8,7 @@ import GenerateExamPage from "./pages/GenerateExamPage";
 import TopicsPage from "./pages/TopicsPage";
 import AuthCallback from "./components/AuthCallback";
 import Notes from './pages/Notes';
+import MainPage from "./pages/MainPage";
 
 export default function App() {
   return (
@@ -17,7 +18,6 @@ export default function App() {
           <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
             <Navbar />
             <Routes>
-              <Route path="/" element={<Navigate to="/generate" replace />} />
               <Route path="/auth/callback" element={<AuthCallback />} />
               <Route 
                 path="/generate" 
@@ -40,6 +40,14 @@ export default function App() {
                 element={
                   <ProtectedRoute>
                     <TopicsPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/" 
+                element={
+                  <ProtectedRoute>
+                    <MainPage />
                   </ProtectedRoute>
                 } 
               />
