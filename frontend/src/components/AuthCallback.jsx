@@ -7,7 +7,7 @@ export default function AuthCallback() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/', { replace: true });
-    }, 500); // allow AuthContext time to set token
+    }, 500); 
 
     return () => clearTimeout(timer);
   }, [navigate]);

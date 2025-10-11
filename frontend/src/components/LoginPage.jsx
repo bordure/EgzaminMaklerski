@@ -1,9 +1,19 @@
 import React from 'react';
 import { useAuth } from '../AuthContext';
 import { BookOpen } from 'lucide-react';
+import { guestLogin } from '../api';
 
 const LoginPage = () => {
-  const { login, loading, error } = useAuth();
+  const { login, loading, error, setAuth } = useAuth();
+
+  const handleGuestLogin = async () => {
+    try {
+      const data = await guestLogin();
+      setAuth(data.access_token); 
+    } catch (err) {
+      console.error("Guest login failed:", err);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-6">
@@ -36,10 +46,11 @@ const LoginPage = () => {
             </div>
           )}
 
+          {/* Google Login */}
           <button
             onClick={login}
             disabled={loading}
-            className="w-full flex items-center justify-center gap-3 bg-white border-2 border-gray-300 rounded-lg px-6 py-3 text-gray-700 font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-3 bg-white border-2 border-gray-300 rounded-lg px-6 py-3 text-gray-700 font-medium hover:bg-gray-50 hover:border-gray-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mb-3"
           >
             {loading ? (
               <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
@@ -55,6 +66,26 @@ const LoginPage = () => {
               </>
             )}
           </button>
+
+          {/* Guest Login */}
+        <button
+          onClick={async () => {
+            try {
+              await login("guest");
+            } catch (err) {
+              console.error("Guest login failed:", err);
+            }
+          }}
+          disabled={loading}
+          className="w-full mt-3 flex items-center justify-center gap-3 bg-gray-100 border-2 border-gray-300 rounded-lg px-6 py-3 text-gray-700 font-medium hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {loading ? (
+            <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
+          ) : (
+            <>Continue as Guest</>
+          )}
+        </button>
+
 
           <div className="mt-4 text-center">
             <p className="text-xs text-gray-500">
