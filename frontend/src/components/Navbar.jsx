@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import { BookOpen, LogOut, LogIn, FileText, Sun, Moon, Menu, X } from 'lucide-react';
 import { useDarkMode } from './DarkModeContext';
+import guestAvatar from '../assets/images/guest-avatar.svg';
+import coffeeIcon from '../assets/images/coffee-icon.svg';
 
 const Navbar = () => {
   const { user, logout, isAuthenticated, login } = useAuth();
@@ -30,7 +32,7 @@ const Navbar = () => {
       title="Support us with a coffee!"
     >
       <img
-        src="https://www.svgrepo.com/show/330105/buymeacoffee.svg"
+        src={coffeeIcon}
         alt="Buy Me a Coffee"
         className="w-5 h-5 transition dark:invert"
       />
@@ -87,7 +89,7 @@ const Navbar = () => {
               <img
                 src={
                   user?.guest
-                    ? 'https://pic.onlinewebfonts.com/thumbnails/icons_322855.svg'
+                    ? guestAvatar
                     : user?.picture
                 }
                 alt={user?.name || 'Guest'}
