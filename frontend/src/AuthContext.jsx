@@ -1,12 +1,19 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { setAuthToken, clearAuthToken, getCurrentUser, exchangeCodeForToken, getGoogleAuthUrl } from './api';
+import React, { createContext, useContext, useState, useEffect } from "react";
+import {
+  setAuthToken,
+  clearAuthToken,
+  getCurrentUser,
+  getGoogleAuthUrl,
+  guestLogin,
+} from "./api";
+import axios from "axios";
 
 const AuthContext = createContext(null);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };
@@ -17,19 +24,51 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [initialized, setInitialized] = useState(false);
 
+  const refreshAccessToken = async () => {
+    try {
+      const refresh = localStorage.getItem("refresh_token");
+      if (!refresh) throw new Error("No refresh token available");
+
+      const res = await axios.post(
+        "/auth/refresh",
+        {},
+        { headers: { Authorization: `Bearer ${refresh}` } }
+      );
+
+      const { access_token, refresh_token } = res.data;
+      localStorage.setItem("auth_token", access_token);
+      localStorage.setItem("refresh_token", refresh_token);
+      setAuthToken(access_token);
+      return access_token;
+    } catch (err) {
+      console.error("Refresh token failed", err);
+      logout();
+      throw err;
+    }
+  };
+
   useEffect(() => {
-    if (initialized) return; 
-    
+    if (initialized) return;
+
     const checkAuth = async () => {
       try {
-        const token = localStorage.getItem('auth_token');
+        const token = localStorage.getItem("auth_token");
+        const refresh = localStorage.getItem("refresh_token");
+
         if (token) {
           setAuthToken(token);
           const userData = await getCurrentUser();
           setUser(userData);
+        } else if (refresh) {
+          const newToken = await refreshAccessToken();
+          setAuthToken(newToken);
+          const userData = await getCurrentUser();
+          setUser(userData);
         }
       } catch (error) {
-        localStorage.removeItem('auth_token');
+        console.warn("Auth check failed:", error);
+        localStorage.removeItem("auth_token");
+        localStorage.removeItem("refresh_token");
         clearAuthToken();
       } finally {
         setLoading(false);
@@ -41,64 +80,44 @@ export const AuthProvider = ({ children }) => {
   }, [initialized]);
 
   useEffect(() => {
-    const handleAuthExpired = () => {
-      logout();
-    };
-
-    window.addEventListener('auth-expired', handleAuthExpired);
-    return () => window.removeEventListener('auth-expired', handleAuthExpired);
+    const handleAuthExpired = () => logout();
+    window.addEventListener("auth-expired", handleAuthExpired);
+    return () => window.removeEventListener("auth-expired", handleAuthExpired);
   }, []);
 
   useEffect(() => {
     const handleOAuthCallback = async () => {
       const urlParams = new URLSearchParams(window.location.search);
-      const code = urlParams.get('code');
-      const token = urlParams.get('token');
-      const error = urlParams.get('error');
-      
-      if (!code && !token && !error) return;
-      
+      const token = urlParams.get("token");
+      const refresh = urlParams.get("refresh");
+      const error = urlParams.get("error");
+
+      if (!token && !refresh && !error) return;
+
       if (error) {
-        setError('Authentication failed. Please try again.');
-        window.history.replaceState({}, document.title, '/');
+        setError("Authentication failed. Please try again.");
+        window.history.replaceState({}, document.title, "/");
         return;
       }
-      
-      if (token) {
-        setLoading(true);
+
+      if (token && refresh) {
         try {
-          localStorage.setItem('auth_token', token);
+          localStorage.setItem("auth_token", token);
+          localStorage.setItem("refresh_token", refresh);
           setAuthToken(token);
+
           const userData = await getCurrentUser();
           setUser(userData);
           setInitialized(true);
-          
-          window.history.replaceState({}, document.title, '/');
-        } catch (error) {
-          setError('Authentication failed. Please try again.');
-          localStorage.removeItem('auth_token');
+        } catch (err) {
+          console.error("OAuth callback error:", err);
+          setError("Authentication failed. Please try again.");
+          localStorage.removeItem("auth_token");
+          localStorage.removeItem("refresh_token");
           clearAuthToken();
         } finally {
           setLoading(false);
-        }
-      } else if (code) {
-        setLoading(true);
-        try {
-          const tokenData = await exchangeCodeForToken(code);
-          const jwtToken = tokenData.access_token;
-          
-          localStorage.setItem('auth_token', jwtToken);
-          setAuthToken(jwtToken);
-          
-          const userData = await getCurrentUser();
-          setUser(userData);
-          setInitialized(true);
-          
-          window.history.replaceState({}, document.title, window.location.pathname);
-        } catch (error) {
-          setError('Authentication failed. Please try again.');
-        } finally {
-          setLoading(false);
+          window.history.replaceState({}, document.title, "/");
         }
       }
     };
@@ -106,18 +125,28 @@ export const AuthProvider = ({ children }) => {
     handleOAuthCallback();
   }, []);
 
-  const login = async () => {
+  const login = async (mode = "google") => {
     try {
       setError(null);
-      const { auth_url } = await getGoogleAuthUrl();
-      window.location.href = auth_url;
+      if (mode === "guest") {
+        const res = await guestLogin();
+        localStorage.setItem("auth_token", res.access_token);
+        localStorage.setItem("refresh_token", res.refresh_token);
+        setAuthToken(res.access_token);
+        setUser({ name: "Guest", email: null, picture: null, guest: true });
+      } else {
+        const { auth_url } = await getGoogleAuthUrl();
+        window.location.href = auth_url;
+      }
     } catch (error) {
-      setError('Failed to initiate login. Please try again.');
+      console.error(error);
+      setError("Failed to initiate login. Please try again.");
     }
   };
 
   const logout = () => {
-    localStorage.removeItem('auth_token');
+    localStorage.removeItem("auth_token");
+    localStorage.removeItem("refresh_token");
     clearAuthToken();
     setUser(null);
     setError(null);
@@ -129,7 +158,7 @@ export const AuthProvider = ({ children }) => {
     error,
     login,
     logout,
-    isAuthenticated: !!user
+    isAuthenticated: !!user,
   };
 
   return (
