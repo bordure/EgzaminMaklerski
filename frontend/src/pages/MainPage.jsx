@@ -115,88 +115,170 @@ export default function MainPage() {
   );
 
   const tableClass = "w-full table-fixed border-collapse";
-  const thClass = "p-2 text-center font-semibold border-b";
-  const tdClass = "p-2 text-center truncate";
 
   return (
-    <div className={`min-h-screen p-8 ${isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-50 text-gray-900"}`}>
+    <div
+      className={`min-h-screen p-8 ${
+        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-50 text-gray-900"
+      }`}
+    >
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-2 border-b pb-4">{course.title}</h1>
+        {/* === Intro section === */}
+        <h1 className="text-3xl font-bold mb-2 border-b pb-4">
+          {course.title}
+        </h1>
 
         <div className="mb-6 space-y-1">
-          <p className="text-lg"><strong>Czas trwania:</strong> {course.duration}</p>
-          <p className="text-lg"><strong>Liczba pytań:</strong> {course.totalQuestions}</p>
+          <p className="text-lg">
+            <strong>Czas trwania:</strong> {course.duration}
+          </p>
+          <p className="text-lg">
+            <strong>Liczba pytań:</strong> {course.totalQuestions}
+          </p>
         </div>
 
-        {/* --- Part I: Matematyka Finansowa --- */}
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Część I – Matematyka Finansowa</h2>
-        {mathSections.map((section, idx) => (
-          <div key={idx} className={`mb-8 rounded-lg shadow-lg ${isDarkMode ? "bg-gray-800" : "bg-white"} p-6`}>
-          <h3 className="text-xl font-semibold mb-4 border-b pb-2">{section.name}</h3>
-        <table className={tableClass}>
-          <colgroup>
-            <col className="w-[75%]" />
-            <col className="w-[25%]" />
-          </colgroup>
-          <thead>
-            <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
-              <th className="p-2 text-left font-semibold border-b">Temat</th>
-              <th className="p-2 text-center font-semibold border-b">Średnia liczba pytań</th>
-            </tr>
-          </thead>
-          <tbody>
-            {section.topics.map((topic, i) => (
-              <tr
-                key={i}
-                className={`${
-                  i % 2 === 0
-                    ? isDarkMode ? "bg-gray-800" : "bg-white"
-                    : isDarkMode ? "bg-gray-700" : "bg-gray-50"
-                }`}
-              >
-                <td className="p-2 text-left truncate">{topic.name}</td>
-                <td className="p-2 text-center">{Math.round(topic.avg)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div
+          className={`p-6 mb-8 rounded-lg shadow-md leading-relaxed ${
+            isDarkMode ? "bg-gray-800" : "bg-white"
+          }`}
+        >
+          <h2 className="text-2xl font-semibold mb-3 border-b pb-2">
+            O egzaminie
+          </h2>
+          <p className="mb-3">
+            Egzamin maklerski jest państwowym egzaminem organizowanym przez
+            Komisję Nadzoru Finansowego (KNF), którego celem jest weryfikacja
+            wiedzy kandydatów ubiegających się o licencję maklera papierów
+            wartościowych. Test składa się ze 120 pytań jednokrotnego wyboru i
+            obejmuje szeroki zakres zagadnień z obszarów rynku kapitałowego,
+            prawa, finansów oraz instrumentów finansowych. Egzamin dzieli się na 2
+            części: Matematyka Finansowa oraz Prawo.
+          </p>
+          <p>
+            Za każdą odpowiedź przyznawane są punkty według poniższego systemu:
+          </p>
+          <ul className="list-disc list-inside mt-2 space-y-1">
+            <li>
+              <strong>+2 punkty</strong> – odpowiedź prawidłowa
+            </li>
+            <li>
+              <strong>−1 punkt</strong> – odpowiedź błędna
+            </li>
+            <li>
+              <strong>0 punktów</strong> – brak odpowiedzi
+            </li>
+          </ul>
+          <p className="mt-3">
+            Aby uzyskać pozytywny wynik, należy zdobyć co najmniej 66.67% punktów
+            możliwych do zdobycia.
+          </p>
+        </div>
 
+        {/* === Część I === */}
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
+          Część I – Matematyka Finansowa
+        </h2>
+        {mathSections.map((section, idx) => (
+          <div
+            key={idx}
+            className={`mb-8 rounded-lg shadow-lg ${
+              isDarkMode ? "bg-gray-800" : "bg-white"
+            } p-6`}
+          >
+            <h3 className="text-xl font-semibold mb-4 border-b pb-2">
+              {section.name}
+            </h3>
+            <table className={tableClass}>
+              <colgroup>
+                <col className="w-[75%]" />
+                <col className="w-[25%]" />
+              </colgroup>
+              <thead>
+                <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
+                  <th className="p-2 text-left font-semibold border-b">
+                    Temat
+                  </th>
+                  <th className="p-2 text-center font-semibold border-b">
+                    Średnia liczba pytań
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {section.topics.map((topic, i) => (
+                  <tr
+                    key={i}
+                    className={`${
+                      i % 2 === 0
+                        ? isDarkMode
+                          ? "bg-gray-800"
+                          : "bg-white"
+                        : isDarkMode
+                        ? "bg-gray-700"
+                        : "bg-gray-50"
+                    }`}
+                  >
+                    <td className="p-2 text-left truncate">{topic.name}</td>
+                    <td className="p-2 text-center">
+                      {Math.round(topic.avg)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         ))}
 
-        {/* --- Part II: Prawo --- */}
-        <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Część II – Prawo</h2>
+        {/* === Część II === */}
+        <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
+          Część II – Prawo i Etyka
+        </h2>
         {lawSections.map((section, idx) => (
-          <div key={idx} className={`mb-8 rounded-lg shadow-lg ${isDarkMode ? "bg-gray-800" : "bg-white"} p-6`}>
-            <h3 className="text-xl font-semibold mb-4 border-b pb-2">{section.name}</h3>
-          <table className={tableClass}>
-            <colgroup>
-              <col className="w-[75%]" />
-              <col className="w-[25%]" />
-            </colgroup>
-            <thead>
-              <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
-                <th className="p-2 text-left font-semibold border-b">Temat</th>
-                <th className="p-2 text-center font-semibold border-b">Średnia liczba pytań</th>
-              </tr>
-            </thead>
-            <tbody>
-              {section.topics.map((topic, i) => (
-                <tr
-                  key={i}
-                  className={`${
-                    i % 2 === 0
-                      ? isDarkMode ? "bg-gray-800" : "bg-white"
-                      : isDarkMode ? "bg-gray-700" : "bg-gray-50"
-                  }`}
-                >
-                  <td className="p-2 text-left truncate">{topic.name}</td>
-                  <td className="p-2 text-center">{Math.round(topic.avg)}</td>
+          <div
+            key={idx}
+            className={`mb-8 rounded-lg shadow-lg ${
+              isDarkMode ? "bg-gray-800" : "bg-white"
+            } p-6`}
+          >
+            <h3 className="text-xl font-semibold mb-4 border-b pb-2">
+              {section.name}
+            </h3>
+            <table className={tableClass}>
+              <colgroup>
+                <col className="w-[75%]" />
+                <col className="w-[25%]" />
+              </colgroup>
+              <thead>
+                <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
+                  <th className="p-2 text-left font-semibold border-b">
+                    Temat
+                  </th>
+                  <th className="p-2 text-center font-semibold border-b">
+                    Średnia liczba pytań
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-
+              </thead>
+              <tbody>
+                {section.topics.map((topic, i) => (
+                  <tr
+                    key={i}
+                    className={`${
+                      i % 2 === 0
+                        ? isDarkMode
+                          ? "bg-gray-800"
+                          : "bg-white"
+                        : isDarkMode
+                        ? "bg-gray-700"
+                        : "bg-gray-50"
+                    }`}
+                  >
+                    <td className="p-2 text-left truncate">{topic.name}</td>
+                    <td className="p-2 text-center">
+                      {Math.round(topic.avg)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         ))}
       </div>
