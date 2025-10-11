@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     db_name: str = Field(default="exam_db", env="DB_NAME")
     collection_name: str = Field(default="questions")
     users_collection: str = Field(default="users")
+    logins_collection: str = Field(default="user_logins")
     google_client_id: str = Field(...)
     google_client_secret: str = Field(...)
     google_redirect_uri: str = Field(default='http://localhost:8000/auth/google/callback')
