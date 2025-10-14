@@ -12,7 +12,7 @@ origins = [
     "http://127.0.0.1:3000",
     "http://frontend:3000",
     "https://egzaminmaklerski.azurewebsites.net",
-    "*"  
+    "https://egzaminmaklerski.online"  
 ]
 
 app.add_middleware(
