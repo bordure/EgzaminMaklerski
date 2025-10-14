@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { fetchTopics, fetchQuestions, fetchQuestionsCount, fetchSubtopicCounts } from "../api";
 import ExamQuestion from "../components/ExamQuestion";
 import { useDarkMode } from "../components/DarkModeContext";
@@ -12,7 +12,8 @@ export default function TopicsPage() {
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [loading, setLoading] = useState(false);
   
-  const questionsPerPage = 10;
+  const questionsPerPage = 5;
+  const questionsRef = useRef(null);
 
   useEffect(() => {
     const loadData = async () => {
@@ -44,7 +45,17 @@ export default function TopicsPage() {
     loadData();
   }, []);
 
-  const loadQuestions = async (main, sub, page = 1) => {
+  const scrollToQuestions = () => {
+    if (questionsRef.current) {
+      const yOffset = -20; // Small offset from top
+      const element = questionsRef.current;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
+  const loadQuestions = async (main, sub, page = 1, shouldScroll = true) => {
     setLoading(true);
     setSelected({ main, sub });
     setCurrentPage(page);
@@ -65,6 +76,13 @@ export default function TopicsPage() {
       }));
       
       setQuestions(transformedQuestions);
+      
+      // Scroll to questions after they load, with a small delay to ensure rendering
+      if (shouldScroll) {
+        setTimeout(() => {
+          scrollToQuestions();
+        }, 100);
+      }
     } catch (error) {
       console.error("Error fetching questions:", error);
     } finally {
@@ -74,8 +92,7 @@ export default function TopicsPage() {
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages && !loading) {
-      loadQuestions(selected.main, selected.sub, newPage);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      loadQuestions(selected.main, selected.sub, newPage, true);
     }
   };
 
@@ -153,7 +170,7 @@ export default function TopicsPage() {
   return (
     <div className={`min-h-screen p-8 ${isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-50 text-gray-900"}`}>
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6 border-b pb-4">{/* Title */}Browse by Topic</h1>
+        <h1 className="text-3xl font-bold mb-6 border-b pb-4">Browse by Topic</h1>
         <div className="flex flex-col md:flex-row gap-8">
           {/* Topics Sidebar */}
           <div className={`w-full md:w-1/3 p-6 rounded-lg shadow-lg ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
@@ -191,7 +208,7 @@ export default function TopicsPage() {
           </div>
           
           {/* Questions Section */}
-          <div className="flex-1">
+          <div className="flex-1" ref={questionsRef}>
             {loading ? (
               <div className={`p-8 rounded-lg shadow-lg text-center ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
