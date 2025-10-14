@@ -1,7 +1,19 @@
-import React from "react";
-import { useDarkMode } from "../components/DarkModeContext";
+import React, { createContext, useContext, useState } from "react";
 
-export default function MainPage() {
+// DarkMode Context
+const DarkModeContext = createContext();
+const useDarkMode = () => useContext(DarkModeContext);
+
+function DarkModeProvider({ children }) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  return (
+    <DarkModeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
+}
+
+function MainPage() {
   const { isDarkMode } = useDarkMode();
 
   const course = {
@@ -114,7 +126,7 @@ export default function MainPage() {
     (s) => s.name.includes("Prawo") || s.name.includes("Etyka")
   );
 
-  const tableClass = "w-full table-fixed border-collapse";
+  const tableClass = "w-full border-collapse";
 
   return (
     <div
@@ -152,7 +164,7 @@ export default function MainPage() {
             wartościowych. Test składa się ze 120 pytań jednokrotnego wyboru i
             obejmuje szeroki zakres zagadnień z obszarów rynku kapitałowego,
             prawa, finansów oraz instrumentów finansowych. Egzamin dzieli się na 2
-            części: Matematyka Finansowa oraz Prawo.
+            części: Matematyka Finansowa oraz prawo 
           </p>
           <p>
             Za każdą odpowiedź przyznawane są punkty według poniższego systemu:
@@ -188,43 +200,41 @@ export default function MainPage() {
             <h3 className="text-xl font-semibold mb-4 border-b pb-2">
               {section.name}
             </h3>
-            <table className={tableClass}>
-              <colgroup>
-                <col className="w-[75%]" />
-                <col className="w-[25%]" />
-              </colgroup>
-              <thead>
-                <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
-                  <th className="p-2 text-left font-semibold border-b">
-                    Temat
-                  </th>
-                  <th className="p-2 text-center font-semibold border-b">
-                    Średnia liczba pytań
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {section.topics.map((topic, i) => (
-                  <tr
-                    key={i}
-                    className={`${
-                      i % 2 === 0
-                        ? isDarkMode
-                          ? "bg-gray-800"
-                          : "bg-white"
-                        : isDarkMode
-                        ? "bg-gray-700"
-                        : "bg-gray-50"
-                    }`}
-                  >
-                    <td className="p-2 text-left truncate">{topic.name}</td>
-                    <td className="p-2 text-center">
-                      {Math.round(topic.avg)}
-                    </td>
+            <div className="overflow-x-auto">
+              <table className={tableClass} style={{ minWidth: "500px" }}>
+                <thead>
+                  <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
+                    <th className="p-2 text-left font-semibold border-b">
+                      Temat
+                    </th>
+                    <th className="p-2 text-center font-semibold border-b whitespace-nowrap" style={{ width: "150px" }}>
+                      Średnia liczba pytań
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {section.topics.map((topic, i) => (
+                    <tr
+                      key={i}
+                      className={`${
+                        i % 2 === 0
+                          ? isDarkMode
+                            ? "bg-gray-800"
+                            : "bg-white"
+                          : isDarkMode
+                          ? "bg-gray-700"
+                          : "bg-gray-50"
+                      }`}
+                    >
+                      <td className="p-2 text-left">{topic.name}</td>
+                      <td className="p-2 text-center whitespace-nowrap">
+                        {Math.round(topic.avg)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         ))}
 
@@ -242,46 +252,52 @@ export default function MainPage() {
             <h3 className="text-xl font-semibold mb-4 border-b pb-2">
               {section.name}
             </h3>
-            <table className={tableClass}>
-              <colgroup>
-                <col className="w-[75%]" />
-                <col className="w-[25%]" />
-              </colgroup>
-              <thead>
-                <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
-                  <th className="p-2 text-left font-semibold border-b">
-                    Temat
-                  </th>
-                  <th className="p-2 text-center font-semibold border-b">
-                    Średnia liczba pytań
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {section.topics.map((topic, i) => (
-                  <tr
-                    key={i}
-                    className={`${
-                      i % 2 === 0
-                        ? isDarkMode
-                          ? "bg-gray-800"
-                          : "bg-white"
-                        : isDarkMode
-                        ? "bg-gray-700"
-                        : "bg-gray-50"
-                    }`}
-                  >
-                    <td className="p-2 text-left truncate">{topic.name}</td>
-                    <td className="p-2 text-center">
-                      {Math.round(topic.avg)}
-                    </td>
+            <div className="overflow-x-auto">
+              <table className={tableClass} style={{ minWidth: "500px" }}>
+                <thead>
+                  <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
+                    <th className="p-2 text-left font-semibold border-b">
+                      Temat
+                    </th>
+                    <th className="p-2 text-center font-semibold border-b whitespace-nowrap" style={{ width: "150px" }}>
+                      Średnia liczba pytań
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {section.topics.map((topic, i) => (
+                    <tr
+                      key={i}
+                      className={`${
+                        i % 2 === 0
+                          ? isDarkMode
+                            ? "bg-gray-800"
+                            : "bg-white"
+                          : isDarkMode
+                          ? "bg-gray-700"
+                          : "bg-gray-50"
+                      }`}
+                    >
+                      <td className="p-2 text-left">{topic.name}</td>
+                      <td className="p-2 text-center whitespace-nowrap">
+                        {Math.round(topic.avg)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         ))}
       </div>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <DarkModeProvider>
+      <MainPage />
+    </DarkModeProvider>
   );
 }
