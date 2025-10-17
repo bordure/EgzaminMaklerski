@@ -129,11 +129,7 @@ function MainPage() {
   const tableClass = "w-full border-collapse";
 
   return (
-    <div
-      className={`min-h-screen p-8 ${
-        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-50 text-gray-900"
-      }`}
-    >
+    <div className="min-h-screen p-8 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <div className="max-w-6xl mx-auto">
         {/* === Intro section === */}
         <h1 className="text-3xl font-bold mb-2 border-b pb-4">
@@ -149,11 +145,7 @@ function MainPage() {
           </p>
         </div>
 
-        <div
-          className={`p-6 mb-8 rounded-lg shadow-md leading-relaxed ${
-            isDarkMode ? "bg-gray-800" : "bg-white"
-          }`}
-        >
+        <div className="p-6 mb-8 rounded-lg shadow-md leading-relaxed bg-white dark:bg-gray-800">
           <h2 className="text-2xl font-semibold mb-3 border-b pb-2">
             O egzaminie
           </h2>
@@ -193,9 +185,7 @@ function MainPage() {
         {mathSections.map((section, idx) => (
           <div
             key={idx}
-            className={`mb-8 rounded-lg shadow-lg ${
-              isDarkMode ? "bg-gray-800" : "bg-white"
-            } p-6`}
+            className="mb-8 rounded-lg shadow-lg bg-white dark:bg-gray-800 p-6"
           >
             <h3 className="text-xl font-semibold mb-4 border-b pb-2">
               {section.name}
@@ -203,7 +193,7 @@ function MainPage() {
             <div className="overflow-x-auto">
               <table className={tableClass} style={{ minWidth: "500px" }}>
                 <thead>
-                  <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
+                  <tr className="bg-blue-50 dark:bg-gray-700">
                     <th className="p-2 text-left font-semibold border-b">
                       Temat
                     </th>
@@ -216,15 +206,7 @@ function MainPage() {
                   {section.topics.map((topic, i) => (
                     <tr
                       key={i}
-                      className={`${
-                        i % 2 === 0
-                          ? isDarkMode
-                            ? "bg-gray-800"
-                            : "bg-white"
-                          : isDarkMode
-                          ? "bg-gray-700"
-                          : "bg-gray-50"
-                      }`}
+                      className={i % 2 === 0 ? "bg-white dark:bg-gray-800" : "bg-gray-50 dark:bg-gray-700"}
                     >
                       <td className="p-2 text-left">{topic.name}</td>
                       <td className="p-2 text-center whitespace-nowrap">
@@ -245,9 +227,7 @@ function MainPage() {
         {lawSections.map((section, idx) => (
           <div
             key={idx}
-            className={`mb-8 rounded-lg shadow-lg ${
-              isDarkMode ? "bg-gray-800" : "bg-white"
-            } p-6`}
+            className="mb-8 rounded-lg shadow-lg bg-white dark:bg-gray-800 p-6"
           >
             <h3 className="text-xl font-semibold mb-4 border-b pb-2">
               {section.name}
@@ -255,7 +235,7 @@ function MainPage() {
             <div className="overflow-x-auto">
               <table className={tableClass} style={{ minWidth: "500px" }}>
                 <thead>
-                  <tr className={`${isDarkMode ? "bg-gray-700" : "bg-blue-50"}`}>
+                  <tr className="bg-blue-50 dark:bg-gray-700">
                     <th className="p-2 text-left font-semibold border-b">
                       Temat
                     </th>
@@ -268,15 +248,7 @@ function MainPage() {
                   {section.topics.map((topic, i) => (
                     <tr
                       key={i}
-                      className={`${
-                        i % 2 === 0
-                          ? isDarkMode
-                            ? "bg-gray-800"
-                            : "bg-white"
-                          : isDarkMode
-                          ? "bg-gray-700"
-                          : "bg-gray-50"
-                      }`}
+                      className={i % 2 === 0 ? "bg-white dark:bg-gray-800" : "bg-gray-50 dark:bg-gray-700"}
                     >
                       <td className="p-2 text-left">{topic.name}</td>
                       <td className="p-2 text-center whitespace-nowrap">
