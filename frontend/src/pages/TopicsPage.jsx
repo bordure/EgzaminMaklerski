@@ -125,7 +125,7 @@ export default function TopicsPage() {
         disabled={currentPage === 1 || loading}
         className={currentPage === 1 || loading ? disabledClass : buttonClass(false)}
       >
-        ← Previous
+        ← Poprzednia
       </button>
     );
 
@@ -160,7 +160,7 @@ export default function TopicsPage() {
         disabled={currentPage === totalPages || loading}
         className={currentPage === totalPages || loading ? disabledClass : buttonClass(false)}
       >
-        Next →
+        Następna →
       </button>
     );
 
@@ -170,7 +170,7 @@ export default function TopicsPage() {
   return (
     <div className={`min-h-screen p-8 ${isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-50 text-gray-900"}`}>
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6 border-b pb-4">Browse by Topic</h1>
+        <h1 className="text-3xl font-bold mb-6 border-b pb-4">Przeglądaj według tematu</h1>
         <div className="flex flex-col md:flex-row gap-8">
           {/* Topics Sidebar */}
           <div className={`w-full md:w-1/3 p-6 rounded-lg shadow-lg ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
@@ -212,7 +212,7 @@ export default function TopicsPage() {
             {loading ? (
               <div className={`p-8 rounded-lg shadow-lg text-center ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-                <p className={`${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-4`}>Loading questions...</p>
+                <p className={`${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-4`}>Ładowanie pytań...</p>
               </div>
             ) : questions.length > 0 ? (
               <>
@@ -222,7 +222,7 @@ export default function TopicsPage() {
                       {selected.sub ? `${selected.main} - ${selected.sub}` : selected.main}
                     </h2>
                     <span className={`${isDarkMode ? "text-gray-400" : "text-gray-500"} text-sm`}>
-                      Showing {((currentPage - 1) * questionsPerPage) + 1}-{Math.min(currentPage * questionsPerPage, totalQuestions)} of {totalQuestions} questions
+                      Pytania {((currentPage - 1) * questionsPerPage) + 1}–{Math.min(currentPage * questionsPerPage, totalQuestions)} z {totalQuestions}
                     </span>
                   </div>
                 </div>
@@ -245,14 +245,14 @@ export default function TopicsPage() {
                       {renderPagination()}
                     </div>
                     <div className={`${isDarkMode ? "text-gray-400" : "text-gray-500"} text-center text-sm mt-4`}>
-                      Page {currentPage} of {totalPages} ({totalQuestions} total questions)
+                      Strona {currentPage} z {totalPages} ({totalQuestions} pytań łącznie)
                     </div>
                   </div>
                 )}
               </>
             ) : (
               <div className={`p-8 rounded-lg shadow-lg text-center ${isDarkMode ? "bg-gray-800 text-gray-300" : "bg-white text-gray-500"}`}>
-                <p className="text-xl">Select a sub-topic or a main topic to view questions.</p>
+                <p className="text-xl">Wybierz podtemat lub główny temat, aby wyświetlić pytania.</p>
               </div>
             )}
           </div>

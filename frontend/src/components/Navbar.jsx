@@ -29,14 +29,14 @@ const Navbar = () => {
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
-      title="Support us with a coffee!"
+      title="Wesprzyj nas kawą!"
     >
       <img
         src={coffeeIcon}
-        alt="Buy Me a Coffee"
+        alt="Kup kawę"
         className="w-5 h-5 transition dark:invert"
       />
-      <span>Donate</span>
+      <span>Wesprzyj</span>
     </a>
   );
 
@@ -60,14 +60,14 @@ const Navbar = () => {
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/generate" className={linkClasses('/generate')}>
-              Generate Exam
+              Generuj Egzamin
             </Link>
             <Link to="/topics" className={linkClasses('/topics')}>
-              Browse Topics
+              Przeglądaj Tematy
             </Link>
             <Link to="/notes" className={linkClasses('/notes')}>
               <FileText className="w-4 h-4 mr-1 inline" />
-              Notes
+              Notatki
             </Link>
             <DonateButton />
           </div>
@@ -78,10 +78,10 @@ const Navbar = () => {
             <button
               onClick={toggleDarkMode}
               className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors flex items-center gap-1"
-              title="Toggle Dark Mode"
+              title="Przełącz tryb ciemny"
             >
               {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              {isDarkMode ? 'Light' : 'Dark'}
+              {isDarkMode ? 'Jasny' : 'Ciemny'}
             </button>
 
             {/* Avatar + info */}
@@ -92,14 +92,14 @@ const Navbar = () => {
                     ? guestAvatar
                     : user?.picture
                 }
-                alt={user?.name || 'Guest'}
+                alt={user?.name || 'Gość'}
                 className={`w-8 h-8 rounded-full border-2 border-gray-200 dark:border-gray-600 object-cover ${
                   user?.guest ? 'dark:invert' : ''
                 }`}
               />
               <div className="hidden sm:block">
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                  {user?.guest ? 'Guest' : user?.name}
+                  {user?.guest ? 'Gość' : user?.name}
                 </p>
                 {!user?.guest && (
                   <p className="text-xs text-gray-500 dark:text-gray-400">{user?.email}</p>
@@ -112,19 +112,19 @@ const Navbar = () => {
               <button
                 onClick={login}
                 className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
-                title="Login"
+                title="Zaloguj"
               >
                 <LogIn className="w-4 h-4" />
-                <span className="hidden sm:inline">Login</span>
+                <span className="hidden sm:inline">Zaloguj</span>
               </button>
             ) : (
               <button
                 onClick={logout}
                 className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
-                title="Logout"
+                title="Wyloguj"
               >
                 <LogOut className="w-4 h-4" />
-                <span className="hidden sm:inline">Logout</span>
+                <span className="hidden sm:inline">Wyloguj</span>
               </button>
             )}
           </div>
@@ -168,14 +168,14 @@ const Navbar = () => {
 
         <div className="p-4 flex flex-col gap-2">
           <Link to="/generate" onClick={() => setMenuOpen(false)} className={linkClasses('/generate')}>
-            Generate Exam
+            Generuj Egzamin
           </Link>
           <Link to="/topics" onClick={() => setMenuOpen(false)} className={linkClasses('/topics')}>
-            Browse Topics
+            Przeglądaj Tematy
           </Link>
           <Link to="/notes" onClick={() => setMenuOpen(false)} className={linkClasses('/notes')}>
             <FileText className="w-4 h-4 mr-1 inline" />
-            Notes
+            Notatki
           </Link>
           <DonateButton />
 
@@ -188,7 +188,7 @@ const Navbar = () => {
               className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
             >
               <LogIn className="w-4 h-4" />
-              Login
+              Zaloguj
             </button>
           ) : (
             <button
@@ -199,7 +199,7 @@ const Navbar = () => {
               className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
             >
               <LogOut className="w-4 h-4" />
-              Logout
+              Wyloguj
             </button>
           )}
         </div>

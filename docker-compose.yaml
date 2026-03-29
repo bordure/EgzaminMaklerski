@@ -16,6 +16,7 @@ services:
     container_name: exam_backend
     depends_on:
       - mongo
+    env_file: .env
     environment:
       MONGO_URI: ${MONGO_URI}
     ports:

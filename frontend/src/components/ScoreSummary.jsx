@@ -15,13 +15,13 @@ export default function ScoreSummary({ questions, answers }) {
 
   return (
     <div className="p-4 bg-gray-100 text-gray-900 rounded mt-4 shadow-inner">
-      <h2 className="text-xl font-bold mb-2 text-gray-800">Exam Summary</h2>
-      <p>Total Questions: {total}</p>
-      <p>Points: {points}/{maxPoints}</p>
+      <h2 className="text-xl font-bold mb-2 text-gray-800">Podsumowanie egzaminu</h2>
+      <p>Łączna liczba pytań: {total}</p>
+      <p>Punkty: {points}/{maxPoints}</p>
       <p>
         Status:
         <span className={`font-bold ml-2 ${passed ? "text-green-600" : "text-red-600"}`}>
-          {passed ? "PASSED" : "FAILED"}
+          {passed ? "ZDANY" : "OBLANY"}
         </span>
       </p>
     </div>

@@ -9,7 +9,7 @@ export default function ExamList({ questions }) {
           className="p-4 border rounded shadow-sm bg-white dark:bg-gray-900 dark:border-gray-700 transition-colors duration-300"
         >
           <div className="font-bold text-gray-800 dark:text-gray-100">
-            Q{idx + 1}: {q.question}
+            P.{idx + 1}: {q.question}
           </div>
           <ul className="list-disc pl-5 mt-2 text-gray-700 dark:text-gray-300">
             {["option_A", "option_B", "option_C", "option_D"].map((opt) => (
@@ -17,7 +17,7 @@ export default function ExamList({ questions }) {
             ))}
           </ul>
           <div className="mt-2 font-semibold text-green-600 dark:text-green-400">
-            Correct: {q.correct_answer}
+            Poprawna: {q.correct_answer}
           </div>
         </div>
       ))}

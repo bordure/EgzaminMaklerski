@@ -53,7 +53,7 @@ const Notes = () => {
         setRecordMap(processNotionData(data));
         setCurrentPageId(clickedPageId);
       } catch (err) {
-        setError(err.message || "Failed to load page");
+        setError(err.message || "Nie udało się załadować strony");
       } finally {
         setLoading(false);
       }
@@ -69,7 +69,7 @@ const Notes = () => {
         const data = await fetchNotionPage(currentPageId);
         setRecordMap(processNotionData(data));
       } catch (err) {
-        setError(err.message || "Failed to load page");
+        setError(err.message || "Nie udało się załadować strony");
       } finally {
         setLoading(false);
       }
@@ -100,7 +100,7 @@ const Notes = () => {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
-          <p className="text-gray-600 dark:text-gray-300">Loading Notion page...</p>
+          <p className="text-gray-600 dark:text-gray-300">Ładowanie strony Notion...</p>
         </div>
       </div>
     );
@@ -112,14 +112,14 @@ const Notes = () => {
         <div className="text-center max-w-md mx-auto p-6">
           <div className="text-red-500 text-4xl mb-4">⚠️</div>
           <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
-            Failed to Load Page
+            Nie udało się załadować strony
           </h2>
           <p className="text-red-600 dark:text-red-400 mb-6">{error}</p>
           <button
             onClick={() => window.location.reload()}
             className="px-6 py-3 bg-blue-500 dark:bg-blue-600 text-white rounded-lg hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors"
           >
-            Try Again
+            Spróbuj ponownie
           </button>
         </div>
       </div>
@@ -132,16 +132,16 @@ const Notes = () => {
         <div className="text-center max-w-md mx-auto p-6">
           <div className="text-gray-400 dark:text-gray-500 text-4xl mb-4">📄</div>
           <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
-            Page Empty
+            Pusta strona
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            The Notion page has no content blocks.
+            Strona Notion nie zawiera żadnych bloków treści.
           </p>
           <button
             onClick={() => window.location.reload()}
             className="px-6 py-3 bg-blue-500 dark:bg-blue-600 text-white rounded-lg hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors"
           >
-            Refresh
+            Odśwież
           </button>
         </div>
       </div>

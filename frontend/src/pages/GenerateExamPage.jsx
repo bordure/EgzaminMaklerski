@@ -44,7 +44,7 @@ export default function GenerateExamPage() {
             : []
         );
       } catch {
-        setError("Failed to fetch topics or exam dates.");
+        setError("Nie udało się pobrać tematów lub dat egzaminów.");
       }
     };
     loadData();
@@ -137,7 +137,7 @@ export default function GenerateExamPage() {
         }))
       );
     } catch {
-      setError("Failed to generate exam. Please try again.");
+      setError("Nie udało się wygenerować egzaminu. Spróbuj ponownie.");
     } finally {
       setLoading(false);
     }
@@ -240,7 +240,7 @@ export default function GenerateExamPage() {
     scoreColor = score.hasPassed
       ? "text-green-600 dark:text-green-400"
       : "text-red-600 dark:text-red-400";
-    passMessage = score.hasPassed ? "You Passed! 🎉" : "You Did Not Pass. 😔";
+    passMessage = score.hasPassed ? "Zdałeś! 🎉" : "Nie zdałeś. 😔";
   }
 
   return (
@@ -253,10 +253,10 @@ export default function GenerateExamPage() {
           <div className="fixed top-0 left-0 right-0 bg-red-600 text-white py-3 px-6 shadow-lg z-50">
             <div className="max-w-4xl mx-auto flex justify-between items-center">
               <div className="flex items-center space-x-4">
-                <span className="text-lg font-semibold">Exam in Progress</span>
+                <span className="text-lg font-semibold">Egzamin w toku</span>
               </div>
               <div className="text-xl font-bold">
-                ⏰ Time Remaining: {formatTime(timeRemaining)}
+                ⏰ Pozostały czas: {formatTime(timeRemaining)}
               </div>
             </div>
           </div>
@@ -272,7 +272,7 @@ export default function GenerateExamPage() {
             : ""
         }`}
       >
-        <h1 className="text-3xl font-bold mb-6 border-b pb-4">Generate Exam</h1>
+        <h1 className="text-3xl font-bold mb-6 border-b pb-4">Generuj egzamin</h1>
 
         {/* Exam options */}
         {showExamOptions && (
@@ -280,7 +280,7 @@ export default function GenerateExamPage() {
             {/* Number of Questions */}
             <div>
               <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
-                Number of Questions:
+                Liczba pytań:
               </label>
               <input
                 type="number"
@@ -297,7 +297,7 @@ export default function GenerateExamPage() {
 
             {/* Specific Topics */}
             <div className="flex items-center justify-between">
-              <span className="font-medium">Ask from specific topics:</span>
+              <span className="font-medium">Pytaj z określonych tematów:</span>
               <button
                 onClick={() => setIsSpecificTopics(!isSpecificTopics)}
                 className={`px-4 py-2 rounded-full font-semibold transition-colors duration-200 ${
@@ -306,7 +306,7 @@ export default function GenerateExamPage() {
                     : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600"
                 }`}
               >
-                {isSpecificTopics ? "On" : "Off"}
+                {isSpecificTopics ? "Wł." : "Wył."}
               </button>
             </div>
 
@@ -314,7 +314,7 @@ export default function GenerateExamPage() {
               <div className="space-y-4 pt-4">
                 <div>
                   <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
-                    Select Main Topic:
+                    Wybierz główny temat:
                   </label>
                   <select
                     value={selectedMainTopic}
@@ -324,7 +324,7 @@ export default function GenerateExamPage() {
                     }}
                     className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
                   >
-                    <option value="">-- Select a main topic --</option>
+                    <option value="">-- Wybierz główny temat --</option>
                     {Object.keys(topics).map((topic) => (
                       <option key={topic} value={topic}>
                         {topic}
@@ -338,14 +338,14 @@ export default function GenerateExamPage() {
                   topics[selectedMainTopic].length > 0 && (
                     <div>
                       <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
-                        Select Sub-topic (optional):
+                        Wybierz podtemat (opcjonalnie):
                       </label>
                       <select
                         value={selectedSubTopic}
                         onChange={(e) => setSelectedSubTopic(e.target.value)}
                         className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
                       >
-                        <option value="">-- All sub-topics --</option>
+                        <option value="">-- Wszystkie podtematy --</option>
                         {topics[selectedMainTopic].map((sub) => (
                           <option key={sub} value={sub}>
                             {sub}
@@ -359,7 +359,7 @@ export default function GenerateExamPage() {
 
             {/* Specific Year */}
             <div className="flex items-center justify-between">
-              <span className="font-medium">Ask from specific year:</span>
+              <span className="font-medium">Pytaj z określonego roku:</span>
               <button
                 onClick={() => setIsSpecificYear(!isSpecificYear)}
                 className={`px-4 py-2 rounded-full font-semibold transition-colors duration-200 ${
@@ -368,21 +368,21 @@ export default function GenerateExamPage() {
                     : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600"
                 }`}
               >
-                {isSpecificYear ? "On" : "Off"}
+                {isSpecificYear ? "Wł." : "Wył."}
               </button>
             </div>
 
             {isSpecificYear && (
               <div>
                 <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
-                  Exam Year:
+                  Rok egzaminu:
                 </label>
                 <select
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(e.target.value)}
                   className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
                 >
-                  <option value="">-- Select a year --</option>
+                  <option value="">-- Wybierz rok --</option>
                   {examYears.map((year) => (
                     <option key={year} value={year}>
                       {year}
@@ -394,7 +394,7 @@ export default function GenerateExamPage() {
 
             {/* Mode */}
             <div className="flex items-center justify-between">
-              <span className="font-medium">Mode:</span>
+              <span className="font-medium">Tryb:</span>
               <button
                 onClick={() => {
                   setMode(mode === "study" ? "exam" : "study");
@@ -405,13 +405,13 @@ export default function GenerateExamPage() {
                 }}
                 className="px-4 py-2 rounded-full font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200"
               >
-                {mode === "study" ? "Study" : "Exam"}
+                {mode === "study" ? "Nauka" : "Egzamin"}
               </button>
             </div>
 
             {/* Show Exam Years */}
             <div className="flex items-center justify-between">
-              <span className="font-medium">Show Exam Years:</span>
+              <span className="font-medium">Pokaż lata egzaminów:</span>
               <button
                 onClick={() => setShowYears(!showYears)}
                 className={`px-4 py-2 rounded-full font-semibold transition-colors duration-200 ${
@@ -420,7 +420,7 @@ export default function GenerateExamPage() {
                     : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600"
                 }`}
               >
-                {showYears ? "On" : "Off"}
+                {showYears ? "Wł." : "Wył."}
               </button>
             </div>
 
@@ -434,10 +434,10 @@ export default function GenerateExamPage() {
               className="w-full mt-4 bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
             >
               {loading
-                ? "Generating..."
+                ? "Generowanie..."
                 : mode === "exam" && !examSubmitted && timeRemaining !== null
-                ? "Exam In Progress"
-                : "Generate Exam"}
+                ? "Egzamin w toku"
+                : "Generuj egzamin"}
             </button>
           </div>
         )}
@@ -454,7 +454,7 @@ export default function GenerateExamPage() {
 {mode === "exam" && examSubmitted ? (
   <div ref={resultsRef} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
     <div className="text-center mb-8">
-      <h2 className="text-2xl font-bold mb-4">Exam Finished!</h2>
+      <h2 className="text-2xl font-bold mb-4">Egzamin zakończony!</h2>
 
       {/* Score summary */}
       {questions.length > 0 && (
@@ -463,23 +463,23 @@ export default function GenerateExamPage() {
           const scoreColor = score.hasPassed
             ? "text-green-600 dark:text-green-400"
             : "text-red-600 dark:text-red-400";
-          const passMessage = score.hasPassed ? "You Passed! 🎉" : "You Did Not Pass. 😔";
+          const passMessage = score.hasPassed ? "Zdałeś! 🎉" : "Nie zdałeś. 😔";
           return (
             <div className="space-y-4">
               <p className={`text-3xl font-bold ${scoreColor}`}>{passMessage}</p>
               <p className="text-2xl text-gray-700 dark:text-gray-300">
-                Total Score:{" "}
+                Łączny wynik:{" "}
                 <span className="font-bold text-purple-600 dark:text-purple-400">
-                  {score.totalPoints} points
+                  {score.totalPoints} punktów
                 </span>
               </p>
               <div className="text-lg text-gray-600 dark:text-gray-400 space-y-1">
-                <p>✅ Correct: {score.correctCount} (+{score.correctCount * 2} points)</p>
-                <p>❌ Wrong: {score.wrongCount} ({score.wrongCount * -1} points)</p>
-                <p>⏭️ Skipped: {score.skippedCount} (0 points)</p>
-                <p className="font-medium">Total Questions: {score.totalQuestions}</p>
+                <p>✅ Poprawnych: {score.correctCount} (+{score.correctCount * 2} punktów)</p>
+                <p>❌ Błędnych: {score.wrongCount} ({score.wrongCount * -1} punktów)</p>
+                <p>⏭️ Pominiętych: {score.skippedCount} (0 punktów)</p>
+                <p className="font-medium">Łączna liczba pytań: {score.totalQuestions}</p>
                 <p className="font-medium">
-                  Passing Score: {Math.round(score.passingScore)} points (
+                  Próg zaliczenia: {Math.round(score.passingScore)} punktów (
                   {Math.round((score.passingScore / score.maxPossibleScore) * 100)}%)
                 </p>
               </div>
@@ -487,7 +487,7 @@ export default function GenerateExamPage() {
                 onClick={handleEndSession}
                 className="mt-4 px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors duration-200"
               >
-                Back to Generate Exam
+                Powrót do generowania egzaminu
               </button>
             </div>
           );
@@ -497,7 +497,7 @@ export default function GenerateExamPage() {
       {/* Review questions paginated */}
       {questions.length > 0 && (
         <div className="mt-8">
-          <h3 className="text-xl font-semibold border-b pb-2 mb-4">Review Your Answers</h3>
+          <h3 className="text-xl font-semibold border-b pb-2 mb-4">Przejrzyj odpowiedzi</h3>
           {currentQuestion && (
             <ExamQuestion
               key={`review-${currentQuestion._id}-${currentQuestionIndex}`}
@@ -517,11 +517,11 @@ export default function GenerateExamPage() {
               disabled={currentQuestionIndex === 0}
               className="px-6 py-3 bg-gray-600 dark:bg-gray-700 text-white font-bold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              ← Previous
+              ← Poprzednie
             </button>
 
             <span className="font-medium text-gray-700 dark:text-gray-200">
-              Question {currentQuestionIndex + 1} of {questions.length}
+              Pytanie {currentQuestionIndex + 1} z {questions.length}
             </span>
 
             <button
@@ -529,7 +529,7 @@ export default function GenerateExamPage() {
               disabled={currentQuestionIndex === questions.length - 1}
               className="px-6 py-3 bg-gray-600 dark:bg-gray-700 text-white font-bold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Next →
+              Następne →
             </button>
           </div>
         </div>
@@ -541,7 +541,7 @@ export default function GenerateExamPage() {
   <>
     <div className="mb-4 text-center">
       <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-        Question {currentQuestionIndex + 1} of {questions.length}
+        Pytanie {currentQuestionIndex + 1} z {questions.length}
       </div>
     </div>
 
@@ -564,7 +564,7 @@ export default function GenerateExamPage() {
         disabled={currentQuestionIndex === 0}
         className="px-6 py-3 bg-gray-600 dark:bg-gray-700 text-white font-bold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        ← Previous
+        ← Poprzednie
       </button>
 
       {mode === "exam" ? (
@@ -572,14 +572,14 @@ export default function GenerateExamPage() {
           onClick={handleFinishExam}
           className="px-8 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-colors duration-200"
         >
-          Finish Exam
+          Zakończ egzamin
         </button>
       ) : (
         <button
           onClick={handleEndSession}
           className="px-8 py-3 bg-yellow-500 text-white font-bold rounded-lg hover:bg-yellow-600 transition-colors duration-200"
         >
-          End Study
+          Zakończ naukę
         </button>
       )}
 
@@ -588,13 +588,13 @@ export default function GenerateExamPage() {
         disabled={currentQuestionIndex === questions.length - 1}
         className="px-6 py-3 bg-gray-600 dark:bg-gray-700 text-white font-bold rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Next →
+        Następne →
       </button>
     </div>
   </>
 ) : (
   <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center text-gray-700 dark:text-gray-200">
-    No exam loaded. Generate one above.
+    Brak załadowanego egzaminu. Wygeneruj powyżej.
   </div>
 )}
       </div>

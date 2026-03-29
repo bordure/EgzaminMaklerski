@@ -83,7 +83,7 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
     <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg mb-6 transition-colors duration-300">
       <div className="flex justify-between items-start mb-4">
         <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
-          Question {idx + 1}
+          Pytanie {idx + 1}
         </h3>
         {showYear && q.exam_date && (
           <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">

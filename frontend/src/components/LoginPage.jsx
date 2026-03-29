@@ -22,12 +22,12 @@ const LoginPage = () => {
         <div className="flex-[1.6] p-10 bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex flex-col justify-center">
           <h1 className="text-4xl font-bold mb-6">Egzamin Maklerski</h1>
           <p className="text-lg mb-4">
-            On this page, you can practice previous exam questions by topic 
-            and improve your chances of passing — since the current pass rate is only <strong>10%</strong>.
+            Na tej stronie możesz ćwiczyć pytania z poprzednich egzaminów według tematu
+            i zwiększyć swoje szanse na zdanie — obecny wskaźnik zdawalności wynosi tylko <strong>10%</strong>.
           </p>
           <p className="text-md">
-            The platform is <strong>completely free to use</strong>.  
-            Focus on learning, not on fees.
+            Platforma jest <strong>całkowicie bezpłatna</strong>.<br />
+            Skup się na nauce, nie na opłatach.
           </p>
         </div>
 
@@ -36,8 +36,8 @@ const LoginPage = () => {
             <div className="mx-auto w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-4">
               <BookOpen className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Sign In</h2>
-            <p className="text-gray-600">Access the Egzamin Maklerski simulator</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Zaloguj się</h2>
+            <p className="text-gray-600">Dostęp do symulatora Egzaminu Maklerskiego</p>
           </div>
 
           {error && (
@@ -62,7 +62,7 @@ const LoginPage = () => {
                   <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                   <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                 </svg>
-                Continue with Google
+                Kontynuuj przez Google
               </>
             )}
           </button>
@@ -82,14 +82,14 @@ const LoginPage = () => {
           {loading ? (
             <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
           ) : (
-            <>Continue as Guest</>
+            <>Kontynuuj jako Gość</>
           )}
         </button>
 
 
           <div className="mt-4 text-center">
             <p className="text-xs text-gray-500">
-              By signing in, you agree to securely access previous exams and track your progress.
+              Logując się, zgadzasz się na bezpieczny dostęp do poprzednich egzaminów i śledzenie swoich postępów.
             </p>
           </div>
         </div>
