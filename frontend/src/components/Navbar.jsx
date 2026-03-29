@@ -87,12 +87,10 @@ const Navbar = () => {
             {/* Avatar + info */}
             <div className="flex items-center gap-3">
               <img
-                src={
-                  user?.guest
-                    ? guestAvatar
-                    : user?.picture
-                }
+                src={user?.guest ? guestAvatar : (user?.picture || guestAvatar)}
                 alt={user?.name || 'Gość'}
+                referrerPolicy="no-referrer"
+                onError={(e) => { e.currentTarget.src = guestAvatar; e.currentTarget.className = e.currentTarget.className + ' dark:invert'; }}
                 className={`w-8 h-8 rounded-full border-2 border-gray-200 dark:border-gray-600 object-cover ${
                   user?.guest ? 'dark:invert' : ''
                 }`}
@@ -164,6 +162,27 @@ const Navbar = () => {
           >
             <X className="w-5 h-5 text-gray-700 dark:text-gray-200" />
           </button>
+        </div>
+
+        {/* Mobile profile section */}
+        <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
+          <img
+            src={user?.guest ? guestAvatar : (user?.picture || guestAvatar)}
+            alt={user?.name || 'Gość'}
+            referrerPolicy="no-referrer"
+            onError={(e) => { e.currentTarget.src = guestAvatar; }}
+            className={`w-10 h-10 rounded-full border-2 border-gray-200 dark:border-gray-600 object-cover ${
+              user?.guest ? 'dark:invert' : ''
+            }`}
+          />
+          <div>
+            <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+              {user?.guest ? 'Gość' : user?.name}
+            </p>
+            {!user?.guest && (
+              <p className="text-xs text-gray-500 dark:text-gray-400 truncate max-w-[160px]">{user?.email}</p>
+            )}
+          </div>
         </div>
 
         <div className="p-4 flex flex-col gap-2">
