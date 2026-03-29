@@ -2,6 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from settings import Settings
 from pymongo import MongoClient
+from prometheus_fastapi_instrumentator import Instrumentator
+from prometheus_client import Gauge
+import threading, time
 
 cfg = Settings()
 
@@ -28,6 +31,33 @@ db = client[cfg.db_name]
 
 app.state.db = db
 
+# ── Prometheus metrics ────────────────────────────────────────────────────────
+Instrumentator().instrument(app).expose(app, endpoint="/metrics", include_in_schema=False)
+
+questions_total    = Gauge("exam_questions_total",       "Total questions in database")
+users_total        = Gauge("exam_users_total",           "Total registered (non-guest) users")
+google_logins_total = Gauge("exam_google_logins_total",  "Total Google logins all time")
+guest_logins_total  = Gauge("exam_guest_logins_total",   "Total guest logins all time")
+logins_today       = Gauge("exam_logins_today",          "Login events in the last 24 hours")
+
+def _refresh_db_gauges():
+    """Background thread: refresh DB-derived gauges every 30 seconds."""
+    from datetime import datetime, timedelta
+    while True:
+        try:
+            questions_total.set(db[cfg.collection_name].estimated_document_count())
+            users_total.set(db[cfg.logins_collection].count_documents({"guest": False}))
+            google_logins_total.set(db[cfg.logins_collection].count_documents({"guest": False}))
+            guest_logins_total.set(db[cfg.logins_collection].count_documents({"guest": True}))
+            since = datetime.utcnow() - timedelta(hours=24)
+            logins_today.set(db[cfg.logins_collection].count_documents({"login_time": {"$gte": since}}))
+        except Exception:
+            pass
+        time.sleep(30)
+
+threading.Thread(target=_refresh_db_gauges, daemon=True).start()
+
+# ─────────────────────────────────────────────────────────────────────────────
 
 from routers import auth, analytics, notion, exam
 

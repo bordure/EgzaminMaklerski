@@ -13,6 +13,6 @@ class Settings(BaseSettings):
     jwt_secret_key: str = Field(...)
     jwt_algorithm: str = Field(default="HS256")
     frontend_url: str = Field(default="http://localhost:3000", description="Frontend URL")
-    analytics_token: str = Field(..., description="Token to access analytics endpoints")
+    grafana_url: str = Field(default="http://localhost:3001", description="Grafana dashboard URL")
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")

@@ -163,9 +163,9 @@ async def google_callback(code: str, request: Request):
 
 
 @router.post("/guest", response_model=TokenPair)
-def guest_login():
-    guest_id = secrets.token_urlsafe(16)
-    user_data = {"id": guest_id, "guest": True}
+def guest_login(request: Request):
+    guess_id = secrets.token_urlsafe(16)
+    user_data = {"id": guess_id, "guest": True}
     return create_token_pair(user_data)
 
 

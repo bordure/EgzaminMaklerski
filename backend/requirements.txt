@@ -7,3 +7,5 @@ httpx
 python-multipart
 pyJWT
 pydantic-settings
+prometheus-fastapi-instrumentator
+prometheus-client
