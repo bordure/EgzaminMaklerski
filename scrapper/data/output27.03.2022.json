@@ -7,7 +7,10 @@
     "option_C": "31.50",
     "option_D": "kurs otwarcia na tej sesji nie zostanie w żaden sposób określony.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 2,
@@ -17,7 +20,10 @@
     "option_C": "zmodyfikowaną wewnętrzną stopę zwrotu (MIRR, ang. Modified Internal Rate of Return)",
     "option_D": "indeks zyskowności (PI, ang. Profitability Index)",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Metody oceny projektów inwestycyjnych"
   },
   {
     "id": 3,
@@ -27,7 +33,10 @@
     "option_C": "nadzór nad KRUS",
     "option_D": "nadzór nad małymi instytucjami płatniczymi.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 4,
@@ -37,7 +46,10 @@
     "option_C": "państwową osobą prawną",
     "option_D": "spółką Skarbu Państwa.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 5,
@@ -47,7 +59,10 @@
     "option_C": "11,20%",
     "option_D": "14,55%",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 6,
@@ -57,7 +72,10 @@
     "option_C": "opcją put na WIG20 o terminie wykonania przypadającym w miesiącu sierpniu",
     "option_D": "opcją put na WIG20 o terminie wykonania przypadającym w miesiącu czerwcu.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 7,
@@ -67,7 +85,10 @@
     "option_C": "wartości nabycia",
     "option_D": "wartości godziwej.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 8,
@@ -77,7 +98,10 @@
     "option_C": "II",
     "option_D": "I, II, III.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 9,
@@ -87,7 +111,10 @@
     "option_C": "poinformowania Komisji Nadzoru Finansowego",
     "option_D": "żadne z powyższych.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 10,
@@ -97,7 +124,10 @@
     "option_C": "obligacji zamiennych",
     "option_D": "jednostek uczestnictwa funduszu inwestycyjnego otwartego.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 11,
@@ -107,7 +137,10 @@
     "option_C": "1,22",
     "option_D": "1,45.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "NPV i PI"
   },
   {
     "id": 12,
@@ -117,7 +150,10 @@
     "option_C": "zlecenie IV",
     "option_D": "zlecenie I i zlecenie IV",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 13,
@@ -127,7 +163,10 @@
     "option_C": "2,31",
     "option_D": "1,4.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Dźwignie"
   },
   {
     "id": 14,
@@ -137,7 +176,10 @@
     "option_C": "działanie III i IV",
     "option_D": "działanie II i IV",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 15,
@@ -147,7 +189,10 @@
     "option_C": "kupno 10 szt. z limitem realizacji 99,9999 i limitem aktywacji 99,9990",
     "option_D": "sprzedaż 10 szt. bez limitu i limitem aktywacji 99,9990.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 16,
@@ -157,7 +202,10 @@
     "option_C": "2 miesiące",
     "option_D": "żadne z powyższych",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 17,
@@ -167,7 +215,10 @@
     "option_C": "ustanawia się dla niej opiekuna",
     "option_D": "notariusz ustanawia dla niej likwidatora.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 18,
@@ -177,7 +228,10 @@
     "option_C": "wyłącznie na rynku regulowanym, w ASO lub na OTF",
     "option_D": "bez ograniczeń.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 19,
@@ -187,7 +241,10 @@
     "option_C": "zlecenie I i zlecenie III",
     "option_D": "zlecenie IV",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 20,
@@ -197,7 +254,10 @@
     "option_C": "nieważna, chyba że druga strona o wygaśnięciu umocowania wiedziała lub z łatwością mogła się dowiedzieć",
     "option_D": "zawsze nieważna.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 21,
@@ -207,7 +267,10 @@
     "option_C": "8",
     "option_D": "16",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty"
   },
   {
     "id": 22,
@@ -217,7 +280,10 @@
     "option_C": "0,63",
     "option_D": "0,70",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Model Gordona"
   },
   {
     "id": 23,
@@ -227,7 +293,10 @@
     "option_C": "zlecenie zostało złożone przy wykorzystaniu techniki handlu algorytmicznego",
     "option_D": "żadne z powyższych.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 24,
@@ -237,7 +306,10 @@
     "option_C": "nie są ujawniane w arkuszu zleceń oraz nie biorą udziału w określaniu teoretycznego kursu otwarcia (TKO) i teoretycznego wolumenu otwarcia (TWO)",
     "option_D": "są ujawniane w arkuszu zleceń i biorą udział w określaniu teoretycznego kursu otwarcia (TKO) i teoretycznego wolumenu otwarcia (TWO).",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 25,
@@ -247,7 +319,10 @@
     "option_C": "skorygowany kosztorys",
     "option_D": "koszt wytworzenia wartości niematerialnych i prawnych.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 26,
@@ -257,7 +332,10 @@
     "option_C": "benchmarking portfela inwestycyjnego (ang. benchmark portfolio) może występować również w strategiach pasywnych",
     "option_D": "pochodne instrumenty finansowe są szczególnie przydatne w ograniczaniu niesystematycznego (specyficznego) ryzyka, natomiast nie nadają się do ograniczania systematycznego ryzyka wynikającego z inwestycji w akcje.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Strategie zarządzania portfelami"
   },
   {
     "id": 27,
@@ -267,7 +345,10 @@
     "option_C": "strategię rotated bull spread",
     "option_D": "strategię long condor",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - wykorzystanie strategii"
   },
   {
     "id": 28,
@@ -277,7 +358,10 @@
     "option_C": "w przypadku tej transakcji członek Zarządu nie miał obowiązku dokonania powiadomienia, ponieważ transakcja nie osiągnęła progu równowartości 10.000 EUR",
     "option_D": "w przypadku tej transakcji członek Zarządu nie miał obowiązku dokonania powiadomienia, ponieważ obowiązek ten nie dotyczy transakcji dokonywanych na spółkach notowanych w alternatywnym systemie obrotu organizowanym przez giełdę.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 596/2014 (MAR)"
   },
   {
     "id": 29,
@@ -287,7 +371,10 @@
     "option_C": "1,14",
     "option_D": "1,25",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 30,
@@ -297,7 +384,10 @@
     "option_C": "15% udziału w kapitale zakładowym innego podmiotu",
     "option_D": "20% udziału w kapitale zakładowym innego podmiotu.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 31,
@@ -307,7 +397,10 @@
     "option_C": "metoda Equity Cash Flow jest sumą przepływów pieniężnych należących do wierzycieli przedsiębiorstwa",
     "option_D": "w metodzie klasycznej wartość przedsiębiorstwa jest sumą wartości aktywów netto przedsiębiorstwa oraz goodwill",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Metody wyceny przedsiębiorstw"
   },
   {
     "id": 32,
@@ -317,7 +410,10 @@
     "option_C": "7%",
     "option_D": "43%.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa zwrotu z inwestycji"
   },
   {
     "id": 33,
@@ -327,7 +423,10 @@
     "option_C": "firma wykonuje zlecenia tylko w jednym systemie wykonywania zleceń",
     "option_D": "klient określił szczegółowe warunki, na jakich zlecenie ma zostać wykonane.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 34,
@@ -337,7 +436,10 @@
     "option_C": "10,3%",
     "option_D": "11,3%",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 35,
@@ -347,7 +449,10 @@
     "option_C": "dokonanie przymusowego wykupu akcji - w przypadku świadectwa dotyczącego akcji objętych przymusowym wykupem",
     "option_D": "zniszczenie lub utrata świadectwa",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 36,
@@ -357,7 +462,10 @@
     "option_C": "zlecenia „cross” mogą być składane w imieniu i na rachunek dwóch klientów tego samego członka giełdy",
     "option_D": "zlecenia „cross”, w chwili składania, muszą mieścić się w ograniczeniach wahań kursów obowiązujących dla danego instrumentu finansowego.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 37,
@@ -367,7 +475,10 @@
     "option_C": "metoda rozszerzenia kontroli",
     "option_D": "metoda łączenia udziałów.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Łączenie spółek"
   },
   {
     "id": 38,
@@ -377,7 +488,10 @@
     "option_C": "strategia rotated bull spread",
     "option_D": "strategia put ratio spread",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   },
   {
     "id": 39,
@@ -387,7 +501,10 @@
     "option_C": "5,36 PLN",
     "option_D": "8,72 PLN.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Współczynniki greckie"
   },
   {
     "id": 40,
@@ -397,7 +514,10 @@
     "option_C": "09:05",
     "option_D": "żadna z powyższych",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 41,
@@ -407,7 +527,10 @@
     "option_C": "fundusz nabywa osobowość prawną z chwilą nadania funduszowi statutu przez towarzystwo funduszy inwestycyjnych",
     "option_D": "utworzenie funduszu wymaga wydania zezwolenia przez Komisję Nadzoru Finansowego",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 42,
@@ -417,7 +540,10 @@
     "option_C": "36.773,2 PLN",
     "option_D": "46.790,1 PLN.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki rentowności"
   },
   {
     "id": 43,
@@ -427,7 +553,10 @@
     "option_C": "5.238,00 PLN",
     "option_D": "5.251,50 PLN.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Obligacje zerokuponowe"
   },
   {
     "id": 44,
@@ -437,7 +566,10 @@
     "option_C": "instrumenty pochodne",
     "option_D": "certyfikaty strukturyzowane.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 45,
@@ -447,7 +579,10 @@
     "option_C": "904.640 PLN",
     "option_D": "916.865 PLN",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Metoda równych rat kapitałowych"
   },
   {
     "id": 46,
@@ -457,7 +592,10 @@
     "option_C": "maklerzy i doradcy mogą składać zlecenia dotyczące transakcji na rachunku własnym w oparciu o decyzje inwestycyjne klientów lub pracodawców",
     "option_D": "maklerzy i doradcy nie mogą wykorzystywać posiadanych uprawnień lub stanowiska służbowego w celu uprzywilejowanego nabycia lub zbycia instrumentów finansowych.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Etyka",
+    "topic": "Zasady etyki zawodowej Maklerów i Doradców"
   },
   {
     "id": 47,
@@ -467,7 +605,10 @@
     "option_C": "271.590 PLN",
     "option_D": "452.650 PLN",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty wieczystej"
   },
   {
     "id": 48,
@@ -477,7 +618,10 @@
     "option_C": "4,00%",
     "option_D": "3,00%",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 49,
@@ -487,7 +631,10 @@
     "option_C": "obrót należnościami 4,51 a średni okres inkasa 54,9 dnia",
     "option_D": "obrót należnościami 4,51 a średni okres inkasa 21,9 dnia.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki aktywności"
   },
   {
     "id": 50,
@@ -497,7 +644,10 @@
     "option_C": "105.079,38 PLN",
     "option_D": "127.330,68 PLN.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 51,
@@ -507,7 +657,10 @@
     "option_C": "360 PLN za 20 lat dyskontowane roczną stopą procentową równą 3%",
     "option_D": "362 PLN za 7 lat dyskontowane roczną stopą procentową równą 9%",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca"
   },
   {
     "id": 52,
@@ -517,7 +670,10 @@
     "option_C": "efektu analizy (ang analysis effect), efektu obrotu (ang. trading effect) oraz efektu polityki (ang. policy effect)",
     "option_D": "efektu polityki (ang. policy effect), efektu przewidywania stopy oprocentowania (ang. interest rate anticipation effect) oraz efektu analizy (ang. analysis effect)",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Zarządzanie portfelem obligacji"
   },
   {
     "id": 53,
@@ -527,7 +683,10 @@
     "option_C": "im dłuższy termin wykupu obligacji, tym wyższa wypukłość (przy tym samym oprocentowaniu i tej samej stopie dochodu)",
     "option_D": "im niższe oprocentowanie obligacji, tym niższa wypukłość (przy tej samej stopie dochodu i tym samym duration).",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Wypukłość obligacji (convexity)"
   },
   {
     "id": 54,
@@ -537,7 +696,10 @@
     "option_C": "73,730",
     "option_D": "73,520",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 55,
@@ -547,7 +709,10 @@
     "option_C": "poza systemem notowań ciągłych oraz kursu jednolitego",
     "option_D": "w systemie notowań ciągłych lub kursu jednolitego.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 56,
@@ -557,7 +722,10 @@
     "option_C": "wyraża zgodę na wprowadzenie akcji do obrotu w alternatywnym systemie obrotu",
     "option_D": "udziela zezwolenia na ogłoszenie wezwania w spółce publicznej.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 57,
@@ -567,7 +735,10 @@
     "option_C": "akcje \"przed wymianą\" są notowane na giełdzie po raz ostatni na ostatniej sesji przed dniem W (dniem wymiany akcji w wyniku obniżenia ich wartości nominalnej)",
     "option_D": "zlecenia maklerskie na akcje \"przed wymianą\", przekazane na giełdę a niezrealizowane do końca ostatniej sesji przed dniem W (dniem wymiany akcji w wyniku obniżenia ich wartości nominalnej), tracą ważność po zakończeniu tej sesji",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 58,
@@ -577,7 +748,10 @@
     "option_C": "czterokrotności pełnej wartości należności",
     "option_D": "należności nieobjętej gwarancją lub innym zabezpieczeniem należności, zgłoszonej likwidatorowi lub sędziemu komisarzowi w postępowaniu upadłościowym.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 59,
@@ -587,7 +761,10 @@
     "option_C": "16 lat",
     "option_D": "24 lata.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Metoda równych kwot płatności kredytu"
   },
   {
     "id": 60,
@@ -597,7 +774,10 @@
     "option_C": "Rada Nadzorcza Giełdy",
     "option_D": "minister właściwy do spraw instytucji finansowych na wniosek Zarządu Giełdy.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 61,
@@ -607,7 +787,10 @@
     "option_C": "w przypadkach określonych w ustawie Przewodniczący Komisji może wystąpić do podmiotu nadzorowanego z pisemnym żądaniem dokonania blokady rachunku papierów wartościowych",
     "option_D": "Przewodniczący Komisji jest powoływany przez Prezesa Rady Ministrów.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 62,
@@ -617,7 +800,10 @@
     "option_C": "środki w wysokości 7.277,68 PLN, a średnioroczna stopa zwrotu równa 1,76%",
     "option_D": "środki w wysokości 7.277,68 PLN, a średnioroczna stopa zwrotu równa 1,78%.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa zwrotu z inwestycji"
   },
   {
     "id": 63,
@@ -627,7 +813,10 @@
     "option_C": "(I, II)",
     "option_D": "(III, IV).",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 64,
@@ -637,7 +826,10 @@
     "option_C": "1,99",
     "option_D": "Drugi kurs jednolity nie zostanie określony.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 65,
@@ -647,7 +839,10 @@
     "option_C": "Vega",
     "option_D": "Rho.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Współczynniki greckie"
   },
   {
     "id": 66,
@@ -657,7 +852,10 @@
     "option_C": "firma określa grupę docelową w odniesieniu do każdego emitowanego przez nią instrumentu finansowego",
     "option_D": "firma określa negatywną grupę docelową w odniesieniu do każdego emitowanego przez nią instrumentu finansowego, który nie stanowi nieskomplikowanego instrumentu finansowego.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 67,
@@ -667,7 +865,10 @@
     "option_C": "towarzystwo funduszy inwestycyjnych zarządzające funduszem sekurytyzacyjnym",
     "option_D": "uczestnik nabywający certyfikaty inwestycyjne funduszu sekurytyzacyjnego.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 68,
@@ -677,7 +878,10 @@
     "option_C": "strategie dopasowania, strategie indeksowania, strategie pasywne, strategie aktywne",
     "option_D": "strategie rolowania, strategie immunizacji, strategie pasywne, strategie aktywne",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Zarządzanie portfelem obligacji"
   },
   {
     "id": 69,
@@ -687,7 +891,10 @@
     "option_C": "65.191 PLN",
     "option_D": "76.775 PLN.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty"
   },
   {
     "id": 70,
@@ -697,7 +904,10 @@
     "option_C": "w rzeczywistości istnieją także pasywne portfele inwestycyjne, które w żaden sposób nie są związane z indeksami giełdowymi",
     "option_D": "strategia rotacji sektorowej (ang. sector rotation strategy) jest na ogół stosowana przez inwestujących w zagraniczne aktywa finansowe",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Strategie zarządzania portfelami"
   },
   {
     "id": 71,
@@ -707,7 +917,10 @@
     "option_C": "9.068,80 PLN",
     "option_D": "37.421,88 PLN",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty"
   },
   {
     "id": 72,
@@ -717,7 +930,10 @@
     "option_C": "krzywej możliwości inwestycyjnych",
     "option_D": "linii CML (ang. Capital Market Line)",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Metody oceny projektów inwestycyjnych"
   },
   {
     "id": 73,
@@ -727,7 +943,10 @@
     "option_C": "6 maja 2022 r",
     "option_D": "4 maja 2022 r.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 74,
@@ -737,7 +956,10 @@
     "option_C": "4brokergpw",
     "option_D": "4brokerintra",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 75,
@@ -747,7 +969,10 @@
     "option_C": "opcje realne to przeważnie opcje europejskie",
     "option_D": "w przypadku opcji realnych występuje dłuższy horyzont czasowy",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Opcje realne"
   },
   {
     "id": 76,
@@ -757,7 +982,10 @@
     "option_C": "40",
     "option_D": "żadne z powyższych",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 77,
@@ -767,7 +995,10 @@
     "option_C": "nie mogą być skracane ani przedłużane przez czynność prawną",
     "option_D": "żadna z powyższych.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 78,
@@ -777,7 +1008,10 @@
     "option_C": "średnia arytmetyczna wyznaczona na podstawie logarytmicznych stóp zwrotu również uwzględnia zmianę wartości inwestycji w całym okresie, a nie zmiany w poszczególnych podokresach",
     "option_D": "średnia arytmetyczna stóp zwrotu jest prawie zawsze wyższa od średniej geometrycznej stóp zwrotu",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa zwrotu z inwestycji"
   },
   {
     "id": 79,
@@ -787,7 +1021,10 @@
     "option_C": "5,134",
     "option_D": "żadne z powyższych",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 80,
@@ -797,7 +1034,10 @@
     "option_C": "rzetelnie",
     "option_D": "bieżąco.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 81,
@@ -807,7 +1047,10 @@
     "option_C": "50% wartości aktywów funduszu",
     "option_D": "żadne z powyższych.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 82,
@@ -817,7 +1060,10 @@
     "option_C": "bull call spread",
     "option_D": "call ratio backspread",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   },
   {
     "id": 83,
@@ -827,7 +1073,10 @@
     "option_C": "spółka z ograniczoną odpowiedzialnością, spółka akcyjna i prosta spółka akcyjna",
     "option_D": "wyłącznie spółka z ograniczoną odpowiedzialnością i spółka akcyjna.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 84,
@@ -837,7 +1086,10 @@
     "option_C": "stosowanie jasnych i jednoznacznych zasad rozpatrywania reklamacji klientów",
     "option_D": "przekazywanie do Komisji Nadzoru Finansowego kwartalnego raportu reklamacji klientów",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Etyka",
+    "topic": "Zasady etyki zawodowej Maklerów i Doradców"
   },
   {
     "id": 85,
@@ -847,7 +1099,10 @@
     "option_C": "umożliwiający ustalenie kwoty operacji wyłącznie w walucie obcej",
     "option_D": "żadna z powyższych.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 86,
@@ -857,7 +1112,10 @@
     "option_C": "pozostaje bez zmian",
     "option_D": "nie jest do określenia",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Duration"
   },
   {
     "id": 87,
@@ -867,7 +1125,10 @@
     "option_C": "obligacje mogą emitować spółki komandytowo-akcyjne",
     "option_D": "obligacje nie podlegają obowiązkowi zarejestrowania w depozycie papierów wartościowych prowadzonym zgodnie z przepisami ustawy o obrocie instrumentami finansowym.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 88,
@@ -877,7 +1138,10 @@
     "option_C": "zysk operacyjny wzrośnie o 14,1%, to zysk netto wzrośnie również o 14,1%",
     "option_D": "żadna z powyższych.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Dźwignie"
   },
   {
     "id": 89,
@@ -887,7 +1151,10 @@
     "option_C": "zlecenie kupna 12.232 akcji spółki B z limitem 3,35",
     "option_D": "zlecenie sprzedaży 98.000 akcji spółki C z limitem 0,50",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 90,
@@ -897,7 +1164,10 @@
     "option_C": "modyfikacje: I, II, III, IV",
     "option_D": "modyfikacje: III, IV",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 91,
@@ -907,7 +1177,10 @@
     "option_C": "rachunkach zbiorczych",
     "option_D": "rejestrach instrumentów finansowych.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 92,
@@ -917,7 +1190,10 @@
     "option_C": "nieodwracalnym wyłączeniu możliwości dokonywania zapisów księgowych w zbiorach tworzących zamknięte księgi rachunkowe",
     "option_D": "wyłączeniu możliwości dokonywania zapisów księgowych w zbiorach tworzących zamknięte księgi rachunkowe wyłącznie przez okres 6 lat kalendarzowych.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 93,
@@ -927,7 +1203,10 @@
     "option_C": "wyłącznie rejestr sald konta księgi pomocniczej",
     "option_D": "dziennik operacyjny jednostki._",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 94,
@@ -937,7 +1216,10 @@
     "option_C": "zlecenia PEG mogą być składane wyłącznie w fazie notowań ciągłych",
     "option_D": "zlecenie PEG nie traci priorytetu czasu przyjęcia w przypadku, gdy jego podstawowy (zmienny) limit ceny jest aktualizowany",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 95,
@@ -947,7 +1229,10 @@
     "option_C": "16,92%",
     "option_D": "39,61%",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Model Gordona"
   },
   {
     "id": 96,
@@ -957,7 +1242,10 @@
     "option_C": "wskaźnika selektywności",
     "option_D": "wskaźnika ryzyka",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 97,
@@ -967,7 +1255,10 @@
     "option_C": "6,20%",
     "option_D": "6,97%.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 98,
@@ -977,7 +1268,10 @@
     "option_C": "im niższa wielkość renty, tym wyższa wartość bieżąca",
     "option_D": "wartość bieżąca renty płatnej z góry jest równa wartości bieżącej renty płatnej z dołu podzielonej przez czynnik równy 1 plus stopa procentowa",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty"
   },
   {
     "id": 99,
@@ -987,7 +1281,10 @@
     "option_C": "na żądanie Sądu lub Prokuratora Generalnego, zgłoszone zgodnie z przepisami Ustawy o obrocie instrumentami finansowymi",
     "option_D": "na żądanie Komisji Nadzoru Finansowego zgłoszone zgodnie z przepisami Ustawy o obrocie instrumentami finansowymi",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 100,
@@ -997,7 +1294,10 @@
     "option_C": "obligacje skarbowe",
     "option_D": "instrumenty strukturyzowane bez dźwigni.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 101,
@@ -1007,7 +1307,10 @@
     "option_C": "1) maksymalizacji wolumenu obrotu 2) minimalizacji różnicy między kursem określanym a kursem odniesienia, 3) minimalizacji różnicy między liczbą instrumentów finansowych w zleceniach sprzedaży i zleceniach kupna możliwych do zrealizowania po określonym kursie",
     "option_D": "żadna z powyższych.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 102,
@@ -1017,7 +1320,10 @@
     "option_C": "17 sztuk po cenie 39,825",
     "option_D": "15 sztuk po cenie 39,85 i 2 sztuki pozostaną niezrealizowane.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 103,
@@ -1027,7 +1333,10 @@
     "option_C": "wolność od przeróbek i wymazywań",
     "option_D": "zawieranie przez dowody księgowe danych wskazanych w ustawie o rachunkowości. KUPNO LIMIT 40,10 39,90 39,85 39,80 39,75 SPRZEDAZ 56 58 15 14 17",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 104,
@@ -1037,7 +1346,10 @@
     "option_C": "5,4099",
     "option_D": "kurs zamknięcia nie zostanie określony",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 105,
@@ -1047,7 +1359,10 @@
     "option_C": "zawiadomi Komisję Nadzoru Finansowego co najmniej 30 dni przed planowanym podziałem",
     "option_D": "żadne z powyższych.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 106,
@@ -1057,7 +1372,10 @@
     "option_C": "obowiązek zawiadomienia spocznie wyłącznie na akcjonariuszu Kowalskim",
     "option_D": "nie powstał obowiązek notyfikacyjny, ani na spółce B z ograniczoną odpowiedzialnością, ani na akcjonariuszu Kowalskim.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 107,
@@ -1067,7 +1385,10 @@
     "option_C": "giełdowe prawo pochodne",
     "option_D": "kwit depozytwowy",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 108,
@@ -1077,7 +1398,10 @@
     "option_C": "członek zarządu nie mógł dokonać tej transakcji, ponieważ nie miał zgody Komisji",
     "option_D": "członek zarządu mógł dokonać tej transakcji, ponieważ była ona dokonana poza okresem zamkniętym.",
     "correct_answer": "A",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 596/2014 (MAR)"
   },
   {
     "id": 109,
@@ -1087,7 +1411,10 @@
     "option_C": "zarząd jest odpowiedzialny za adekwatność i skuteczność procedury zgłaszania naruszeń",
     "option_D": "procedury zgłaszania naruszeń określają między innymi sposób ochrony danych osobowych osoby dokonującej zgłoszenia naruszenia oraz osoby, której zarzuca się dokonanie naruszenia.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 110,
@@ -1097,7 +1424,10 @@
     "option_C": "zjawisko nazywane uśmiechem zmienności (ang. volatility smile) polega na tym, że wyższe oszacowania zmienności otrzymuje się przy wysokich i niskich cenach wykonania, niższe zaś przy średnich cenach wykonania",
     "option_D": "model Black’a-Scholes’a-Merton’a może być stosowany do wyceny wszystkich rodzajów opcji amerykańskich",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Modele wyceny opcji"
   },
   {
     "id": 111,
@@ -1107,7 +1437,10 @@
     "option_C": "stopy krótkoterminowe maleją więcej niż stopy średnioterminowe, a te z kolei więcej niż stopy długoterminowe",
     "option_D": "stopy krótkoterminowe maleją mniej niż stopy średnioterminowe, a te z kolei mniej niż stopy długoterminowe.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Krzywa rentowności"
   },
   {
     "id": 112,
@@ -1117,7 +1450,10 @@
     "option_C": "spółki komandytowej, w której jedynym komplementariuszem jest spółka z ograniczoną odpowiedzialnością",
     "option_D": "spółki komandytowo-akcyjnej, w której jedynym komplementariuszem jest spółka jawna",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 113,
@@ -1127,7 +1463,10 @@
     "option_C": "zlecenia po cenie rynkowej",
     "option_D": "zlecenia po każdej cenie.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 114,
@@ -1137,7 +1476,10 @@
     "option_C": "akcje nie mogą być obejmowane poniżej ich wartości nominalnej",
     "option_D": "kapitał zakładowy spółki powinien wynosić co najmniej 10.000 PLN.",
     "correct_answer": "D",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 115,
@@ -1147,7 +1489,10 @@
     "option_C": "zakupie kontraktu terminowego (long forward) (lub zakupie akcji) oraz wystawieniu opcji kupna (call)",
     "option_D": "zakupie kontraktu terminowego (long forward) (lub zakupie akcji) oraz zakupie opcji sprzedaży (put).",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - wykorzystanie strategii"
   },
   {
     "id": 116,
@@ -1157,7 +1502,10 @@
     "option_C": "0,192",
     "option_D": "20,833",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Modele rynku (CML, Sharpe, CAPM)"
   },
   {
     "id": 117,
@@ -1167,7 +1515,10 @@
     "option_C": "z prawem pierwszeństwa",
     "option_D": "podporządkowanymi.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 118,
@@ -1177,7 +1528,10 @@
     "option_C": "zawiadmienia ministra właściwego do spraw instytucji finansowych",
     "option_D": "zgody ministra właściwego do spraw instytucji finansowych.",
     "correct_answer": "B",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 119,
@@ -1187,7 +1541,10 @@
     "option_C": "EVA zmaleje na skutek restrukturyzacji kapitału tylko wtedy, gdy podatkowa korzyść zwiększenia wskaźnika zadłużenia przewyższy związany z tym koszt po stronie ryzyka",
     "option_D": "w rachunku EVA porównuje się zwrot z inwestycji (ROIC w ujęciu względnym, NOPAT w ujęciu bezwzględnym) ze zwrotem, którego wymagają inwestorzy (WACC w ujęciu względnym, WACC * IC w ujęciu bezwzględnym).",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 120,
@@ -1197,6 +1554,9 @@
     "option_C": "30,20",
     "option_D": "zlecenie nie zrealizuje się.",
     "correct_answer": "C",
-    "exam_date": "27.03.2022"
+    "exam_date": "27.03.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   }
 ]

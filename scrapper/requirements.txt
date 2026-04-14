@@ -3,3 +3,5 @@ pdf2image
 pymupdf
 pymongo
 python-dotenv
+openai>=1.0.0
+pydantic>=2.0.0

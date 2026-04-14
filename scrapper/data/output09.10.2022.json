@@ -7,7 +7,10 @@
     "option_C": "II",
     "option_D": "żadne z powyższych.",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 2,
@@ -17,7 +20,10 @@
     "option_C": "33.640 PLN",
     "option_D": "36.752 PLN",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 3,
@@ -27,7 +33,10 @@
     "option_C": "61.214 PLN",
     "option_D": "93.247 PLN.",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Metoda równych kwot płatności kredytu"
   },
   {
     "id": 4,
@@ -37,7 +46,10 @@
     "option_C": "spółka jawna, spółka partnerska, spółka komandytowa oraz spółka komandytowo- akcyjna",
     "option_D": "spółka partnerska oraz jednoosobowa spółka z ograniczoną odpowiedzialnością.________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 5,
@@ -47,7 +59,10 @@
     "option_C": "50%",
     "option_D": "66%",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 6,
@@ -57,7 +72,10 @@
     "option_C": "od godz. 17:00 do godz. 17:10",
     "option_D": "od godz. 17:00 do godz. 17:05._________________________________________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 7,
@@ -67,7 +85,10 @@
     "option_C": "21,25%",
     "option_D": "28,57%.",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 8,
@@ -77,7 +98,10 @@
     "option_C": "Przewodniczący Sesji",
     "option_D": "emitent",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 9,
@@ -87,7 +111,10 @@
     "option_C": "I, III",
     "option_D": "III, IV.__________________________________________________________________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 10,
@@ -97,7 +124,10 @@
     "option_C": "niedoszacowanie wskaźników poziomu amortyzacji wyposażenia",
     "option_D": "nieadekwatną kompensację ryzyka finansowego.__________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki aktywności"
   },
   {
     "id": 11,
@@ -107,7 +137,10 @@
     "option_C": "zysk operacyjny wzrośnie o 12,8%, to zysk netto wzrośnie również o 12,8%",
     "option_D": "zysk operacyjny wzrośnie o 21%, to zysk netto wzrośnie zawsze o 12,8%._____________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Dźwignie"
   },
   {
     "id": 12,
@@ -117,7 +150,10 @@
     "option_C": "1,35",
     "option_D": "1,65",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 13,
@@ -127,7 +163,10 @@
     "option_C": "jeżeli mocodawca ustanowił kilku pełnomocników z takim samym zakresem umocowania, każdy z nich może działać samodzielnie, chyba że co innego wynika z treści pełnomocnictwa",
     "option_D": "pełnomocnictwo ogólne obejmuje umocowanie do czynności zwykłego zarządu oraz do czynności przekraczających zakres zwykłego zarządu.________________________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 14,
@@ -137,7 +176,10 @@
     "option_C": "makler obrotu finansowego",
     "option_D": "makler finansowy.",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Etyka",
+    "topic": "Zasady etyki zawodowej Maklerów i Doradców"
   },
   {
     "id": 15,
@@ -147,7 +189,10 @@
     "option_C": "kupno 25 sztuk z limitem realizacji 24,2500 i limitem aktywacji 24,2500",
     "option_D": "kupno 25 sztuk z limitem realizacji 23,0050 i limitem aktywacji 24,2500",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 16,
@@ -157,7 +202,10 @@
     "option_C": "regulamin audytu wewnętrznego",
     "option_D": "żadne z powyższych._________________________________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 17,
@@ -167,7 +215,10 @@
     "option_C": "koszty dotyczące przeszłych okresów oraz przeszłe koszty, które jeszcze nie zostały poniesione",
     "option_D": "zobowiązania długo- i krótkoterminowe._________________________________________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 18,
@@ -177,7 +228,10 @@
     "option_C": "wyłącznie pozostałych przychodów operacyjnych",
     "option_D": "zysków nadzwyczajnych._________________________________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 19,
@@ -187,7 +241,10 @@
     "option_C": "I",
     "option_D": "I, II, III",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 20,
@@ -197,7 +254,10 @@
     "option_C": "październik",
     "option_D": "listopad.____________________________________________________________________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 21,
@@ -207,7 +267,10 @@
     "option_C": "2,311",
     "option_D": "1,422.______________________________________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Dźwignie"
   },
   {
     "id": 22,
@@ -217,7 +280,10 @@
     "option_C": "do wysokości niepokrytej zabezpieczeniem należności",
     "option_D": "zawsze do wysokości 5% należności.____________________________________________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 23,
@@ -227,7 +293,10 @@
     "option_C": "58.942 PLN",
     "option_D": "82.602 PLN",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "NPV i PI"
   },
   {
     "id": 24,
@@ -237,7 +306,10 @@
     "option_C": "metod majątkowych",
     "option_D": "metod bazujących na wycenie wartości goodwill.",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Model Gordona"
   },
   {
     "id": 25,
@@ -247,7 +319,10 @@
     "option_C": "40,05",
     "option_D": "40,20",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 26,
@@ -257,7 +332,10 @@
     "option_C": "ISN",
     "option_D": "EIL",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 27,
@@ -267,7 +345,10 @@
     "option_C": "20%",
     "option_D": "30%.",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 28,
@@ -277,7 +358,10 @@
     "option_C": "22,10",
     "option_D": "22,09",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 29,
@@ -287,7 +371,10 @@
     "option_C": "trzeciego dnia sesyjnego przed rozpoczęciem kolejnego okresu odsetkowego",
     "option_D": "w dniu rozpoczęcia kolejnego okresu odsetkowego.________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 30,
@@ -297,7 +384,10 @@
     "option_C": "Komisja Nadzoru Finansowego oraz Przewodniczący Komisji Nadzoru Finansowego",
     "option_D": "Urząd Komisji nie posiada organów.____________________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 31,
@@ -307,7 +397,10 @@
     "option_C": "stosują wyłącznie przepisy wykonawcze wydane na podstawie ustawy o rachunkowości, w zakresie nieuregulowanym przez MSR",
     "option_D": "stosują przepisy ustawy o rachunkowości oraz przepisy wykonawcze wydane na jej podstawie, w zakresie nieuregulowanym przez MSR._________________________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 32,
@@ -317,7 +410,10 @@
     "option_C": "rachunki jednostek uczestnictwa",
     "option_D": "żadne z powyższych._________________________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 33,
@@ -327,7 +423,10 @@
     "option_C": "maklera obrotu finansowego",
     "option_D": "doradcy inwestycyjnego.______________________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Etyka",
+    "topic": "Zasady etyki zawodowej Maklerów i Doradców"
   },
   {
     "id": 34,
@@ -337,7 +436,10 @@
     "option_C": "nie tracą ważności po dniu D do momentu ich anulacji przez wystawiającego zlecenie",
     "option_D": "tracą ważność w jakimkolwiek dniu oznaczonym przez wystawiającego zlecenie._______",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 35,
@@ -347,7 +449,10 @@
     "option_C": "oddziałem instytucji kredytowej z siedzibą na terytorium Rzeczypospolitej Polskiej, jeżeli fundusze przydzielone do dyspozycji tego oddziału wynoszą co najmniej 50.000.000 PLN",
     "option_D": "żadne z powyższych._________________________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 36,
@@ -357,7 +462,10 @@
     "option_C": "środki w wysokości 5.588,61 PLN, a średnioroczna stopa zwrotu równa 3,68%",
     "option_D": "środki w wysokości 6.449,25 PLN, a średnioroczna stopa zwrotu równa -3,49%",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa zwrotu z inwestycji"
   },
   {
     "id": 37,
@@ -367,7 +475,10 @@
     "option_C": "strategie wynikające z oczekiwań braku zmian stóp procentowych",
     "option_D": "strategie indeksowania (ang. indexing)",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Zarządzanie portfelem obligacji"
   },
   {
     "id": 38,
@@ -377,7 +488,10 @@
     "option_C": "trzy podmioty wskazane przez emitenta instrumentów",
     "option_D": "dowolna liczba podmiotów wskazanych przez emitenta (nie ma ograniczeń w tym zakresie).______________________________________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 39,
@@ -387,7 +501,10 @@
     "option_C": "obrót należnościami 5,74 a średni okres inkasa 63,4 dnia",
     "option_D": "obrót należnościami 5,75 a średni okres inkasa 63,5 dnia.___________________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki aktywności"
   },
   {
     "id": 40,
@@ -397,7 +514,10 @@
     "option_C": "52.257 PLN",
     "option_D": "57.050 PLN",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 41,
@@ -407,7 +527,10 @@
     "option_C": "profil NPV to narzędzie szczególnie przydatne przy analizie projektów o niekonwencjonalnych przepływach pieniężnych",
     "option_D": "dodatnia wartość NPV oznacza, że zrealizowana stopa zwrotu z projektu jest wyższa niż koszt kapitału.",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "NPV i PI"
   },
   {
     "id": 42,
@@ -417,7 +540,10 @@
     "option_C": "członek Rady Nadzorczej nie mógł dokonać tej transakcji, ponieważ nie miał zgody emitenta",
     "option_D": "członek Rady Nadzorczej nie mógł dokonać tej transakcji, ponieważ była ona dokonana w okresie zamkniętym",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 596/2014 (MAR)"
   },
   {
     "id": 43,
@@ -427,7 +553,10 @@
     "option_C": "które nie ukończyły lat siedemnastu oraz osoby ubezwłasnowolnione częściowo lub całkowicie",
     "option_D": "żadna z powyższych._________________________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 44,
@@ -437,7 +566,10 @@
     "option_C": "53,75%",
     "option_D": "77,40%.",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Model Gordona"
   },
   {
     "id": 45,
@@ -447,7 +579,10 @@
     "option_C": "zakupie opcji kupna (call) i sprzedaży (put) z różnymi cenami wykonania",
     "option_D": "zakupie opcji sprzedaży (put) z niższą ceną wykonania i wystawieniu opcji kupna (call) z wyższą ceną wykonania",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   },
   {
     "id": 46,
@@ -457,7 +592,10 @@
     "option_C": "4%",
     "option_D": "8%",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 47,
@@ -467,7 +605,10 @@
     "option_C": "52,94",
     "option_D": "52,98.",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 48,
@@ -477,7 +618,10 @@
     "option_C": "Rho",
     "option_D": "Vega",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Współczynniki greckie"
   },
   {
     "id": 49,
@@ -487,7 +631,10 @@
     "option_C": "Funduszu Rozwoju Rynku Finansowego",
     "option_D": "Komisji Nadzoru Finansowego.________________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 50,
@@ -497,7 +644,10 @@
     "option_C": "model Cox’a-Ross’a-Rubinstein’a zakłada, że zmiany ceny instrumentu bazowego kształtują się zgodnie z rozkładem dwumianowym",
     "option_D": "model Cox’a-Ross’a-Rubinstein’a w swojej podstawowej postaci może być stosowany do wyceny opcji na stopę procentową",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Modele wyceny opcji"
   },
   {
     "id": 51,
@@ -507,7 +657,10 @@
     "option_C": "1.504.800 PLN",
     "option_D": "1.567.500 PLN.",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Metoda równych rat kapitałowych"
   },
   {
     "id": 52,
@@ -517,7 +670,10 @@
     "option_C": "Komisja, na wniosek spółki publicznej, udziela zezwolenia na wycofanie akcji z obrotu zorganizowanego",
     "option_D": "Komisja może zgłosić żądanie zmiany treści wezwania do zapisywania się na sprzedaż akcji spółki publicznej.__________________________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 53,
@@ -527,7 +683,10 @@
     "option_C": "23%",
     "option_D": "24%",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa zwrotu z inwestycji"
   },
   {
     "id": 54,
@@ -537,7 +696,10 @@
     "option_C": "opcje realne to przeważnie opcje europejskie",
     "option_D": "w przypadku opcji realnych oprócz ryzyka rynkowego występuje także ryzyko specyficzne",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Opcje realne"
   },
   {
     "id": 55,
@@ -547,7 +709,10 @@
     "option_C": "2 tygodnie",
     "option_D": "żadne z powyższych._________________________________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 56,
@@ -557,7 +722,10 @@
     "option_C": "zlecenie LIMIT zawiera limit ceny i może być realizowane wyłącznie po cenie określonej w tym limicie albo po cenie niższej - w przypadku zlecenia kupna albo po cenie wyższej - w przypadku zlecenia sprzedaży",
     "option_D": "zlecenie STOP zawiera limit aktywacji zlecenia oraz limit ceny, po której zlecenie to może podlegać realizacji (zlecenie STOP Limit) albo polecenie realizacji bez określonego limitu ceny (zlecenie STOP Loss)._________________________________________________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 57,
@@ -567,7 +735,10 @@
     "option_C": "w zakresie określonym w ustawie Przewodniczący Komisji posiada uprawnienia prokuratora w postępowaniu cywilnym",
     "option_D": "w zakresie określonym w ustawie Przewodniczącemu Komisji, na jego wniosek, przysługują uprawnienia pokrzywdzonego w postępowaniu karnym._____________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 58,
@@ -577,7 +748,10 @@
     "option_C": "obligacje mogą być emitowane przez spółdzielcze kasy oszczędnościowo-kredytowe",
     "option_D": "obligacje podlegają obowiązkowi zarejestrowania w depozycie papierów wartościowych prowadzonym zgodnie z przepisami ustawy o obrocie instrumentami finansowym._________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 59,
@@ -587,7 +761,10 @@
     "option_C": "rynek regulowany",
     "option_D": "żadne z powyższych._________________________________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 60,
@@ -597,7 +774,10 @@
     "option_C": "maszyn",
     "option_D": "know-how",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 61,
@@ -607,7 +787,10 @@
     "option_C": "562 PLN za 26 lat dyskontowane roczną stopą procentową równą 6%",
     "option_D": "564 PLN za 9 lat dyskontowane roczną stopą procentową równą 18%",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca"
   },
   {
     "id": 62,
@@ -617,7 +800,10 @@
     "option_C": "long hedge",
     "option_D": "short hedge.",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Kontrakty terminowe"
   },
   {
     "id": 63,
@@ -627,7 +813,10 @@
     "option_C": "zlecenie kupna 60 akcji z limitem 445,00 i warunkiem MWW=",
     "option_D": "zlecenie sprzedaży 20 akcji po kursie 435,50 z warunkiem WNF.______",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 64,
@@ -637,7 +826,10 @@
     "option_C": "firma inwestycyjna odmawia podjęcia czynności związane z przeniesieniem instrumentów finansowych, gdy z otrzymanych dokumentów wynika w sposób oczywisty, że przeniesienie instrumentów finansowych jest sprzeczne z przepisami prawa",
     "option_D": "firma inwestycyjna lub bank powierniczy mogą odmówić podjęcia czynności związanych z przeniesieniem instrumentów finansowych w przypadku powzięcia, na podstawie otrzymanych dokumentów, uzasadnionych wątpliwości wskazujących, że przeniesienie instrumentów finansowych ma na celu obejście przepisów prawa._______________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 65,
@@ -647,7 +839,10 @@
     "option_C": "68,60",
     "option_D": "68,80",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 66,
@@ -657,7 +852,10 @@
     "option_C": "zlecenia maklerskie na transakcje pakietowe nie mogą zawierać oznaczeń lub rodzajów ważności, ani dodatkowych warunków realizacji",
     "option_D": "przedmiotem transakcji pakietowych mogą być jednostki uczestnictwa.________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 67,
@@ -667,7 +865,10 @@
     "option_C": "obowiązek zawiadomienia powstał wyłącznie do faktu zejścia z progu 5% ogólnej liczby głosów w wyniku transakcji sprzedaży",
     "option_D": "obowiązek zawiadomienia powstał wyłącznie do faktu osiągnięcia progu 5% ogólnej liczby głosów w wyniku transakcji kupna.__________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 68,
@@ -677,7 +878,10 @@
     "option_C": "21,87%",
     "option_D": "23,83%.",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 69,
@@ -687,7 +891,10 @@
     "option_C": "tylko zlecenia I, II, III",
     "option_D": "wszystkie zlecenia I, II, III, IV",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 70,
@@ -697,7 +904,10 @@
     "option_C": "zwiększenie wolumenu w zleceniu drugim z 1.200 do 1.500",
     "option_D": "zmniejszenie wolumenu w zleceniu czwartym z 800 do 500.",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 71,
@@ -707,7 +917,10 @@
     "option_C": "system nie chroni osób, które w dniu ogłoszenia upadłości domu maklerskiego posiadały 2 % ogólnej liczby głosów lub kapitału zakładowego domu maklerskiego",
     "option_D": "system nie chroni osób będących wstęnymi członków rady nadzorczej domu maklerskiego.__________________________________________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 72,
@@ -717,7 +930,10 @@
     "option_C": "wskaźnika selektywności brutto",
     "option_D": "wskaźnika selektywności netto",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 73,
@@ -727,7 +943,10 @@
     "option_C": "21,40",
     "option_D": "28,50",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki rentowności"
   },
   {
     "id": 74,
@@ -737,7 +956,10 @@
     "option_C": "4,00%",
     "option_D": "3,00%.",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 75,
@@ -747,7 +969,10 @@
     "option_C": "obligacji zabezpieczonych umową powierniczą - obligacje hipoteczne o dodatkowym zabezpieczeniu (ang. collateral trust bonds)",
     "option_D": "obligacji z listami zastawnymi (ang. collateralized mortgage obligation)",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Rodzaje obligacji i ich ryzyka"
   },
   {
     "id": 76,
@@ -757,7 +982,10 @@
     "option_C": "strategię call ratio backspread",
     "option_D": "strategię long butterfly",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - wykorzystanie strategii"
   },
   {
     "id": 77,
@@ -767,7 +995,10 @@
     "option_C": "40 348,65 PLN",
     "option_D": "48.879,62 PLN.",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty"
   },
   {
     "id": 78,
@@ -777,7 +1008,10 @@
     "option_C": "w przypadku gdy polityka przewiduje możliwości wykonywania zleceń poza systemem obrotu instrumentami finansowymi, firma inwestycyjna informuje o tym klienta przed wykonaniem jego zlecenia poza systemem obrotu instrumentami finansowymi",
     "option_D": "firma inwestycyjna świadcząca usługi wykonywania zleceń nabycia lub zbycia instrumentów finansowych jest obowiązana ustanowić i wdrożyć rozwiązania w celu wdrożenia i przestrzegania polityki.________________________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 79,
@@ -787,7 +1021,10 @@
     "option_C": "rynkowa premia za ryzyko jest stałą, gdyż nachylenie SML nie zmienia się w czasie",
     "option_D": "zmiana położenia SML odzwierciedla zmiany oczekiwanej realnej stopy wzrostu gospodarczego, warunków funkcjonowania rynku kapitałowego lub oczekiwanej stopy inflacji",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Modele rynku (CML, Sharpe, CAPM)"
   },
   {
     "id": 80,
@@ -797,7 +1034,10 @@
     "option_C": "0,46",
     "option_D": "0,48.",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Dźwignie"
   },
   {
     "id": 81,
@@ -807,7 +1047,10 @@
     "option_C": "system transakcyjny oraz system rozliczeń",
     "option_D": "system transakcyjny, system rozliczeń oraz system rozrachunku",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 82,
@@ -817,7 +1060,10 @@
     "option_C": "dziesięć lat, dla roszczeń o świadczenia okresowe trzy lata, a dla roszczeń związanych z prowadzeniem działalności gospodarczej - jeden rok",
     "option_D": "dziesięć lat dla wszystkich roszczeń._____________________________________________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 83,
@@ -827,7 +1073,10 @@
     "option_C": "II",
     "option_D": "I, II, III, IV._________________________________________________________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 84,
@@ -837,7 +1086,10 @@
     "option_C": "synthetic long put",
     "option_D": "synthetic long forward",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   },
   {
     "id": 85,
@@ -847,7 +1099,10 @@
     "option_C": "realna stopa zwrotu z inwestycji wolnej od ryzyka (ang. Real Risk-Free Rate)",
     "option_D": "średnia historyczna stopa zwrotu z pojedynczej inwestycji (ang. Mean Rate of Return)",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 86,
@@ -857,7 +1112,10 @@
     "option_C": "1.500 sztuk po cenie 3,75",
     "option_D": "zlecenie zostanie odrzucone i transakcja nie zostanie zrealizowana.___________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 87,
@@ -867,7 +1125,10 @@
     "option_C": "wyższa niż wypukłość obligacji A",
     "option_D": "nie do ustalenia",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Wypukłość obligacji (convexity)"
   },
   {
     "id": 88,
@@ -877,7 +1138,10 @@
     "option_C": "III",
     "option_D": "I, II, III, IV._________________________________________________________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 89,
@@ -887,7 +1151,10 @@
     "option_C": "zlecenia LIMIT oraz zlecenia z warunkami WUJ i MWW",
     "option_D": "zlecenia LIMIT z warunkami WDA oraz WDC",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 90,
@@ -897,7 +1164,10 @@
     "option_C": "13%",
     "option_D": "14%.",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Obligacje zerokuponowe"
   },
   {
     "id": 91,
@@ -907,7 +1177,10 @@
     "option_C": "zlecenie trzecie",
     "option_D": "żadne zlecenie",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 92,
@@ -917,7 +1190,10 @@
     "option_C": "kapitał zakładowy spółki powinien wynosić co najmniej 100.000 PLN",
     "option_D": "akcjonariuszom nie wolno pobierać odsetek od wniesionych wkładów, jak również od posiadanych akcji.______________________________________________________________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 93,
@@ -927,7 +1203,10 @@
     "option_C": "w przypadku tej transakcji członek Zarządu nie miał obowiązku dokonania powiadomienia emitenta ani Komisji Nadzoru Finansowego, ponieważ kwota transakcji nie osiągnęła progu równowartości 5.000 EUR do dnia sprzedaży w 2022 r",
     "option_D": "w przypadku tej transakcji członek Zarządu nie miał obowiązku dokonania powiadomienia emitenta ani Komisji Nadzoru Finansowego, ponieważ obowiązek ten dotyczy tylko transakcji kupna, a nie sprzedaży.______________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 596/2014 (MAR)"
   },
   {
     "id": 94,
@@ -937,7 +1216,10 @@
     "option_C": "emisję obligacji",
     "option_D": "przejęcie zarządzania funduszem przez inne towarzystwo funduszy inwestycyjnych._____",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 95,
@@ -947,7 +1229,10 @@
     "option_C": "fazy akumulacji",
     "option_D": "fazy konsolidacji.",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Strategie zarządzania portfelami"
   },
   {
     "id": 96,
@@ -957,7 +1242,10 @@
     "option_C": "1) zleceń LIMIT, 2) zleceń STOP",
     "option_D": "1) zleceń PEG 2) zleceń PKC",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 97,
@@ -967,7 +1255,10 @@
     "option_C": "średnim kursie uznanym przez Narodowy Bank Polski, na pierwszy dzień sierpnia roku poprzedzającego rok obrotowy",
     "option_D": "średnim kursie ogłoszonym przez Europejski Bank Centralny wspólnie z Narodowym Bankiem Polskim, na pierwszy dzień czerwca roku obrotowego.________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 98,
@@ -977,7 +1268,10 @@
     "option_C": "I, II, III, IV",
     "option_D": "I, II, IV.____________________________________________________________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 99,
@@ -987,7 +1281,10 @@
     "option_C": "złożenie zlecenia kupna PCR o wolumenie",
     "option_D": "złożenie zlecenia sprzedaży PKC o wolumenie",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 100,
@@ -997,7 +1294,10 @@
     "option_C": "jedną z istotnych zalet metody NPV jest to, że przyjmuje realne założenie o poziomie stopy reinwestycji",
     "option_D": "konflikt wyboru (ang. conflicting ranking) pojawia się wówczas, gdy analizowane projekty różnią się rozkładem przepływów pieniężnych (ang. timing problem)",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Metody oceny projektów inwestycyjnych"
   },
   {
     "id": 101,
@@ -1007,7 +1307,10 @@
     "option_C": "obligacji w odniesieniu do których emitent zamierza ubiegać się o dopuszczenie do obrotu na rynku regulowanym lub o wprowadzenie do ASO",
     "option_D": "akcj i w odniesieniu do których emitent zamierza ubiegać się o dopuszczenie do obrotu na rynku regulowanym lub o wprowadzenie do ASO.___________________________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 103,
@@ -1017,7 +1320,10 @@
     "option_C": "tożsamych co do rodzaju aktywów i pasywów, przychodów i kosztów związanych z nimi oraz zysków i strat nadzwyczajnych",
     "option_D": "tożsamych co do rodzaju pasywów, przychodów i kosztów z nimi związanych._________",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 104,
@@ -1027,7 +1333,10 @@
     "option_C": "w fazie tej mogą być anulowane zlecenia",
     "option_D": "w fazie tej mogą być składane nowe zlecenia._____________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 105,
@@ -1037,7 +1346,10 @@
     "option_C": "I, II, III",
     "option_D": "II, III",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 106,
@@ -1047,7 +1359,10 @@
     "option_C": "straty nadzwyczajne",
     "option_D": "zobowiązania finansowe.______________________________________________________",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 107,
@@ -1057,7 +1372,10 @@
     "option_C": "30 dni",
     "option_D": "3 miesiące.__________________________________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 108,
@@ -1067,7 +1385,10 @@
     "option_C": "4.000.000 PLN",
     "option_D": "10.000.000 PLN.",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 109,
@@ -1077,7 +1398,10 @@
     "option_C": "zgody Komisji Nadzoru Finansowego",
     "option_D": "żadne z powyższych._________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 110,
@@ -1087,7 +1411,10 @@
     "option_C": "z prawem pierwszeństwa",
     "option_D": "partycypacyjnymi.____________________________________________________________",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 111,
@@ -1097,7 +1424,10 @@
     "option_C": "49,00 PLN",
     "option_D": "49,25 PLN",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Współczynniki greckie"
   },
   {
     "id": 112,
@@ -1107,7 +1437,10 @@
     "option_C": "metoda Equity Cash Flow określa wartość fundamentalną kapitału własnego w przedsiębiorstwie",
     "option_D": "do najistotniejszych nurtów w ewolucji metod wyceny przedsiębiorstwa należą nurty dochodowy i mnożnikowy.",
     "correct_answer": "D",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Metody wyceny przedsiębiorstw"
   },
   {
     "id": 113,
@@ -1117,7 +1450,10 @@
     "option_C": "pozostałych kosztów operacyjnych",
     "option_D": "zysków nadzwyczajnych.______________________________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 114,
@@ -1127,7 +1463,10 @@
     "option_C": "14 dni od dnia złożenia wniosku",
     "option_D": "miesiąca od dnia złożenia wniosku._____________________________________________",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 115,
@@ -1137,7 +1476,10 @@
     "option_C": "3,676",
     "option_D": "3,680.",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 116,
@@ -1147,7 +1489,10 @@
     "option_C": "aktywne zarządzanie portfelem akcji jest próbą skonstruowania portfela ryzykownych inwestycji, które jednakże w dość krótkim czasie są w stanie wygenerować ponadprzeciętną stopę zwrotu",
     "option_D": "w rzeczywistości istnieją także pasywne portfele inwestycyjne, które w żaden sposób nie są związane z indeksami giełdowymi",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Strategie zarządzania portfelami"
   },
   {
     "id": 117,
@@ -1157,7 +1502,10 @@
     "option_C": "8,12%",
     "option_D": "8,30%",
     "correct_answer": "A",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Modele rynku (CML, Sharpe, CAPM)"
   },
   {
     "id": 118,
@@ -1167,7 +1515,10 @@
     "option_C": "8,08%",
     "option_D": "8,80%",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty wieczystej"
   },
   {
     "id": 119,
@@ -1177,7 +1528,10 @@
     "option_C": "im niższa wielkość renty, tym wyższa wartość przyszła renty",
     "option_D": "wartość przyszła renty płatnej z góry jest równa wartości przyszłej renty płatnej z dołu pomnożonej przez czynnik równy 1 plus stopa procentowa.",
     "correct_answer": "C",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 120,
@@ -1187,6 +1541,9 @@
     "option_C": "strategia put ratio backspread",
     "option_D": "strategia synthetic long put. 40 Numer pytania Odpowiedź",
     "correct_answer": "B",
-    "exam_date": "09.10.2022"
+    "exam_date": "09.10.2022",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   }
 ]

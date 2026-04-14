@@ -7,7 +7,10 @@
     "option_C": "podmiot, dla którego prowadzony jest rachunek zbiorczy (posiadacz rachunku zbiorczego), nie jest uważany za uprawnionego z zapisanych na tym rachunku zdematerializowanych papierów wartościowych",
     "option_D": "rachunki zbiorcze mogą być prowadzone m.in. dla zagranicznych firm inwestycyjnych prowadzących działalność maklerską na terytorium Rzeczypospolitej Polskiej w formie oddziału w zakresie rejestrowania instrumentów finansowych",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 2,
@@ -17,7 +20,10 @@
     "option_C": "ryzyko stopy procentowej",
     "option_D": "ryzyko kursu walutowego",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Rodzaje obligacji i ich ryzyka"
   },
   {
     "id": 3,
@@ -27,7 +33,10 @@
     "option_C": "odwołanie prokurenta wymaga zgody wszystkich członków zarządu",
     "option_D": "prawo członka zarządu do reprezentowania spółki dotyczy wszystkich czynności sądowych i pozasądowych spółki.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 4,
@@ -37,7 +46,10 @@
     "option_C": "kod skrócony powinien być unikalny w ramach działalności danego członka giełdy",
     "option_D": "kodom skróconym odpowiadają kody pełne („long code”)",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 5,
@@ -47,7 +59,10 @@
     "option_C": "im krótszy termin wykupu obligacji, tym wyższa wypukłość (przy tym samym oprocentowaniu i tej samej stopie dochodu",
     "option_D": "im wyższa stopa dochodu obligacji, tym wyższa wypukłość (przy tym samym oprocentowaniu i tym samym terminie wykupu)",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Wypukłość obligacji (convexity)"
   },
   {
     "id": 6,
@@ -57,7 +72,10 @@
     "option_C": "kosztów działalności reasekuracyjnej",
     "option_D": "kosztów retrocesji.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 7,
@@ -67,7 +85,10 @@
     "option_C": "jest to niezbędne do korzystania z usług, które nie są świadczone przez jego pracodawcę",
     "option_D": "żadne z powyższych",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 69+) - Firmy inwestycyjne"
   },
   {
     "id": 8,
@@ -77,7 +98,10 @@
     "option_C": "certyfikat inwestycyjny",
     "option_D": "kontrakt na różnicę",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 9,
@@ -87,7 +111,10 @@
     "option_C": "pełnomocnictwo do uczestniczenia w walnym zgromadzeniu spółki publicznej i wykonywania prawa głosu wymaga udzielenia na piśmie lub w postaci elektronicznej. Udzielenie pełnomocnictwa w postaci elektronicznej nie wymaga opatrzenia kwalifikowanym podpisem elektronicznym",
     "option_D": "akcjonariusz spółki publicznej posiadający akcje zapisane na więcej niż jednym rachunku papierów wartościowych może ustanowić oddzielnych pełnomocników do wykonywania praw z akcji zapisanych na każdym z rachunków.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 10,
@@ -97,7 +124,10 @@
     "option_C": "wystawieniu dwóch opcji sprzedaży (put) z niższą ceną wykonania i zakupie jednej opcji kupna (call) z wyższą ceną wykonania",
     "option_D": "zakupie dwóch opcji sprzedaży (put) z niższą ceną wykonania i wystawieniu jednej opcji kupna (call) z wyższą ceną wykonania",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   },
   {
     "id": 11,
@@ -107,7 +137,10 @@
     "option_C": "prosta spółka akcyjna",
     "option_D": "spółka partnerska",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 12,
@@ -117,7 +150,10 @@
     "option_C": "obecności w arkuszu zleceń, minimalnej wartości/wolumenu zleceń i maksymalnego spreadu",
     "option_D": "obecności w arkuszu zleceń, minimalnej wartości/wolumenu zleceń i minimalnego spreadu.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 13,
@@ -127,7 +163,10 @@
     "option_C": "60,80",
     "option_D": "60,75",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 14,
@@ -137,7 +176,10 @@
     "option_C": "4,20%",
     "option_D": "5,50%.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 15,
@@ -147,7 +189,10 @@
     "option_C": "przeciwdziałania praktykom ograniczającym konkurencję oraz praktykom naruszającym zbiorowe interesy konsumentów",
     "option_D": "nadzór emerytalny",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 16,
@@ -157,7 +202,10 @@
     "option_C": "EVA obniży się na skutek restrukturyzacji kapitału tylko wtedy, gdy podatkowa korzyść zwiększenia wskaźnika zadłużenia przewyższy związany z tym koszt po stronie ryzyka",
     "option_D": "zobowiązania, z których tytułu przedsiębiorstwo nie płaci odsetek (np. kredyt kupiecki), nie są uwzględniane w bazie kapitałowej IC (ang. Invested Capital) podczas kalkulacji EVA.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 17,
@@ -167,7 +215,10 @@
     "option_C": "działanie III",
     "option_D": "żadnego z wyszczególnionych działań nie można dokonać w fazie dogrywki",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 18,
@@ -177,7 +228,10 @@
     "option_C": "oba instrumenty wygasają w czerwcu",
     "option_D": "żadne z powyższych.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 19,
@@ -187,7 +241,10 @@
     "option_C": "fazę notowań ciągłych",
     "option_D": "fazę zamknięcia",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 20,
@@ -197,7 +254,10 @@
     "option_C": "przedostatnia: 2.006; ostatnia: 2.006",
     "option_D": "przedostatnia: 2.010; ostatnia: 2.006.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 21,
@@ -207,7 +267,10 @@
     "option_C": "171.740 PLN",
     "option_D": "222.785 PLN",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty"
   },
   {
     "id": 22,
@@ -217,7 +280,10 @@
     "option_C": "malejącej",
     "option_D": "rosnącej",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 23,
@@ -227,7 +293,10 @@
     "option_C": "20%",
     "option_D": "40%.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 24,
@@ -237,7 +306,10 @@
     "option_C": "nadzór nad działalnością Urzędu Komisji sprawuje Prezes Rady Ministrów",
     "option_D": "organami Urzędu Komisji są Komisja Nadzoru Finansowego oraz Przewodniczący Komisji",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 25,
@@ -247,7 +319,10 @@
     "option_C": "Giełda",
     "option_D": "żadne z powyższych",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 26,
@@ -257,7 +332,10 @@
     "option_C": "im bardziej \"stromy\" jest wykres profilu NPV, tym większa jest wrażliwość projektu na zmiany kosztu kapitału",
     "option_D": "profil NPV to narzędzie szczególnie przydatne przy analizie projektów o niekonwencjonalnych przepływach pieniężnych.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Metody oceny projektów inwestycyjnych"
   },
   {
     "id": 27,
@@ -267,7 +345,10 @@
     "option_C": "w przeciwieństwie do wartości bazującej jedynie na bilansie przedsiębiorstwa, metodologia wycen metodami porównawczymi jest oparta na rachunku zysków i strat, bilansie oraz przepływach pieniężnych",
     "option_D": "wartość odtworzeniowa jest wartością minimalną wartości przedsiębiorstwa, gdyż nie uwzględnia się w niej możliwości kontynuacji działalności",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Metody wyceny przedsiębiorstw"
   },
   {
     "id": 28,
@@ -277,7 +358,10 @@
     "option_C": "synthetic short call",
     "option_D": "portfolio insurance",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   },
   {
     "id": 29,
@@ -287,7 +371,10 @@
     "option_C": "II",
     "option_D": "I, IV.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 30,
@@ -297,7 +384,10 @@
     "option_C": "umowa o wykonywanie funkcji agenta emisji jest zawierana przed rozpoczęciem proponowania nabycia papierów wartościowych objętych umową",
     "option_D": "obowiązki agenta emisji obejmują m.in. utworzenie ewidencji osób uprawnionych z papierów wartościowych",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 31,
@@ -307,7 +397,10 @@
     "option_C": "1,62",
     "option_D": "1,88",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "NPV i PI"
   },
   {
     "id": 32,
@@ -317,7 +410,10 @@
     "option_C": "alternatywny fundusz inwestycyjny otwarty",
     "option_D": "fundusz inwestycyjny zamknięty.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 33,
@@ -327,7 +423,10 @@
     "option_C": "225 PLN za 5 lat dyskontowane roczną stopą procentową równą 15%",
     "option_D": "227 PLN za 4 lata dyskontowane roczną stopą procentową równą 20%",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca"
   },
   {
     "id": 34,
@@ -337,7 +436,10 @@
     "option_C": "210.450 PLN",
     "option_D": "1.262.700 PLN",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty wieczystej"
   },
   {
     "id": 35,
@@ -347,7 +449,10 @@
     "option_C": "(II, III, IV)",
     "option_D": "(I, II, III, IV).",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Stopy zwrotu z obligacji"
   },
   {
     "id": 36,
@@ -357,7 +462,10 @@
     "option_C": "zlecenie PEG zawiera stały limit ceny, który ma wartość równą cenie najlepszego zlecenia w arkuszu zleceń",
     "option_D": "zlecenie PCR nie zawiera limitu ceny; w trakcie notowań ciągłych zlecenie PCR realizowane jest po najlepszej możliwej cenie zlecenia przeciwstawnego oczekującego na realizację w arkuszu zleceń",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 37,
@@ -367,7 +475,10 @@
     "option_C": "300.000 PLN",
     "option_D": "400.000 PLN.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 38,
@@ -377,7 +488,10 @@
     "option_C": "(I, IV)",
     "option_D": "(II, IV)",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Strategie zarządzania portfelami"
   },
   {
     "id": 39,
@@ -387,7 +501,10 @@
     "option_C": "I, III, IV",
     "option_D": "II, III.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 40,
@@ -397,7 +514,10 @@
     "option_C": "2,499",
     "option_D": "2,190",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 41,
@@ -407,7 +527,10 @@
     "option_C": "w przypadku tych transakcji członek Rady Nadzorczej nie miał obowiązku dokonania powiadomienia emitenta ani Komisji Nadzoru Finansowego",
     "option_D": "członek Rady Nadzorczej niezwłocznie i nie później niż w 2 dni robocze po dniu drugiej transakcji, powinien powiadomić o transakcji Komisję Nadzoru Finansowego.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 596/2014 (MAR)"
   },
   {
     "id": 42,
@@ -417,7 +540,10 @@
     "option_C": "w przypadku gdy ustalenie prawa do pożytków ze zdematerializowanych papierów wartościowych nastąpiło w dniu, w którym w depozycie papierów wartościowych powinno zostać przeprowadzone rozliczenie transakcji, lub później, a papiery te są nadal zapisane na rachunku zbywcy, pożytki przypadają nabywcy w chwili dokonania zapisu na jego rachunku papierów wartościowych",
     "option_D": "prawa ze zdematerializowanych papierów wartościowych przysługują osobie będącej posiadaczem rachunku, na którym zapisane są te prawa",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 43,
@@ -427,7 +553,10 @@
     "option_C": "7%",
     "option_D": "8%",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa zwrotu z inwestycji"
   },
   {
     "id": 44,
@@ -437,7 +566,10 @@
     "option_C": "1,02",
     "option_D": "1,41.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Dźwignie"
   },
   {
     "id": 45,
@@ -447,7 +579,10 @@
     "option_C": "18.269,08 PLN",
     "option_D": "31.184,80 PLN",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Obligacje zerokuponowe"
   },
   {
     "id": 46,
@@ -457,7 +592,10 @@
     "option_C": "I, II, III",
     "option_D": "III.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 47,
@@ -467,7 +605,10 @@
     "option_C": "optymalny budżet kapitałowy zapewnia najwyższy możliwy w danych warunkach przyrost wartości rynkowej przedsiębiorstwa",
     "option_D": "optymalny budżet kapitałowy to ilość kapitału niezbędnego do sfinansowania wszystkich efektywnych projektów",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Metody oceny projektów inwestycyjnych"
   },
   {
     "id": 48,
@@ -477,7 +618,10 @@
     "option_C": "wartość opcji realnej jest tym niższa, im mniejsza jest niepewność",
     "option_D": "z reguły wyróżnia się dwie grupy opcji realnych: opcje \"wbudowane\" w projekt i opcje \"kreowane\" przez projekt.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Opcje realne"
   },
   {
     "id": 49,
@@ -487,7 +631,10 @@
     "option_C": "strategię long condor",
     "option_D": "strategię short strangle",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - wykorzystanie strategii"
   },
   {
     "id": 50,
@@ -497,7 +644,10 @@
     "option_C": "krótkookresowe zobowiązanie niefinansowe",
     "option_D": "należność finansowa.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 51,
@@ -507,7 +657,10 @@
     "option_C": "70,39",
     "option_D": "żadna z powyższych",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 52,
@@ -517,7 +670,10 @@
     "option_C": "54,5 mln PLN",
     "option_D": "58,5 mln PLN.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Dźwignie"
   },
   {
     "id": 53,
@@ -527,7 +683,10 @@
     "option_C": "obowiązek zawiadomienia powstał wyłącznie po stronie spółki ABC Sp. z o.o",
     "option_D": "obowiązek zawiadomienia nie powstał",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 54,
@@ -537,7 +696,10 @@
     "option_C": "500.000 EUR",
     "option_D": "750.000 EUR",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 55,
@@ -547,7 +709,10 @@
     "option_C": "0,48",
     "option_D": "0,54.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Model Gordona"
   },
   {
     "id": 56,
@@ -557,7 +722,10 @@
     "option_C": "18",
     "option_D": "24",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 57,
@@ -567,7 +735,10 @@
     "option_C": "transakcja pakietowa może być zawarta, jeżeli co najmniej jeden członek giełdy przekaże zlecenie kupna oraz zlecenie sprzedaży takiej samej liczby instrumentów finansowych, po takiej samej cenie i z taką samą datą rozliczenia",
     "option_D": "transakcja pakietowa może być zawarta na sesji giełdowej również w przypadku gdy obrót danymi instrumentami finansowymi jest zawieszony.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 58,
@@ -577,7 +748,10 @@
     "option_C": "zlecenie I, II; IV",
     "option_D": "zlecenia I, II, III",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 59,
@@ -587,7 +761,10 @@
     "option_C": "457.565 PLN",
     "option_D": "464.828 PLN.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Metoda równych rat kapitałowych"
   },
   {
     "id": 60,
@@ -597,7 +774,10 @@
     "option_C": "6 lat",
     "option_D": "12 lat",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Metoda równych kwot płatności kredytu"
   },
   {
     "id": 61,
@@ -607,7 +787,10 @@
     "option_C": "drugi kurs nie zostanie określony i nie rozpocznie się równoważenie",
     "option_D": "żadne z powyższych.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 62,
@@ -617,7 +800,10 @@
     "option_C": "strategia bull call spread",
     "option_D": "strategia bear call spread",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   },
   {
     "id": 63,
@@ -627,7 +813,10 @@
     "option_C": "utrata przez przedsiębiorcę zdolności do czynności prawnych",
     "option_D": "ogłoszenie upadłości przedsiębiorcy",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 64,
@@ -637,7 +826,10 @@
     "option_C": "3 mln PLN",
     "option_D": "4 mln PLN.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 65,
@@ -647,7 +839,10 @@
     "option_C": "im mniejsza liczba rent, tym niższa wartość bieżąca renty",
     "option_D": "wartość bieżąca renty płatnej z dołu jest równa wartości bieżącej renty płatnej z góry podzielonej przez czynnik równy 1 plus stopa procentowa",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty"
   },
   {
     "id": 66,
@@ -657,7 +852,10 @@
     "option_C": "członek Rady Nadzorczej mógł dokonać tej transakcji, ponieważ miał zgodę emitenta na zawarcie transakcji w okresie zamkniętym",
     "option_D": "członek Rady Nadzorczej mógł dokonać tej transakcji, ponieważ nie pełnił obowiązków zarządczych, a wartość transakcji nie przekraczała równowartości 20.000 EUR.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 596/2014 (MAR)"
   },
   {
     "id": 67,
@@ -667,7 +865,10 @@
     "option_C": "sprzedaż 40 sztuk z limitem aktywacji 4,7223 i limitem realizacji 4,7327",
     "option_D": "kupno 50 sztuk z limitem aktywacji 4,9000 i limitem realizacji 4,9000",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 68,
@@ -677,7 +878,10 @@
     "option_C": "zgody przewodniczącego sesji",
     "option_D": "zgody Rady Nadzorczej Giełdy.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 69,
@@ -687,7 +891,10 @@
     "option_C": "I, II, III",
     "option_D": "I, IV",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 70,
@@ -697,7 +904,10 @@
     "option_C": "3%",
     "option_D": "4%.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 71,
@@ -707,7 +917,10 @@
     "option_C": "I, II, III",
     "option_D": "III",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 72,
@@ -717,7 +930,10 @@
     "option_C": "zostanie zakupione 299 sztuk po kursie 83,25 oraz jedna sztuka po kursie 83,30",
     "option_D": "zlecenie nie zostanie zrealizowane.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 73,
@@ -727,7 +943,10 @@
     "option_C": "37.691,95 PLN",
     "option_D": "78.201,09 PLN",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 74,
@@ -737,7 +956,10 @@
     "option_C": "zlecenie kupna 150 akcji z limitem 250,00 i MWW =",
     "option_D": "zlecenie sprzedaży 120 akcji po kursie 230,00 z warunkiem WLA.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 75,
@@ -747,7 +969,10 @@
     "option_C": "WDC",
     "option_D": "WIA",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 76,
@@ -757,7 +982,10 @@
     "option_C": "wartości rynkowej",
     "option_D": "wartości odpisów umorzeniowych.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 77,
@@ -767,7 +995,10 @@
     "option_C": "III",
     "option_D": "I, II, III, IV",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 78,
@@ -777,7 +1008,10 @@
     "option_C": "stosunki cywilnoprawne oraz administracyjnoprawne między osobami fizycznymi i osobami prawnymi",
     "option_D": "procedurę postępowania cywilnego między osobami fizycznymi i osobami prawnymi.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 79,
@@ -787,7 +1021,10 @@
     "option_C": "wykonywania zleceń nabycia lub zbycia instrumentów finansowych",
     "option_D": "żadne z powyższych",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 80,
@@ -797,7 +1034,10 @@
     "option_C": "przeinwestowania lub niedoinwestowania w określony segment rynku",
     "option_D": "o ile lepszą rentowność ma dany portfel w stosunku do portfela wybranego w wyniku zastosowania modelu polityki \"kupuj i trzymaj\" i o takim samym ryzyku",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 81,
@@ -807,7 +1047,10 @@
     "option_C": "zawsze podczas wszystkich faz notowań",
     "option_D": "wyłącznie w fazie dogrywki.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 82,
@@ -817,7 +1060,10 @@
     "option_C": "I, II, IV",
     "option_D": "III",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 83,
@@ -827,7 +1073,10 @@
     "option_C": "zleceń LIMIT, zleceń PCR",
     "option_D": "zleceń PKC, zleceń PCR",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 84,
@@ -837,7 +1086,10 @@
     "option_C": "19.183,46 PLN",
     "option_D": "80.681,52 PLN.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 85,
@@ -847,7 +1099,10 @@
     "option_C": "1,4",
     "option_D": "1,5",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 86,
@@ -857,7 +1112,10 @@
     "option_C": "5,75",
     "option_D": "5,80.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 87,
@@ -867,7 +1125,10 @@
     "option_C": "środki w wysokości 5.372,00 PLN, a średnioroczna stopa zwrotu równa 2,40%",
     "option_D": "środki w wysokości 5.640,11 PLN, a średnioroczna stopa zwrotu równa 2,32%",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa zwrotu z inwestycji"
   },
   {
     "id": 88,
@@ -877,7 +1138,10 @@
     "option_C": "Lambda",
     "option_D": "Kappa",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Współczynniki greckie"
   },
   {
     "id": 89,
@@ -887,7 +1151,10 @@
     "option_C": "statut funduszu na to zezwala",
     "option_D": "fundusz nie może dokonać podziału jednostek uczestnictwa.",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 90,
@@ -897,7 +1164,10 @@
     "option_C": "powiększają kapitały spółki do poziomu nadwyżki wartości emisji nad wartością akcji",
     "option_D": "zmniejszają kapitał zapasowy spółki do wysokości nadwyżki wartości emisji nad wartością nominalną akcji, a pozostałą ich część zalicza się do kosztów finansowych",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Łączenie spółek"
   },
   {
     "id": 91,
@@ -907,7 +1177,10 @@
     "option_C": "III",
     "option_D": "IV.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 92,
@@ -917,7 +1190,10 @@
     "option_C": "24,65%",
     "option_D": "32,81%",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Model Gordona"
   },
   {
     "id": 93,
@@ -927,7 +1203,10 @@
     "option_C": "banku zagranicznym - pod warunkiem uzyskania zgody klienta",
     "option_D": "banku krajowym",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 94,
@@ -937,7 +1216,10 @@
     "option_C": "zobowiązania pozaksięgowe",
     "option_D": "nieujęte w księgach zobowiązania krótkoterminowe.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 95,
@@ -947,7 +1229,10 @@
     "option_C": "4 lat",
     "option_D": "5 lat",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 96,
@@ -957,7 +1242,10 @@
     "option_C": "4,61 PLN",
     "option_D": "4,93 PLN",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Współczynniki greckie"
   },
   {
     "id": 97,
@@ -967,7 +1255,10 @@
     "option_C": "10,20%",
     "option_D": "11,64%.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 98,
@@ -977,7 +1268,10 @@
     "option_C": "(III)",
     "option_D": "(I, II, III, IV)",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Krzywa rentowności"
   },
   {
     "id": 99,
@@ -987,7 +1281,10 @@
     "option_C": "jeśli w modelu dwumianowym będziemy zwiększać liczbę okresów, to w granicy (gdy liczba okresów zdąża do nieskończoności) otrzymamy model Black'a - Scholes'a - Merton'a",
     "option_D": "Model Black'a - Scholes'a - Merton'a nie może być wykorzystany do wyceny opcji na akcję, która może dawać dywidendę",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Modele wyceny opcji"
   },
   {
     "id": 100,
@@ -997,7 +1294,10 @@
     "option_C": "zysk operacyjny wzrośnie o 14,1%, to zysk netto wzrośnie o 11,2%",
     "option_D": "żadna z powyższych.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Dźwignie"
   },
   {
     "id": 101,
@@ -1007,7 +1307,10 @@
     "option_C": "w uchwałach organów Związku Maklerów i Doradców",
     "option_D": "żadne z powyższych",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Etyka",
+    "topic": "Zasady etyki zawodowej Maklerów i Doradców"
   },
   {
     "id": 102,
@@ -1017,7 +1320,10 @@
     "option_C": "II",
     "option_D": "III, IV",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 103,
@@ -1027,7 +1333,10 @@
     "option_C": "20.000.000 PLN",
     "option_D": "25.000.000 PLN.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 104,
@@ -1037,7 +1346,10 @@
     "option_C": "27,708",
     "option_D": "drugi kurs jednolity nie zostanie określony",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 105,
@@ -1047,7 +1359,10 @@
     "option_C": "784 sztuk po cenie 42,90 oraz 16 sztuk po cenie 42,85",
     "option_D": "zlecenie nie zostanie przyjęte do arkusza i żadna transakcja nie zostanie zrealizowana.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 106,
@@ -1057,7 +1372,10 @@
     "option_C": "wypłata odsetek oznacza spadek (niewielki) duration",
     "option_D": "im większa częstość płacenia odsetek, przy innych parametrach niezmiennych, tym niższe duration",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Duration"
   },
   {
     "id": 107,
@@ -1067,7 +1385,10 @@
     "option_C": "Członek Giełdy",
     "option_D": "Zarząd Giełdy",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 108,
@@ -1077,7 +1398,10 @@
     "option_C": "okoliczność, że pełnomocnik jest ograniczony w zdolności do czynności prawnych, nie ma wpływu na ważność czynności dokonanej przez niego w imieniu mocodawcy",
     "option_D": "pełnomocnictwo ogólne obejmuje umocowanie do wszelkich czynności prawnych.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 109,
@@ -1087,7 +1411,10 @@
     "option_C": "wyróżnia się trzy podstawowe metody konstrukcji indeksu giełdowego pozwalającego realizować aktywną strategię inwestycyjną. Są to: pełne odwzorowanie (ang. full replication), portfel próbny (ang. sampling) oraz metoda optymalizacyjna kwadratów lub programowania (ang. quadratic optimization or programming)",
     "option_D": "głównym zadaniem instrumentów pochodnych przy konstruowaniu efektywnego portfela akcji jest ograniczenie systematycznego i specyficznego ryzyka",
     "correct_answer": "C",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Strategie zarządzania portfelami"
   },
   {
     "id": 110,
@@ -1097,7 +1424,10 @@
     "option_C": "odstąpienie od ogłoszonego wezwania jest niedopuszczalne, chyba że po jego ogłoszeniu inny podmiot ogłosił po wyższej cenie wezwanie do zapisywania się na sprzedaż lub zamianę wszystkich pozostałych akcji spółki publicznej i w wezwaniu tym nie zastrzeżono żadnego warunku",
     "option_D": "podmiot pośredniczący przekazuje treść wezwania co najmniej jednej agencji informacyjnej w celu ogłoszenia w serwisie bezpłatnym i dostępnym dla wszystkich inwestorów na niedyskryminacyjnych warunkach.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 111,
@@ -1107,7 +1437,10 @@
     "option_C": "0,1 punktu indeksowego",
     "option_D": "1 punkt indeksowy",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 112,
@@ -1117,7 +1450,10 @@
     "option_C": "24 miesiące od dnia zarządzenia jego przeprowadzenia",
     "option_D": "brak limitu czasowego do prowadzenia postępowania wyjaśniającego.",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 113,
@@ -1127,7 +1463,10 @@
     "option_C": "zlecenie I, II i III",
     "option_D": "żadne z wymienionych zleceń nie może zostać złożone w fazie dogrywki",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 114,
@@ -1137,7 +1476,10 @@
     "option_C": "0,240",
     "option_D": "0,312.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Modele rynku (CML, Sharpe, CAPM)"
   },
   {
     "id": 115,
@@ -1147,7 +1489,10 @@
     "option_C": "świadczenia wynikające z obligacji, sposób ich realizacji oraz związane z nimi prawa i obowiązki emitenta i obligatariuszy określają warunki emisji",
     "option_D": "za zobowiązania wynikające z obligacji emitent odpowiada całym swoim majątkiem",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 116,
@@ -1157,7 +1502,10 @@
     "option_C": "przychody operacyjne",
     "option_D": "koszty zapadłe",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 117,
@@ -1167,7 +1515,10 @@
     "option_C": "35,5 mln PLN w przypadku sumy aktywów bilansu na koniec roku obrotowego, 60 mln PLN w przypadku przychodów netto ze sprzedaży towarów i produktów za rok obrotowy oraz 55 osób w przypadku średniorocznego zatrudnienia w przeliczeniu na pełne etaty",
     "option_D": "45,5 mln PLN w przypadku sumy aktywów bilansu na koniec roku obrotowego, 65 mln PLN w przypadku przychodów netto ze sprzedaży towarów i produktów za rok obrotowy oraz 60 osób w przypadku średniorocznego zatrudnienia w przeliczeniu na pełne etaty.",
     "correct_answer": "A",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 118,
@@ -1177,7 +1528,10 @@
     "option_C": "270.000 PLN",
     "option_D": "290.000 PLN",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki rentowności"
   },
   {
     "id": 119,
@@ -1187,7 +1541,10 @@
     "option_C": "II, IV",
     "option_D": "I, II, III, IV.",
     "correct_answer": "D",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 120,
@@ -1197,6 +1554,9 @@
     "option_C": "immunizacji i pasywnych",
     "option_D": "dopasowania i aktywnych. 53 Numer pytania Prawidłowa odpowiedź Numer pytania Prawidłowa odpowiedź Numer pytania Prawidłowa odpowiedź Numer pytania Prawidłowa odpowiedź",
     "correct_answer": "B",
-    "exam_date": "15.10.2023"
+    "exam_date": "15.10.2023",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Zarządzanie portfelem obligacji"
   }
 ]

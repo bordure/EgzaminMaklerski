@@ -7,7 +7,10 @@
     "option_C": "tak, ale pod warunkiem że jest uprawniony do działania na rachunek klienta",
     "option_D": "tak, ale pod warunkiem wyrażenia zgody przez Zarząd Giełdy",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 2,
@@ -17,7 +20,10 @@
     "option_C": "4,20%",
     "option_D": "4,29%",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 3,
@@ -27,7 +33,10 @@
     "option_C": "w przypadku niektórych projektów inwestycyjnych o niekonwencjonalnych przepływach pieniężnych może pojawić się sytuacja braku IRR",
     "option_D": "w przypadku niektórych projektów inwestycyjnych o niekonwencjonalnych przepływach, teoretycznie możliwa jest sytuacja, że znajdziemy tyle wartości IRR, ile razy przepływy pieniężne zmieniają znak.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa IRR i MIRR"
   },
   {
     "id": 4,
@@ -37,7 +46,10 @@
     "option_C": "strategia long butterfly",
     "option_D": "strategia long condor",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - łączenie strategii"
   },
   {
     "id": 5,
@@ -47,7 +59,10 @@
     "option_C": "I, II",
     "option_D": "III.",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 6,
@@ -57,7 +72,10 @@
     "option_C": "zakupie opcji kupna (call) z niską ceną wykonania, wystawieniu dwóch opcji kupna (call) ze średnią ceną wykonania i zakupie opcji kupna (call) z wysoką ceną wykonania",
     "option_D": "wystawieniu opcji kupna (call) z niską ceną wykonania, zakupie dwóch opcji kupna (call) ze średnią ceną wykonania i wystawieniu opcji kupna (call) z wysoką ceną wykonania",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   },
   {
     "id": 7,
@@ -67,7 +85,10 @@
     "option_C": "669,08 PLN",
     "option_D": "716,22 PLN",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Obligacje zerokuponowe"
   },
   {
     "id": 8,
@@ -77,7 +98,10 @@
     "option_C": "200.000 PLN",
     "option_D": "1.920.000 PLN.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Metoda równych rat kapitałowych"
   },
   {
     "id": 9,
@@ -87,7 +111,10 @@
     "option_C": "małoletni, którzy ukończyli lat dziewięć, oraz osoby ubezwłasnowolnione częściowo",
     "option_D": "małoletni, którzy ukończyli lat trzynaście, oraz osoby ubezwłasnowolnione częściowo",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 10,
@@ -97,7 +124,10 @@
     "option_C": "strategię long strip",
     "option_D": "strategię rotated bull spread",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - wykorzystanie strategii"
   },
   {
     "id": 11,
@@ -107,7 +137,10 @@
     "option_C": "środki w wysokości 5.745,04 PLN, a średnioroczna stopa zwrotu równa 2,15%",
     "option_D": "środki w wysokości 6.235,07 PLN, a średnioroczna stopa zwrotu równa 2,15%.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa zwrotu z inwestycji"
   },
   {
     "id": 12,
@@ -117,7 +150,10 @@
     "option_C": "Prezesa ZMiD",
     "option_D": "żadne z powyższych",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Etyka",
+    "topic": "Zasady etyki zawodowej Maklerów i Doradców"
   },
   {
     "id": 13,
@@ -127,7 +163,10 @@
     "option_C": "KDPW S.A",
     "option_D": "żadne z powyższych",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 14,
@@ -137,7 +176,10 @@
     "option_C": "firma spółki może być obrana dowolnie; powinna zawierać dodatkowe oznaczenie \"spółka akcyjna\"",
     "option_D": "do powstania spółki akcyjnej wymaga się ustanowienia zarządu i rady nadzorczej.",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 15,
@@ -147,7 +189,10 @@
     "option_C": "w razie ogłoszenia upadłości firmy inwestycyjnej środki pieniężne powierzone przez klientów firmie inwestycyjnej w związku ze świadczeniem przez nią usług maklerskich podlegają wyłączeniu z masy upadłości firmy inwestycyjnej",
     "option_D": "zasady oprocentowania środków pieniężnych powierzonych przez klienta firmie inwestycyjnej w związku ze świadczeniem usług maklerskich określa zarząd firmy inwestycyjnej w formie uchwały",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 16,
@@ -157,7 +202,10 @@
     "option_C": "klient określił szczegółowe warunki, na jakich zlecenie ma zostać wykonane",
     "option_D": "zlecenie ma zostać wykonane w systemie obrotu instrumentami finansowymi w państwie trzecim",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 17,
@@ -167,7 +215,10 @@
     "option_C": "27,04%",
     "option_D": "34,16%.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Model Gordona"
   },
   {
     "id": 18,
@@ -177,7 +228,10 @@
     "option_C": "29%",
     "option_D": "30%",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Stopa zwrotu z inwestycji"
   },
   {
     "id": 19,
@@ -187,7 +241,10 @@
     "option_C": "poza systemem notowań ciągłych oraz systemem kursu jednolitego",
     "option_D": "w systemie notowań ciągłych i w systemie kursu jednolitego",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 20,
@@ -197,7 +254,10 @@
     "option_C": "w dowolnym dniu",
     "option_D": "wyłącznie w godzinie, w której transakcja ma zostać zawarta",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 21,
@@ -207,7 +267,10 @@
     "option_C": "kosztów finansowych lub pozostałych kosztów operacyjnych",
     "option_D": "żadna z powyższych.",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 22,
@@ -217,7 +280,10 @@
     "option_C": "346.558 PLN",
     "option_D": "648.770 PLN",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty"
   },
   {
     "id": 23,
@@ -227,7 +293,10 @@
     "option_C": "siedzibą i adresem funduszu inwestycyjnego jest siedziba i adres towarzystwa będącego jego organem",
     "option_D": "organem funduszu inwestycyjnego otwartego jest rada inwestorów",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 24,
@@ -237,7 +306,10 @@
     "option_C": "wzywający może zmienić treść wezwania dobrowolnego w zakresie terminów transakcji nabycia akcji w wezwaniu, przypadających przed upływem terminu przyjmowania zapisów",
     "option_D": "wezwanie jest ogłaszane i przeprowadzane za pośrednictwem giełdy.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 25,
@@ -247,7 +319,10 @@
     "option_C": "urządzeń",
     "option_D": "know-how",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 26,
@@ -257,7 +332,10 @@
     "option_C": "96.065,13 PLN",
     "option_D": "108.245,63 PLN",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 27,
@@ -267,7 +345,10 @@
     "option_C": "w terminie n+0 dla papierów wartościowych, poprzez zapis na rachunku papierów wartościowych",
     "option_D": "w terminie n+0 dla instrumentów pochodnych, poprzez zapis na rachunku derywatów.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 28,
@@ -277,7 +358,10 @@
     "option_C": "w metodzie Firm Cash Flow przepływy pieniężne są dyskontowane średnim ważonym kosztem kapitału (WACC)",
     "option_D": "w metodzie Capital Cash Flow, przepływy pieniężne należące do wierzycieli przedsiębiorstwa składają się z sumy wypłat związanych z kosztami finansowania oraz zmiany stanu poziomu zadłużenia w danym okresie",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Metody wyceny przedsiębiorstw"
   },
   {
     "id": 29,
@@ -287,7 +371,10 @@
     "option_C": "ryzyko polityczne (ang. political risk)",
     "option_D": "ryzyko kredytowe (ang. credit risk)",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Rodzaje obligacji i ich ryzyka"
   },
   {
     "id": 30,
@@ -297,7 +384,10 @@
     "option_C": "0,56",
     "option_D": "0,64.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Model Gordona"
   },
   {
     "id": 31,
@@ -307,7 +397,10 @@
     "option_C": "25-znakowy kod alfa-numeryczny Global LEI System - GLEIS",
     "option_D": "kod nadany przez Association of National Numbering Agencies - ANNA",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 32,
@@ -317,7 +410,10 @@
     "option_C": "w terminie wyznaczonym dla wystawiania i przekazania kart umów do KDPW_CCP S.A",
     "option_D": "żadne z powyższych",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 33,
@@ -327,7 +423,10 @@
     "option_C": "przewodniczący sesji",
     "option_D": "członek giełdy.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 34,
@@ -337,7 +436,10 @@
     "option_C": "jeżeli przychody tych podmiotów przekroczą 80 mln EUR",
     "option_D": "bez względu na wielkość przychodów",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 35,
@@ -347,7 +449,10 @@
     "option_C": "agent informuje klienta lub potencjalnego klienta oraz posiadacza lub potencjalnego posiadacza lokaty strukturyzowanej o zakresie czynności, do podejmowania których jest upoważniony",
     "option_D": "za szkodę wyrządzoną przez agenta w związku z wykonywaniem czynności w imieniu i na rachunek firmy inwestycyjnej odpowiada wyłącznie ta firma inwestycyjna",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 36,
@@ -357,7 +462,10 @@
     "option_C": "tak, jednak wymaga to porozumienia zawartego pomiędzy spółkami w celu zarządzania rzeczywistym lub potencjalnym konfliktem interesów",
     "option_D": "odpowiedź zależy od treści regulaminu świadczenia usług maklerskich w obydwu spółkach oraz wyniku analizy rzeczywistego lub potencjalnego konfliktu interesów.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 37,
@@ -367,7 +475,10 @@
     "option_C": "1,32",
     "option_D": "1,44",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "NPV i PI"
   },
   {
     "id": 38,
@@ -377,7 +488,10 @@
     "option_C": "II, IV",
     "option_D": "żadne z powyższych.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 39,
@@ -387,7 +501,10 @@
     "option_C": "stosuje ten przepis, a w informacji dodatkowej uzasadnia jedynie wpływ, jaki zastosowanie przepisu wywiera na obraz sytuacji majątkowej jednostki",
     "option_D": "żadna z powyższych",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 40,
@@ -397,7 +514,10 @@
     "option_C": "371 PLN za 2 lata dyskontowane roczną stopą procentową równą 11%",
     "option_D": "373 PLN za 1 rok dyskontowane roczną stopą procentową równą 19%",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca"
   },
   {
     "id": 41,
@@ -407,7 +527,10 @@
     "option_C": "360.473 PLN",
     "option_D": "465.532 PLN.",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki rentowności"
   },
   {
     "id": 42,
@@ -417,7 +540,10 @@
     "option_C": "wyłącznie osób umieszczonych na liście osób mających dostęp do informacji poufnych",
     "option_D": "wyłącznie osób zatrudnionych u emitenta lub z nim powiązanych",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 596/2014 (MAR)"
   },
   {
     "id": 43,
@@ -427,7 +553,10 @@
     "option_C": "w wyniku połączenia efektu przewidywania stopy oprocentowania (ang. interest rate anticipation effect), efektu analizy (ang. analysis effect) oraz efektu polityki (ang. policy effect) otrzymujemy efekt zarządzania (ang. management effect)",
     "option_D": "różnica między oczekiwanym zwrotem z czasu trwania a bieżącym zwrotem z portfela w danym okresie jest wynikiem połączenia efektu analizy (ang. analysis effect) i efektu obrotu (ang. trading effect)",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Zarządzanie portfelem obligacji"
   },
   {
     "id": 44,
@@ -437,7 +566,10 @@
     "option_C": "krótkoterminowe zobowiązania pozabilansowe",
     "option_D": "żadna z powyższych.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 45,
@@ -447,7 +579,10 @@
     "option_C": "dom maklerski",
     "option_D": "żaden z powyższych",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 46,
@@ -457,7 +592,10 @@
     "option_C": "uzgadnia z emitentem instrumentu pochodnego standard instrumentów pochodnych",
     "option_D": "wprowadza szczegółowy opis danego instrumentu pochodnego do umowy z KDPW S.A",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 47,
@@ -467,7 +605,10 @@
     "option_C": "6,73 PLN",
     "option_D": "10,03 PLN.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Współczynniki greckie"
   },
   {
     "id": 48,
@@ -477,7 +618,10 @@
     "option_C": "I, III",
     "option_D": "I",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 49,
@@ -487,7 +631,10 @@
     "option_C": "kosztów połączenia",
     "option_D": "amortyzacji.",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 50,
@@ -497,7 +644,10 @@
     "option_C": "członek Rady Nadzorczej nie mógł sprzedać akcji emitenta, ponieważ transakcja była dokonana w okresie zamkniętym",
     "option_D": "członek Rady Nadzorczej nie mógł sprzedać akcji emitenta, ponieważ transakcja była dokonana w okresie zamkniętym, a zezwolenie emitenta na dokonanie transakcji nie miało w tym przypadku znaczenia",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 596/2014 (MAR)"
   },
   {
     "id": 51,
@@ -507,7 +657,10 @@
     "option_C": "wypukłość obligacji rośnie w coraz szybszym tempie w miarę wzrostu duration i spada w coraz wolniejszym tempie w miarę spadku duration",
     "option_D": "im wyższe oprocentowanie obligacji, tym wyższa wypukłość (przy tej samej stopie dochodu i tym samym duration).",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Wypukłość obligacji (convexity)"
   },
   {
     "id": 52,
@@ -517,7 +670,10 @@
     "option_C": "78",
     "option_D": "79",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki aktywności"
   },
   {
     "id": 53,
@@ -527,7 +683,10 @@
     "option_C": "(II, IV)",
     "option_D": "(II, III, IV).",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Zarządzanie portfelem obligacji"
   },
   {
     "id": 54,
@@ -537,7 +696,10 @@
     "option_C": "obowiązek zawiadomienia spocznie na spółce XYZ S.A. oraz na spółce B z o.o",
     "option_D": "nie powstał obowiązek zawiadomienia",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 55,
@@ -547,7 +709,10 @@
     "option_C": "obrót należnościami 45,5 a średni okres inkasa 54,9 dnia",
     "option_D": "obrót należnościami 6,51 a średni okres inkasa 51,8 dnia",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki aktywności"
   },
   {
     "id": 56,
@@ -557,7 +722,10 @@
     "option_C": "model Black'a - Scholes'a - Merton'a stosowany jest do wyceny opcji europejskich",
     "option_D": "w modelu Black'a-Scholes'a-Merton'a przyjmuje się założenie, że proces kształtowania się cen instrumentu podstawowego jest tzw. geometrycznym ruchem Browna.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Modele wyceny opcji"
   },
   {
     "id": 57,
@@ -567,7 +735,10 @@
     "option_C": "tak, pod warunkiem spełnienia przez członka giełdy dodatkowych zobowiązań wskazanych w Regulaminie Giełdy oraz wydania zezwolenia swoim klientom w tym zakresie",
     "option_D": "tak, pod warunkiem poinformowania o tym fakcie Giełdy",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 58,
@@ -577,7 +748,10 @@
     "option_C": "co najmniej połowę głosów oddanych",
     "option_D": "żadna z powyższych.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 59,
@@ -587,7 +761,10 @@
     "option_C": "I, II, III, IV",
     "option_D": "II",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 60,
@@ -597,7 +774,10 @@
     "option_C": "jeżeli uzna, że wymaga tego interes Giełdy",
     "option_D": "na wniosek emitenta.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 61,
@@ -607,7 +787,10 @@
     "option_C": "straty nadzwyczajne",
     "option_D": "straty transferowe",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 62,
@@ -617,7 +800,10 @@
     "option_C": "bull call spread",
     "option_D": "bear call spread",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Strategie opcyjne - budowa strategii"
   },
   {
     "id": 63,
@@ -627,7 +813,10 @@
     "option_C": "tak, po warunkiem korzystania z dostępu sponsorowanego przez klienta członka giełdy",
     "option_D": "nie, ponieważ maklerem giełdowym automatycznie zostaje osoba która z wynikiem pozytywnym ukończy egzamin przeprowadzany przez Komisję Egzaminacyjną dla Maklerów Papierów Wartościowych powołaną przez Przewodniczącego Komisji Nadzoru Finansowego.",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 64,
@@ -637,7 +826,10 @@
     "option_C": "jeśli w pewnym okresie nie występują płatności z tytułu posiadaniu obligacji, a YTM (stopa dochodu w okresie do wykupu) się nie zmienia, to duration zmniejsza się dokładnie o długość tego okresu",
     "option_D": "wypłata odsetek oznacza spadek (niewielki) duration",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Rodzaje obligacji i ich ryzyka"
   },
   {
     "id": 65,
@@ -647,7 +839,10 @@
     "option_C": "systemach Giełdy",
     "option_D": "Krajowym Depozycie Papierów Wartościowych S.A",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 66,
@@ -657,7 +852,10 @@
     "option_C": "Komisja Nadzoru Finansowego",
     "option_D": "przewodniczący sesji.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 67,
@@ -667,7 +865,10 @@
     "option_C": "organem Komisji jest Urząd Komisji",
     "option_D": "w skład Komisji wchodzą Przewodniczący, trzech Zastępców Przewodniczącego i dziewięciu członków",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 68,
@@ -677,7 +878,10 @@
     "option_C": "21 dni",
     "option_D": "miesiąc",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 69,
@@ -687,7 +891,10 @@
     "option_C": "20",
     "option_D": "24.",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 70,
@@ -697,7 +904,10 @@
     "option_C": "wyłącznie zysków",
     "option_D": "wyłącznie przychodów",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 71,
@@ -707,7 +917,10 @@
     "option_C": "firma, realizując w bieżącej działalności operacyjnej określoną przez siebie grupę docelową dla danego instrumentu finansowego lub usługi, zapewnia dostosowanie i zgodność świadczonych usług maklerskich w odniesieniu do objętych grupą docelową instrumentów finansowych",
     "option_D": "firma nie musi zapewniać zgodności określanej grupy docelowej z podstawowymi założeniami odnoszącymi się do grupy docelowej określonej przez emitenta lub wystawcę instrumentu finansowego, jeżeli tak wynika z analizy cech bazy klientów firmy i potencjalnych klientów.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 72,
@@ -717,7 +930,10 @@
     "option_C": "8 lat",
     "option_D": "14 lat",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Metoda równych kwot płatności kredytu"
   },
   {
     "id": 73,
@@ -727,7 +943,10 @@
     "option_C": "bezzasadnie nie został dopuszczony do uczestniczenia w zgromadzeniu obligatariuszy",
     "option_D": "nie był obecny na zgromadzeniu obligatariuszy, w przypadku wadliwego zwołania zgromadzenia obligatariuszy lub podjęcia uchwały w sprawie nieobjętej porządkiem obrad",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 74,
@@ -737,7 +956,10 @@
     "option_C": "okres w którym następuje nadmierne lecz niepełne zużycie aktywów jednostki",
     "option_D": "okres, za który sporządza się sprawozdanie finansowe w trybie przewidzianym ustawą lub inne sprawozdania sporządzone na podstawie ksiąg rachunkowych.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Definicje"
   },
   {
     "id": 75,
@@ -747,7 +969,10 @@
     "option_C": "opcje realne to przeważnie opcje amerykańskie, a termin wykonania może być zmieniany",
     "option_D": "możliwość zatrzymania produkcji i ponownego jej uruchomienia może być interpretowana jako portfel złożony z amerykańskiej opcji sprzedaży (put - wstrzymanie produkcji) i amerykańskiej opcji kupna (call - ponowne uruchomienie produkcji), czyli straddle",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Opcje realne"
   },
   {
     "id": 76,
@@ -757,7 +982,10 @@
     "option_C": "bank spółdzielczy",
     "option_D": "giełda kryptoaktywów",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 77,
@@ -767,7 +995,10 @@
     "option_C": "o ile lepszą rentowność ma dany portfel w stosunku do portfela wybranego w wyniku zastosowania modelu polityki \"kupuj i trzymaj\" i o takim samym ryzyku",
     "option_D": "całkowitej rentowności portfela przy założonym ryzyku.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Wskaźniki efektywności zarządzania portfelem"
   },
   {
     "id": 78,
@@ -777,7 +1008,10 @@
     "option_C": "warunkowo ważna",
     "option_D": "żadna z powyższych",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 79,
@@ -787,7 +1021,10 @@
     "option_C": "I, II, III, IV",
     "option_D": "II, III.",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
   },
   {
     "id": 80,
@@ -797,7 +1034,10 @@
     "option_C": "liczby akcji wynikającej z deklaracji właściciela akcji o woli nabycia akcji nowej emisji",
     "option_D": "co najmniej tylu akcji ile umożliwi zachowanie przez akcjonariusza dotychczasowych proporcji udziału w kapitale",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 81,
@@ -807,7 +1047,10 @@
     "option_C": "jednego maklera papierów wartościowych do czynności wykonywaniu zleceń nabycia lub zbycia instrumentów finansowych na rachunek dającego zlecenie",
     "option_D": "jednego maklera papierów wartościowych do czynności oferowania instrumentów finansowych",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 82,
@@ -817,7 +1060,10 @@
     "option_C": "potwierdzenia przez KDPW_CCP S.A. o posiadaniu przez członka giełdy statusu uczestnika rozliczającego",
     "option_D": "potwierdzenia przez KDPW_CCP S.A. o posiadaniu przez członka giełdy statusu uczestnika rozrachunku.",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 83,
@@ -827,7 +1073,10 @@
     "option_C": "Przewodniczący Komisji tworzy sąd polubowny i ustala jego regulamin",
     "option_D": "w zakresie określonym w ustawie Przewodniczący Komisji może zażądać od Szefa Krajowej Administracji Skarbowej udostępnienia określonych informacji stanowiących tajemnicę skarbową",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 84,
@@ -837,7 +1086,10 @@
     "option_C": "wykres krańcowego kosztu kapitału MCC (ang. Marginal Cost of Capital) jest rosnący, bo przedsiębiorstwo korzysta z coraz droższego kapitału",
     "option_D": "wyznaczenie optymalnego budżetu kapitałowego, tzn. kapitału niezbędnego do sfinansowania wszystkich efektywnych projektów inwestycyjnych, wymaga jednoczesnej analizy krzywej pokazującej kształtowanie się możliwości inwestycyjnych przedsiębiorstwa i krzywej pokazującej kształtowanie się średniego ważonego kosztu kapitału przedsiębiorstwa.",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Metody oceny projektów inwestycyjnych"
   },
   {
     "id": 85,
@@ -847,7 +1099,10 @@
     "option_C": "11,91%",
     "option_D": "12,75%",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 86,
@@ -857,7 +1112,10 @@
     "option_C": "kapitał zapasowy",
     "option_D": "żadna z powyższych",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o rachunkowości - Łączenie spółek"
   },
   {
     "id": 87,
@@ -867,7 +1125,10 @@
     "option_C": "do końca sesji",
     "option_D": "zgodnie z godziną otrzymania komunikatu o zawieszeniu przyjmowania zleceń od maklera nadzorującego członka giełdy.",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 88,
@@ -877,7 +1138,10 @@
     "option_C": "może, po uzyskaniu zezwolenia Komisji Nadzoru Finansowego, prowadzić ASO",
     "option_D": "może, po przekazaniu zawiadomienia Komisji Nadzoru Finansowego, prowadzić OTF",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 89,
@@ -887,7 +1151,10 @@
     "option_C": "Gamma",
     "option_D": "Vega",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Pochodne",
+    "topic": "Współczynniki greckie"
   },
   {
     "id": 90,
@@ -897,7 +1164,10 @@
     "option_C": "0,8",
     "option_D": "1,25.",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Średni ważony koszt kapitału"
   },
   {
     "id": 91,
@@ -907,7 +1177,10 @@
     "option_C": "(I)",
     "option_D": "(IV)",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Instrumenty Dłużne",
+    "topic": "Krzywa rentowności"
   },
   {
     "id": 92,
@@ -917,7 +1190,10 @@
     "option_C": "20.000 EUR",
     "option_D": "40.000 EUR.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 93,
@@ -927,7 +1203,10 @@
     "option_C": "III",
     "option_D": "żadne z powyższych",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 94,
@@ -937,7 +1216,10 @@
     "option_C": "0,320",
     "option_D": "0,532",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Modele rynku (CML, Sharpe, CAPM)"
   },
   {
     "id": 95,
@@ -947,7 +1229,10 @@
     "option_C": "59%",
     "option_D": "64%.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Wskaźniki rentowności"
   },
   {
     "id": 96,
@@ -957,7 +1242,10 @@
     "option_C": "nad instytucjami pieniądza elektronicznego",
     "option_D": "nad działalnością kantorową",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o nadzorze nad rynkiem finansowym"
   },
   {
     "id": 97,
@@ -967,7 +1255,10 @@
     "option_C": "jeżeli reprezentowane jest na nim co najmniej 50% kapitału zakładowego",
     "option_D": "bez względu na liczbę reprezentowanych na nim akcji",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 98,
@@ -977,7 +1268,10 @@
     "option_C": "(I, III)",
     "option_D": "(I, II, III).",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Metody wyceny przedsiębiorstw"
   },
   {
     "id": 99,
@@ -987,7 +1281,10 @@
     "option_C": "Krajowego Depozytu Papierów Wartościowych S.A",
     "option_D": "firmy inwestycyjnej uprawnionej do wykonywania czynności przechowywania lub rejestrowania instrumentów finansowych, w tym prowadzenia rachunków papierów wartościowych, rachunków derywatów i rachunków zbiorczych, oraz prowadzenia rachunków pieniężnych, a także prowadzenia ewidencji instrumentów finansowych, której fundusze własne wynoszą co najmniej 100 000 000 zł",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o funduszach inwestycyjnych"
   },
   {
     "id": 100,
@@ -997,7 +1294,10 @@
     "option_C": "21 maja 2025 r",
     "option_D": "28 maja 2025 r",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Spółek Handlowych"
   },
   {
     "id": 101,
@@ -1007,7 +1307,10 @@
     "option_C": "zapada bezwzględną większością głosów",
     "option_D": "zapada większością 2/3 głosów.",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 102,
@@ -1017,7 +1320,10 @@
     "option_C": "emitentem obligacji kapitałowych nie może być bank krajowy",
     "option_D": "spółdzielcza kasa oszczędnościowo-kredytowa może emitować obligacje podporządkowane, o ile wartość nominalna jednej obligacji nie będzie niższa niż 400 000 zł",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obligacjach"
   },
   {
     "id": 103,
@@ -1027,7 +1333,10 @@
     "option_C": "ten sam makler nadzorujący może nadzorować proces przekazania na giełdę i modyfikowania zleceń maklerskich, ale nie może jednocześnie nadzorować procesu anulowania zleceń maklerskich",
     "option_D": "Regulamin Giełdy nie reguluje tego zagadnienia zostawiając podjęcie decyzji samemu członkowi giełdy poprzez odpowiednie zapisy w regulaminie świadczenia usług maklerskich.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 104,
@@ -1037,7 +1346,10 @@
     "option_C": "głównym zadaniem instrumentów pochodnych przy konstruowaniu efektywnego portfela akcji jest ograniczenie systematycznego i specyficznego ryzyka",
     "option_D": "zazwyczaj stopa zwrotu z pasywnie zarządzanego portfela akcji zmienia się w podobnym stopniu jak wielkość indeksu giełdowego",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Strategie zarządzania portfelami"
   },
   {
     "id": 105,
@@ -1047,7 +1359,10 @@
     "option_C": "przez Zarząd Giełdy na żądanie KDPW_CCP S.A",
     "option_D": "przez Zarząd Giełdy na wniosek KDPW S.A",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 106,
@@ -1057,7 +1372,10 @@
     "option_C": "obligacji będących prostym instrumentem finansowym",
     "option_D": "jednostek uczestnictwa funduszu inwestycyjnego otwartego.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 2017/565"
   },
   {
     "id": 107,
@@ -1067,7 +1385,10 @@
     "option_C": "nie jest określony",
     "option_D": "nie może być dłuższy niż 100 dni",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o ofercie publicznej"
   },
   {
     "id": 108,
@@ -1077,7 +1398,10 @@
     "option_C": "tak, ale wyłącznie wobec ETF-ów wpisanych do segmentu Lista Alertów",
     "option_D": "odpowiedź zależy od ustalenia czy dostawca ETF jest krajowym czy zagranicznym członkiem giełdy",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "SZOG"
   },
   {
     "id": 109,
@@ -1087,7 +1411,10 @@
     "option_C": "nie wymaga zgody Prezesa ZMiD",
     "option_D": "żadne z powyższych.",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Etyka",
+    "topic": "Zasady etyki zawodowej Maklerów i Doradców"
   },
   {
     "id": 110,
@@ -1097,7 +1424,10 @@
     "option_C": "102.138,66 PLN",
     "option_D": "285.129,00 PLN",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość przyszła renty"
   },
   {
     "id": 111,
@@ -1107,7 +1437,10 @@
     "option_C": "III",
     "option_D": "I, IV.",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Tryb i warunki postępowania firm inwestycyjnych i banków"
   },
   {
     "id": 112,
@@ -1117,7 +1450,10 @@
     "option_C": "IV",
     "option_D": "II",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 2017/565"
   },
   {
     "id": 113,
@@ -1127,7 +1463,10 @@
     "option_C": "prokura może być w każdym czasie odwołana",
     "option_D": "prokurentem może być osoba prawna.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Kodeks Cywilny"
   },
   {
     "id": 114,
@@ -1137,7 +1476,10 @@
     "option_C": "zysk operacyjny wzrośnie o 16,3%, to zysk netto wzrośnie również o 16,3%",
     "option_D": "żadna z powyższych",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza wskaźnikowa i wycena",
+    "topic": "Dźwignie"
   },
   {
     "id": 115,
@@ -1147,7 +1489,10 @@
     "option_C": "tworzy ewidencję osób uprawnionych z papierów wartościowych",
     "option_D": "zawiera w imieniu emitenta umowę, której przedmiotem jest rejestracja papierów wartościowych w depozycie papierów wartościowych",
     "correct_answer": "B",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Ustawy",
+    "topic": "Ustawa o obrocie (art. 1 do 45)"
   },
   {
     "id": 116,
@@ -1157,7 +1502,10 @@
     "option_C": "89.115 PLN",
     "option_D": "148.525 PLN.",
     "correct_answer": "D",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty wieczystej"
   },
   {
     "id": 117,
@@ -1167,7 +1515,10 @@
     "option_C": "członek Zarządu emitenta miał obowiązek dokonania powiadomienia emitenta oraz Komisji Nadzoru Finansowego jedynie po transakcji kupna akcji emitenta za kwotę o równowartości 2000 EUR",
     "option_D": "żona członka Zarządu emitenta miała obowiązek dokonania powiadomienia emitenta oraz Komisji Nadzoru Finansowego po każdej transakcji kupna akcji emitenta",
     "correct_answer": "A",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Prawo i Etyka",
+    "section": "Prawo - Rozporządzenia",
+    "topic": "Rozporządzenie Nr 596/2014 (MAR)"
   },
   {
     "id": 118,
@@ -1177,7 +1528,10 @@
     "option_C": "(II, III)",
     "option_D": "(II, III, IV).",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Analiza Portfelowa",
+    "topic": "Strategie zarządzania portfelami"
   },
   {
     "id": 119,
@@ -1187,7 +1541,10 @@
     "option_C": "wyklucza taki instrument finansowy z obrotu giełdowego",
     "option_D": "zawiesza obrót takim instrumentem finansowym",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Techniki Notowań Giełdowych",
+    "topic": "Regulamin GPW"
   },
   {
     "id": 120,
@@ -1197,6 +1554,9 @@
     "option_C": "im wyższa wielkość renty, tym niższa wartość bieżąca renty",
     "option_D": "im niższa stopa procentowa, tym wyższa wartość bieżąca renty.",
     "correct_answer": "C",
-    "exam_date": "30.03.2025"
+    "exam_date": "30.03.2025",
+    "domain": "Matematyka Finansowa",
+    "section": "Matematyka Finansowa",
+    "topic": "Wartość bieżąca renty"
   }
 ]
