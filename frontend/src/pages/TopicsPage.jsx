@@ -6,7 +6,7 @@ import { useDarkMode } from "../components/DarkModeContext";
 export default function TopicsPage() {
   const { isDarkMode } = useDarkMode();
   const [topics, setTopics] = useState({});
-  const [selected, setSelected] = useState({ main: "", sub: "" });
+  const [selected, setSelected] = useState({ domain: "", section: "", topic: "" });
   const [questions, setQuestions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalQuestions, setTotalQuestions] = useState(0);
@@ -29,11 +29,14 @@ export default function TopicsPage() {
         });
 
         const updatedTopics = {};
-        Object.entries(topicsResponse).forEach(([mainTopic, subs]) => {
-          updatedTopics[mainTopic] = subs.map(subName => ({
-            name: subName,
-            count: countsObject[subName] || 0
-          }));
+        Object.entries(topicsResponse).forEach(([domain, sections]) => {
+          updatedTopics[domain] = {};
+          Object.entries(sections).forEach(([section, topicNames]) => {
+            updatedTopics[domain][section] = topicNames.map((name) => ({
+              name,
+              count: countsObject[name] || 0,
+            }));
+          });
         });
 
         setTopics(updatedTopics);
@@ -55,16 +58,16 @@ export default function TopicsPage() {
     }
   };
 
-  const loadQuestions = async (main, sub, page = 1, shouldScroll = true) => {
+  const loadQuestions = async (domain, section, topic, page = 1, shouldScroll = true) => {
     setLoading(true);
-    setSelected({ main, sub });
+    setSelected({ domain, section, topic });
     setCurrentPage(page);
     
     try {
       const skip = (page - 1) * questionsPerPage;
       const [questionsResponse, countResponse] = await Promise.all([
-        fetchQuestions({ main_topic: main, sub_topic: sub, n: questionsPerPage, skip, random: false }),
-        fetchQuestionsCount({ main_topic: main, sub_topic: sub })
+        fetchQuestions({ domain, section, topic, n: questionsPerPage, skip, random: false }),
+        fetchQuestionsCount({ domain, section, topic })
       ]);
       
       setTotalQuestions(countResponse.total);
@@ -77,7 +80,6 @@ export default function TopicsPage() {
       
       setQuestions(transformedQuestions);
       
-      // Scroll to questions after they load, with a small delay to ensure rendering
       if (shouldScroll) {
         setTimeout(() => {
           scrollToQuestions();
@@ -92,7 +94,7 @@ export default function TopicsPage() {
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages && !loading) {
-      loadQuestions(selected.main, selected.sub, newPage, true);
+      loadQuestions(selected.domain, selected.section, selected.topic, newPage, true);
     }
   };
 
@@ -174,35 +176,47 @@ export default function TopicsPage() {
         <div className="flex flex-col md:flex-row gap-8">
           {/* Topics Sidebar */}
           <div className={`w-full md:w-1/3 p-6 rounded-lg shadow-lg ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
-            {Object.entries(topics).map(([main, subs]) => (
-              <div key={main} className="mb-6 last:mb-0">
+            {Object.entries(topics).map(([domain, sections]) => (
+              <div key={domain} className="mb-6 last:mb-0">
                 <h2
                   className={`font-semibold text-lg border-b pb-2 mb-2 cursor-pointer transition-colors ${
                     isDarkMode ? "text-gray-100 hover:text-blue-400" : "text-gray-800 hover:text-blue-600"
                   }`}
-                  onClick={() => loadQuestions(main, null)}
+                  onClick={() => loadQuestions(domain, null, null)}
                 >
-                  {main}
+                  {domain}
                 </h2>
-                <ul className="pl-2 space-y-2">
-                  {subs.map(s => (
-                    <li
-                      key={s.name}
-                      className={`p-2 rounded-md cursor-pointer transition-colors duration-200 ${
-                        selected.sub === s.name
-                          ? isDarkMode
-                            ? "bg-blue-900 text-blue-300 font-medium"
-                            : "bg-blue-100 text-blue-700 font-medium"
-                          : isDarkMode
-                          ? "hover:bg-gray-700"
-                          : "hover:bg-gray-100"
+                {Object.entries(sections).map(([section, topicList]) => (
+                  <div key={section} className="mb-4">
+                    <h3
+                      className={`font-medium text-sm uppercase tracking-wide pl-1 mb-1 cursor-pointer transition-colors ${
+                        isDarkMode ? "text-gray-400 hover:text-blue-400" : "text-gray-500 hover:text-blue-600"
                       }`}
-                      onClick={() => loadQuestions(main, s.name)}
+                      onClick={() => loadQuestions(domain, section, null)}
                     >
-                      {s.name} ({s.count})
-                    </li>
-                  ))}
-                </ul>
+                      {section}
+                    </h3>
+                    <ul className="pl-2 space-y-1">
+                      {topicList.map((t) => (
+                        <li
+                          key={t.name}
+                          className={`p-2 rounded-md cursor-pointer transition-colors duration-200 text-sm ${
+                            selected.topic === t.name
+                              ? isDarkMode
+                                ? "bg-blue-900 text-blue-300 font-medium"
+                                : "bg-blue-100 text-blue-700 font-medium"
+                              : isDarkMode
+                              ? "hover:bg-gray-700"
+                              : "hover:bg-gray-100"
+                          }`}
+                          onClick={() => loadQuestions(domain, section, t.name)}
+                        >
+                          {t.name} ({t.count})
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
@@ -219,7 +233,11 @@ export default function TopicsPage() {
                 <div className={`p-4 rounded-lg shadow-lg mb-6 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
                   <div className="flex justify-between items-center">
                     <h2 className={`${isDarkMode ? "text-gray-100" : "text-gray-800"} text-xl font-semibold`}>
-                      {selected.sub ? `${selected.main} - ${selected.sub}` : selected.main}
+                      {selected.topic
+                        ? `${selected.domain} > ${selected.section} > ${selected.topic}`
+                        : selected.section
+                        ? `${selected.domain} > ${selected.section}`
+                        : selected.domain}
                     </h2>
                     <span className={`${isDarkMode ? "text-gray-400" : "text-gray-500"} text-sm`}>
                       Pytania {((currentPage - 1) * questionsPerPage) + 1}–{Math.min(currentPage * questionsPerPage, totalQuestions)} z {totalQuestions}

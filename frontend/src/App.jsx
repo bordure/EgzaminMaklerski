@@ -36,6 +36,14 @@ export default function App() {
                 } 
               />
               <Route 
+                path="/notes/:id" 
+                element={
+                  <ProtectedRoute>
+                    <Notes />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
                 path="/topics" 
                 element={
                   <ProtectedRoute>

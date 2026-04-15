@@ -118,8 +118,9 @@ export const fetchTopics = () =>
 
 export const fetchQuestions = (options = {}) => {
   const {
-    main_topic = null,
-    sub_topic = null,
+    domain = null,
+    section = null,
+    topic = null,
     exam_date = null,
     n = 10,
     skip = 0,
@@ -127,8 +128,9 @@ export const fetchQuestions = (options = {}) => {
   } = options;
 
   const params = { n, skip, random_questions };
-  if (main_topic) params.main_topic = main_topic;
-  if (sub_topic) params.sub_topic = sub_topic;
+  if (domain) params.domain = domain;
+  if (section) params.section = section;
+  if (topic) params.topic = topic;
   if (exam_date) params.exam_date = exam_date;
 
   return api
@@ -141,11 +143,12 @@ export const fetchQuestions = (options = {}) => {
 };
 
 export const fetchQuestionsCount = (options = {}) => {
-  const { main_topic = null, sub_topic = null, exam_date = null } = options;
+  const { domain = null, section = null, topic = null, exam_date = null } = options;
 
   const params = {};
-  if (main_topic) params.main_topic = main_topic;
-  if (sub_topic) params.sub_topic = sub_topic;
+  if (domain) params.domain = domain;
+  if (section) params.section = section;
+  if (topic) params.topic = topic;
   if (exam_date) params.exam_date = exam_date;
 
   return api.get("/exam/questions/count", { params }).then((r) => r.data);
@@ -160,8 +163,8 @@ export const fetchSubtopicCounts = () =>
 export const fetchExam = (n = 5, exam_date = null) =>
   fetchQuestions({ n, exam_date, random_questions: true });
 
-export const fetchQuestionsByTopic = (main_topic, sub_topic = null, n = 10, skip = 0) =>
-  fetchQuestions({ main_topic, sub_topic, n, skip, random_questions: false });
+export const fetchQuestionsByTopic = (domain, section = null, topic = null, n = 10, skip = 0) =>
+  fetchQuestions({ domain, section, topic, n, skip, random_questions: false });
 
 export const fetchQuestionsByDate = (exam_date, n = 10, skip = 0) =>
   fetchQuestions({ exam_date, n, skip, random_questions: false });

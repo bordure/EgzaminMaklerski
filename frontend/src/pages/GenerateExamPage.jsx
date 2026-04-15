@@ -12,8 +12,9 @@ export default function GenerateExamPage() {
   const [isSpecificYear, setIsSpecificYear] = useState(false);
   const [examYears, setExamYears] = useState([]);
   const [selectedYear, setSelectedYear] = useState("");
-  const [selectedMainTopic, setSelectedMainTopic] = useState("");
-  const [selectedSubTopic, setSelectedSubTopic] = useState("");
+  const [selectedDomain, setSelectedDomain] = useState("");
+  const [selectedSection, setSelectedSection] = useState("");
+  const [selectedTopic, setSelectedTopic] = useState("");
   const [mode, setMode] = useState("study");
   const [numberOfQuestions, setNumberOfQuestions] = useState(10);
   const [showYears, setShowYears] = useState(true);
@@ -117,8 +118,9 @@ export default function GenerateExamPage() {
       const queryOptions = { n: questionsCount, random_questions: true };
 
       if (isSpecificTopics) {
-        if (selectedMainTopic) queryOptions.main_topic = selectedMainTopic;
-        if (selectedSubTopic) queryOptions.sub_topic = selectedSubTopic;
+        if (selectedDomain) queryOptions.domain = selectedDomain;
+        if (selectedSection) queryOptions.section = selectedSection;
+        if (selectedTopic) queryOptions.topic = selectedTopic;
       }
       if (isSpecificYear && selectedYear) {
         queryOptions.exam_date = selectedYear;
@@ -314,46 +316,68 @@ export default function GenerateExamPage() {
               <div className="space-y-4 pt-4">
                 <div>
                   <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
-                    Wybierz główny temat:
+                    Wybierz dziedzinę:
                   </label>
                   <select
-                    value={selectedMainTopic}
+                    value={selectedDomain}
                     onChange={(e) => {
-                      setSelectedMainTopic(e.target.value);
-                      setSelectedSubTopic("");
+                      setSelectedDomain(e.target.value);
+                      setSelectedSection("");
+                      setSelectedTopic("");
                     }}
                     className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
                   >
-                    <option value="">-- Wybierz główny temat --</option>
-                    {Object.keys(topics).map((topic) => (
-                      <option key={topic} value={topic}>
-                        {topic}
+                    <option value="">-- Wybierz dziedzinę --</option>
+                    {Object.keys(topics).map((d) => (
+                      <option key={d} value={d}>
+                        {d}
                       </option>
                     ))}
                   </select>
                 </div>
 
-                {selectedMainTopic &&
-                  topics[selectedMainTopic] &&
-                  topics[selectedMainTopic].length > 0 && (
-                    <div>
-                      <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
-                        Wybierz podtemat (opcjonalnie):
-                      </label>
-                      <select
-                        value={selectedSubTopic}
-                        onChange={(e) => setSelectedSubTopic(e.target.value)}
-                        className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-                      >
-                        <option value="">-- Wszystkie podtematy --</option>
-                        {topics[selectedMainTopic].map((sub) => (
-                          <option key={sub} value={sub}>
-                            {sub}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  )}
+                {selectedDomain && topics[selectedDomain] && (
+                  <div>
+                    <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
+                      Wybierz dział (opcjonalnie):
+                    </label>
+                    <select
+                      value={selectedSection}
+                      onChange={(e) => {
+                        setSelectedSection(e.target.value);
+                        setSelectedTopic("");
+                      }}
+                      className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+                    >
+                      <option value="">-- Wszystkie działy --</option>
+                      {Object.keys(topics[selectedDomain]).map((s) => (
+                        <option key={s} value={s}>
+                          {s}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
+                {selectedSection && topics[selectedDomain]?.[selectedSection]?.length > 0 && (
+                  <div>
+                    <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
+                      Wybierz temat (opcjonalnie):
+                    </label>
+                    <select
+                      value={selectedTopic}
+                      onChange={(e) => setSelectedTopic(e.target.value)}
+                      className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+                    >
+                      <option value="">-- Wszystkie tematy --</option>
+                      {topics[selectedDomain][selectedSection].map((t) => (
+                        <option key={t} value={t}>
+                          {t}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
               </div>
             )}
 
@@ -408,6 +432,27 @@ export default function GenerateExamPage() {
                 {mode === "study" ? "Nauka" : "Egzamin"}
               </button>
             </div>
+
+            {mode === "exam" && (
+              <div>
+                <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
+                  Czas trwania egzaminu (minuty):
+                </label>
+                <input
+                  type="number"
+                  value={examTimer}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setExamTimer(value === "" ? "" : Math.max(1, parseInt(value, 10)));
+                  }}
+                  onBlur={() => {
+                    if (examTimer === "" || examTimer < 1) setExamTimer(60);
+                  }}
+                  min="1"
+                  className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+                />
+              </div>
+            )}
 
             {/* Show Exam Years */}
             <div className="flex items-center justify-between">

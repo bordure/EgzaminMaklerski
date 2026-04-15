@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, Component } from "react";
 import { NotionRenderer } from "react-notion-x";
 import { Code } from "react-notion-x/build/third-party/code";
 import { Equation } from "react-notion-x/build/third-party/equation";
@@ -10,6 +10,40 @@ import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "katex/dist/katex.min.css";
 
+class NotionErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="p-8 text-center text-red-500 dark:text-red-400">
+          Nie udało się wyrenderować strony Notion. Spróbuj odświeżyć.
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+function sanitizeRecordMap(recordMap) {
+  if (!recordMap) return recordMap;
+  const block = {};
+  for (const [key, val] of Object.entries(recordMap.block || {})) {
+    if (!key || typeof key !== "string" || !val?.value) continue;
+    // patch missing id so react-notion-x never calls .replaceAll on undefined
+    if (typeof val.value.id !== "string") {
+      val.value.id = key;
+    }
+    block[key] = val;
+  }
+  return { ...recordMap, block };
+}
+
 const Notes = () => {
   const { isDarkMode } = useDarkMode();
   const { id } = useParams();
@@ -20,9 +54,11 @@ const Notes = () => {
   const [currentPageId, setCurrentPageId] = useState(pageId);
 
   const processNotionData = useCallback((data) => {
-    if (data?.recordMap?.block) return data.recordMap;
-    if (data?.block)
-      return {
+    let raw;
+    if (data?.recordMap?.block) {
+      raw = data.recordMap;
+    } else if (data?.block) {
+      raw = {
         block: data.block,
         notion_user: data.notion_user || {},
         collection: data.collection || {},
@@ -30,18 +66,30 @@ const Notes = () => {
         space: data.space || {},
         user: data.user || {},
       };
-    const blocks = {};
-    Object.keys(data || {}).forEach((key) => {
-      if (data[key]?.value) blocks[key] = data[key];
-    });
-    return {
-      block: blocks,
-      notion_user: {},
-      collection: {},
-      collection_view: {},
-      space: {},
-      user: {},
-    };
+    } else {
+      // splitbee /v1/page/ returns { blockId: { spaceId?, value: { role, value: actualBlock } } }
+      const blocks = {};
+      Object.keys(data || {}).forEach((key) => {
+        const entry = data[key];
+        if (!entry || typeof entry !== "object") return;
+        // double-nested: entry.value = { role, value: actualBlock }
+        if (entry.value?.value) {
+          blocks[key] = entry.value;
+        } else if (entry.value) {
+          // single-nested: entry = { role, value: actualBlock }
+          blocks[key] = entry;
+        }
+      });
+      raw = {
+        block: blocks,
+        notion_user: {},
+        collection: {},
+        collection_view: {},
+        space: {},
+        user: {},
+      };
+    }
+    return sanitizeRecordMap(raw);
   }, []);
 
   const handlePageClick = useCallback(
@@ -151,30 +199,32 @@ const Notes = () => {
   return (
     <div className={`min-h-screen bg-gray-50 dark:bg-gray-900`}>
       <div className="notion-frame max-w-7xl mx-auto py-8 px-8">
-        <NotionRenderer
-          recordMap={recordMap}
-          fullPage={false}
-          darkMode={isDarkMode}
-          rootPageId={currentPageId}
-          previewImages={true}
-          showCollectionViewDropdown={false}
-          mapPageUrl={(pageId) => `/notes/${pageId}`}
-          mapImageUrl={(url, block) => {
-            if (!url) return "";
-            if (url.includes("img.notionusercontent.com")) return url;
-            try {
-              const u = new URL(url);
-              if (u.searchParams.has("exp") && u.searchParams.has("sig")) {
-                return `https://img.notionusercontent.com${u.pathname}?${u.searchParams.toString()}`;
-              }
-            } catch {}
-            return `https://www.notion.so/image/${encodeURIComponent(
-              url
-            )}?table=block&id=${block?.id}&cache=v2`;
-          }}
-          components={{ Code, Equation }}
-          disableHeader={false}
-        />
+        <NotionErrorBoundary>
+          <NotionRenderer
+            recordMap={recordMap}
+            fullPage={false}
+            darkMode={isDarkMode}
+            rootPageId={currentPageId}
+            previewImages={true}
+            showCollectionViewDropdown={false}
+            mapPageUrl={(pageId) => (pageId ? `/notes/${pageId.replaceAll('-', '')}` : '/notes')}
+            mapImageUrl={(url, block) => {
+              if (!url) return "";
+              if (url.includes("img.notionusercontent.com")) return url;
+              try {
+                const u = new URL(url);
+                if (u.searchParams.has("exp") && u.searchParams.has("sig")) {
+                  return `https://img.notionusercontent.com${u.pathname}?${u.searchParams.toString()}`;
+                }
+              } catch {}
+              return `https://www.notion.so/image/${encodeURIComponent(
+                url
+              )}?table=block&id=${block?.id}&cache=v2`;
+            }}
+            components={{ Code, Equation }}
+            disableHeader={false}
+          />
+        </NotionErrorBoundary>
       </div>
     </div>
   );
