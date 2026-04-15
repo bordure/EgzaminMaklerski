@@ -9,3 +9,6 @@ pyJWT
 pydantic-settings
 prometheus-fastapi-instrumentator
 prometheus-client
+pytest
+pytest-asyncio
+mongomock

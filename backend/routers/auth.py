@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import RedirectResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from settings import Settings
 import httpx, jwt, secrets
 
@@ -11,8 +11,8 @@ security = HTTPBearer(auto_error=False)
 
 cfg = Settings()
 
-JWT_SECRET_KEY = cfg.jwt_secret_key or secrets.token_urlsafe(32)
-JWT_ALGORITHM = "HS256"
+JWT_SECRET_KEY = cfg.jwt_secret_key
+JWT_ALGORITHM = cfg.jwt_algorithm
 ACCESS_TOKEN_EXPIRE = timedelta(hours=24)
 REFRESH_TOKEN_EXPIRE = timedelta(days=7)
 
@@ -43,8 +43,8 @@ def create_token(payload: dict,
                  expires_delta: timedelta) -> str:
     payload = {
         **payload,
-        "exp": datetime.utcnow() + expires_delta,
-        "iat": datetime.utcnow(),
+        "exp": datetime.now(timezone.utc) + expires_delta,
+        "iat": datetime.now(timezone.utc),
     }
     return jwt.encode(payload, JWT_SECRET_KEY, algorithm=JWT_ALGORITHM)
 
@@ -110,7 +110,7 @@ def get_current_user(
         "user_id": payload.get("user_id", payload.get("id")),
         "email": payload.get("email"),
         "guest": payload.get("guest", False),
-        "login_time": datetime.utcnow(),
+        "login_time": datetime.now(timezone.utc),
     })
     return payload
 
@@ -147,9 +147,9 @@ async def google_callback(code: str, request: Request):
                 "name": google_user["name"],
                 "picture": google_user["picture"],
                 "verified_email": google_user["verified_email"],
-                "last_login": datetime.utcnow(),
+                "last_login": datetime.now(timezone.utc),
             },
-            "$setOnInsert": {"created_at": datetime.utcnow()},
+            "$setOnInsert": {"created_at": datetime.now(timezone.utc)},
         },
         upsert=True,
     )

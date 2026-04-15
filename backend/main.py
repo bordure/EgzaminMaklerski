@@ -1,12 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from settings import Settings
+from misc.log import get_logger
 from pymongo import MongoClient
 from prometheus_fastapi_instrumentator import Instrumentator
 from prometheus_client import Gauge
 import threading, time
 
 cfg = Settings()
+log = get_logger(__name__)
 
 app = FastAPI(title="Egzamin Maklerski API")
 
@@ -31,6 +33,8 @@ db = client[cfg.db_name]
 
 app.state.db = db
 
+log.info("Starting Egzamin Maklerski API (environment=%s, log_level=%s)", cfg.environment, cfg.log_level)
+
 # ── Prometheus metrics ────────────────────────────────────────────────────────
 Instrumentator().instrument(app).expose(app, endpoint="/metrics", include_in_schema=False)
 
@@ -42,32 +46,32 @@ logins_today       = Gauge("exam_logins_today",          "Login events in the la
 
 def _refresh_db_gauges():
     """Background thread: refresh DB-derived gauges every 30 seconds."""
-    from datetime import datetime, timedelta
+    from datetime import datetime, timedelta, timezone
     while True:
         try:
             questions_total.set(db[cfg.collection_name].estimated_document_count())
-            users_total.set(db[cfg.logins_collection].count_documents({"guest": False}))
+            users_total.set(len(db[cfg.logins_collection].distinct("email", {"guest": False, "email": {"$ne": None}})))
             google_logins_total.set(db[cfg.logins_collection].count_documents({"guest": False}))
             guest_logins_total.set(db[cfg.logins_collection].count_documents({"guest": True}))
-            since = datetime.utcnow() - timedelta(hours=24)
+            since = datetime.now(timezone.utc) - timedelta(hours=24)
             logins_today.set(db[cfg.logins_collection].count_documents({"login_time": {"$gte": since}}))
         except Exception:
-            pass
+            log.exception("Error refreshing DB gauges.")
         time.sleep(30)
 
 threading.Thread(target=_refresh_db_gauges, daemon=True).start()
 
 # ─────────────────────────────────────────────────────────────────────────────
 
-from routers import auth, analytics, notion, exam
+from routers import auth, notion, exam
 
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(exam.router, prefix="/exam", tags=["exam"])
-app.include_router(analytics.router, prefix="/analytics", tags=["analytics"])
 app.include_router(notion.router, prefix="/notion", tags=["notion"])
 
 @app.get("/health")
 def health_check():
+    """Return service health status."""
     return {"status": "healthy"}
 
 if __name__ == "__main__":
