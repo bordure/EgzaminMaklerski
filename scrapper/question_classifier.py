@@ -1,7 +1,7 @@
 import argparse
 import json
-import os
 import time
+import sys
 from enum import Enum
 from pathlib import Path
 
@@ -9,7 +9,15 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel, model_validator
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from misc.log import get_logger
+from misc.settings import ScrapperSettings
+
 load_dotenv()
+
+log = get_logger(__name__)
+cfg = ScrapperSettings()
 
 DATA_DIR = Path(__file__).parent / "data"
 REQUEST_DELAY = 0.3 
@@ -26,15 +34,12 @@ class Domain(str, Enum):
 class Section(str, Enum):
     """Thematic group (Dział) within a domain."""
 
-    # Część I – Matematyka Finansowa
     ANALIZA_PORTFELOWA = "Analiza Portfelowa"
     ANALIZA_WSKAZNIKOWA_I_WYCENA = "Analiza wskaźnikowa i wycena"
     INSTRUMENTY_DLUZNE = "Instrumenty Dłużne"
     INSTRUMENTY_POCHODNE = "Instrumenty Pochodne"
     MATEMATYKA_FINANSOWA = "Matematyka Finansowa"
     TECHNIKI_NOTOWAN_GIELDOWYCH = "Techniki Notowań Giełdowych"
-
-    # Część II – Prawo i Etyka
     ETYKA = "Etyka"
     PRAWO_ROZPORZADZENIA = "Prawo - Rozporządzenia"
     PRAWO_USTAWY = "Prawo - Ustawy"
@@ -43,21 +48,16 @@ class Section(str, Enum):
 class Topic(str, Enum):
     """Specific subject (Temat) within a section."""
 
-    # Analiza Portfelowa
     WSKAZNIKI_EFEKTYWNOSCI_PORTFELEM = "Wskaźniki efektywności zarządzania portfelem"
     KONTRYBUCJA_DO_STOPY_ZWROTU = "Kontrybucja do stopy zwrotu"
     MODELE_RYNKU = "Modele rynku (CML, Sharpe, CAPM)"
     STRATEGIE_ZARZADZANIA_PORTFELAMI = "Strategie zarządzania portfelami"
     SREDNI_WAZONY_KOSZT_KAPITALU = "Średni ważony koszt kapitału"
-
-    # Analiza wskaźnikowa i wycena
     DZWIGNIE = "Dźwignie"
     WSKAZNIKI_AKTYWNOSCI = "Wskaźniki aktywności"
     METODY_WYCENY_PRZEDSIEBIORSTW = "Metody wyceny przedsiębiorstw"
     WSKAZNIKI_RENTOWNOSCI = "Wskaźniki rentowności"
     MODEL_GORDONA = "Model Gordona"
-
-    # Instrumenty Dłużne
     OBLIGACJE_ZEROKUPONOWE = "Obligacje zerokuponowe"
     RODZAJE_OBLIGACJI_I_ICH_RYZYKA = "Rodzaje obligacji i ich ryzyka"
     WYPUKLOSC_OBLIGACJI = "Wypukłość obligacji (convexity)"
@@ -67,8 +67,6 @@ class Topic(str, Enum):
     STOPY_ZWROTU_Z_OBLIGACJI = "Stopy zwrotu z obligacji"
     ZARZADZANIE_PORTFELEM_OBLIGACJI = "Zarządzanie portfelem obligacji"
     KRZYWA_RENTOWNOSCI = "Krzywa rentowności"
-
-    # Instrumenty Pochodne
     KONTRAKTY_TERMINOWE = "Kontrakty terminowe"
     STRATEGIE_OPCYJNE_WYKORZYSTANIE = "Strategie opcyjne - wykorzystanie strategii"
     STRATEGIE_OPCYJNE_BUDOWA = "Strategie opcyjne - budowa strategii"
@@ -76,8 +74,6 @@ class Topic(str, Enum):
     OPCJE_REALNE = "Opcje realne"
     WSPOLCZYNNIKI_GRECKIE = "Współczynniki greckie"
     MODELE_WYCENY_OPCJI = "Modele wyceny opcji"
-
-    # Matematyka Finansowa
     METODY_OCENY_PROJEKTOW = "Metody oceny projektów inwestycyjnych"
     STOPA_ZWROTU_Z_INWESTYCJI = "Stopa zwrotu z inwestycji"
     WARTOSC_BIEZACA_RENTY_WIECZYSTEJ = "Wartość bieżąca renty wieczystej"
@@ -86,21 +82,13 @@ class Topic(str, Enum):
     STOPA_IRR_I_MIRR = "Stopa IRR i MIRR"
     WARTOSC_BIEZACA = "Wartość bieżąca"
     WARTOSC_PRZYSZLA_RENTY = "Wartość przyszła renty"
-
-    # Techniki Notowań Giełdowych
     REGULAMIN_GPW = "Regulamin GPW"
     SZOG = "SZOG"
-
-    # Etyka
     ZASADY_ETYKI_ZAWODOWEJ = "Zasady etyki zawodowej Maklerów i Doradców"
-
-    # Prawo - Rozporządzenia
     ROZPORZADZENIE_2017_565 = "Rozporządzenie Nr 2017/565"
     SZCZEGOLOWE_WARUNKI_TECH_I_ORG = "Szczegółowe warunki techniczne i organizacyjne dla firm inwestycyjnych"
     ROZPORZADZENIE_596_2014 = "Rozporządzenie Nr 596/2014 (MAR)"
     TRYB_I_WARUNKI_POSTEPOWANIA = "Tryb i warunki postępowania firm inwestycyjnych i banków"
-
-    # Prawo - Ustawy
     USTAWA_O_NADZORZE = "Ustawa o nadzorze nad rynkiem finansowym"
     USTAWA_O_OBROCIE_ART_1_45 = "Ustawa o obrocie (art. 1 do 45)"
     USTAWA_O_RACHUNKOWOSCI_LACZENIE = "Ustawa o rachunkowości - Łączenie spółek"
@@ -288,18 +276,10 @@ Return ONLY valid JSON with keys: domain, section, topic. Use the exact string v
 """
 
 
-# ---------------------------------------------------------------------------
-# Classifier
-# ---------------------------------------------------------------------------
-
-
 def _build_client() -> OpenAI:
     """Instantiate the OpenAI client pointed at the Azure endpoint."""
-    endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
-    # Strip trailing /chat/completions if the env var contains the full path
-    base_url = endpoint.removesuffix("/chat/completions")
-    api_key = os.environ["AZURE_OPENAI_KEY"]
-    return OpenAI(base_url=base_url, api_key=api_key)
+    base_url = cfg.azure_openai_endpoint.removesuffix("/chat/completions")
+    return OpenAI(base_url=base_url, api_key=cfg.azure_openai_key)
 
 
 def classify_question(
@@ -335,7 +315,7 @@ def classify_question(
             if attempt == max_retries:
                 raise
             wait = REQUEST_DELAY * (2 ** attempt)
-            print(f"  ⚠️  Attempt {attempt} failed ({exc}). Retrying in {wait:.1f}s…")
+            log.warning("Attempt %d/%d failed (%s). Retrying in %.1fs.", attempt, max_retries, exc, wait)
             time.sleep(wait)
 
     raise RuntimeError("Unreachable")
@@ -367,13 +347,13 @@ def process_file(
 
         question_text = question.get("question", "")
         if not question_text:
-            print(f"  ⚠️  Question {idx} has no 'question' field – skipping.")
+            log.warning("Question %d has no 'question' field - skipping.", idx)
             continue
 
         try:
             classification = classify_question(client, deployment, question_text)
         except Exception as exc:
-            print(f"  ❌ Question {idx} classification failed: {exc}")
+            log.error("Question %d classification failed: %s", idx, exc)
             continue
 
         question["domain"] = classification.domain.value
@@ -381,9 +361,12 @@ def process_file(
         question["topic"] = classification.topic.value
         classified_count += 1
 
-        print(
-            f"  [{idx:>3}] {classification.domain.value} › "
-            f"{classification.section.value} › {classification.topic.value}"
+        log.info(
+            "[%3d] %s > %s > %s",
+            idx,
+            classification.domain.value,
+            classification.section.value,
+            classification.topic.value,
         )
         time.sleep(REQUEST_DELAY)
 
@@ -391,11 +374,6 @@ def process_file(
         json.dump(questions, fh, ensure_ascii=False, indent=2)
 
     return classified_count
-
-
-# ---------------------------------------------------------------------------
-# Entry point
-# ---------------------------------------------------------------------------
 
 
 def main() -> None:
@@ -416,8 +394,8 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    deployment = os.environ["AZURE_OPENAI_DEPLOYMENT"]
     client = _build_client()
+    deployment = cfg.azure_openai_deployment
 
     files: list[Path]
     if args.file:
@@ -426,17 +404,17 @@ def main() -> None:
         files = sorted(DATA_DIR.glob("output*.json"))
 
     if not files:
-        print(f"No output*.json files found in {DATA_DIR}")
+        log.warning("No output*.json files found in %s", DATA_DIR)
         return
 
     total = 0
     for path in files:
-        print(f"\n📄 {path.name}")
+        log.info("Processing file: %s", path.name)
         count = process_file(path, client, deployment, force=args.force)
         total += count
-        print(f"   → {count} question(s) classified.")
+        log.info("%s: %d question(s) classified.", path.name, count)
 
-    print(f"\n✅ Done. Total classified: {total}")
+    log.info("Done. Total classified: %d", total)
 
 
 if __name__ == "__main__":

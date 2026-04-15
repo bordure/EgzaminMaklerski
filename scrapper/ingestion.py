@@ -1,14 +1,21 @@
 from pymongo import MongoClient, ASCENDING
-import os
-from dotenv import load_dotenv
 from pymongo.errors import BulkWriteError
 import time
 import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from misc.log import get_logger
+from misc.settings import ScrapperSettings
+
+log = get_logger(__name__)
+_cfg = ScrapperSettings()
 
 
 class Ingestion():
     def __init__(self, mode, is_inserting=True):
-        load_dotenv()
         self.mode = mode
         self.is_inserting = is_inserting
         if self.is_inserting:
@@ -18,8 +25,7 @@ class Ingestion():
 
     def _create_mongo_client(self):
         if self.mode == "prod":
-            mongo_uri = os.getenv("MONGO_URI")
-            return MongoClient(mongo_uri)
+            return MongoClient(_cfg.mongo_uri)
         else:
             return MongoClient("mongodb://localhost:27017/")
 
@@ -93,7 +99,7 @@ class Ingestion():
         Automatically strips _id fields and respects unique index constraints.
         """
         if not self.is_inserting:
-            print("Inserting is disabled. Skipping insertion.")
+            log.info("Inserting is disabled. Skipping insertion.")
             return
         
         for d in docs:
@@ -105,7 +111,7 @@ class Ingestion():
             for attempt in range(max_retries):
                 try:
                     self.collection.insert_many(batch, ordered=False)
-                    break 
+                    break
                 except BulkWriteError as bwe:
                     details = bwe.details
                     write_errors = details.get("writeErrors", [])
@@ -118,19 +124,19 @@ class Ingestion():
                             match = re.search(r"RetryAfterMs=(\d+)", msg)
                             retry_ms = int(match.group(1)) if match else 2000
                             should_retry = True
-                            print(f"⚠️ Rate limit hit — retrying in {retry_ms}ms...")
+                            log.warning("Rate limit hit - retrying in %dms.", retry_ms)
                         elif "duplicate key error" in msg:
                             continue
                         else:
-                            print(f"❌ Unexpected write error: {msg}")
+                            log.error("Unexpected write error: %s", msg)
 
                     if should_retry:
                         time.sleep(retry_ms / 1000.0)
-                        continue  
+                        continue
 
                     break
 
             else:
                 raise Exception("Max retries exceeded during insert_many for a batch.")
 
-        print("✅ All batches inserted successfully.")
+        log.info("All batches inserted successfully.")

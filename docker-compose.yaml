@@ -12,7 +12,8 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: exam_backend
     depends_on:
       - mongo
@@ -23,6 +24,7 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/app
+      - ./misc:/app/misc
 
   frontend:
     build:
