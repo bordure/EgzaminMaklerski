@@ -63,11 +63,13 @@ threading.Thread(target=_refresh_db_gauges, daemon=True).start()
 
 # ─────────────────────────────────────────────────────────────────────────────
 
-from routers import auth, notion, exam
+from routers import auth, notion, exam, admin, reports
 
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(exam.router, prefix="/exam", tags=["exam"])
 app.include_router(notion.router, prefix="/notion", tags=["notion"])
+app.include_router(admin.router, prefix="/admin", tags=["admin"])
+app.include_router(reports.router, prefix="/reports", tags=["reports"])
 
 @app.get("/health")
 def health_check():

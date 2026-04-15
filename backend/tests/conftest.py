@@ -16,6 +16,7 @@ os.environ.setdefault("MONGO_URI", "mongodb://localhost:27017")
 os.environ.setdefault("GOOGLE_CLIENT_ID", "test-client-id")
 os.environ.setdefault("GOOGLE_CLIENT_SECRET", "test-client-secret")
 os.environ.setdefault("JWT_SECRET_KEY", "test-secret-key-for-tests-only-padding")
+os.environ.setdefault("ADMIN_EMAIL", "admin@example.com")
 
 from main import app
 import routers.auth as auth_module
@@ -61,6 +62,56 @@ def auth_headers(auth_token):
 def guest_headers(guest_token):
     """Authorization headers for a guest user."""
     return {"Authorization": f"Bearer {guest_token}"}
+
+
+@pytest.fixture()
+def admin_token(mongo_db):
+    """Return a valid access token for the admin user."""
+    user = {"id": "admin-001", "email": "admin@example.com", "guest": False}
+    pair = auth_module.create_token_pair(user)
+    return pair.access_token
+
+
+@pytest.fixture()
+def admin_headers(admin_token):
+    """Authorization headers for the admin user."""
+    return {"Authorization": f"Bearer {admin_token}"}
+
+
+@pytest.fixture()
+def seeded_reports(mongo_db):
+    """Insert a small set of reports into the test DB."""
+    from datetime import datetime, timezone
+    from bson import ObjectId
+
+    reports = [
+        {
+            "question_id": "507f1f77bcf86cd799439011",
+            "question_text": "Pytanie testowe 1",
+            "reason": "typo",
+            "description": "Blad w tresci",
+            "reported_by": "test@example.com",
+            "created_at": datetime.now(timezone.utc),
+            "resolved": False,
+            "resolved_at": None,
+            "admin_note": None,
+        },
+        {
+            "question_id": "507f1f77bcf86cd799439012",
+            "question_text": "Pytanie testowe 2",
+            "reason": "wrong_answer",
+            "description": "",
+            "reported_by": "other@example.com",
+            "created_at": datetime.now(timezone.utc),
+            "resolved": True,
+            "resolved_at": datetime.now(timezone.utc),
+            "admin_note": "Poprawione",
+        },
+    ]
+    result = mongo_db["reports"].insert_many(reports)
+    for doc, inserted_id in zip(reports, result.inserted_ids):
+        doc["_id"] = inserted_id
+    return reports
 
 
 @pytest.fixture()
