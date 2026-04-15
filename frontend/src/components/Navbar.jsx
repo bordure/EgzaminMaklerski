@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
-import { BookOpen, LogOut, LogIn, FileText, Sun, Moon, Menu, X } from 'lucide-react';
+import { BookOpen, LogOut, LogIn, FileText, Sun, Moon, Menu, X, ShieldCheck } from 'lucide-react';
+import { checkAdmin } from '../api';
 import { useDarkMode } from './DarkModeContext';
 import guestAvatar from '../assets/images/guest-avatar.svg';
 import coffeeIcon from '../assets/images/coffee-icon.svg';
@@ -11,6 +12,15 @@ const Navbar = () => {
   const location = useLocation();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    if (isAuthenticated && !user?.guest) {
+      checkAdmin().then((d) => setIsAdmin(d.is_admin ?? false)).catch(() => {});
+    } else {
+      setIsAdmin(false);
+    }
+  }, [isAuthenticated, user]);
 
   if (!isAuthenticated) return null;
 
@@ -69,6 +79,12 @@ const Navbar = () => {
               <FileText className="w-4 h-4 mr-1 inline" />
               Notatki
             </Link>
+            {isAdmin && (
+              <Link to="/admin" className={linkClasses('/admin')}>
+                <ShieldCheck className="w-4 h-4 mr-1 inline" />
+                Admin
+              </Link>
+            )}
             <DonateButton />
           </div>
 
@@ -85,10 +101,10 @@ const Navbar = () => {
             </button>
 
             {/* Avatar + info */}
-            <div className="flex items-center gap-3">
+            <Link to="/profile" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <img
                 src={user?.guest ? guestAvatar : (user?.picture || guestAvatar)}
-                alt={user?.name || 'Gość'}
+                alt={user?.name || 'Gosc'}
                 referrerPolicy="no-referrer"
                 onError={(e) => { e.currentTarget.src = guestAvatar; e.currentTarget.className = e.currentTarget.className + ' dark:invert'; }}
                 className={`w-8 h-8 rounded-full border-2 border-gray-200 dark:border-gray-600 object-cover ${
@@ -97,13 +113,13 @@ const Navbar = () => {
               />
               <div className="hidden sm:block">
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                  {user?.guest ? 'Gość' : user?.name}
+                  {user?.guest ? 'Gosc' : user?.name}
                 </p>
                 {!user?.guest && (
                   <p className="text-xs text-gray-500 dark:text-gray-400">{user?.email}</p>
                 )}
               </div>
-            </div>
+            </Link>
 
             {/* Login or Logout button */}
             {user?.guest ? (
@@ -165,10 +181,14 @@ const Navbar = () => {
         </div>
 
         {/* Mobile profile section */}
-        <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
+        <Link
+          to="/profile"
+          onClick={() => setMenuOpen(false)}
+          className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors"
+        >
           <img
             src={user?.guest ? guestAvatar : (user?.picture || guestAvatar)}
-            alt={user?.name || 'Gość'}
+            alt={user?.name || 'Gosc'}
             referrerPolicy="no-referrer"
             onError={(e) => { e.currentTarget.src = guestAvatar; }}
             className={`w-10 h-10 rounded-full border-2 border-gray-200 dark:border-gray-600 object-cover ${
@@ -177,13 +197,13 @@ const Navbar = () => {
           />
           <div>
             <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
-              {user?.guest ? 'Gość' : user?.name}
+              {user?.guest ? 'Gosc' : user?.name}
             </p>
             {!user?.guest && (
               <p className="text-xs text-gray-500 dark:text-gray-400 truncate max-w-[160px]">{user?.email}</p>
             )}
           </div>
-        </div>
+        </Link>
 
         <div className="p-4 flex flex-col gap-2">
           <Link to="/generate" onClick={() => setMenuOpen(false)} className={linkClasses('/generate')}>
@@ -196,6 +216,12 @@ const Navbar = () => {
             <FileText className="w-4 h-4 mr-1 inline" />
             Notatki
           </Link>
+          {isAdmin && (
+            <Link to="/admin" onClick={() => setMenuOpen(false)} className={linkClasses('/admin')}>
+              <ShieldCheck className="w-4 h-4 mr-1 inline" />
+              Admin
+            </Link>
+          )}
           <DonateButton />
 
           {user?.guest ? (

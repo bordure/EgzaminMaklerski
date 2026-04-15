@@ -9,6 +9,8 @@ import TopicsPage from "./pages/TopicsPage";
 import AuthCallback from "./components/AuthCallback";
 import Notes from './pages/Notes';
 import MainPage from "./pages/MainPage";
+import AdminPage from "./pages/AdminPage";
+import ProfilePage from "./pages/ProfilePage";
 
 export default function App() {
   return (
@@ -58,6 +60,22 @@ export default function App() {
                     <MainPage />
                   </ProtectedRoute>
                 } 
+              />
+              <Route
+                path="/admin"
+                element={
+                  <ProtectedRoute>
+                    <AdminPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <ProfilePage />
+                  </ProtectedRoute>
+                }
               />
             </Routes>
           </div>

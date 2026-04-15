@@ -171,3 +171,27 @@ export const fetchQuestionsByDate = (exam_date, n = 10, skip = 0) =>
 
 export const fetchNotionPage = (pageId) =>
   api.get(`/notion/${pageId}`).then((r) => r.data);
+
+// Reports
+export const submitReport = (payload) =>
+  api.post("/reports", payload).then((r) => r.data);
+
+// Admin
+export const checkAdmin = () =>
+  api.get("/admin/check").then((r) => r.data);
+
+export const adminFetchQuestions = (params = {}) =>
+  api.get("/admin/questions", { params }).then((r) => r.data);
+
+export const adminUpdateQuestion = (id, fields) =>
+  api.patch(`/admin/questions/${id}`, fields).then((r) => r.data);
+
+export const adminFetchReports = (params = {}) =>
+  api.get("/admin/reports", { params }).then((r) => r.data);
+
+export const adminUpdateReport = (id, fields) =>
+  api.patch(`/admin/reports/${id}`, fields).then((r) => r.data);
+
+export const adminDeleteReport = (id) =>
+  api.delete(`/admin/reports/${id}`).then((r) => r.data);
+
