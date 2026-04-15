@@ -97,3 +97,7 @@ class BackendSettings(BaseAppSettings):
         default="",
         description="Public API URL exposed to the frontend (VITE_API_URL).",
     )
+    admin_email: str = Field(
+        default="",
+        description="Email address of the admin user. Grants access to the admin panel.",
+    )
