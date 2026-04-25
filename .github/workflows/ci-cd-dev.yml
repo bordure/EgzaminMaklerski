@@ -118,7 +118,8 @@ jobs:
             --exclude "Dockerfile" \
             --exclude "seed_local_blobs.py"
           cd ..
-          az functionapp deployment source config-zip \
+          az functionapp deploy \
             --name "${{ env.FUNCTIONS_APP_NAME }}" \
             --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
-            --src functions.zip
+            --src-path functions.zip \
+            --type zip
