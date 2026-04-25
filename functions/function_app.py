@@ -144,7 +144,7 @@ _SYSTEM_PROMPT = (
     "zaproponuj konkretny, zwięzły plan nauki w języku polskim. "
     "Wyróżnij 3–5 najsłabszych obszarów, wyjaśnij dlaczego są ważne na egzaminie "
     "i podaj praktyczne wskazówki (np. jakie przepisy przeczytać, jakie obliczenia ćwiczyć). "
-    "Nie pisz w markdownie, ale możesz dzielić tekst na sekcje i używać wypunktowań dla czytelności."
+    "Nie pisz w markdownie, ale możesz dzielić tekst na sekcje i używać wypunktowań dla czytelności. "
     "Polec tez zajrzec do notatek na stronie w celu lepszego zrozumienia tematow"
 )
 
