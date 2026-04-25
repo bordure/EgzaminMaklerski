@@ -224,3 +224,6 @@ pip-selfcheck.json
 data/db
 uv.lock
 .python-version
+*.dbfunctions/local.settings.json
+*.db
+*.lock.hcl
