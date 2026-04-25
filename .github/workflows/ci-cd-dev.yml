@@ -11,6 +11,7 @@ env:
   AZURE_RESOURCE_GROUP: egzamin-maklerski-dev-rg
   BACKEND_APP_NAME: egzamin-maklerski-dev-backend
   FRONTEND_APP_NAME: egzamin-maklerski-dev-frontend
+  FUNCTIONS_APP_NAME: egzamin-maklerski-dev-func
 
 jobs:
   test:
@@ -107,3 +108,17 @@ jobs:
             --name "${{ env.FRONTEND_APP_NAME }}" \
             --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
             --image "${{ env.FRONTEND_IMAGE }}:${{ steps.tag.outputs.value }}"
+
+      - name: Package and deploy Azure Function App
+        run: |
+          cd functions
+          zip -r ../functions.zip . \
+            --exclude "local.settings.json" \
+            --exclude "local.settings.json.example" \
+            --exclude "Dockerfile" \
+            --exclude "seed_local_blobs.py"
+          cd ..
+          az functionapp deployment source config-zip \
+            --name "${{ env.FUNCTIONS_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --src functions.zip
