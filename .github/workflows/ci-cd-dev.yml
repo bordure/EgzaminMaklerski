@@ -12,6 +12,8 @@ env:
   BACKEND_APP_NAME: egzamin-maklerski-dev-backend
   FRONTEND_APP_NAME: egzamin-maklerski-dev-frontend
   FUNCTIONS_APP_NAME: egzamin-maklerski-dev-func
+  FUNCTIONS_STORAGE_ACCOUNT: egzamindevst01
+  FUNCTIONS_RELEASE_CONTAINER: function-releases
 
 jobs:
   test:
@@ -118,8 +120,34 @@ jobs:
             --exclude "Dockerfile" \
             --exclude "seed_local_blobs.py"
           cd ..
-          az functionapp deploy \
+
+          BLOB_NAME="cicd-$(date -u +%Y%m%d%H%M%S)-${{ github.sha }}.zip"
+
+          STORAGE_KEY=$(az storage account keys list \
+            --account-name "${{ env.FUNCTIONS_STORAGE_ACCOUNT }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --query "[0].value" -o tsv)
+
+          az storage blob upload \
+            --account-name "${{ env.FUNCTIONS_STORAGE_ACCOUNT }}" \
+            --account-key "$STORAGE_KEY" \
+            --container-name "${{ env.FUNCTIONS_RELEASE_CONTAINER }}" \
+            --name "$BLOB_NAME" \
+            --file functions.zip \
+            --content-type "application/zip" \
+            --overwrite
+
+          SAS_URL=$(az storage blob generate-sas \
+            --account-name "${{ env.FUNCTIONS_STORAGE_ACCOUNT }}" \
+            --account-key "$STORAGE_KEY" \
+            --container-name "${{ env.FUNCTIONS_RELEASE_CONTAINER }}" \
+            --name "$BLOB_NAME" \
+            --permissions r \
+            --expiry "2036-01-01T00:00:00Z" \
+            --full-uri \
+            --output tsv)
+
+          az functionapp config appsettings set \
             --name "${{ env.FUNCTIONS_APP_NAME }}" \
             --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
-            --src-path functions.zip \
-            --type zip
+            --settings "WEBSITE_RUN_FROM_PACKAGE=$SAS_URL"
