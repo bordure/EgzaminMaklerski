@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request, Query
 from bson import ObjectId
 from datetime import datetime, timezone
 from typing import Optional
+import httpx
 
 from .auth import get_current_user
 from settings import Settings
@@ -107,7 +108,7 @@ def admin_list_reports(
         query["resolved"] = resolved
 
     total = db["reports"].count_documents(query)
-    reports = list(db["reports"].find(query).sort("created_at", -1).skip(skip).limit(n))
+    reports = list(db["reports"].find(query).sort("_id", -1).skip(skip).limit(n))
     for r in reports:
         r["_id"] = str(r["_id"])
     return {"reports": reports, "total": total}
@@ -158,4 +159,37 @@ def admin_delete_report(
     result = db["reports"].delete_one({"_id": oid})
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail="Report not found.")
+
+
+@router.post("/import")
+async def admin_trigger_import(
+    drop: bool = True,
+    _: dict = Depends(_require_admin),
+):
+    """Proxy call to the blob_to_mongo Azure Function.
+
+    Forwards the request to the configured Azure Function URL so the
+    function key never leaves the backend.  Requires BLOB_TO_MONGO_URL
+    to be set in the backend environment.
+    """
+    if not cfg.blob_to_mongo_url:
+        raise HTTPException(
+            status_code=503,
+            detail="Import function is not configured (BLOB_TO_MONGO_URL is empty).",
+        )
+
+    params = {"drop": "true" if drop else "false"}
+    headers = {"x-functions-key": cfg.function_key} if cfg.function_key else {}
+    try:
+        async with httpx.AsyncClient(timeout=300) as client:
+            resp = await client.post(cfg.blob_to_mongo_url, params=params, headers=headers)
+        resp.raise_for_status()
+        return resp.json()
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Function returned {exc.response.status_code}: {exc.response.text[:300]}",
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail=f"Failed to reach import function: {exc}")
     return {"deleted": True}
