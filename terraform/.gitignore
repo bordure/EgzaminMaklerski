@@ -1,0 +1,30 @@
+# Terraform state files — never commit
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform working directory
+**/.terraform/
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Terraform plan outputs — may contain secrets
+*.tfplan
+
+# tfvars files with secrets (use TF_VAR_* env vars for secrets)
+# terraform.tfvars is tracked (non-sensitive config), but override files are not:
+secrets.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Lock file — commit this for reproducible provider versions
+# .terraform.lock.hcl
+
+# backend.hcl is not sensitive but is environment-specific — track it in git
+# Uncomment below if you prefer not to track it:
+# backend.hcl
