@@ -24,7 +24,6 @@ def extract_text_from_pdf(pdf_path: str, exam_year: int) -> str:
 def scrap_pdf_file(PDF_PATH: str):
     year_match = re.search(r'\d{2}\.\d{2}\.(\d{4})', PDF_PATH)
     exam_year = int(year_match.group(1)) if year_match else 2022
-    # Exams from year < 2022 due to text not being selectable and it requires OCR processing
     if exam_year < 2022:
         print(f"Skipping file {PDF_PATH} due to old exam year {exam_year}.")
         return

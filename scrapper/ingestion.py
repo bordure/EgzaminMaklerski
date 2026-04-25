@@ -24,10 +24,7 @@ class Ingestion():
             self.collection = self.db["questions"]
 
     def _create_mongo_client(self):
-        if self.mode == "prod":
-            return MongoClient(_cfg.mongo_uri)
-        else:
-            return MongoClient("mongodb://localhost:27017/")
+        return MongoClient(_cfg.mongo_uri)
 
     def clear_collection(self):
         self.collection.drop()
