@@ -6,14 +6,12 @@ import { checkAdmin } from '../api';
 import { useDarkMode } from './DarkModeContext';
 import guestAvatar from '../assets/images/guest-avatar.svg';
 import coffeeIcon from '../assets/images/coffee-icon.svg';
-
 const Navbar = () => {
   const { user, logout, isAuthenticated, login } = useAuth();
   const location = useLocation();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-
   useEffect(() => {
     if (isAuthenticated && !user?.guest) {
       checkAdmin().then((d) => setIsAdmin(d.is_admin ?? false)).catch(() => {});
@@ -21,18 +19,14 @@ const Navbar = () => {
       setIsAdmin(false);
     }
   }, [isAuthenticated, user]);
-
   if (!isAuthenticated) return null;
-
   const isActive = (path) => location.pathname === path;
-
   const linkClasses = (path) =>
     `block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
       isActive(path)
         ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
         : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700'
     }`;
-
   const DonateButton = () => (
     <a
       href="https://buycoffee.to/egzaminmaklerski"
@@ -49,12 +43,11 @@ const Navbar = () => {
       <span>Wesprzyj</span>
     </a>
   );
-
   return (
     <nav className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
               <BookOpen className="w-5 h-5 text-white" />
@@ -66,8 +59,7 @@ const Navbar = () => {
               Egzamin Maklerski
             </Link>
           </div>
-
-          {/* Desktop menu */}
+          {}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/generate" className={linkClasses('/generate')}>
               Generuj Egzamin
@@ -87,10 +79,9 @@ const Navbar = () => {
             )}
             <DonateButton />
           </div>
-
-          {/* User actions */}
+          {}
           <div className="hidden md:flex items-center gap-4">
-            {/* Dark mode toggle */}
+            {}
             <button
               onClick={toggleDarkMode}
               className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors flex items-center gap-1"
@@ -99,8 +90,7 @@ const Navbar = () => {
               {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
               {isDarkMode ? 'Jasny' : 'Ciemny'}
             </button>
-
-            {/* Avatar + info */}
+            {}
             <Link to="/profile" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <img
                 src={user?.guest ? guestAvatar : (user?.picture || guestAvatar)}
@@ -120,8 +110,7 @@ const Navbar = () => {
                 )}
               </div>
             </Link>
-
-            {/* Login or Logout button */}
+            {}
             {user?.guest ? (
               <button
                 onClick={login}
@@ -142,8 +131,7 @@ const Navbar = () => {
               </button>
             )}
           </div>
-
-          {/* Mobile buttons */}
+          {}
           <div className="flex md:hidden items-center gap-3">
             <button
               onClick={toggleDarkMode}
@@ -152,7 +140,6 @@ const Navbar = () => {
             >
               {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
-
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="p-2 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
@@ -163,8 +150,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      {/* Mobile menu */}
+      {}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
@@ -179,8 +165,7 @@ const Navbar = () => {
             <X className="w-5 h-5 text-gray-700 dark:text-gray-200" />
           </button>
         </div>
-
-        {/* Mobile profile section */}
+        {}
         <Link
           to="/profile"
           onClick={() => setMenuOpen(false)}
@@ -204,7 +189,6 @@ const Navbar = () => {
             )}
           </div>
         </Link>
-
         <div className="p-4 flex flex-col gap-2">
           <Link to="/generate" onClick={() => setMenuOpen(false)} className={linkClasses('/generate')}>
             Generuj Egzamin
@@ -223,7 +207,6 @@ const Navbar = () => {
             </Link>
           )}
           <DonateButton />
-
           {user?.guest ? (
             <button
               onClick={() => {
@@ -249,7 +232,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-
       {menuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-30 z-30"
@@ -259,5 +241,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;

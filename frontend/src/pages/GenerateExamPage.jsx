@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { fetchTopics, fetchQuestions, fetchExamDates } from "../api";
+import { fetchTopics, fetchQuestions, fetchExamDates, submitAnswer } from "../api";
 import ExamQuestion from "../components/ExamQuestion";
 import { useDarkMode } from "../components/DarkModeContext";
-
+import { useAuth } from "../AuthContext";
 export default function GenerateExamPage() {
   const { isDarkMode } = useDarkMode();
-
-  // State
+  const { user } = useAuth();
   const [topics, setTopics] = useState({});
   const [isSpecificTopics, setIsSpecificTopics] = useState(false);
   const [isSpecificYear, setIsSpecificYear] = useState(false);
@@ -26,11 +25,8 @@ export default function GenerateExamPage() {
   const [examSubmitted, setExamSubmitted] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showExamOptions, setShowExamOptions] = useState(true);
-
   const timerIntervalRef = useRef(null);
   const resultsRef = useRef(null);
-
-  // Load topics and exam dates
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -50,8 +46,6 @@ export default function GenerateExamPage() {
     };
     loadData();
   }, []);
-
-  // Exam timer
   useEffect(() => {
     if (
       mode === "exam" &&
@@ -81,25 +75,19 @@ export default function GenerateExamPage() {
       }
     };
   }, [mode, examSubmitted, examTimer, questions.length]);
-
-  // Scroll to results after exam
   useEffect(() => {
     if (examSubmitted && resultsRef.current) {
       resultsRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [examSubmitted]);
-
-  // Handlers
   const handleNumberChange = (e) => {
     const value = e.target.value;
     setNumberOfQuestions(value === "" ? "" : Math.max(1, parseInt(value, 10)));
   };
-
   const handleTimerChange = (e) => {
     const value = e.target.value;
     setExamTimer(value === "" ? "" : Math.max(1, parseInt(value, 10)));
   };
-
   const handleGenerateExam = async () => {
     setLoading(true);
     setError(null);
@@ -111,12 +99,10 @@ export default function GenerateExamPage() {
       timerIntervalRef.current = null;
     }
     setTimeRemaining(null);
-
     try {
       const questionsCount =
         numberOfQuestions === "" ? 1 : parseInt(numberOfQuestions, 10);
       const queryOptions = { n: questionsCount, random_questions: true };
-
       if (isSpecificTopics) {
         if (selectedDomain) queryOptions.domain = selectedDomain;
         if (selectedSection) queryOptions.section = selectedSection;
@@ -125,7 +111,6 @@ export default function GenerateExamPage() {
       if (isSpecificYear && selectedYear) {
         queryOptions.exam_date = selectedYear;
       }
-
       const res = await fetchQuestions(queryOptions);
       if (!res?.questions || !Array.isArray(res.questions)) {
         throw new Error("No questions received from API");
@@ -144,8 +129,7 @@ export default function GenerateExamPage() {
       setLoading(false);
     }
   };
-
-  const handleAnswer = (questionId, isCorrect, chosenOption) => {
+  const handleAnswer = (questionId, isCorrect, chosenOption, meta) => {
     if (!examSubmitted) {
       setQuestions((prev) =>
         prev.map((q) =>
@@ -154,9 +138,17 @@ export default function GenerateExamPage() {
             : q
         )
       );
+      if (!user?.guest && meta) {
+        submitAnswer({
+          question_id: questionId,
+          is_correct: isCorrect,
+          domain: meta.domain ?? null,
+          section: meta.section ?? null,
+          topic: meta.topic ?? null,
+        }).catch(() => {});
+      }
     }
   };
-
   const handleFinishExam = () => {
     if (timerIntervalRef.current) {
       clearInterval(timerIntervalRef.current);
@@ -165,7 +157,6 @@ export default function GenerateExamPage() {
     setExamSubmitted(true);
     setCurrentQuestionIndex(0);
   };
-
   const handleEndSession = () => {
     if (timerIntervalRef.current) {
       clearInterval(timerIntervalRef.current);
@@ -177,19 +168,16 @@ export default function GenerateExamPage() {
     setShowExamOptions(true);
     setCurrentQuestionIndex(0);
   };
-
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
     }
   };
-
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex((prev) => prev - 1);
     }
   };
-
   const calculateScore = () => {
     let totalPoints = 0,
       correctCount = 0,
@@ -218,7 +206,6 @@ export default function GenerateExamPage() {
       hasPassed: totalPoints >= passingScore,
     };
   };
-
   const formatTime = (seconds) => {
     if (seconds === null) return "00:00";
     const mins = Math.floor(seconds / 60);
@@ -227,13 +214,10 @@ export default function GenerateExamPage() {
       .toString()
       .padStart(2, "0")}`;
   };
-
   const answeredCount = questions.filter(
     (q) => q.answered.chosenOption !== null
   ).length;
   const currentQuestion = questions[currentQuestionIndex];
-
-  // Score calculation outside JSX
   let score = null;
   let scoreColor = "";
   let passMessage = "";
@@ -244,10 +228,9 @@ export default function GenerateExamPage() {
       : "text-red-600 dark:text-red-400";
     passMessage = score.hasPassed ? "Zdałeś! 🎉" : "Nie zdałeś. 😔";
   }
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-8">
-      {/* Timer banner */}
+      {}
       {mode === "exam" &&
         questions.length > 0 &&
         !examSubmitted &&
@@ -263,7 +246,6 @@ export default function GenerateExamPage() {
             </div>
           </div>
         )}
-
       <div
         className={`max-w-4xl mx-auto ${
           mode === "exam" &&
@@ -275,11 +257,10 @@ export default function GenerateExamPage() {
         }`}
       >
         <h1 className="text-3xl font-bold mb-6 border-b pb-4">Generuj egzamin</h1>
-
-        {/* Exam options */}
+        {}
         {showExamOptions && (
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-8 space-y-4">
-            {/* Number of Questions */}
+            {}
             <div>
               <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
                 Liczba pytań:
@@ -296,8 +277,7 @@ export default function GenerateExamPage() {
                 className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
               />
             </div>
-
-            {/* Specific Topics */}
+            {}
             <div className="flex items-center justify-between">
               <span className="font-medium">Pytaj z określonych tematów:</span>
               <button
@@ -311,7 +291,6 @@ export default function GenerateExamPage() {
                 {isSpecificTopics ? "Wł." : "Wył."}
               </button>
             </div>
-
             {isSpecificTopics && (
               <div className="space-y-4 pt-4">
                 <div>
@@ -335,7 +314,6 @@ export default function GenerateExamPage() {
                     ))}
                   </select>
                 </div>
-
                 {selectedDomain && topics[selectedDomain] && (
                   <div>
                     <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
@@ -358,7 +336,6 @@ export default function GenerateExamPage() {
                     </select>
                   </div>
                 )}
-
                 {selectedSection && topics[selectedDomain]?.[selectedSection]?.length > 0 && (
                   <div>
                     <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
@@ -380,8 +357,7 @@ export default function GenerateExamPage() {
                 )}
               </div>
             )}
-
-            {/* Specific Year */}
+            {}
             <div className="flex items-center justify-between">
               <span className="font-medium">Pytaj z określonego roku:</span>
               <button
@@ -395,7 +371,6 @@ export default function GenerateExamPage() {
                 {isSpecificYear ? "Wł." : "Wył."}
               </button>
             </div>
-
             {isSpecificYear && (
               <div>
                 <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
@@ -415,8 +390,7 @@ export default function GenerateExamPage() {
                 </select>
               </div>
             )}
-
-            {/* Mode */}
+            {}
             <div className="flex items-center justify-between">
               <span className="font-medium">Tryb:</span>
               <button
@@ -432,7 +406,6 @@ export default function GenerateExamPage() {
                 {mode === "study" ? "Nauka" : "Egzamin"}
               </button>
             </div>
-
             {mode === "exam" && (
               <div>
                 <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
@@ -453,8 +426,7 @@ export default function GenerateExamPage() {
                 />
               </div>
             )}
-
-            {/* Show Exam Years */}
+            {}
             <div className="flex items-center justify-between">
               <span className="font-medium">Pokaż lata egzaminów:</span>
               <button
@@ -468,8 +440,7 @@ export default function GenerateExamPage() {
                 {showYears ? "Wł." : "Wył."}
               </button>
             </div>
-
-            {/* Generate Exam Button */}
+            {}
             <button
               onClick={handleGenerateExam}
               disabled={
@@ -486,22 +457,19 @@ export default function GenerateExamPage() {
             </button>
           </div>
         )}
-
-        {/* Error Message */}
+        {}
         {error && (
           <div className="bg-red-100 dark:bg-red-800 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-200 p-4 rounded-lg text-center mb-8">
             {error}
           </div>
         )}
-
-        {/* Exam Results / Question Display */}
-        {/* Exam results / Review */}
+        {}
+        {}
 {mode === "exam" && examSubmitted ? (
   <div ref={resultsRef} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
     <div className="text-center mb-8">
       <h2 className="text-2xl font-bold mb-4">Egzamin zakończony!</h2>
-
-      {/* Score summary */}
+      {}
       {questions.length > 0 && (
         (() => {
           const score = calculateScore();
@@ -538,8 +506,7 @@ export default function GenerateExamPage() {
           );
         })()
       )}
-
-      {/* Review questions paginated */}
+      {}
       {questions.length > 0 && (
         <div className="mt-8">
           <h3 className="text-xl font-semibold border-b pb-2 mb-4">Przejrzyj odpowiedzi</h3>
@@ -555,7 +522,6 @@ export default function GenerateExamPage() {
               examSubmitted={true}
             />
           )}
-
           <div className="flex justify-between mt-6">
             <button
               onClick={handlePrevious}
@@ -564,11 +530,9 @@ export default function GenerateExamPage() {
             >
               ← Poprzednie
             </button>
-
             <span className="font-medium text-gray-700 dark:text-gray-200">
               Pytanie {currentQuestionIndex + 1} z {questions.length}
             </span>
-
             <button
               onClick={handleNext}
               disabled={currentQuestionIndex === questions.length - 1}
@@ -582,14 +546,12 @@ export default function GenerateExamPage() {
     </div>
   </div>
 ) : questions.length > 0 ? (
-  /* Normal question display while exam is ongoing */
   <>
     <div className="mb-4 text-center">
       <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
         Pytanie {currentQuestionIndex + 1} z {questions.length}
       </div>
     </div>
-
     {currentQuestion && (
       <ExamQuestion
         key={`${currentQuestion._id}-${currentQuestionIndex}`}
@@ -602,7 +564,6 @@ export default function GenerateExamPage() {
         examSubmitted={examSubmitted}
       />
     )}
-
     <div className="flex justify-between items-center mt-6">
       <button
         onClick={handlePrevious}
@@ -611,7 +572,6 @@ export default function GenerateExamPage() {
       >
         ← Poprzednie
       </button>
-
       {mode === "exam" ? (
         <button
           onClick={handleFinishExam}
@@ -627,7 +587,6 @@ export default function GenerateExamPage() {
           Zakończ naukę
         </button>
       )}
-
       <button
         onClick={handleNext}
         disabled={currentQuestionIndex === questions.length - 1}

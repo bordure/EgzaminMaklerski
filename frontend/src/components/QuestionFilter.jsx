@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-
 export default function QuestionFilter({ onFetch }) {
   const [mainTopic, setMainTopic] = useState("");
   const [subTopic, setSubTopic] = useState("");
   const [n, setN] = useState(5);
-
   const handleSubmit = e => {
     e.preventDefault();
     if (!mainTopic) return;
     onFetch(mainTopic, subTopic || null, n);
   };
-
   return (
     <form onSubmit={handleSubmit} className="space-y-2">
       <input

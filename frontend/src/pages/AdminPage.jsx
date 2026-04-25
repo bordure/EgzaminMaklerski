@@ -7,19 +7,17 @@ import {
   adminFetchReports,
   adminUpdateReport,
   adminDeleteReport,
+  adminTriggerImport,
 } from "../api";
-
 const TABS = [
   { id: "reports", label: "Zgloszenia" },
   { id: "questions", label: "Pytania" },
 ];
-
 const REASON_LABELS = {
   typo: "Literowka",
   wrong_answer: "Bledna odpowiedz",
   other: "Inny problem",
 };
-
 function QuestionEditor({ question, onSave, onCancel }) {
   const [fields, setFields] = useState({
     question: question.question ?? "",
@@ -33,7 +31,6 @@ function QuestionEditor({ question, onSave, onCancel }) {
     topic: question.topic ?? "",
   });
   const [saving, setSaving] = useState(false);
-
   const handleSave = async () => {
     setSaving(true);
     try {
@@ -42,10 +39,8 @@ function QuestionEditor({ question, onSave, onCancel }) {
       setSaving(false);
     }
   };
-
   const inputClass =
     "w-full px-3 py-2 text-sm bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-indigo-500";
-
   return (
     <div className="space-y-3">
       <div>
@@ -131,7 +126,6 @@ function QuestionEditor({ question, onSave, onCancel }) {
     </div>
   );
 }
-
 function ReportsTab() {
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -141,7 +135,6 @@ function ReportsTab() {
   const [editingReport, setEditingReport] = useState(null);
   const [editingQuestion, setEditingQuestion] = useState(null);
   const [loadingQuestion, setLoadingQuestion] = useState(false);
-
   const load = useCallback(async () => {
     setLoading(true);
     try {
@@ -151,9 +144,7 @@ function ReportsTab() {
       setLoading(false);
     }
   }, [showResolved]);
-
   useEffect(() => { load(); }, [load]);
-
   const handleResolve = async (id) => {
     setResolving((r) => ({ ...r, [id]: true }));
     try {
@@ -163,7 +154,6 @@ function ReportsTab() {
       setResolving((r) => ({ ...r, [id]: false }));
     }
   };
-
   const openQuestionEditor = useCallback(async (r) => {
     setEditingReport(r._id);
     setLoadingQuestion(true);
@@ -176,19 +166,16 @@ function ReportsTab() {
       setLoadingQuestion(false);
     }
   }, []);
-
   const handleSaveQuestion = async (reportId, questionId, fields) => {
     await adminUpdateQuestion(questionId, fields);
     setEditingReport(null);
     setEditingQuestion(null);
   };
-
   const handleDelete = async (id) => {
     if (!window.confirm("Usunac to zgloszenie?")) return;
     await adminDeleteReport(id);
     await load();
   };
-
   return (
     <div>
       <div className="flex items-center gap-4 mb-6">
@@ -203,7 +190,6 @@ function ReportsTab() {
           Pokaz rozwiazane
         </label>
       </div>
-
       {loading ? (
         <p className="text-gray-500 dark:text-gray-400">Ladowanie...</p>
       ) : reports.length === 0 ? (
@@ -235,20 +221,16 @@ function ReportsTab() {
                   {r.created_at ? new Date(r.created_at).toLocaleDateString("pl-PL") : ""}
                 </span>
               </div>
-
               <p className="text-sm text-gray-800 dark:text-gray-200 font-medium line-clamp-3">
                 {r.question_text}
               </p>
-
               {r.description && (
                 <p className="text-sm text-gray-500 dark:text-gray-400 italic">"{r.description}"</p>
               )}
-
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <span>Zglasza:</span>
                 <span className="text-gray-600 dark:text-gray-400">{r.reported_by}</span>
               </div>
-
               {editingReport === r._id && (
                 <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
                   {loadingQuestion ? (
@@ -264,7 +246,6 @@ function ReportsTab() {
                   )}
                 </div>
               )}
-
               {r.resolved ? (
                 <div className="text-xs text-green-500">
                   Rozwiazane {r.resolved_at ? new Date(r.resolved_at).toLocaleDateString("pl-PL") : ""}
@@ -315,7 +296,6 @@ function ReportsTab() {
     </div>
   );
 }
-
 function QuestionsTab() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -325,7 +305,6 @@ function QuestionsTab() {
   const [searchInput, setSearchInput] = useState("");
   const [editingId, setEditingId] = useState(null);
   const PAGE_SIZE = 20;
-
   const load = useCallback(async () => {
     setLoading(true);
     try {
@@ -336,17 +315,13 @@ function QuestionsTab() {
       setLoading(false);
     }
   }, [page, search]);
-
   useEffect(() => { load(); }, [load]);
-
   const handleSave = async (q, fields) => {
     await adminUpdateQuestion(q._id, fields);
     setEditingId(null);
     await load();
   };
-
   const totalPages = Math.ceil(total / PAGE_SIZE);
-
   return (
     <div>
       <div className="flex items-center gap-4 mb-6">
@@ -375,7 +350,6 @@ function QuestionsTab() {
           </button>
         </form>
       </div>
-
       {loading ? (
         <p className="text-gray-500 dark:text-gray-400">Ladowanie...</p>
       ) : (
@@ -416,7 +390,6 @@ function QuestionsTab() {
           ))}
         </div>
       )}
-
       {totalPages > 1 && (
         <div className="flex items-center justify-center gap-3 mt-8">
           <button
@@ -441,17 +414,33 @@ function QuestionsTab() {
     </div>
   );
 }
-
 export default function AdminPage() {
   const [tab, setTab] = useState("reports");
   const [isAdmin, setIsAdmin] = useState(null);
-
+  const [importing, setImporting] = useState(false);
+  const [importResult, setImportResult] = useState(null); 
   useEffect(() => {
     checkAdmin()
       .then((d) => setIsAdmin(d.is_admin ?? false))
       .catch(() => setIsAdmin(false));
   }, []);
-
+  const handleImport = async () => {
+    if (!window.confirm("Reimportować wszystkie pliki JSON z Blob Storage do MongoDB?\nKolekcja zostanie zastąpiona.")) return;
+    setImporting(true);
+    setImportResult(null);
+    try {
+      const data = await adminTriggerImport(true);
+      setImportResult({
+        ok: true,
+        message: `Zaimportowano ${data.total_inserted ?? "?"} pytań z ${(data.files_processed ?? []).length} plików.`,
+      });
+    } catch (err) {
+      const detail = err?.response?.data?.detail ?? err.message ?? "Nieznany błąd";
+      setImportResult({ ok: false, message: `Błąd importu: ${detail}` });
+    } finally {
+      setImporting(false);
+    }
+  };
   if (isAdmin === null) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
@@ -459,16 +448,56 @@ export default function AdminPage() {
       </div>
     );
   }
-
   if (!isAdmin) {
     return <Navigate to="/" replace />;
   }
-
   return (
     <div className="min-h-screen p-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Panel administratora</h1>
-
+        <div className="flex items-center justify-between mb-6">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Panel administratora</h1>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleImport}
+              disabled={importing}
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-amber-600 hover:bg-amber-500 disabled:bg-amber-800 disabled:opacity-60 text-white rounded-lg transition-colors"
+            >
+              {importing ? (
+                <>
+                  <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                  </svg>
+                  Importowanie...
+                </>
+              ) : (
+                <>
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+                  </svg>
+                  Reimport z Blob Storage
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+        {importResult && (
+          <div
+            className={`mb-6 px-4 py-3 rounded-lg text-sm flex items-center justify-between gap-4 ${
+              importResult.ok
+                ? "bg-green-900/30 border border-green-700 text-green-300"
+                : "bg-red-900/30 border border-red-700 text-red-300"
+            }`}
+          >
+            <span>{importResult.message}</span>
+            <button
+              onClick={() => setImportResult(null)}
+              className="shrink-0 text-xs opacity-60 hover:opacity-100 transition-opacity"
+            >
+              ✕
+            </button>
+          </div>
+        )}
         <div className="flex gap-1 mb-8 border-b border-gray-200 dark:border-gray-700">
           {TABS.map((t) => (
             <button
@@ -484,7 +513,6 @@ export default function AdminPage() {
             </button>
           ))}
         </div>
-
         {tab === "reports" ? <ReportsTab /> : <QuestionsTab />}
       </div>
     </div>

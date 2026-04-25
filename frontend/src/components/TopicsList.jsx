@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function TopicsList({ topics, onSelect }) {
   return (
     <div className="space-y-2">

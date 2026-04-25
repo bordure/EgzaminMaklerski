@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function ExamList({ questions }) {
   return (
     <div className="space-y-4">

@@ -7,9 +7,7 @@ import {
   guestLogin,
 } from "./api";
 import axios from "axios";
-
 const AuthContext = createContext(null);
-
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
@@ -17,24 +15,20 @@ export const useAuth = () => {
   }
   return context;
 };
-
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [initialized, setInitialized] = useState(false);
-
   const refreshAccessToken = async () => {
     try {
       const refresh = localStorage.getItem("refresh_token");
       if (!refresh) throw new Error("No refresh token available");
-
       const res = await axios.post(
         "/auth/refresh",
         {},
         { headers: { Authorization: `Bearer ${refresh}` } }
       );
-
       const { access_token, refresh_token } = res.data;
       localStorage.setItem("auth_token", access_token);
       localStorage.setItem("refresh_token", refresh_token);
@@ -46,15 +40,12 @@ export const AuthProvider = ({ children }) => {
       throw err;
     }
   };
-
   useEffect(() => {
     if (initialized) return;
-
     const checkAuth = async () => {
       try {
         const token = localStorage.getItem("auth_token");
         const refresh = localStorage.getItem("refresh_token");
-
         if (token) {
           setAuthToken(token);
           const userData = await getCurrentUser();
@@ -75,37 +66,30 @@ export const AuthProvider = ({ children }) => {
         setInitialized(true);
       }
     };
-
     checkAuth();
   }, [initialized]);
-
   useEffect(() => {
     const handleAuthExpired = () => logout();
     window.addEventListener("auth-expired", handleAuthExpired);
     return () => window.removeEventListener("auth-expired", handleAuthExpired);
   }, []);
-
   useEffect(() => {
     const handleOAuthCallback = async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const token = urlParams.get("token");
       const refresh = urlParams.get("refresh");
       const error = urlParams.get("error");
-
       if (!token && !refresh && !error) return;
-
       if (error) {
         setError("Authentication failed. Please try again.");
         window.history.replaceState({}, document.title, "/");
         return;
       }
-
       if (token && refresh) {
         try {
           localStorage.setItem("auth_token", token);
           localStorage.setItem("refresh_token", refresh);
           setAuthToken(token);
-
           const userData = await getCurrentUser();
           setUser(userData);
           setInitialized(true);
@@ -121,10 +105,8 @@ export const AuthProvider = ({ children }) => {
         }
       }
     };
-
     handleOAuthCallback();
   }, []);
-
   const login = async (mode = "google") => {
     try {
       setError(null);
@@ -143,7 +125,6 @@ export const AuthProvider = ({ children }) => {
       setError("Failed to initiate login. Please try again.");
     }
   };
-
   const logout = () => {
     localStorage.removeItem("auth_token");
     localStorage.removeItem("refresh_token");
@@ -151,7 +132,6 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     setError(null);
   };
-
   const value = {
     user,
     loading,
@@ -160,7 +140,6 @@ export const AuthProvider = ({ children }) => {
     logout,
     isAuthenticated: !!user,
   };
-
   return (
     <AuthContext.Provider value={value}>
       {children}

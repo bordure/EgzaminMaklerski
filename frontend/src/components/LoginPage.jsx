@@ -2,10 +2,8 @@ import React from 'react';
 import { useAuth } from '../AuthContext';
 import { BookOpen } from 'lucide-react';
 import { guestLogin } from '../api';
-
 const LoginPage = () => {
   const { login, loading, error, setAuth } = useAuth();
-
   const handleGuestLogin = async () => {
     try {
       const data = await guestLogin();
@@ -14,11 +12,9 @@ const LoginPage = () => {
       console.error("Guest login failed:", err);
     }
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-6">
       <div className="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-        
         <div className="flex-[1.6] p-10 bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex flex-col justify-center">
           <h1 className="text-4xl font-bold mb-6">Egzamin Maklerski</h1>
           <p className="text-lg mb-4">
@@ -30,7 +26,6 @@ const LoginPage = () => {
             Skup się na nauce, nie na opłatach.
           </p>
         </div>
-
         <div className="flex-[1] p-8 flex flex-col justify-center">
           <div className="text-center mb-6">
             <div className="mx-auto w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-4">
@@ -39,14 +34,12 @@ const LoginPage = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Zaloguj się</h2>
             <p className="text-gray-600">Dostęp do symulatora Egzaminu Maklerskiego</p>
           </div>
-
           {error && (
             <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
               <p className="text-red-600 text-sm">{error}</p>
             </div>
           )}
-
-          {/* Google Login */}
+          {}
           <button
             onClick={login}
             disabled={loading}
@@ -66,8 +59,7 @@ const LoginPage = () => {
               </>
             )}
           </button>
-
-          {/* Guest Login */}
+          {}
         <button
           onClick={async () => {
             try {
@@ -85,8 +77,6 @@ const LoginPage = () => {
             <>Kontynuuj jako Gość</>
           )}
         </button>
-
-
           <div className="mt-4 text-center">
             <p className="text-xs text-gray-500">
               Logując się, zgadzasz się na bezpieczny dostęp do poprzednich egzaminów i śledzenie swoich postępów.
@@ -97,5 +87,4 @@ const LoginPage = () => {
     </div>
   );
 };
-
 export default LoginPage;

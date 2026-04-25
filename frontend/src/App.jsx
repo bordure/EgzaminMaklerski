@@ -11,7 +11,6 @@ import Notes from './pages/Notes';
 import MainPage from "./pages/MainPage";
 import AdminPage from "./pages/AdminPage";
 import ProfilePage from "./pages/ProfilePage";
-
 export default function App() {
   return (
     <AuthProvider>

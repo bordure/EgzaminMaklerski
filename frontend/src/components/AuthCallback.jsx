@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 export default function AuthCallback() {
   const navigate = useNavigate();
-
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/', { replace: true });
     }, 500); 
-
     return () => clearTimeout(timer);
   }, [navigate]);
-
   return (
     <div className="flex items-center justify-center h-screen bg-gray-50">
       <div className="flex flex-col items-center">

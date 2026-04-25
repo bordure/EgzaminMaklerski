@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { submitReport } from '../api';
 import { useAuth } from '../AuthContext';
-
 const REPORT_REASONS = [
   { value: "typo", label: "Literowka" },
   { value: "wrong_answer", label: "Bledna odpowiedz" },
   { value: "other", label: "Inny problem" },
 ];
-
 function ReportModal({ question, onClose }) {
   const [reason, setReason] = useState("typo");
   const [description, setDescription] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -26,12 +23,10 @@ function ReportModal({ question, onClose }) {
       });
       setDone(true);
     } catch {
-      // silently ignore submission errors on the user side
     } finally {
       setSubmitting(false);
     }
   };
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
@@ -114,27 +109,23 @@ function ReportModal({ question, onClose }) {
     </div>
   );
 }
-
 export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSubmitted }) {
   const { user } = useAuth();
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
-
   useEffect(() => {
     if (mode !== "review") {
       setSelectedOption(null);
       setIsAnswered(false);
     }
   }, [q._id, q.question, mode]);
-
   useEffect(() => {
     if (mode === "review" && q.answered && q.answered.chosenOption) {
       setSelectedOption(q.answered.chosenOption);
       setIsAnswered(true);
     }
   }, [mode, q.answered]);
-
   const getCorrectAnswerText = (correctAnswerLetter) => {
     switch (correctAnswerLetter) {
       case "A":
@@ -149,29 +140,23 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
         return null;
     }
   };
-
   const handleOptionClick = (option) => {
     if (mode === "review" || examSubmitted || (isAnswered && mode === "study")) return;
     setSelectedOption(option);
     setIsAnswered(true);
-
     const correctText = getCorrectAnswerText(q.correct_answer);
     const isCorrect = option === correctText;
-    onAnswer(q._id, isCorrect, option);
+    onAnswer(q._id, isCorrect, option, { domain: q.domain, section: q.section, topic: q.topic });
   };
-
   const getOptionClasses = (option) => {
     let classes =
       "w-full text-left p-3 border rounded-md transition-colors duration-200 shadow-sm";
-
     const correctText = getCorrectAnswerText(q.correct_answer);
-
     if (mode === "review" || examSubmitted || (isAnswered && mode === "study")) {
       classes += " cursor-default";
     } else {
       classes += " cursor-pointer";
     }
-
     if (mode === "review" || examSubmitted || (mode === "study" && isAnswered)) {
       if (option === correctText) {
         classes +=
@@ -192,10 +177,8 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
           " bg-white hover:bg-gray-100 border-gray-300 dark:bg-gray-900 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-200";
       }
     }
-
     return classes;
   };
-
   return (
     <div className="relative bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg mb-6 transition-colors duration-300">
       {reportOpen && (

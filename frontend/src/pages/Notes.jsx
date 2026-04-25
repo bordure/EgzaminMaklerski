@@ -5,11 +5,9 @@ import { Equation } from "react-notion-x/build/third-party/equation";
 import { useParams } from "react-router-dom";
 import { fetchNotionPage } from "../api";
 import { useDarkMode } from "../components/DarkModeContext";
-
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "katex/dist/katex.min.css";
-
 class NotionErrorBoundary extends Component {
   constructor(props) {
     super(props);
@@ -29,13 +27,11 @@ class NotionErrorBoundary extends Component {
     return this.props.children;
   }
 }
-
 function sanitizeRecordMap(recordMap) {
   if (!recordMap) return recordMap;
   const block = {};
   for (const [key, val] of Object.entries(recordMap.block || {})) {
     if (!key || typeof key !== "string" || !val?.value) continue;
-    // patch missing id so react-notion-x never calls .replaceAll on undefined
     if (typeof val.value.id !== "string") {
       val.value.id = key;
     }
@@ -43,7 +39,6 @@ function sanitizeRecordMap(recordMap) {
   }
   return { ...recordMap, block };
 }
-
 const Notes = () => {
   const { isDarkMode } = useDarkMode();
   const { id } = useParams();
@@ -52,7 +47,6 @@ const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPageId, setCurrentPageId] = useState(pageId);
-
   const processNotionData = useCallback((data) => {
     let raw;
     if (data?.recordMap?.block) {
@@ -67,16 +61,13 @@ const Notes = () => {
         user: data.user || {},
       };
     } else {
-      // splitbee /v1/page/ returns { blockId: { spaceId?, value: { role, value: actualBlock } } }
       const blocks = {};
       Object.keys(data || {}).forEach((key) => {
         const entry = data[key];
         if (!entry || typeof entry !== "object") return;
-        // double-nested: entry.value = { role, value: actualBlock }
         if (entry.value?.value) {
           blocks[key] = entry.value;
         } else if (entry.value) {
-          // single-nested: entry = { role, value: actualBlock }
           blocks[key] = entry;
         }
       });
@@ -91,7 +82,6 @@ const Notes = () => {
     }
     return sanitizeRecordMap(raw);
   }, []);
-
   const handlePageClick = useCallback(
     async (clickedPageId) => {
       try {
@@ -108,7 +98,6 @@ const Notes = () => {
     },
     [processNotionData]
   );
-
   useEffect(() => {
     const loadPage = async () => {
       try {
@@ -124,7 +113,6 @@ const Notes = () => {
     };
     loadPage();
   }, [currentPageId, processNotionData]);
-
   useEffect(() => {
     const handleClick = (e) => {
       const link = e.target.closest("a");
@@ -142,7 +130,6 @@ const Notes = () => {
     document.addEventListener("click", handleClick, true);
     return () => document.removeEventListener("click", handleClick, true);
   }, [handlePageClick]);
-
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
@@ -153,7 +140,6 @@ const Notes = () => {
       </div>
     );
   }
-
   if (error) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
@@ -173,7 +159,6 @@ const Notes = () => {
       </div>
     );
   }
-
   if (!recordMap || !recordMap.block || Object.keys(recordMap.block).length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
@@ -195,7 +180,6 @@ const Notes = () => {
       </div>
     );
   }
-
   return (
     <div className={`min-h-screen bg-gray-50 dark:bg-gray-900`}>
       <div className="notion-frame max-w-7xl mx-auto py-8 px-8">
@@ -229,5 +213,4 @@ const Notes = () => {
     </div>
   );
 };
-
 export default Notes;

@@ -1,9 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
-
-// DarkMode Context
 const DarkModeContext = createContext();
 const useDarkMode = () => useContext(DarkModeContext);
-
 function DarkModeProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
@@ -12,10 +9,8 @@ function DarkModeProvider({ children }) {
     </DarkModeContext.Provider>
   );
 }
-
 function MainPage() {
   const { isDarkMode } = useDarkMode();
-
   const course = {
     title: "Egzamin Maklerski",
     duration: "180 minut",
@@ -118,24 +113,20 @@ function MainPage() {
       },
     ],
   };
-
   const mathSections = course.sections.filter(
     (s) => !s.name.includes("Prawo") && !s.name.includes("Etyka")
   );
   const lawSections = course.sections.filter(
     (s) => s.name.includes("Prawo") || s.name.includes("Etyka")
   );
-
   const tableClass = "w-full border-collapse";
-
   return (
     <div className="min-h-screen p-8 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <div className="max-w-6xl mx-auto">
-        {/* === Intro section === */}
+        {}
         <h1 className="text-3xl font-bold mb-2 border-b pb-4">
           {course.title}
         </h1>
-
         <div className="mb-6 space-y-1">
           <p className="text-lg">
             <strong>Czas trwania:</strong> {course.duration}
@@ -144,7 +135,6 @@ function MainPage() {
             <strong>Liczba pytań:</strong> {course.totalQuestions}
           </p>
         </div>
-
         <div className="p-6 mb-8 rounded-lg shadow-md leading-relaxed bg-white dark:bg-gray-800">
           <h2 className="text-2xl font-semibold mb-3 border-b pb-2">
             O egzaminie
@@ -177,8 +167,7 @@ function MainPage() {
             możliwych do zdobycia.
           </p>
         </div>
-
-        {/* === Część I === */}
+        {}
         <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
           Część I – Matematyka Finansowa
         </h2>
@@ -219,8 +208,7 @@ function MainPage() {
             </div>
           </div>
         ))}
-
-        {/* === Część II === */}
+        {}
         <h2 className="text-2xl font-semibold mb-4 border-b pb-2">
           Część II – Prawo i Etyka
         </h2>
@@ -265,7 +253,6 @@ function MainPage() {
     </div>
   );
 }
-
 export default function App() {
   return (
     <DarkModeProvider>
