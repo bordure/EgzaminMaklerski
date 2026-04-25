@@ -6,6 +6,10 @@ datasources:
     orgId: 1
     type: prometheus
     access: proxy
-    url: http://prometheus:9090
+    url: "${prometheus_url}"
     isDefault: true
     editable: false
+    jsonData:
+      httpMethod: GET
+      timeInterval: 15s
+      manageAlerts: false
