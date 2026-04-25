@@ -46,6 +46,7 @@ jobs:
     name: Build, push & deploy
     runs-on: ubuntu-latest
     needs: test
+    environment: dev
 
     steps:
       - name: Checkout repository
