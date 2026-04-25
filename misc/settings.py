@@ -101,3 +101,19 @@ class BackendSettings(BaseAppSettings):
         default="",
         description="Email address of the admin user. Grants access to the admin panel.",
     )
+    sql_database_url: str = Field(
+        default="sqlite:///./egzamin.db",
+        description="Database URL for relational storage (SQLite for dev, PostgreSQL for prod).",
+    )
+    blob_to_mongo_url: str = Field(
+        default="",
+        description="Full URL of the blob_to_mongo Azure Function. Leave empty to disable.",
+    )
+    learning_advisor_url: str = Field(
+        default="",
+        description="Full URL of the learning_advisor Azure Function. Leave empty to disable.",
+    )
+    function_key: str = Field(
+        default="",
+        description="Azure Function default host key for authenticating function calls.",
+    )
