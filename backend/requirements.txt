@@ -12,3 +12,6 @@ prometheus-client
 pytest
 pytest-asyncio
 mongomock
+sqlalchemy
+alembic
+pymssql
