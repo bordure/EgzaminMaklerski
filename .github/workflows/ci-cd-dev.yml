@@ -163,3 +163,25 @@ jobs:
             --settings \
               "WEBSITE_RUN_FROM_PACKAGE=$SAS_URL" \
               "PYTHONPATH=/home/site/wwwroot/.python_packages/lib/site-packages"
+
+      - name: Sync function key to backend Container App
+        run: |
+          FUNCTION_KEY=$(az functionapp keys list \
+            --name "${{ env.FUNCTIONS_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --query "functionKeys.default" -o tsv)
+
+          az containerapp secret set \
+            --name "${{ env.BACKEND_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --secrets "function-key=$FUNCTION_KEY"
+
+          ACTIVE_REVISION=$(az containerapp revision list \
+            --name "${{ env.BACKEND_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --query "[?properties.active].name | [0]" -o tsv)
+
+          az containerapp revision restart \
+            --name "${{ env.BACKEND_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --revision "$ACTIVE_REVISION"
