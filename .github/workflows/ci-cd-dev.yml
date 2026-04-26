@@ -18,7 +18,7 @@ env:
 jobs:
   test:
     name: Run backend tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repository
@@ -47,7 +47,7 @@ jobs:
 
   build-and-deploy:
     name: Build, push & deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: test
     environment: dev
 
@@ -113,15 +113,24 @@ jobs:
 
       - name: Package and deploy Azure Function App
         run: |
-          cd functions
-          zip -r ../functions.zip . \
+          WORK_DIR=$(mktemp -d)
+          cp -r functions/. "$WORK_DIR/"
+          pip install \
+            --quiet \
+            --target "$WORK_DIR/.python_packages/lib/site-packages" \
+            --platform manylinux2014_x86_64 \
+            --implementation cp \
+            --python-version 3.11 \
+            --only-binary=:all: \
+            --upgrade \
+            -r functions/requirements.txt
+
+          BLOB_NAME="cicd-$(date -u +%Y%m%d%H%M%S)-${{ github.sha }}.zip"
+          (cd "$WORK_DIR" && zip -qr "$GITHUB_WORKSPACE/functions.zip" . \
             --exclude "local.settings.json" \
             --exclude "local.settings.json.example" \
             --exclude "Dockerfile" \
-            --exclude "seed_local_blobs.py"
-          cd ..
-
-          BLOB_NAME="cicd-$(date -u +%Y%m%d%H%M%S)-${{ github.sha }}.zip"
+            --exclude "seed_local_blobs.py")
 
           STORAGE_KEY=$(az storage account keys list \
             --account-name "${{ env.FUNCTIONS_STORAGE_ACCOUNT }}" \
@@ -137,17 +146,20 @@ jobs:
             --content-type "application/zip" \
             --overwrite
 
+          SAS_EXPIRY=$(date -u -d "+1 year" +%Y-%m-%dT%H:%M:%SZ)
           SAS_URL=$(az storage blob generate-sas \
             --account-name "${{ env.FUNCTIONS_STORAGE_ACCOUNT }}" \
             --account-key "$STORAGE_KEY" \
             --container-name "${{ env.FUNCTIONS_RELEASE_CONTAINER }}" \
             --name "$BLOB_NAME" \
             --permissions r \
-            --expiry "2036-01-01T00:00:00Z" \
+            --expiry "$SAS_EXPIRY" \
             --full-uri \
             --output tsv)
 
           az functionapp config appsettings set \
             --name "${{ env.FUNCTIONS_APP_NAME }}" \
             --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
-            --settings "WEBSITE_RUN_FROM_PACKAGE=$SAS_URL"
+            --settings \
+              "WEBSITE_RUN_FROM_PACKAGE=$SAS_URL" \
+              "PYTHONPATH=/home/site/wwwroot/.python_packages/lib/site-packages"

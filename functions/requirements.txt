@@ -3,3 +3,4 @@ azure-storage-blob>=12.20.0
 pymongo>=4.7.0
 openai>=1.30.0
 pymssql>=2.2.11
+cryptography==43.0.3
