@@ -1,0 +1,187 @@
+name: CI/CD — Prod
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  BACKEND_IMAGE: dihake/egzamin-maklerski-backend
+  FRONTEND_IMAGE: dihake/egzamin-maklerski-frontend
+  AZURE_RESOURCE_GROUP: egzamin-maklerski-prd-rg
+  BACKEND_APP_NAME: egzamin-maklerski-prd-backend
+  FRONTEND_APP_NAME: egzamin-maklerski-prd-frontend
+  FUNCTIONS_APP_NAME: egzamin-maklerski-prd-func
+  FUNCTIONS_STORAGE_ACCOUNT: egzaminprdst01
+  FUNCTIONS_RELEASE_CONTAINER: function-releases
+
+jobs:
+  test:
+    name: Run backend tests
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: backend/pyproject.toml
+
+      - name: Install dependencies
+        working-directory: backend
+        run: pip install -e ".[dev]" 2>/dev/null || pip install -r requirements.txt
+
+      - name: Run pytest
+        working-directory: backend
+        env:
+          MONGO_URI: "mongodb://localhost:27017"
+          GOOGLE_CLIENT_ID: "ci-test-client-id"
+          GOOGLE_CLIENT_SECRET: "ci-test-client-secret"
+          JWT_SECRET_KEY: "ci-test-jwt-secret-key-padding-value"
+          ADMIN_EMAIL: "admin@example.com"
+        run: pytest -q
+
+  build-and-deploy:
+    name: Build, push & deploy
+    runs-on: ubuntu-22.04
+    needs: test
+    environment: dev
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Derive image tag
+        id: tag
+        run: echo "value=prd-${{ github.sha }}" >> "$GITHUB_OUTPUT"
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push backend image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: backend/Dockerfile
+          push: true
+          tags: |
+            ${{ env.BACKEND_IMAGE }}:${{ steps.tag.outputs.value }}
+            ${{ env.BACKEND_IMAGE }}:prd-latest
+          cache-from: type=gha,scope=backend-prd
+          cache-to: type=gha,mode=max,scope=backend-prd
+
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend
+          file: frontend/Dockerfile
+          push: true
+          tags: |
+            ${{ env.FRONTEND_IMAGE }}:${{ steps.tag.outputs.value }}
+            ${{ env.FRONTEND_IMAGE }}:prd-latest
+          cache-from: type=gha,scope=frontend-prd
+          cache-to: type=gha,mode=max,scope=frontend-prd
+
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Update backend Container App
+        run: |
+          az containerapp update \
+            --name "${{ env.BACKEND_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --image "${{ env.BACKEND_IMAGE }}:${{ steps.tag.outputs.value }}"
+
+      - name: Update frontend Container App
+        run: |
+          az containerapp update \
+            --name "${{ env.FRONTEND_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --image "${{ env.FRONTEND_IMAGE }}:${{ steps.tag.outputs.value }}"
+
+      - name: Package and deploy Azure Function App
+        run: |
+          WORK_DIR=$(mktemp -d)
+          cp -r functions/. "$WORK_DIR/"
+          pip install \
+            --quiet \
+            --target "$WORK_DIR/.python_packages/lib/site-packages" \
+            --platform manylinux2014_x86_64 \
+            --implementation cp \
+            --python-version 3.11 \
+            --only-binary=:all: \
+            --upgrade \
+            -r functions/requirements.txt
+
+          BLOB_NAME="cicd-$(date -u +%Y%m%d%H%M%S)-${{ github.sha }}.zip"
+          (cd "$WORK_DIR" && zip -qr "$GITHUB_WORKSPACE/functions.zip" . \
+            --exclude "local.settings.json" \
+            --exclude "local.settings.json.example" \
+            --exclude "Dockerfile" \
+            --exclude "seed_local_blobs.py")
+
+          STORAGE_KEY=$(az storage account keys list \
+            --account-name "${{ env.FUNCTIONS_STORAGE_ACCOUNT }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --query "[0].value" -o tsv)
+
+          az storage blob upload \
+            --account-name "${{ env.FUNCTIONS_STORAGE_ACCOUNT }}" \
+            --account-key "$STORAGE_KEY" \
+            --container-name "${{ env.FUNCTIONS_RELEASE_CONTAINER }}" \
+            --name "$BLOB_NAME" \
+            --file functions.zip \
+            --content-type "application/zip" \
+            --overwrite
+
+          SAS_EXPIRY=$(date -u -d "+1 year" +%Y-%m-%dT%H:%M:%SZ)
+          SAS_URL=$(az storage blob generate-sas \
+            --account-name "${{ env.FUNCTIONS_STORAGE_ACCOUNT }}" \
+            --account-key "$STORAGE_KEY" \
+            --container-name "${{ env.FUNCTIONS_RELEASE_CONTAINER }}" \
+            --name "$BLOB_NAME" \
+            --permissions r \
+            --expiry "$SAS_EXPIRY" \
+            --full-uri \
+            --output tsv)
+
+          az functionapp config appsettings set \
+            --name "${{ env.FUNCTIONS_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --settings \
+              "WEBSITE_RUN_FROM_PACKAGE=$SAS_URL" \
+              "PYTHONPATH=/home/site/wwwroot/.python_packages/lib/site-packages"
+
+      - name: Sync function key to backend Container App
+        run: |
+          FUNCTION_KEY=$(az functionapp keys list \
+            --name "${{ env.FUNCTIONS_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --query "functionKeys.default" -o tsv)
+
+          az containerapp secret set \
+            --name "${{ env.BACKEND_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --secrets "function-key=$FUNCTION_KEY"
+
+          ACTIVE_REVISION=$(az containerapp revision list \
+            --name "${{ env.BACKEND_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --query "[?properties.active].name | [0]" -o tsv)
+
+          az containerapp revision restart \
+            --name "${{ env.BACKEND_APP_NAME }}" \
+            --resource-group "${{ env.AZURE_RESOURCE_GROUP }}" \
+            --revision "$ACTIVE_REVISION"
