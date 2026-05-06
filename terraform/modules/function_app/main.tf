@@ -35,3 +35,7 @@ resource "azurerm_linux_function_app" "this" {
     var.app_settings,
   )
 }
+data "azurerm_function_app_host_keys" "this" {
+  name                = azurerm_linux_function_app.this.name
+  resource_group_name = var.resource_group_name
+}

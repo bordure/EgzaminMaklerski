@@ -5,24 +5,24 @@
 # Pass secrets via: terraform apply -var-file=../../secrets.tfvars
 # ============================================================
 
-subscription_id = "00000000-0000-0000-0000-000000000000"  # replace
+subscription_id = "368ced15-3f4a-4e61-842f-06d2ad888577"
 location        = "Germany West Central"
-openai_location = "Sweden Central"
+openai_location = "Germany West Central"
 project         = "egzamin-maklerski"
 database_name   = "exam_db"
 
 # Storage account name: 3-24 lowercase alphanumeric, globally unique, no hyphens
-storage_account_name = "egzaminprdst01"  # replace with a unique name
+storage_account_name = "egzaminprdst01"
 
 # SQL Server admin (non-sensitive login name only; password goes in secrets.tfvars)
 sql_admin_login = "sqladmin"
 
-# Container images — production tags
-backend_image  = "REPLACE_WITH_REGISTRY/backend:latest"
-frontend_image = "REPLACE_WITH_REGISTRY/frontend:latest"
+# Container images — bootstrap with latest dev build; CI/CD will update on each main push
+backend_image  = "dihake/egzamin-maklerski-backend:0.07"
+frontend_image = "dihake/egzamin-maklerski-frontend:0.06"
 
 openai_deployment = "gpt-4.1-nano"
 
-# Google OAuth2 (non-sensitive part)
-google_client_id = "REPLACE_WITH_GOOGLE_CLIENT_ID"
+# Set to true only after adding the TXT records from: terraform output -json dns_txt_records
+enable_custom_domains = false
 

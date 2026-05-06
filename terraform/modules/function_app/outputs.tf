@@ -15,7 +15,7 @@ output "learning_advisor_url" {
   description = "URL for the learning_advisor function. Authenticate with x-functions-key header or ?code= query param."
 }
 output "default_key" {
-  value       = azurerm_linux_function_app.this.site_credential[0].password
+  value       = data.azurerm_function_app_host_keys.this.default_function_key
   sensitive   = true
-  description = "Default function key used to authenticate requests when auth_level = FUNCTION."
+  description = "Default function host key for authenticating requests (x-functions-key header)."
 }

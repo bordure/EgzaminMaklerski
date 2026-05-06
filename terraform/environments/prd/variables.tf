@@ -34,10 +34,6 @@ variable "frontend_image" {
   type        = string
   description = "Frontend container image (e.g. myacr.azurecr.io/frontend:latest)"
 }
-variable "google_client_id" {
-  type        = string
-  description = "Google OAuth2 client ID"
-}
 variable "openai_deployment" {
   type        = string
   default     = "gpt-4.1-nano"
@@ -47,6 +43,11 @@ variable "secrets" {
   type        = map(string)
   sensitive   = true
   description = "All sensitive secrets. Keys: google-client-secret, jwt-secret-key, grafana-admin-password, analytics-token."
+}
+variable "enable_custom_domains" {
+  type        = bool
+  default     = false
+  description = "Set to true only after DNS TXT records are in place (run terraform output dns_txt_records to get them)."
 }
 variable "sql_admin_login" {
   type        = string

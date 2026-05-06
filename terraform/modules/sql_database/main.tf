@@ -9,11 +9,11 @@ resource "azurerm_mssql_server" "this" {
   tags                         = var.tags
 }
 resource "azurerm_mssql_firewall_rule" "allowed_ips" {
-  for_each         = toset(var.allowed_ips)
-  name             = "AllowIP-${replace(each.value, ".", "-")}"
+  count            = length(var.allowed_ips)
+  name             = "AllowIP-${replace(var.allowed_ips[count.index], ".", "-")}"
   server_id        = azurerm_mssql_server.this.id
-  start_ip_address = each.value
-  end_ip_address   = each.value
+  start_ip_address = var.allowed_ips[count.index]
+  end_ip_address   = var.allowed_ips[count.index]
 }
 resource "azurerm_mssql_firewall_rule" "azure_services" {
   count            = var.allow_azure_services ? 1 : 0

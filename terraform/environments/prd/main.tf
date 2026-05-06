@@ -13,7 +13,11 @@ terraform {
   backend "azurerm" {}
 }
 provider "azurerm" {
-  features {}
+  features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
   subscription_id = var.subscription_id
 }
 data "azurerm_client_config" "current" {}
@@ -21,6 +25,9 @@ locals {
   prefix = "${var.project}-prd"
   backend_fqdn  = "${local.prefix}-backend.${azurerm_container_app_environment.this.default_domain}"
   frontend_fqdn = "${local.prefix}-frontend.${azurerm_container_app_environment.this.default_domain}"
+  backend_custom_domain  = "api.egzaminmaklerski.online"
+  frontend_custom_domain = "egzaminmaklerski.online"
+  grafana_custom_domain  = "monitoring.egzaminmaklerski.online"
   prometheus_url = "http://${local.prefix}-prometheus.internal.${azurerm_container_app_environment.this.default_domain}"
   sql_database_url = "mssql+pymssql://${urlencode(var.sql_admin_login)}:${urlencode(var.sql_admin_password)}@${module.sql.server_fqdn}/appdb"
   tags = {
@@ -73,9 +80,10 @@ module "cosmosdb" {
   name                = "${local.prefix}-cosmos"
   resource_group_name = azurerm_resource_group.this.name
   location            = var.location
-  enable_free_tier    = false
-  serverless          = true
+  enable_free_tier    = true
+  serverless          = false
   database_name       = var.database_name
+  allowed_cidrs       = [azurerm_container_app_environment.this.static_ip_address, "0.0.0.0"]
   tags                = local.tags
 }
 module "openai" {
@@ -93,6 +101,7 @@ module "sql" {
   location               = var.location
   administrator_login    = var.sql_admin_login
   administrator_password = var.sql_admin_password
+  allowed_ips            = [azurerm_container_app_environment.this.static_ip_address]
   tags                   = local.tags
 }
 resource "azurerm_storage_share" "grafana_provisioning" {
@@ -131,6 +140,7 @@ resource "azurerm_storage_share_file" "prometheus_yml" {
   path              = "datasources"
   storage_share_url = azurerm_storage_share.grafana_provisioning.url
   source            = local_file.grafana_datasource.filename
+  content_md5       = local_file.grafana_datasource.content_md5
   depends_on        = [azurerm_storage_share_directory.datasources_dir, local_file.grafana_datasource]
 }
 resource "azurerm_storage_share" "prometheus_config" {
@@ -154,6 +164,7 @@ resource "azurerm_storage_share_file" "egzamin_json" {
   name              = "egzamin.json"
   storage_share_url = azurerm_storage_share.grafana_dashboards.url
   source            = "${path.module}/../../../monitoring/grafana/dashboards/egzamin.json"
+  content_md5       = filemd5("${path.module}/../../../monitoring/grafana/dashboards/egzamin.json")
 }
 resource "azurerm_container_app_environment_storage" "grafana_provisioning" {
   name                         = "grafana-provisioning"
@@ -185,34 +196,40 @@ module "backend" {
   resource_group_name          = azurerm_resource_group.this.name
   container_app_environment_id = azurerm_container_app_environment.this.id
   image                        = var.backend_image
-  cpu                          = 0.5
-  memory                       = "1Gi"
-  min_replicas                 = 1
-  max_replicas                 = 3
+  cpu                          = 0.25
+  memory                       = "0.5Gi"
+  min_replicas                 = 0
+  max_replicas                 = 1
   target_port                  = 8000
   external_ingress             = true
   startup_probe_path           = "/health"
+  custom_domain_names          = var.enable_custom_domains ? [local.backend_custom_domain] : []
   secrets = [
     { name = "mongo-uri",            value = module.cosmosdb.connection_string },
+    { name = "google-client-id",      value = var.secrets["google-client-id"] },
     { name = "google-client-secret", value = var.secrets["google-client-secret"] },
     { name = "jwt-secret-key",       value = var.secrets["jwt-secret-key"] },
+    { name = "admin-email",          value = var.secrets["admin-email"] },
     { name = "azure-openai-key",     value = module.openai.api_key },
     { name = "blob-to-mongo-url",    value = module.functions.blob_to_mongo_url },
     { name = "learning-advisor-url", value = module.functions.learning_advisor_url },
     { name = "sql-database-url",     value = local.sql_database_url },
+    { name = "function-key",         value = module.functions.default_key },
   ]
   env_vars = [
     { name = "MONGO_URI",               secret_name = "mongo-uri" },
     { name = "AZURE_OPENAI_ENDPOINT",   value = module.openai.endpoint },
     { name = "AZURE_OPENAI_API_KEY",    secret_name = "azure-openai-key" },
-    { name = "GOOGLE_CLIENT_ID",        value = var.google_client_id },
+    { name = "GOOGLE_CLIENT_ID",        secret_name = "google-client-id" },
     { name = "GOOGLE_CLIENT_SECRET",    secret_name = "google-client-secret" },
     { name = "JWT_SECRET_KEY",          secret_name = "jwt-secret-key" },
-    { name = "FRONTEND_URL",            value = "https://${local.frontend_fqdn}" },
-    { name = "GOOGLE_REDIRECT_URI",     value = "https://${local.backend_fqdn}/auth/google/callback" },
+    { name = "ADMIN_EMAIL",             secret_name = "admin-email" },
+    { name = "FRONTEND_URL",            value = "https://${local.frontend_custom_domain}" },
+    { name = "GOOGLE_REDIRECT_URI",     value = "https://${local.backend_custom_domain}/auth/google/callback" },
     { name = "BLOB_TO_MONGO_URL",       secret_name = "blob-to-mongo-url" },
     { name = "LEARNING_ADVISOR_URL",    secret_name = "learning-advisor-url" },
     { name = "SQL_DATABASE_URL",        secret_name = "sql-database-url" },
+    { name = "FUNCTION_KEY",            secret_name = "function-key" },
   ]
   tags = local.tags
 }
@@ -222,14 +239,15 @@ module "frontend" {
   resource_group_name          = azurerm_resource_group.this.name
   container_app_environment_id = azurerm_container_app_environment.this.id
   image                        = var.frontend_image
-  cpu                          = 0.5
-  memory                       = "1Gi"
-  min_replicas                 = 1
-  max_replicas                 = 3
+  cpu                          = 0.25
+  memory                       = "0.5Gi"
+  min_replicas                 = 0
+  max_replicas                 = 1
   target_port                  = 80
   external_ingress             = true
+  custom_domain_names = var.enable_custom_domains ? [local.frontend_custom_domain] : []
   env_vars = [
-    { name = "VITE_API_URL", value = "https://${local.backend_fqdn}" },
+    { name = "VITE_API_URL", value = "https://${local.backend_custom_domain}" },
   ]
   tags = local.tags
 }
@@ -238,13 +256,14 @@ module "grafana" {
   name                         = "${local.prefix}-grafana"
   resource_group_name          = azurerm_resource_group.this.name
   container_app_environment_id = azurerm_container_app_environment.this.id
-  image                        = "grafana/grafana:latest"
+  image                        = "grafana/grafana:11.6.1"
   cpu                          = 0.25
   memory                       = "0.5Gi"
   min_replicas                 = 0
   max_replicas                 = 1
   target_port                  = 3000
   external_ingress             = true
+  custom_domain_names          = var.enable_custom_domains ? [local.grafana_custom_domain] : []
   secrets = [
     { name = "grafana-admin-password", value = var.secrets["grafana-admin-password"] },
   ]
@@ -292,7 +311,7 @@ module "functions" {
   storage_account_name       = module.storage.name
   storage_account_access_key = module.storage.primary_access_key
   functions_dir              = "${path.module}/../../../functions"
-  sku_name                   = "EP1"
+  sku_name                   = "Y1"
   tags                       = local.tags
   app_settings = {
     AZURE_STORAGE_CONNECTION_STRING = module.storage.primary_connection_string

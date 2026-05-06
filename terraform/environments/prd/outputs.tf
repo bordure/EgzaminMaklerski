@@ -3,15 +3,15 @@ output "resource_group_name" {
   description = "Name of the prd resource group"
 }
 output "frontend_url" {
-  value       = "https://${module.frontend.fqdn}"
-  description = "Public URL of the frontend — set as var.frontend_url and re-apply"
+  value       = "https://${local.frontend_custom_domain}"
+  description = "Public URL of the frontend"
 }
 output "backend_url" {
-  value       = "https://${module.backend.fqdn}"
-  description = "Public URL of the backend — set as var.backend_url and re-apply"
+  value       = "https://${local.backend_custom_domain}"
+  description = "Public URL of the backend"
 }
 output "grafana_url" {
-  value       = "https://${module.grafana.fqdn}"
+  value       = "https://${local.grafana_custom_domain}"
   description = "Public URL of Grafana"
 }
 output "openai_endpoint" {
@@ -27,8 +27,8 @@ output "cosmosdb_account_name" {
   description = "Cosmos DB account name"
 }
 output "google_redirect_uri" {
-  value       = "https://${module.backend.fqdn}/auth/google/callback"
-  description = "Google OAuth2 redirect URI — set as var.google_redirect_uri and re-apply"
+  value       = "https://${local.backend_custom_domain}/auth/google/callback"
+  description = "Google OAuth2 redirect URI — register this in your Google Cloud Console"
 }
 output "key_vault_uri" {
   value       = module.key_vault.vault_uri
@@ -41,4 +41,13 @@ output "blob_to_mongo_url" {
 output "learning_advisor_url" {
   value       = module.functions.learning_advisor_url
   description = "POST this URL (with x-functions-key header) to get a personalised study plan"
+}
+output "dns_txt_records" {
+  sensitive = true
+  value = {
+    "asuid.egzaminmaklerski.online"            = module.frontend.custom_domain_verification_id
+    "asuid.api.egzaminmaklerski.online"        = module.backend.custom_domain_verification_id
+    "asuid.monitoring.egzaminmaklerski.online" = module.grafana.custom_domain_verification_id
+  }
+  description = "Add these TXT records in your DNS provider, then run terraform apply again to bind custom domains"
 }
