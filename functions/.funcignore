@@ -1,0 +1,12 @@
+# local.settings.json is used by Azure Functions Core Tools for local development.
+# It must NOT be committed — all secrets go here.
+# Copy this file, rename to local.settings.json, and fill in the values.
+#
+# Run locally:  func start
+# Install tools: npm install -g azure-functions-core-tools@4 --unsafe-perm true
+
+local.settings.json
+.python_packages/
+__pycache__/
+.venv/
+*.pyc

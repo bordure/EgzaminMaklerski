@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AZURE_STORAGE_CONNECTION_STRING": "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;",
+    "BLOB_CONTAINER_NAME": "exam-data",
+    "MONGO_URI": "mongodb://localhost:27017",
+    "MONGO_DB_NAME": "exam_db",
+    "MONGO_COLLECTION_NAME": "questions",
+    "SQL_DATABASE_URL": "sqlite:///./egzamin.db"
+  }
+}

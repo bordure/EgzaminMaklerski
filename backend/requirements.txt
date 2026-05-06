@@ -7,3 +7,11 @@ httpx
 python-multipart
 pyJWT
 pydantic-settings
+prometheus-fastapi-instrumentator
+prometheus-client
+pytest
+pytest-asyncio
+mongomock
+sqlalchemy
+alembic
+pymssql

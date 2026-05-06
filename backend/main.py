@@ -1,41 +1,14 @@
-from fastapi import FastAPI, HTTPException, Query, Depends, status, Request, Header
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from fastapi.responses import RedirectResponse
-from pymongo import MongoClient
-import os
-from typing import Optional
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from datetime import datetime, timedelta
-import jwt
-import httpx
-from pydantic import BaseModel
-import secrets
 from settings import Settings
-import random
+from misc.log import get_logger
+from pymongo import MongoClient
+from prometheus_fastapi_instrumentator import Instrumentator
+from prometheus_client import Gauge
+import threading, time, httpx
 
 cfg = Settings()
-
-MONGO_URI = cfg.mongo_uri
-DB_NAME = cfg.db_name
-COLLECTION_NAME = cfg.collection_name
-USERS_COLLECTION = cfg.users_collection
-FRONTEND_URL = cfg.frontend_url
-ANALYTICS_TOKEN = cfg.analytics_token
-
-GOOGLE_CLIENT_ID = cfg.google_client_id
-GOOGLE_CLIENT_SECRET = cfg.google_client_secret
-GOOGLE_REDIRECT_URI = cfg.google_redirect_uri
-
-JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", secrets.token_urlsafe(32))
-JWT_ALGORITHM = "HS256"
-JWT_EXPIRATION_TIME = timedelta(hours=24)
-
-client = MongoClient(MONGO_URI)
-db = client[DB_NAME]
-collection = db[COLLECTION_NAME]
-users_collection = db[USERS_COLLECTION]
-LOGINS_COLLECTION = "user_logins"
-logins_collection = db[LOGINS_COLLECTION]
+log = get_logger(__name__)
 
 app = FastAPI(title="Egzamin Maklerski API")
 
@@ -43,8 +16,11 @@ origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://frontend:3000",
-    "https://egzaminmaklerski.azurewebsites.net"
+    "https://egzaminmaklerski.azurewebsites.net",
+    "https://egzaminmaklerski.online",
 ]
+if cfg.frontend_url and cfg.frontend_url not in origins:
+    origins.append(cfg.frontend_url)
 
 app.add_middleware(
     CORSMiddleware,
@@ -54,290 +30,99 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-security = HTTPBearer()
+client = MongoClient(cfg.mongo_uri)
+db = client[cfg.db_name]
 
-class GoogleTokenRequest(BaseModel):
-    code: str
+app.state.db = db
 
-class User(BaseModel):
-    id: str
-    email: str
-    name: str
-    picture: str
-    verified_email: bool
+log.info("Starting Egzamin Maklerski API (environment=%s, log_level=%s)", cfg.environment, cfg.log_level)
 
-class TokenResponse(BaseModel):
-    access_token: str
-    token_type: str
-    expires_in: int
+Instrumentator().instrument(app).expose(app, endpoint="/metrics", include_in_schema=False)
 
-def create_jwt_token(user_data: dict) -> str:
-    """Create JWT token for authenticated user"""
-    payload = {
-        "user_id": user_data["id"],
-        "email": user_data["email"],
-        "exp": datetime.utcnow() + JWT_EXPIRATION_TIME,
-        "iat": datetime.utcnow()
-    }
-    return jwt.encode(payload, JWT_SECRET_KEY, algorithm=JWT_ALGORITHM)
+questions_total    = Gauge("exam_questions_total",       "Total questions in database")
+users_total        = Gauge("exam_users_total",           "Total registered (non-guest) users")
+google_logins_total = Gauge("exam_google_logins_total",  "Total Google logins all time")
+guest_logins_total  = Gauge("exam_guest_logins_total",   "Total guest logins all time")
+logins_today       = Gauge("exam_logins_today",          "Login events in the last 24 hours")
 
-def verify_jwt_token(token: str) -> dict:
-    """Verify and decode JWT token"""
+def _refresh_db_gauges():
+    """Background thread: refresh DB-derived gauges every 30 seconds."""
+    from datetime import datetime, timedelta, timezone
+    while True:
+        try:
+            questions_total.set(db[cfg.collection_name].estimated_document_count())
+            users_total.set(len(db[cfg.logins_collection].distinct("email", {"guest": False, "email": {"$ne": None}})))
+            google_logins_total.set(db[cfg.logins_collection].count_documents({"guest": False}))
+            guest_logins_total.set(db[cfg.logins_collection].count_documents({"guest": True}))
+            since = datetime.now(timezone.utc) - timedelta(hours=24)
+            logins_today.set(db[cfg.logins_collection].count_documents({"login_time": {"$gte": since}}))
+        except Exception:
+            log.exception("Error refreshing DB gauges.")
+        time.sleep(30)
+
+threading.Thread(target=_refresh_db_gauges, daemon=True).start()
+
+def _bootstrap_import():
+    """On startup, call blob_to_mongo if the questions collection is empty."""
+    if not cfg.blob_to_mongo_url:
+        return
     try:
-        payload = jwt.decode(token, JWT_SECRET_KEY, algorithms=[JWT_ALGORITHM])
-        return payload
-    except jwt.ExpiredSignatureError:
-        raise HTTPException(status_code=401, detail="Token expired")
-    except jwt.InvalidTokenError:
-        raise HTTPException(status_code=401, detail="Invalid token")
+        count = db["questions"].count_documents({})
+        if count > 0:
+            log.info("Bootstrap import skipped — %d questions already in DB", count)
+            return
+        log.info("Bootstrap import: questions collection is empty, calling blob_to_mongo")
+        resp = httpx.post(cfg.blob_to_mongo_url, timeout=120)
+        log.info("Bootstrap import result: %s %s", resp.status_code, resp.text[:200])
+    except Exception:
+        log.exception("Bootstrap import failed — will retry on next restart")
 
-async def get_google_user_info(access_token: str) -> dict:
-    """Fetch user info from Google using access token"""
-    async with httpx.AsyncClient() as client:
-        response = await client.get(
-            "https://www.googleapis.com/oauth2/v2/userinfo",
-            headers={"Authorization": f"Bearer {access_token}"}
-        )
-        if response.status_code != 200:
-            raise HTTPException(status_code=400, detail="Failed to fetch user info from Google")
-        return response.json()
-
-async def exchange_code_for_token(code: str) -> str:
-    """Exchange authorization code for access token"""
-    token_url = "https://oauth2.googleapis.com/token"
-    data = {
-        "client_id": GOOGLE_CLIENT_ID,
-        "client_secret": GOOGLE_CLIENT_SECRET,
-        "code": code,
-        "grant_type": "authorization_code",
-        "redirect_uri": GOOGLE_REDIRECT_URI,
-    }
-    
-    async with httpx.AsyncClient() as client:
-        response = await client.post(token_url, data=data)
-        if response.status_code != 200:
-            raise HTTPException(status_code=400, detail="Failed to exchange code for token")
-        
-        token_data = response.json()
-        return token_data["access_token"]
-
-def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)) -> dict:
-    """Dependency to get current authenticated user"""
-    token = credentials.credentials
-    payload = verify_jwt_token(token)
-    
-    # Check if user exists in database
-    user = users_collection.find_one({"google_id": payload["user_id"]})
-    if not user:
-        raise HTTPException(status_code=401, detail="User not found")
-    
-    return {
-        "google_id": user["google_id"],
-        "email": user["email"],
-        "name": user["name"],
-        "picture": user["picture"]
-    }
-
-@app.get("/auth/google/url")
-def get_google_auth_url():
-    """Get Google OAuth2 authorization URL"""
-    auth_url = (
-        f"https://accounts.google.com/o/oauth2/auth?"
-        f"client_id={GOOGLE_CLIENT_ID}&"
-        f"redirect_uri={GOOGLE_REDIRECT_URI}&"
-        f"scope=openid email profile&"
-        f"response_type=code&"
-        f"access_type=offline&"
-        f"prompt=consent"
-    )
-    return {"auth_url": auth_url}
-
-@app.get("/auth/google/callback", response_model=TokenResponse)
-async def google_callback(code: str):
-    """Handle Google OAuth2 callback (GET request from Google)"""
-    try:
-        access_token = await exchange_code_for_token(code)
-        
-        google_user = await get_google_user_info(access_token)
-        
-        users_collection.update_one(
-            {"google_id": google_user["id"]},
-            {
-                "$set": {
-                    "google_id": google_user["id"],
-                    "email": google_user["email"],
-                    "name": google_user["name"],
-                    "picture": google_user["picture"],
-                    "verified_email": google_user["verified_email"],
-                    "last_login": datetime.utcnow()
-                },
-                "$setOnInsert": {
-                    "created_at": datetime.utcnow()
-                }
-            },
-            upsert=True
-        )
-
-        logins_collection.insert_one({
-            "google_id": google_user["id"],
-            "email": google_user["email"],
-            "login_time": datetime.utcnow()
-        })
-        
-        jwt_token = create_jwt_token(google_user)
-
-        redirect_url = f"{FRONTEND_URL}/auth/callback?token={jwt_token}"
-        return RedirectResponse(url=redirect_url)
-
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Authentication failed: {str(e)}")
-
-@app.get("/auth/me")
-def get_current_user_info(current_user: dict = Depends(get_current_user)):
-    """Get current authenticated user information"""
-    return current_user
-
-@app.post("/auth/logout")
-def logout(current_user: dict = Depends(get_current_user)):
-    """Logout endpoint (client should delete the token)"""
-    return {"message": "Successfully logged out"}
-
-@app.get("/analytics/logins")
-def get_login_stats(
-    token: str = Header(None),
-    days: int = Query(7, ge=1, le=90)
-):
-    """Return login counts per day for the last N days (requires ANALYTICS_TOKEN header)"""
-    if token != ANALYTICS_TOKEN:
-        raise HTTPException(status_code=403, detail="Forbidden")
-
-    since = datetime.utcnow() - timedelta(days=days)
-    pipeline = [
-        {"$match": {"login_time": {"$gte": since}}},
-        {
-            "$group": {
-                "_id": {"$dateToString": {"format": "%Y-%m-%d", "date": "$login_time"}},
-                "count": {"$sum": 1},
-                "unique_users": {"$addToSet": "$google_id"}
-            }
-        },
-        {
-            "$project": {
-                "count": 1,
-                "unique_users": {"$size": "$unique_users"}
-            }
-        },
-        {"$sort": {"_id": 1}}
-    ]
-    results = list(logins_collection.aggregate(pipeline))
-    return {"logins": results}
-
-@app.get("/topics")
-def get_topics(current_user: dict = Depends(get_current_user)):
-    """List all main topics and their subtopics (Protected)"""
-    topics = {}
-    for q in collection.find({}, {"main_topic": 1, "sub_topic": 1, "exam_date": 1}):
-        main = q.get("main_topic")[0] if q.get("main_topic") else "Unknown"
-        sub_list = q.get("sub_topic") or []
-        topics.setdefault(main, set())
-        for s in sub_list:
-            topics[main].add(s)
-    topics = {k: list(v) for k, v in topics.items()}
-    return topics
-
-@app.get("/questions")
-def get_questions(
-    main_topic: Optional[str] = None,
-    sub_topic: Optional[str] = None,
-    exam_date: Optional[str] = None,
-    n: int = Query(10, gt=0),
-    skip: int = Query(0, ge=0),
-    random_questions: bool = Query(False),
-    current_user: dict = Depends(get_current_user)
-):
-    query = {}
-    
-    if main_topic:
-        query["main_topic"] = main_topic
-    
-    if sub_topic:
-        query["sub_topic"] = sub_topic
-        
-    if exam_date:
-        query["exam_date"] = exam_date
-    
-    total = collection.count_documents(query)
-    if total == 0:
-        raise HTTPException(status_code=404, detail="No questions found for given filters")
-    
-    n = min(n, total)
-    
-    if random_questions:
-        all_questions = list(collection.find(query, {"_id": 1})) 
-        random.shuffle(all_questions)
-        selected_ids = [q["_id"] for q in all_questions[:n]]
-        
-        questions = list(collection.find({"_id": {"$in": selected_ids}}))
-        random.shuffle(questions)
-    else:
-        questions = list(collection.find(query).skip(skip).limit(n))
-    
-    for q in questions:
-        q["_id"] = str(q["_id"])
-    
-    return {
-        "questions": questions,
-        "total": total,
-        "skip": skip if not random_questions else 0,
-        "limit": n,
-        "has_more": skip + n < total if not random_questions else False,
-        "random": random_questions
-    }
+threading.Thread(target=_bootstrap_import, daemon=True).start()
 
 
-@app.get("/questions/count")
-def get_questions_count(
-    main_topic: Optional[str] = None,
-    sub_topic: Optional[str] = None,
-    exam_date: Optional[str] = None,
-    current_user: dict = Depends(get_current_user)
-):
-    query = {}
-    
-    if main_topic:
-        query["main_topic"] = main_topic
-    
-    if sub_topic:
-        query["sub_topic"] = sub_topic
-        
-    if exam_date:
-        query["exam_date"] = exam_date
-    
-    total = collection.count_documents(query)
-    return {"total": total}
+from routers import auth, notion, exam, admin, reports, stats
+from db.database import engine, run_migrations
+from db import models
+import sqlalchemy.exc
 
-@app.get("/exam_dates")
-def get_exam_dates(current_user: dict = Depends(get_current_user)):
-    dates = collection.distinct("exam_date")
-    sorted_dates = sorted(
-        dates,
-        key=lambda d: datetime.strptime(d, "%d.%m.%Y")
-    )
-    return {"exam_dates": sorted_dates}
+def _init_sql_with_retry(max_attempts: int = 10, delay: float = 6.0):
+    """Create tables and run migrations, retrying on transient Azure SQL errors.
 
-@app.get("/subtopic_counts")
-def get_subtopic_counts(current_user: dict = Depends(get_current_user)):
-    pipeline = [
-        {"$unwind": "$sub_topic"},
-        {"$group": {"_id": "$sub_topic", "count": {"$sum": 1}}},
-        {"$sort": {"count": -1}}
-    ]
-    result = list(collection.aggregate(pipeline))
-    return {"subtopic_counts": result}
+    Azure SQL Serverless returns error 40613 while waking from auto-pause (~30 s).
+    Catching OperationalError here prevents the app from crashing on cold starts.
+    """
+    for attempt in range(1, max_attempts + 1):
+        try:
+            models.Base.metadata.create_all(bind=engine)
+            run_migrations()
+            log.info("SQL init succeeded on attempt %d", attempt)
+            return
+        except sqlalchemy.exc.OperationalError as exc:
+            msg = str(exc)
+            transient = "40613" in msg or "40501" in msg or "connection failed" in msg.lower()
+            if attempt < max_attempts and transient:
+                log.warning(
+                    "SQL init attempt %d/%d failed (transient), retrying in %.0f s: %s",
+                    attempt, max_attempts, delay, msg[:200],
+                )
+                time.sleep(delay)
+            else:
+                log.error("SQL init failed after %d attempts: %s", attempt, msg[:400])
+                return
+
+_init_sql_with_retry()
+
+app.include_router(auth.router, prefix="/auth", tags=["auth"])
+app.include_router(exam.router, prefix="/exam", tags=["exam"])
+app.include_router(notion.router, prefix="/notion", tags=["notion"])
+app.include_router(admin.router, prefix="/admin", tags=["admin"])
+app.include_router(reports.router, prefix="/reports", tags=["reports"])
+app.include_router(stats.router, prefix="/user", tags=["stats"])
 
 @app.get("/health")
 def health_check():
-    return {"status": "healthy", "timestamp": datetime.utcnow().isoformat()}
+    """Return service health status."""
+    return {"status": "healthy"}
 
 if __name__ == "__main__":
     import uvicorn

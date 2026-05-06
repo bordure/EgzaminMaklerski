@@ -222,3 +222,8 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/react,python,venv,visualstudiocode
 # Custom ignores
 data/db
+uv.lock
+.python-version
+*.dbfunctions/local.settings.json
+*.db
+*.lock.hcl

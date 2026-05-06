@@ -1,143 +1,244 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
-import { BookOpen, LogOut } from 'lucide-react';
-
+import { BookOpen, LogOut, LogIn, FileText, Sun, Moon, Menu, X, ShieldCheck } from 'lucide-react';
+import { checkAdmin } from '../api';
+import { useDarkMode } from './DarkModeContext';
+import guestAvatar from '../assets/images/guest-avatar.svg';
+import coffeeIcon from '../assets/images/coffee-icon.svg';
 const Navbar = () => {
-  const { user, logout, isAuthenticated } = useAuth();
+  const { user, logout, isAuthenticated, login } = useAuth();
   const location = useLocation();
-
-  if (!isAuthenticated) {
-    return null;
-  }
-
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    if (isAuthenticated && !user?.guest) {
+      checkAdmin().then((d) => setIsAdmin(d.is_admin ?? false)).catch(() => {});
+    } else {
+      setIsAdmin(false);
+    }
+  }, [isAuthenticated, user]);
+  if (!isAuthenticated) return null;
   const isActive = (path) => location.pathname === path;
-
-  const donateButtonClasses = `flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors 
-    text-gray-600 hover:text-gray-900 hover:bg-gray-100`;
-
+  const linkClasses = (path) =>
+    `block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+      isActive(path)
+        ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
+        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700'
+    }`;
+  const DonateButton = () => (
+    <a
+      href="https://buycoffee.to/egzaminmaklerski"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+      title="Wesprzyj nas kawą!"
+    >
+      <img
+        src={coffeeIcon}
+        alt="Kup kawę"
+        className="w-5 h-5 transition dark:invert"
+      />
+      <span>Wesprzyj</span>
+    </a>
+  );
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-200">
+    <nav className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo and Brand */}
+          {}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
               <BookOpen className="w-5 h-5 text-white" />
             </div>
-            <Link to="/" className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+            <Link
+              to="/"
+              className="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 transition-colors"
+            >
               Egzamin Maklerski
             </Link>
           </div>
-
-          {/* Navigation Links */}
+          {}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/generate"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/generate')
-                  ? 'bg-blue-100 text-blue-700'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-              }`}
-            >
-              Generate Exam
+            <Link to="/generate" className={linkClasses('/generate')}>
+              Generuj Egzamin
             </Link>
-            <Link
-              to="/topics"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/topics')
-                  ? 'bg-blue-100 text-blue-700'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-              }`}
-            >
-              Browse Topics
+            <Link to="/topics" className={linkClasses('/topics')}>
+              Przeglądaj Tematy
             </Link>
-
-            {/* Donate Button */}
-            <a
-              href="https://buycoffee.to/egzaminmaklerski"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={donateButtonClasses}
-              title="Support us with a coffee!"
-            >
-              <img 
-                src="https://www.svgrepo.com/show/330105/buymeacoffee.svg" 
-                alt="Buy Me a Coffee"
-                className="w-5 h-5"
-              />
-              <span className="hidden lg:inline">Donate</span>
-            </a>
+            <Link to="/notes" className={linkClasses('/notes')}>
+              <FileText className="w-4 h-4 mr-1 inline" />
+              Notatki
+            </Link>
+            {isAdmin && (
+              <Link to="/admin" className={linkClasses('/admin')}>
+                <ShieldCheck className="w-4 h-4 mr-1 inline" />
+                Admin
+              </Link>
+            )}
+            <DonateButton />
           </div>
-
-          {/* User Menu */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3">
+          {}
+          <div className="hidden md:flex items-center gap-4">
+            {}
+            <button
+              onClick={toggleDarkMode}
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors flex items-center gap-1"
+              title="Przełącz tryb ciemny"
+            >
+              {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {isDarkMode ? 'Jasny' : 'Ciemny'}
+            </button>
+            {}
+            <Link to="/profile" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <img
-                src={user?.picture}
-                alt={user?.name}
-                className="w-8 h-8 rounded-full border-2 border-gray-200"
+                src={user?.guest ? guestAvatar : (user?.picture || guestAvatar)}
+                alt={user?.name || 'Gosc'}
+                referrerPolicy="no-referrer"
+                onError={(e) => { e.currentTarget.src = guestAvatar; e.currentTarget.className = e.currentTarget.className + ' dark:invert'; }}
+                className={`w-8 h-8 rounded-full border-2 border-gray-200 dark:border-gray-600 object-cover ${
+                  user?.guest ? 'dark:invert' : ''
+                }`}
               />
               <div className="hidden sm:block">
-                <p className="text-sm font-medium text-gray-700">{user?.name}</p>
-                <p className="text-xs text-gray-500">{user?.email}</p>
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                  {user?.guest ? 'Gosc' : user?.name}
+                </p>
+                {!user?.guest && (
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{user?.email}</p>
+                )}
               </div>
-            </div>
+            </Link>
+            {}
+            {user?.guest ? (
+              <button
+                onClick={login}
+                className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                title="Zaloguj"
+              >
+                <LogIn className="w-4 h-4" />
+                <span className="hidden sm:inline">Zaloguj</span>
+              </button>
+            ) : (
+              <button
+                onClick={logout}
+                className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                title="Wyloguj"
+              >
+                <LogOut className="w-4 h-4" />
+                <span className="hidden sm:inline">Wyloguj</span>
+              </button>
+            )}
+          </div>
+          {}
+          <div className="flex md:hidden items-center gap-3">
             <button
-              onClick={logout}
-              className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
-              title="Logout"
+              onClick={toggleDarkMode}
+              className="p-2 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+              title="Toggle Dark Mode"
             >
-              <LogOut className="w-4 h-4" />
-              <span className="hidden sm:inline">Logout</span>
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+              title="Menu"
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        <div className="md:hidden pb-4 pt-2">
-          <div className="flex space-x-4 flex-wrap gap-y-2">
-            <Link
-              to="/generate"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/generate')
-                  ? 'bg-blue-100 text-blue-700'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-              }`}
-            >
-              Generate Exam
-            </Link>
-            <Link
-              to="/topics"
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActive('/topics')
-                  ? 'bg-blue-100 text-blue-700'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-              }`}
-            >
-              Browse Topics
-            </Link>
-
-            {/* Mobile Donate Button */}
-            <a
-              href="https://buycoffee.to/egzaminmaklerski"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={donateButtonClasses}
-              title="Support us with a coffee!"
-            >
-              <img 
-                src="https://www.svgrepo.com/show/330105/buymeacoffee.svg" 
-                alt="Buy Me a Coffee"
-                className="w-5 h-5"
-              />
-              Donate
-            </a>
+      </div>
+      {}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
+          menuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+          <span className="text-lg font-semibold text-gray-900 dark:text-gray-100">Menu</span>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
+          >
+            <X className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+          </button>
+        </div>
+        {}
+        <Link
+          to="/profile"
+          onClick={() => setMenuOpen(false)}
+          className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors"
+        >
+          <img
+            src={user?.guest ? guestAvatar : (user?.picture || guestAvatar)}
+            alt={user?.name || 'Gosc'}
+            referrerPolicy="no-referrer"
+            onError={(e) => { e.currentTarget.src = guestAvatar; }}
+            className={`w-10 h-10 rounded-full border-2 border-gray-200 dark:border-gray-600 object-cover ${
+              user?.guest ? 'dark:invert' : ''
+            }`}
+          />
+          <div>
+            <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+              {user?.guest ? 'Gosc' : user?.name}
+            </p>
+            {!user?.guest && (
+              <p className="text-xs text-gray-500 dark:text-gray-400 truncate max-w-[160px]">{user?.email}</p>
+            )}
           </div>
+        </Link>
+        <div className="p-4 flex flex-col gap-2">
+          <Link to="/generate" onClick={() => setMenuOpen(false)} className={linkClasses('/generate')}>
+            Generuj Egzamin
+          </Link>
+          <Link to="/topics" onClick={() => setMenuOpen(false)} className={linkClasses('/topics')}>
+            Przeglądaj Tematy
+          </Link>
+          <Link to="/notes" onClick={() => setMenuOpen(false)} className={linkClasses('/notes')}>
+            <FileText className="w-4 h-4 mr-1 inline" />
+            Notatki
+          </Link>
+          {isAdmin && (
+            <Link to="/admin" onClick={() => setMenuOpen(false)} className={linkClasses('/admin')}>
+              <ShieldCheck className="w-4 h-4 mr-1 inline" />
+              Admin
+            </Link>
+          )}
+          <DonateButton />
+          {user?.guest ? (
+            <button
+              onClick={() => {
+                login();
+                setMenuOpen(false);
+              }}
+              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
+            >
+              <LogIn className="w-4 h-4" />
+              Zaloguj
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                logout();
+                setMenuOpen(false);
+              }}
+              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
+            >
+              <LogOut className="w-4 h-4" />
+              Wyloguj
+            </button>
+          )}
         </div>
       </div>
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-30 z-30"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
     </nav>
   );
 };
-
 export default Navbar;

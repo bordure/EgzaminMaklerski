@@ -10,18 +10,88 @@ services:
     volumes:
       - mongo_data:/data/db
 
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:latest
+    container_name: azurite
+    ports:
+      - "10000:10000"   # Blob
+      - "10001:10001"   # Queue
+      - "10002:10002"   # Table
+    volumes:
+      - azurite_data:/data
+    command: azurite --blobHost 0.0.0.0 --queueHost 0.0.0.0 --tableHost 0.0.0.0 --skipApiVersionCheck
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('net').connect(10000,'127.0.0.1').on('connect',()=>process.exit(0)).on('error',()=>process.exit(1))"]
+      interval: 3s
+      retries: 15
+
+  # One-shot container: uploads scrapper JSON files into Azurite on every `docker compose up`.
+  # Exits 0 immediately after seeding — other services are not blocked.
+  blob-seeder:
+    image: python:3.11-slim
+    container_name: blob_seeder
+    depends_on:
+      azurite:
+        condition: service_healthy
+    volumes:
+      - ./scrapper/data:/data:ro
+      - ./functions/seed_local_blobs.py:/seed.py:ro
+    environment:
+      AZURITE_HOST: azurite
+    command: >
+      sh -c "pip install 'azure-storage-blob==12.22.0' --quiet &&
+             AZURITE_HOST=azurite python /seed.py"
+    restart: "no"
+
+  functions:
+    build:
+      context: ./functions
+    platform: linux/amd64
+    container_name: exam_functions
+    depends_on:
+      azurite:
+        condition: service_healthy
+      mongo:
+        condition: service_started
+    ports:
+      - "7071:80"
+    environment:
+      # AzureWebJobsStorage — required by the Functions host for internal state
+      AzureWebJobsStorage: "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;QueueEndpoint=http://azurite:10001/devstoreaccount1;TableEndpoint=http://azurite:10002/devstoreaccount1;"
+      # blob_to_mongo function settings
+      AZURE_STORAGE_CONNECTION_STRING: "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;"
+      BLOB_CONTAINER_NAME: "exam-data"
+      MONGO_URI: "mongodb://root:example@mongo:27017"
+      MONGO_DB_NAME: "exam_db"
+      MONGO_COLLECTION_NAME: "questions"
+      # learning_advisor function settings — SQL DB shared with backend
+      SQL_DATABASE_URL: "sqlite:////shared/egzamin.db"
+      AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT:-}
+      AZURE_OPENAI_API_KEY: ${AZURE_OPENAI_API_KEY:-}
+      AZURE_OPENAI_DEPLOYMENT: ${AZURE_OPENAI_DEPLOYMENT:-gpt-4o}
+    volumes:
+      # Share the SQLite DB file with the backend so both see the same data
+      - shared_db:/shared
+
   backend:
     build:
-      context: ./backend
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: exam_backend
     depends_on:
       - mongo
+    env_file: .env
     environment:
       MONGO_URI: ${MONGO_URI}
+      SQL_DATABASE_URL: "sqlite:////shared/egzamin.db"
+      BLOB_TO_MONGO_URL: "http://exam_functions/api/blob_to_mongo"
+      LEARNING_ADVISOR_URL: "http://exam_functions/api/learning_advisor"
     ports:
       - "8000:8000"
     volumes:
       - ./backend:/app
+      - ./misc:/app/misc
+      - shared_db:/shared
 
   frontend:
     build:
@@ -34,5 +104,39 @@ services:
     depends_on:
       - backend
 
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.retention.time=30d"
+    ports:
+      - "9090:9090"
+    depends_on:
+      - backend
+
+  grafana:
+    image: grafana/grafana:11.5.2
+    container_name: grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/egzamin.json
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      - prometheus
+
 volumes:
   mongo_data:
+  azurite_data:
+  shared_db:
+  prometheus_data:
+  grafana_data:
