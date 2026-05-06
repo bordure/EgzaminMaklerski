@@ -54,6 +54,7 @@ module "storage" {
   location            = var.location
   tags                = local.tags
   blob_container_name = "exam-data"
+  extra_containers    = ["function-releases"]
   blob_uploads = {
     "output09.10.2022.json" = { source = "${path.module}/../../../scrapper/data/output09.10.2022.json" }
     "output12.10.2025.json" = { source = "${path.module}/../../../scrapper/data/output12.10.2025.json" }

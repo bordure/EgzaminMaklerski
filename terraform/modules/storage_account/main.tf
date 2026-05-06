@@ -15,6 +15,12 @@ resource "azurerm_storage_container" "blobs" {
   storage_account_id    = azurerm_storage_account.this.id
   container_access_type = "private"
 }
+resource "azurerm_storage_container" "extra" {
+  for_each              = toset(var.extra_containers)
+  name                  = each.value
+  storage_account_id    = azurerm_storage_account.this.id
+  container_access_type = "private"
+}
 resource "azurerm_storage_blob" "uploads" {
   for_each = var.blob_container_name != "" ? var.blob_uploads : {}
   name                   = each.key
