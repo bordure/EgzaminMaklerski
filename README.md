@@ -2,7 +2,7 @@
 
 [![CI/CD Dev](https://github.com/SURFLOU/EgzaminMaklerski/actions/workflows/ci-cd-dev.yml/badge.svg)](https://github.com/SURFLOU/EgzaminMaklerski/actions/workflows/ci-cd-dev.yml)
 [![CI/CD Prod](https://github.com/SURFLOU/EgzaminMaklerski/actions/workflows/ci-cd-prd.yml/badge.svg)](https://github.com/SURFLOU/EgzaminMaklerski/actions/workflows/ci-cd-prd.yml)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fegzaminmaklerski.online&label=egzaminmaklerski.online)](https://egzaminmaklerski.online)
+[![Website](https://img.shields.io/badge/website-egzaminmaklerski.online-blue)](https://egzaminmaklerski.online)
 
 A web application for studying and simulating the Polish securities broker exam (Egzamin Maklerski). It allows users to solve past KNF exam papers, browse questions by category, and generate custom mock exams.
 
