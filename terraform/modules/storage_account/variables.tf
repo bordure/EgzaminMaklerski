@@ -27,3 +27,8 @@ variable "blob_uploads" {
   default     = {}
   description = "Map of blob name -> { source = local file path }. Requires blob_container_name to be set."
 }
+variable "extra_containers" {
+  type        = list(string)
+  default     = []
+  description = "Additional private blob containers to create (e.g. function-releases)."
+}

@@ -97,7 +97,18 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: Check if Azure resources exist
+        id: check_resources
+        run: |
+          if az group show --name "${{ env.AZURE_RESOURCE_GROUP }}" &>/dev/null; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "Resource group ${{ env.AZURE_RESOURCE_GROUP }} not found — skipping deploy."
+          fi
+
       - name: Update backend Container App
+        if: steps.check_resources.outputs.exists == 'true'
         run: |
           az containerapp update \
             --name "${{ env.BACKEND_APP_NAME }}" \
@@ -105,6 +116,7 @@ jobs:
             --image "${{ env.BACKEND_IMAGE }}:${{ steps.tag.outputs.value }}"
 
       - name: Update frontend Container App
+        if: steps.check_resources.outputs.exists == 'true'
         run: |
           az containerapp update \
             --name "${{ env.FRONTEND_APP_NAME }}" \
@@ -112,6 +124,7 @@ jobs:
             --image "${{ env.FRONTEND_IMAGE }}:${{ steps.tag.outputs.value }}"
 
       - name: Package and deploy Azure Function App
+        if: steps.check_resources.outputs.exists == 'true'
         run: |
           WORK_DIR=$(mktemp -d)
           cp -r functions/. "$WORK_DIR/"
@@ -165,6 +178,7 @@ jobs:
               "PYTHONPATH=/home/site/wwwroot/.python_packages/lib/site-packages"
 
       - name: Sync function key to backend Container App
+        if: steps.check_resources.outputs.exists == 'true'
         run: |
           FUNCTION_KEY=$(az functionapp keys list \
             --name "${{ env.FUNCTIONS_APP_NAME }}" \
