@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import { BookOpen, LogOut, LogIn, FileText, Sun, Moon, Menu, X, ShieldCheck } from 'lucide-react';
-import { checkAdmin } from '../api';
+import { checkAdmin, healthCheck } from '../api';
 import { useDarkMode } from './DarkModeContext';
 import guestAvatar from '../assets/images/guest-avatar.svg';
 import coffeeIcon from '../assets/images/coffee-icon.svg';
@@ -12,6 +12,7 @@ const Navbar = () => {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [backendStatus, setBackendStatus] = useState('checking'); // 'checking' | 'online' | 'offline'
   useEffect(() => {
     if (isAuthenticated && !user?.guest) {
       checkAdmin().then((d) => setIsAdmin(d.is_admin ?? false)).catch(() => {});
@@ -19,7 +20,17 @@ const Navbar = () => {
       setIsAdmin(false);
     }
   }, [isAuthenticated, user]);
-  if (!isAuthenticated) return null;
+  useEffect(() => {
+    let timer;
+    const ping = () => {
+      healthCheck()
+        .then(() => setBackendStatus('online'))
+        .catch(() => setBackendStatus('offline'));
+    };
+    ping();
+    timer = setInterval(ping, 15000);
+    return () => clearInterval(timer);
+  }, []);
   const isActive = (path) => location.pathname === path;
   const linkClasses = (path) =>
     `block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -43,6 +54,24 @@ const Navbar = () => {
       <span>Wesprzyj</span>
     </a>
   );
+  const BackendDot = () => (
+    <div className="relative group flex items-center">
+      <span
+        className={`w-2.5 h-2.5 rounded-full block ${
+          backendStatus === 'online'
+            ? 'bg-green-500'
+            : 'bg-orange-400 animate-pulse'
+        }`}
+      />
+      <div className="pointer-events-none absolute right-0 top-5 z-50 hidden group-hover:block w-56 rounded-lg bg-gray-800 dark:bg-gray-900 px-3 py-2 text-xs text-white shadow-xl">
+        {backendStatus === 'online'
+          ? '✓ Serwer działa prawidłowo'
+          : backendStatus === 'offline'
+            ? '⚙ Serwer niedostępny — poczekaj ~30 s i odśwież'
+            : '⏳ Sprawdzanie połączenia z serwerem...'}
+      </div>
+    </div>
+  );
   return (
     <nav className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,6 +87,7 @@ const Navbar = () => {
             >
               Egzamin Maklerski
             </Link>
+            <BackendDot />
           </div>
           {}
           <div className="hidden md:flex items-center space-x-8">

@@ -227,3 +227,4 @@ uv.lock
 *.dbfunctions/local.settings.json
 *.db
 *.lock.hcl
+docs/

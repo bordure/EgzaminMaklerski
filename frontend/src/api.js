@@ -155,3 +155,10 @@ export const fetchUserStats = () =>
   api.get("/user/stats").then((r) => r.data);
 export const fetchLearningAdvice = () =>
   api.post("/user/advice", null, { timeout: 130_000 }).then((r) => r.data);
+export const deleteAccount = () =>
+  api.delete("/auth/me");
+export const exportUserData = () =>
+  api.get("/auth/me/export").then((r) => r.data);
+export const healthCheck = () =>
+  fetch(`${API_URL}/health`, { signal: AbortSignal.timeout(5000) })
+    .then((r) => { if (!r.ok) throw new Error("not ok"); return r.json(); });
