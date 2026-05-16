@@ -247,9 +247,10 @@ def export_user_data(
     raw_logins = list(
         mongo_db["user_logins"]
         .find({"google_id": google_id}, {"_id": 0, "google_id": 0})
-        .sort("last_login", -1)
         .limit(200)
     )
+    # Sort in Python — CosmosDB rejects sort on un-indexed fields
+    raw_logins.sort(key=lambda d: d.get("last_login") or d.get("login_time") or "", reverse=True)
     for doc in raw_logins:
         for k, v in doc.items():
             if isinstance(v, datetime):
