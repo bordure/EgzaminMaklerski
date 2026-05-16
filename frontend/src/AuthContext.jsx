@@ -139,6 +139,8 @@ export const AuthProvider = ({ children }) => {
     clearAuthToken();
     setUser(null);
     setError(null);
+    // Reset initialized so checkAuth re-runs and restores auto-guest session
+    setInitialized(false);
   };
   const value = {
     user,
