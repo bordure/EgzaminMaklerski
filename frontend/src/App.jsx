@@ -11,6 +11,8 @@ import Notes from './pages/Notes';
 import MainPage from "./pages/MainPage";
 import AdminPage from "./pages/AdminPage";
 import ProfilePage from "./pages/ProfilePage";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookieConsent from "./components/CookieConsent";
 export default function App() {
   return (
     <AuthProvider>
@@ -20,6 +22,7 @@ export default function App() {
             <Navbar />
             <Routes>
               <Route path="/auth/callback" element={<AuthCallback />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route 
                 path="/generate" 
                 element={
@@ -44,22 +47,8 @@ export default function App() {
                   </ProtectedRoute>
                 } 
               />
-              <Route 
-                path="/topics" 
-                element={
-                  <ProtectedRoute>
-                    <TopicsPage />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/" 
-                element={
-                  <ProtectedRoute>
-                    <MainPage />
-                  </ProtectedRoute>
-                } 
-              />
+              <Route path="/topics" element={<TopicsPage />} />
+              <Route path="/" element={<MainPage />} />
               <Route
                 path="/admin"
                 element={
@@ -77,6 +66,7 @@ export default function App() {
                 }
               />
             </Routes>
+            <CookieConsent />
           </div>
         </Router>
       </DarkModeProvider>
