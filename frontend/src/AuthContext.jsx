@@ -55,6 +55,14 @@ export const AuthProvider = ({ children }) => {
           setAuthToken(newToken);
           const userData = await getCurrentUser();
           setUser(userData);
+        } else {
+          // No existing session — auto-login as guest so all public pages
+          // (and Google bots) can access content without a login wall.
+          const res = await guestLogin();
+          localStorage.setItem("auth_token", res.access_token);
+          localStorage.setItem("refresh_token", res.refresh_token);
+          setAuthToken(res.access_token);
+          setUser({ name: "Gość", email: null, picture: null, guest: true });
         }
       } catch (error) {
         console.warn("Auth check failed:", error);
