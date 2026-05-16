@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../AuthContext";
-import { fetchUserStats, fetchLearningAdvice } from "../api";
+import { Link, useNavigate } from "react-router-dom";
+import { fetchUserStats, fetchLearningAdvice, deleteAccount, exportUserData } from "../api";
+import { getConsent, setConsent } from "../components/CookieConsent";
+import { initGA } from "../utils/analytics";
 import guestAvatar from "../assets/images/guest-avatar.svg";
 const ADVICE_LS_KEY = "learning_advice_cache";
 function loadAdviceCache() {
@@ -35,13 +38,24 @@ function StatCard({ label, value, color = "text-gray-900 dark:text-gray-100" }) 
   );
 }
 export default function ProfilePage() {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(false);
   const [adviceCache, setAdviceCache] = useState(() => loadAdviceCache());
   const [adviceLoading, setAdviceLoading] = useState(false);
   const [adviceError, setAdviceError] = useState(null);
   const [timeLabel, setTimeLabel] = useState("");
+  const [cookieConsent, setCookieConsentState] = useState(() => getConsent());
+  const [deleteConfirm, setDeleteConfirm] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  const [deleteError, setDeleteError] = useState(null);
+  const [exportLoading, setExportLoading] = useState(false);
+  // Redirect guests — profile page is only for logged-in users
+  useEffect(() => {
+    if (user?.guest) navigate("/", { replace: true });
+  }, [user, navigate]);
+  if (user?.guest) return null;
   useEffect(() => {
     if (!adviceCache?.next_available_at) return;
     setTimeLabel(formatTimeUntil(adviceCache.next_available_at));
@@ -80,6 +94,51 @@ export default function ProfilePage() {
       setAdviceLoading(false);
     }
   };
+
+  const handleExport = async () => {
+    setExportLoading(true);
+    try {
+      const data = await exportUserData();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "moje_dane_egzaminmaklerski.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      // silently ignore — user sees no change
+    } finally {
+      setExportLoading(false);
+    }
+  };
+
+  const handleDeleteAccount = async () => {
+    setDeleteLoading(true);
+    setDeleteError(null);
+    try {
+      await deleteAccount();
+      logout();
+      navigate("/");
+    } catch (err) {
+      setDeleteError(
+        err?.response?.data?.detail ?? "Błąd podczas usuwania konta. Spróbuj ponownie."
+      );
+      setDeleteLoading(false);
+    }
+  };
+
+  const handleCookieAccept = () => {
+    setConsent("accepted");
+    setCookieConsentState("accepted");
+    initGA();
+  };
+
+  const handleCookieReject = () => {
+    setConsent("rejected");
+    setCookieConsentState("rejected");
+  };
+
   const rateLimited = isRateLimited(adviceCache?.next_available_at);
   return (
     <div className="max-w-2xl mx-auto px-4 py-12 space-y-6">
@@ -248,6 +307,135 @@ export default function ProfilePage() {
               Kliknij przycisk, aby AI przeanalizowało Twoje wyniki i zaproponowało plan nauki.
             </p>
           )}
+        </div>
+      )}
+      {/* ── Privacy & GDPR section ── */}
+      {!user?.guest && (
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 space-y-6">
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
+            Prywatność i dane konta
+          </h2>
+
+          {/* Cookie preferences */}
+          <div className="border-b border-gray-100 dark:border-gray-700 pb-5">
+            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-1">
+              Ustawienia cookies
+            </h3>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+              Cookies analityczne (Google Analytics) pozwalają nam ulepszać serwis. Możesz zmienić
+              zgodę w dowolnym momencie.{" "}
+              <Link to="/privacy" className="underline text-indigo-600 dark:text-indigo-400">
+                Polityka prywatności
+              </Link>
+            </p>
+            <div className="flex items-center gap-3 flex-wrap">
+              <span
+                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium ${
+                  cookieConsent === "accepted"
+                    ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400"
+                    : "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-400"
+                }`}
+              >
+                <span
+                  className={`w-2 h-2 rounded-full ${
+                    cookieConsent === "accepted" ? "bg-green-500" : "bg-red-500"
+                  }`}
+                />
+                {cookieConsent === "accepted" ? "Cookies zaakceptowane" : "Cookies odrzucone"}
+              </span>
+              {cookieConsent !== "accepted" ? (
+                <button
+                  onClick={handleCookieAccept}
+                  className="px-4 py-1.5 text-sm font-medium rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition-colors"
+                >
+                  Zaakceptuj cookies
+                </button>
+              ) : (
+                <button
+                  onClick={handleCookieReject}
+                  className="px-4 py-1.5 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                >
+                  Wycofaj zgodę
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Export data */}
+          <div className="border-b border-gray-100 dark:border-gray-700 pb-5">
+            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-1">
+              Eksport danych
+            </h3>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+              Pobierz wszystkie swoje dane jako plik JSON — profil, historia odpowiedzi, logowania.
+            </p>
+            <button
+              onClick={handleExport}
+              disabled={exportLoading}
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {exportLoading ? (
+                <>
+                  <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                  </svg>
+                  Pobieranie...
+                </>
+              ) : (
+                <>
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Pobierz moje dane
+                </>
+              )}
+            </button>
+          </div>
+
+          {/* Delete account */}
+          <div>
+            <h3 className="text-sm font-semibold text-red-600 dark:text-red-400 mb-1">
+              Usuń konto
+            </h3>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+              Trwale usunie Twój profil, historię odpowiedzi i wszystkie dane powiązane z kontem.
+              Tej operacji nie można cofnąć.
+            </p>
+            {!deleteConfirm ? (
+              <button
+                onClick={() => setDeleteConfirm(true)}
+                className="px-4 py-2 text-sm font-medium rounded-lg border border-red-300 dark:border-red-700 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+              >
+                Usuń moje konto
+              </button>
+            ) : (
+              <div className="space-y-3">
+                <p className="text-sm font-medium text-red-600 dark:text-red-400">
+                  Czy na pewno chcesz usunąć konto? Zostaną usunięte wszystkie Twoje dane.
+                </p>
+                {deleteError && (
+                  <p className="text-sm text-red-500 dark:text-red-400">{deleteError}</p>
+                )}
+                <div className="flex gap-3">
+                  <button
+                    onClick={handleDeleteAccount}
+                    disabled={deleteLoading}
+                    className="px-4 py-2 text-sm font-medium rounded-lg bg-red-600 hover:bg-red-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {deleteLoading ? "Usuwanie..." : "Tak, usuń konto"}
+                  </button>
+                  <button
+                    onClick={() => { setDeleteConfirm(false); setDeleteError(null); }}
+                    disabled={deleteLoading}
+                    className="px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    Anuluj
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
