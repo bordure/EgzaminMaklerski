@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from fastapi.responses import RedirectResponse, JSONResponse
+from fastapi.encoders import jsonable_encoder
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from datetime import datetime, timedelta, timezone
@@ -254,7 +255,7 @@ def export_user_data(
             if isinstance(v, datetime):
                 doc[k] = v.isoformat()
 
-    return JSONResponse({
+    return JSONResponse(content=jsonable_encoder({
         "user": {
             "email": sql_user.email,
             "name": sql_user.name,
@@ -273,4 +274,4 @@ def export_user_data(
             for a in answers
         ],
         "login_history": raw_logins,
-    })
+    }))
