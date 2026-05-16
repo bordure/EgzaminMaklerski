@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import { BookOpen } from 'lucide-react';
 import { guestLogin } from '../api';
@@ -80,6 +81,19 @@ const LoginPage = () => {
           <div className="mt-4 text-center">
             <p className="text-xs text-gray-500">
               Logując się, zgadzasz się na bezpieczny dostęp do poprzednich egzaminów i śledzenie swoich postępów.
+              Przeczytaj naszą{" "}
+              <Link to="/privacy" className="underline text-indigo-600 hover:text-indigo-500">
+                Politykę Prywatności
+              </Link>
+              .
+            </p>
+          </div>
+          <div className="mt-3 flex items-start gap-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2 text-left">
+            <svg className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+            </svg>
+            <p className="text-xs text-amber-700">
+              Jeśli po kliknięciu przycisku nic się nie dzieje, poczekaj ok.&nbsp;<strong>30&nbsp;sekund</strong> — serwer może wymagać chwili na pełne uruchomienie.
             </p>
           </div>
         </div>
