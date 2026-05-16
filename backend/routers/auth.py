@@ -1,10 +1,13 @@
-from fastapi import APIRouter, Depends, HTTPException, Request
-from fastapi.responses import RedirectResponse
+from fastapi import APIRouter, Depends, HTTPException, Request, Response
+from fastapi.responses import RedirectResponse, JSONResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from datetime import datetime, timedelta, timezone
+from sqlalchemy.orm import Session
 from settings import Settings
 import httpx, jwt, secrets
+from db.database import get_db
+from db.models import User as SqlUser, AnswerRecord
 
 router = APIRouter()
 security = HTTPBearer(auto_error=False)
@@ -193,3 +196,81 @@ def get_user_info(current_user: dict = Depends(get_current_user)):
 @router.post("/logout")
 def logout(current_user: dict = Depends(get_current_user)):
     return {"message": "Successfully logged out"}
+
+
+@router.delete("/me", status_code=204)
+def delete_account(
+    request: Request,
+    current_user: dict = Depends(get_current_user),
+    sql_db: Session = Depends(get_db),
+):
+    """Permanently delete all data for the authenticated user (GDPR art. 17)."""
+    google_id = current_user.get("id")
+    if not google_id or current_user.get("guest"):
+        raise HTTPException(status_code=400, detail="Cannot delete a guest account")
+
+    sql_user = sql_db.query(SqlUser).filter(SqlUser.google_id == google_id).first()
+    if sql_user:
+        sql_db.query(AnswerRecord).filter(AnswerRecord.user_id == sql_user.id).delete(synchronize_session=False)
+        sql_db.delete(sql_user)
+        sql_db.commit()
+
+    mongo_db = request.app.state.db
+    mongo_db["user_logins"].delete_many({"google_id": google_id})
+    mongo_db["user_logins"].delete_many({"user_id": google_id})
+
+    return Response(status_code=204)
+
+
+@router.get("/me/export")
+def export_user_data(
+    request: Request,
+    current_user: dict = Depends(get_current_user),
+    sql_db: Session = Depends(get_db),
+):
+    """Export all personal data for the authenticated user (GDPR art. 20)."""
+    google_id = current_user.get("id")
+    if not google_id or current_user.get("guest"):
+        raise HTTPException(status_code=400, detail="Cannot export guest data")
+
+    def _dt(dt):
+        return dt.isoformat() if dt else None
+
+    sql_user = sql_db.query(SqlUser).filter(SqlUser.google_id == google_id).first()
+    if not sql_user:
+        return JSONResponse({"user": None, "answers": [], "login_history": []})
+
+    answers = sql_db.query(AnswerRecord).filter(AnswerRecord.user_id == sql_user.id).all()
+
+    mongo_db = request.app.state.db
+    raw_logins = list(
+        mongo_db["user_logins"]
+        .find({"google_id": google_id}, {"_id": 0, "google_id": 0})
+        .sort("last_login", -1)
+        .limit(200)
+    )
+    for doc in raw_logins:
+        for k, v in doc.items():
+            if isinstance(v, datetime):
+                doc[k] = v.isoformat()
+
+    return JSONResponse({
+        "user": {
+            "email": sql_user.email,
+            "name": sql_user.name,
+            "created_at": _dt(sql_user.created_at),
+            "last_login": _dt(sql_user.last_login),
+        },
+        "answers": [
+            {
+                "question_id": a.question_id,
+                "domain": a.domain,
+                "section": a.section,
+                "topic": a.topic,
+                "is_correct": a.is_correct,
+                "answered_at": _dt(a.answered_at),
+            }
+            for a in answers
+        ],
+        "login_history": raw_logins,
+    })
