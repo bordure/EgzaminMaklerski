@@ -1,9 +1,11 @@
 import argparse
+import difflib
 import json
 import time
 import sys
 from enum import Enum
 from pathlib import Path
+from typing import Optional
 
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -276,6 +278,127 @@ Return ONLY valid JSON with keys: domain, section, topic. Use the exact string v
 """
 
 
+def _first_value(v: object) -> str:
+    """Return first element if v is a list, else cast to str; handle multi-value strings."""
+    if isinstance(v, list):
+        return str(v[0]) if v else ""
+    s = str(v) if v is not None else ""
+    # Split on common multi-value separators (pipe or comma) and take first
+    for sep in [" | ", " | ", "|", ", "]:
+        parts = s.split(sep)
+        if len(parts) > 1:
+            return parts[0].strip()
+    return s
+
+
+def _closest(value: str, choices: list, cutoff: float = 0.45) -> Optional[str]:
+    """Return the closest matching string from choices, or None."""
+    if value in choices:
+        return value
+    first_part = value.split(",")[0].strip()
+    if first_part in choices:
+        return first_part
+    m = difflib.get_close_matches(value, choices, n=1, cutoff=cutoff)
+    if m:
+        return m[0]
+    m = difflib.get_close_matches(first_part, choices, n=1, cutoff=cutoff)
+    return m[0] if m else None
+
+
+def _infer_domain_from_section_value(raw: str) -> Optional[str]:
+    """If raw matches a Section value, return the corresponding Domain value."""
+    for domain, sections in _DOMAIN_SECTIONS.items():
+        section_choices = [s.value for s in sections]
+        if _closest(raw, section_choices, cutoff=0.5):
+            return domain.value
+    return None
+
+
+def _find_topic_across_sections(topic_raw: str, valid_sections) -> tuple:
+    """Find the best (section_value, topic_value) for topic_raw across all given sections."""
+    best_section, best_topic, best_score = None, None, 0.0
+    for sec in valid_sections:
+        for t in _SECTION_TOPICS.get(sec, set()):
+            score = difflib.SequenceMatcher(None, topic_raw.lower(), t.value.lower()).ratio()
+            if score > best_score:
+                best_score = score
+                best_section, best_topic = sec.value, t.value
+    return (best_section, best_topic) if best_score > 0.4 else (None, None)
+
+
+def _find_topic_globally(topic_raw: str) -> tuple:
+    """Find the best (domain_value, section_value, topic_value) across ALL domains/sections."""
+    best = (None, None, None, 0.0)
+    for domain, sections in _DOMAIN_SECTIONS.items():
+        for sec in sections:
+            for t in _SECTION_TOPICS.get(sec, set()):
+                score = difflib.SequenceMatcher(None, topic_raw.lower(), t.value.lower()).ratio()
+                if score > best[3]:
+                    best = (domain.value, sec.value, t.value, score)
+    return best[:3] if best[3] > 0.4 else (None, None, None)
+
+
+def _fuzzy_parse(raw: str) -> QuestionClassification:
+    """Parse model JSON with fuzzy enum matching to handle common gpt-4-nano mistakes."""
+    data = json.loads(raw)
+    domain_raw = _first_value(data.get("domain", ""))
+    section_raw = _first_value(data.get("section", ""))
+    topic_raw = _first_value(data.get("topic", ""))
+
+    # --- Domain ---
+    domain_match = _closest(domain_raw, [e.value for e in Domain])
+    if not domain_match:
+        # Model returned a Section/Topic name as domain - infer from section_raw
+        domain_match = _infer_domain_from_section_value(domain_raw)
+        if not domain_match:
+            domain_match = _infer_domain_from_section_value(section_raw)
+    if not domain_match:
+        raise ValueError(f"Cannot match domain: {domain_raw!r}")
+    domain = Domain(domain_match)
+
+    # --- Section ---
+    valid_sections = _DOMAIN_SECTIONS[domain]
+    section_choices = [s.value for s in valid_sections]
+
+    # Detect swap: section_raw may actually be a Topic value
+    all_topic_values = {t.value for topics in _SECTION_TOPICS.values() for t in topics}
+    if section_raw in all_topic_values and topic_raw not in all_topic_values:
+        section_raw, topic_raw = topic_raw, section_raw
+
+    section_match = _closest(section_raw, section_choices)
+    if not section_match:
+        # Infer section from topic
+        inferred_sec, _ = _find_topic_across_sections(topic_raw, valid_sections)
+        section_match = inferred_sec or section_choices[0]
+    section = Section(section_match)
+
+    # --- Topic ---
+    valid_topics = _SECTION_TOPICS[section]
+    topic_choices = [t.value for t in valid_topics]
+    topic_match = _closest(topic_raw, topic_choices, cutoff=0.4)
+    if not topic_match:
+        # Topic belongs to a different section - search across all valid sections in domain
+        best_sec, best_topic = _find_topic_across_sections(topic_raw, valid_sections)
+        if best_sec and best_topic:
+            return QuestionClassification(
+                domain=domain,
+                section=Section(best_sec),
+                topic=Topic(best_topic),
+            )
+        # Final fallback: search across ALL domains (model may have returned wrong domain)
+        g_domain, g_sec, g_topic = _find_topic_globally(topic_raw)
+        if g_domain and g_sec and g_topic:
+            return QuestionClassification(
+                domain=Domain(g_domain),
+                section=Section(g_sec),
+                topic=Topic(g_topic),
+            )
+        raise ValueError(f"Cannot match topic: {topic_raw!r} for section: {section_match!r}")
+    topic = Topic(topic_match)
+
+    return QuestionClassification(domain=domain, section=section, topic=topic)
+
+
 def _build_client() -> OpenAI:
     """Instantiate the OpenAI client pointed at the Azure endpoint."""
     base_url = cfg.azure_openai_endpoint.removesuffix("/chat/completions")
@@ -310,7 +433,10 @@ def classify_question(
             raw = response.choices[0].message.content
             if not raw:
                 raise ValueError("Model returned empty content.")
-            return QuestionClassification.model_validate_json(raw)
+            try:
+                return QuestionClassification.model_validate_json(raw)
+            except Exception:
+                return _fuzzy_parse(raw)
         except Exception as exc:
             if attempt == max_retries:
                 raise
