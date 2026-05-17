@@ -157,7 +157,7 @@
   },
   {
     "id": 13,
-    "question": "Akcje spółki MMM notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Na podstawie poniższych zleceń złożonych w fazie przed zamknięciem proszę wskazać kurs zamknięcia. Kurs odniesienia: 61,00 Minimalna wielkość zmiany ceny: 0,01 KUPNO LIMIT SPRZEDAŻ 100 150 50 50 500 PCR 60,90 60,80 60,70 59,60 --- 450 --- 100 200",
+    "question": "Akcje spółki MMM notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Na podstawie poniższych zleceń złożonych w fazie przed zamknięciem proszę wskazać kurs zamknięcia. Kurs odniesienia: 61,00 Minimalna wielkość zmiany ceny: 0,01\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| 100   | PCR   | —        |\n| 150   | 60,90 | 450      |\n| 50    | 60,80 | —        |\n| 50    | 60,70 | 100      |\n| 500   | 59,60 | 200      |",
     "option_A": "60,70",
     "option_B": "60,71",
     "option_C": "60,80",
@@ -209,7 +209,7 @@
   },
   {
     "id": 17,
-    "question": "Akcje spółki RRR notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs zamknięcia na tej sesji wynosił 49,80. Minimalna wielkość zmiany ceny to 0,1. W fazie dogrywki arkusz zleceń przedstawiał się następująco: KUPNO LIMIT SPRZEDAŻ --- --- --- --- 50,50 50,10 50,00 49,90 596 920 350 50 Wskaż, które z poniższych działań mogą zostać dokonane w fazie dogrywki: I. modyfikacja limitu ceny sprzedaży z 50,10 na 50,55; II. modyfikacja limitu ceny sprzedaży z 49,90 na PKC; III. złożenie zlecenia kupna o wolumenie 100 z limitem 50,60 oraz limitem aktywacji 50,70; IV. złożenie zlecenia kupna o wolumenie 50 i warunkiem PEG.",
+    "question": "Akcje spółki RRR notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs zamknięcia na tej sesji wynosił 49,80. Minimalna wielkość zmiany ceny to 0,1. W fazie dogrywki arkusz zleceń przedstawiał się następująco:\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| —     | 50,50 | 596      |\n| —     | 50,10 | 920      |\n| —     | 50,00 | 350      |\n| —     | 49,90 | 50       |\n\nWskaż, które z poniższych działań mogą zostać dokonane w fazie dogrywki: I. modyfikacja limitu ceny sprzedaży z 50,10 na 50,55; II. modyfikacja limitu ceny sprzedaży z 49,90 na PKC; III. złożenie zlecenia kupna o wolumenie 100 z limitem 50,60 oraz limitem aktywacji 50,70; IV. złożenie zlecenia kupna o wolumenie 50 i warunkiem PEG.",
     "option_A": "działanie I, II, IV",
     "option_B": "działanie I, III",
     "option_C": "działanie III",
@@ -508,7 +508,7 @@
   },
   {
     "id": 40,
-    "question": "Akcje spółki AAA notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Na podstawie poniższych zleceń złożonych w fazie przed zamknięciem proszę wskazać kurs zamknięcia. Kurs odniesienia: 2,550 Minimalna wielkość zmiany ceny: 0,001 KUPNO LIMIT SPRZEDAŻ 2.000 100 100 100 2.000 2,500 2,495 2,450 2,300 2,190 100 900 400 500 200",
+    "question": "Akcje spółki AAA notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Na podstawie poniższych zleceń złożonych w fazie przed zamknięciem proszę wskazać kurs zamknięcia. Kurs odniesienia: 2,550 Minimalna wielkość zmiany ceny: 0,001\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| 2.000 | 2,500 | 100      |\n| 100   | 2,495 | 900      |\n| 100   | 2,450 | 400      |\n| 100   | 2,300 | 500      |\n| 2.000 | 2,190 | 200      |",
     "option_A": "2,495",
     "option_B": "2,496",
     "option_C": "2,499",
@@ -651,7 +651,7 @@
   },
   {
     "id": 51,
-    "question": "Akcje spółki ŁŁŁ notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Na podstawie poniższych zleceń złożonych w fazie przed zamknięciem proszę wskazać kurs zamknięcia. Kurs odniesienia: 70,40 Minimalna wielkość zmiany ceny: 0,1 KUPNO LIMIT SPRZEDAŻ 300 --- --- PKC 70,40 70,30 --- --- 300",
+    "question": "Akcje spółki ŁŁŁ notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Na podstawie poniższych zleceń złożonych w fazie przed zamknięciem proszę wskazać kurs zamknięcia. Kurs odniesienia: 70,40 Minimalna wielkość zmiany ceny: 0,1\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| 300   | PKC   | —        |\n| —     | 70,40 | —        |\n| —     | 70,30 | 300      |",
     "option_A": "70,30",
     "option_B": "70,40",
     "option_C": "70,39",
@@ -742,7 +742,7 @@
   },
   {
     "id": 58,
-    "question": "Akcje spółki OOO notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs otwarcia został ustalony na poziomie 6,175. Minimalna wielkość zmiany ceny to 0,005. W fazie przed zamknięciem arkusz zleceń przedstawiał się następująco: KUPNO LIMIT SPRZEDAŻ --- --- --- 60 10 6,295 6,280 6,275 6,170 6,165 50 40 30 --- --- Wskaż zlecenia, które mogą zostać wprowadzone jako kolejne do arkusza zleceń zgodnie z zasadami obowiązującymi na Giełdzie. Nie obowiązują ograniczenia wahań kursów. I. sprzedaż 30 sztuk po kursie 6,170 z warunkiem WLA; II. kupno 40 sztuk po kursie 6,300 z warunkiem MWW = 30; III. sprzedaż 10.000 sztuk po PKC z warunkiem WUJ = 50; IV. kupno 70.000 sztuk po 6,500 z warunkiem WUJ = 100.",
+    "question": "Akcje spółki OOO notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs otwarcia został ustalony na poziomie 6,175. Minimalna wielkość zmiany ceny to 0,005. W fazie przed zamknięciem arkusz zleceń przedstawiał się następująco:\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| —     | 6,295 | 50       |\n| —     | 6,280 | 40       |\n| —     | 6,275 | 30       |\n| 60    | 6,170 | —        |\n| 10    | 6,165 | —        |\n\nWskaż zlecenia, które mogą zostać wprowadzone jako kolejne do arkusza zleceń zgodnie z zasadami obowiązującymi na Giełdzie. Nie obowiązują ograniczenia wahań kursów. I. sprzedaż 30 sztuk po kursie 6,170 z warunkiem WLA; II. kupno 40 sztuk po kursie 6,300 z warunkiem MWW = 30; III. sprzedaż 10.000 sztuk po PKC z warunkiem WUJ = 50; IV. kupno 70.000 sztuk po 6,500 z warunkiem WUJ = 100.",
     "option_A": "zlecenie III, IV",
     "option_B": "zlecenie IV",
     "option_C": "zlecenie I, II; IV",
@@ -781,7 +781,7 @@
   },
   {
     "id": 61,
-    "question": "Akcje spółki BBB notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie kursu jednolitego z dwukrotnym określeniem kursu. Na podstawie poniższego arkusza zleceń (faza przed otwarciem, tj. przed ustaleniem drugiego kursu jednolitego) proszę wskazać drugi kurs jednolity. Kurs odniesienia: 380,50 Krok notowań: 0,50 KUPNO LIMIT SPRZEDAŻ 300 PCR 300",
+    "question": "Akcje spółki BBB notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie kursu jednolitego z dwukrotnym określeniem kursu. Na podstawie poniższego arkusza zleceń (faza przed otwarciem, tj. przed ustaleniem drugiego kursu jednolitego) proszę wskazać drugi kurs jednolity. Kurs odniesienia: 380,50 Krok notowań: 0,50\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| 300   | PCR   | 300      |",
     "option_A": "300,50",
     "option_B": "drugi kurs nie zostanie określony i rozpocznie się równoważenie",
     "option_C": "drugi kurs nie zostanie określony i nie rozpocznie się równoważenie",
@@ -859,7 +859,7 @@
   },
   {
     "id": 67,
-    "question": "Kontrakty na walutę Z notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs ostatniej transakcji wynosi 4,7273. Minimalna wielkość zmiany ceny wynosi 0,0001. Arkusz zleceń w fazie notowań ciągłych przedstawiał się następująco: KUPNO LIMIT SPRZEDAŻ --- --- 40 50 4,7327 4,7322 4,7273 4,7223 60 70 --- --- Wskaż, które z poniższych zleceń może zostać wprowadzone do arkusza zleceń zgodnie z zasadami obowiązującymi na Giełdzie:",
+    "question": "Kontrakty na walutę Z notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs ostatniej transakcji wynosi 4,7273. Minimalna wielkość zmiany ceny wynosi 0,0001. Arkusz zleceń w fazie notowań ciągłych przedstawiał się następująco:\n\n| KUPNO | LIMIT  | SPRZEDAŻ |\n|-------|--------|----------|\n| —     | 4,7327 | 60       |\n| —     | 4,7322 | 70       |\n| 40    | 4,7273 | —        |\n| 50    | 4,7223 | —        |\n\nWskaż, które z poniższych zleceń może zostać wprowadzone do arkusza zleceń zgodnie z zasadami obowiązującymi na Giełdzie:",
     "option_A": "kupno 20 sztuk z limitem aktywacji 4,7273 i limitem realizacji 4,7274",
     "option_B": "sprzedaż 30 sztuk z limitem aktywacji 4,7274 i bez limitu realizacji",
     "option_C": "sprzedaż 40 sztuk z limitem aktywacji 4,7223 i limitem realizacji 4,7327",
@@ -924,7 +924,7 @@
   },
   {
     "id": 72,
-    "question": "Obligacje SSS notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Krok notowań wynosi 0,01. Arkusz zleceń w fazie notowań ciągłych przedstawiał się następująco: KUPNO LIMIT SPRZEDAŻ --- --- 400 550 83,30 83,25 83,20 82,20 301 299 --- --- Wskaż, czy i które z niżej wymienionych transakcji zostaną zrealizowane po wprowadzeniu do arkusza zlecenia kupna 300 obligacji z limitem 83,25 i warunkiem WLA:",
+    "question": "Obligacje SSS notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Krok notowań wynosi 0,01. Arkusz zleceń w fazie notowań ciągłych przedstawiał się następująco:\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| —     | 83,30 | 301      |\n| —     | 83,25 | 299      |\n| 400   | 83,20 | —        |\n| 550   | 82,20 | —        |\n\nWskaż, czy i które z niżej wymienionych transakcji zostaną zrealizowane po wprowadzeniu do arkusza zlecenia kupna 300 obligacji z limitem 83,25 i warunkiem WLA:",
     "option_A": "zostanie zakupione 299 sztuk po kursie 83,25",
     "option_B": "zostanie zakupione 300 sztuk po kursie 83,30",
     "option_C": "zostanie zakupione 299 sztuk po kursie 83,25 oraz jedna sztuka po kursie 83,30",
@@ -950,7 +950,7 @@
   },
   {
     "id": 74,
-    "question": "Akcje spółki ZZZ notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs otwarcia został ustalony na poziomie 250,00. Minimalna wielkość zmiany ceny to 0,5. W fazie notowań ciągłych arkusz zleceń przedstawiał się następująco: KUPNO LIMIT SPRZEDAŻ --- --- 40 80 252,50 250,00 248,50 230,00 19 61 --- --- Wskaż, które z poniższych zleceń może zostać wprowadzone jako kolejne do arkusza zleceń zgodnie z zasadami obowiązującymi na Giełdzie i po wprowadzeniu będzie podlegało całkowitej natychmiastowej realizacji. Nie obowiązują ograniczenia wahań kursów.",
+    "question": "Akcje spółki ZZZ notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs otwarcia został ustalony na poziomie 250,00. Minimalna wielkość zmiany ceny to 0,5. W fazie notowań ciągłych arkusz zleceń przedstawiał się następująco:\n\n| KUPNO | LIMIT  | SPRZEDAŻ |\n|-------|--------|----------|\n| —     | 252,50 | 19       |\n| —     | 250,00 | 61       |\n| 40    | 248,50 | —        |\n| 80    | 230,00 | —        |\n\nWskaż, które z poniższych zleceń może zostać wprowadzone jako kolejne do arkusza zleceń zgodnie z zasadami obowiązującymi na Giełdzie i po wprowadzeniu będzie podlegało całkowitej natychmiastowej realizacji. Nie obowiązują ograniczenia wahań kursów.",
     "option_A": "zlecenie kupna 19 akcji z limitem 252,55",
     "option_B": "zlecenie sprzedaży 20 akcji po kursie 246,00 z warunkiem WNF",
     "option_C": "zlecenie kupna 150 akcji z limitem 250,00 i MWW =",
@@ -1106,7 +1106,7 @@
   },
   {
     "id": 86,
-    "question": "Akcje spółki QQQ notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Na podstawie poniższych zleceń złożonych w fazie przed zamknięciem proszę wskazać kurs zamknięcia. Kurs odniesienia: 5,70 Minimalna wielkość zmiany ceny: 0,01 KUPNO LIMIT SPRZEDAŻ 200 700 100 200 200 5,80 5,75 5,72 5,70 5,69 100 100 400 300 200",
+    "question": "Akcje spółki QQQ notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Na podstawie poniższych zleceń złożonych w fazie przed zamknięciem proszę wskazać kurs zamknięcia. Kurs odniesienia: 5,70 Minimalna wielkość zmiany ceny: 0,01\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| 200   | 5,80  | 100      |\n| 700   | 5,75  | 100      |\n| 100   | 5,72  | 400      |\n| 200   | 5,70  | 300      |\n| 200   | 5,69  | 200      |",
     "option_A": "5,74",
     "option_B": "5,73",
     "option_C": "5,75",
@@ -1353,7 +1353,7 @@
   },
   {
     "id": 105,
-    "question": "Akcje spółki LLL notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Krok notowań wynosi 0,05. Arkusz zleceń w fazie notowań ciągłych przedstawiał się następująco: KUPNO LIMIT SPRZEDAŻ --- 784 259 935 43,00 42,90 42,85 42,80 400 --- --- --- Wskaż, czy i które z niżej wymienionych transakcji zostaną zrealizowane po prowadzeniu do arkusza zlecenia sprzedaży 1.000 akcji z limitem 42,91 i warunkiem MWW = 800:",
+    "question": "Akcje spółki LLL notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Krok notowań wynosi 0,05. Arkusz zleceń w fazie notowań ciągłych przedstawiał się następująco:\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| —     | 43,00 | 400      |\n| 784   | 42,90 | —        |\n| 259   | 42,85 | —        |\n| 935   | 42,80 | —        |\n\nWskaż, czy i które z niżej wymienionych transakcji zostaną zrealizowane po prowadzeniu do arkusza zlecenia sprzedaży 1.000 akcji z limitem 42,91 i warunkiem MWW = 800:",
     "option_A": "784 sztuk po cenie 42,90 oraz 216 sztuk po cenie 42,85",
     "option_B": "784 sztuk po cenie 42,90",
     "option_C": "784 sztuk po cenie 42,90 oraz 16 sztuk po cenie 42,85",
@@ -1457,7 +1457,7 @@
   },
   {
     "id": 113,
-    "question": "Akcje spółki EEE notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs ostatniej transakcji z fazy notowań ciągłych wyniósł 37,40. Minimalna wielkość zmiany ceny dla tych akcji wynosi 0,05. W fazie dogrywki arkusz zleceń przedstawiał się następująco: KUPNO LIMIT SPRZEDAŻ --- --- 100 200 37,70 37,60 37,45 36,00 600 700 --- -- Wskaż, które z poniższych zleceń może zostać złożone w fazie dogrywki zgodnie z zasadami obowiązującymi na Giełdzie. I. złożenie zlecenia kupna PCR o wolumenie 100; II. złożenie zlecenia sprzedaży PKC o wolumenie 500; III. złożenie zlecenia sprzedaży z limitem 37,45 o wolumenie 700.",
+    "question": "Akcje spółki EEE notowane są na Giełdzie Papierów Wartościowych w Warszawie S.A. w systemie notowań ciągłych. Kurs ostatniej transakcji z fazy notowań ciągłych wyniósł 37,40. Minimalna wielkość zmiany ceny dla tych akcji wynosi 0,05. W fazie dogrywki arkusz zleceń przedstawiał się następująco:\n\n| KUPNO | LIMIT | SPRZEDAŻ |\n|-------|-------|----------|\n| —     | 37,70 | 600      |\n| —     | 37,60 | 700      |\n| 100   | 37,45 | —        |\n| 200   | 36,00 | —        |\n\nWskaż, które z poniższych zleceń może zostać złożone w fazie dogrywki zgodnie z zasadami obowiązującymi na Giełdzie. I. złożenie zlecenia kupna PCR o wolumenie 100; II. złożenie zlecenia sprzedaży PKC o wolumenie 500; III. złożenie zlecenia sprzedaży z limitem 37,45 o wolumenie 700.",
     "option_A": "zlecenie I i II",
     "option_B": "zlecenie III",
     "option_C": "zlecenie I, II i III",
@@ -1552,7 +1552,7 @@
     "option_A": "dopasowania i pasywnych",
     "option_B": "dopasowania i immunizacji",
     "option_C": "immunizacji i pasywnych",
-    "option_D": "dopasowania i aktywnych. 53 Numer pytania Prawidłowa odpowiedź Numer pytania Prawidłowa odpowiedź Numer pytania Prawidłowa odpowiedź Numer pytania Prawidłowa odpowiedź",
+    "option_D": "dopasowania i aktywnych",
     "correct_answer": "B",
     "exam_date": "15.10.2023",
     "domain": "Matematyka Finansowa",

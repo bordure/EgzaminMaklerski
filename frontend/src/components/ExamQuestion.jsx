@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { submitReport } from '../api';
 import { useAuth } from '../AuthContext';
 const REPORT_REASONS = [
@@ -204,7 +206,28 @@ export default function ExamQuestion({ q, idx, mode, showYear, onAnswer, examSub
           </span>
         )}
       </div>
-      <p className="mb-4 text-gray-700 dark:text-gray-300">{q.question}</p>
+      <div className="mb-4 text-gray-700 dark:text-gray-300 question-markdown">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            table: ({ node, ...props }) => (
+              <div className="overflow-x-auto my-3">
+                <table className="text-sm border-collapse w-auto" {...props} />
+              </div>
+            ),
+            thead: ({ node, ...props }) => <thead className="bg-gray-100 dark:bg-gray-700" {...props} />,
+            th: ({ node, ...props }) => (
+              <th className="border border-gray-300 dark:border-gray-600 px-3 py-1 font-semibold text-left" {...props} />
+            ),
+            td: ({ node, ...props }) => (
+              <td className="border border-gray-300 dark:border-gray-600 px-3 py-1" {...props} />
+            ),
+            p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+          }}
+        >
+          {q.question}
+        </ReactMarkdown>
+      </div>
       <ul className="space-y-3">
         {q.options.map((option, optionIdx) => (
           <li

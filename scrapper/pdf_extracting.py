@@ -80,9 +80,8 @@ def scrap_pdf_file(PDF_PATH: str):
         item["correct_answer"] = answers.get(str(item["id"]), "")
         item["exam_date"] = year_of_exam.group(0) if year_of_exam else None
 
-        with open(f"data/output{year_of_exam.group(0)}.json", "w", encoding="utf-8") as f:
-            json.dump(result, f, indent=2, ensure_ascii=False)
-        return
+    with open(f"data/output{year_of_exam.group(0)}.json", "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
 
 if __name__ == "__main__":
     for root, dirs, files in os.walk("raw_exams/"):
