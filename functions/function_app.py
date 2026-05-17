@@ -36,7 +36,7 @@ app = func.FunctionApp()
 _REQUIRED_FIELDS = ("domain", "section", "topic")
 
 
-@app.route(route="blob_to_mongo", methods=["POST"], auth_level=func.AuthLevel.FUNCTION)
+@app.route(route="blob_to_mongo", methods=["POST"], auth_level=func.AuthLevel.ANONYMOUS)
 def blob_to_mongo(req: func.HttpRequest) -> func.HttpResponse:
     """
     Download all *.json blobs from the exam-data container and insert them
@@ -257,7 +257,7 @@ def _call_openai_with_retry(user_message: str) -> str:
             time.sleep(wait)
 
 
-@app.route(route="learning_advisor", methods=["POST"], auth_level=func.AuthLevel.FUNCTION)
+@app.route(route="learning_advisor", methods=["POST"], auth_level=func.AuthLevel.ANONYMOUS)
 def learning_advisor(req: func.HttpRequest) -> func.HttpResponse:
     """
     Return a personalised study plan for the given user.
